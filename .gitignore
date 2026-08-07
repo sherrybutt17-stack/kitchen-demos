@@ -7,3 +7,6 @@ PASTE-INTO-GHL/
 .DS_Store
 __pycache__/
 *.pyc
+
+# Generated deploy repos (scripts/split.py) — each has its own git remote.
+repos/
