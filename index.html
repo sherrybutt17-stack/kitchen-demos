@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Three Kitchen Remodeling Brands — Demo Launcher</title>
+<meta name="description" content="Three complete kitchen remodeling websites, each built as if by a different agency. Open any of them, or the GHL-ready build.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  :root{--ink:#111;--paper:#fff;--line:rgba(255,255,255,.14);--e:cubic-bezier(.16,1,.3,1)}
+  body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+       background:#0d0d0d;color:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .shell{max-width:1400px;margin-inline:auto;padding:clamp(2.5rem,6vw,5rem) clamp(1.25rem,4vw,4rem)}
+  header p{font-size:.6875rem;letter-spacing:.24em;text-transform:uppercase;color:#8a8a8a;margin:0 0 1.25rem}
+  h1{font-size:clamp(2rem,5.5vw,4rem);font-weight:800;letter-spacing:-.04em;line-height:1;margin:0 0 1.25rem}
+  .lede{color:#a8a8a8;max-width:62ch;font-size:clamp(1rem,1.3vw,1.125rem);margin:0}
+  .note{margin-top:1.5rem;padding:1rem 1.25rem;border:1px solid var(--line);color:#a8a8a8;
+        font-size:.875rem;max-width:70ch}
+  .note code{color:#e0b878;font-size:.8125rem}
+  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,2vw,1.75rem);
+        margin-top:clamp(2.5rem,5vw,4rem)}
+  @media(max-width:960px){.grid{grid-template-columns:1fr}}
+  .card{display:flex;flex-direction:column;text-decoration:none;border:1px solid var(--line);
+        overflow:hidden;transition:transform .5s var(--e),border-color .5s var(--e)}
+  .card:hover{transform:translateY(-6px)}
+  .card__sw{height:8px;display:flex}
+  .card__sw i{flex:1}
+  .card__b{padding:clamp(1.5rem,2.5vw,2rem);display:flex;flex-direction:column;flex:1}
+  .card__n{font-size:.6875rem;letter-spacing:.24em;text-transform:uppercase;color:#8a8a8a;margin:0 0 1rem}
+  .card h2{font-size:clamp(1.35rem,2vw,1.75rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin:0 0 .35rem}
+  .card h2 span{display:block;font-size:.8125rem;font-weight:500;letter-spacing:.14em;
+                text-transform:uppercase;color:#8a8a8a;margin-top:.6rem}
+  .card p{color:#a8a8a8;font-size:.9375rem;margin:1rem 0 0}
+  .card dl{margin:1.5rem 0 0;display:grid;gap:.5rem;font-size:.8125rem}
+  .card dl div{display:flex;gap:.75rem;justify-content:space-between;border-top:1px solid var(--line);padding-top:.5rem}
+  .card dt{color:#7a7a7a;margin:0}.card dd{margin:0;text-align:right}
+  .card__go{margin-top:1.75rem;display:inline-flex;align-items:center;gap:.6rem;font-size:.75rem;
+            font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+            border-top:1px solid var(--line);padding-top:1.25rem;transition:gap .35s var(--e)}
+  .card:hover .card__go{gap:1.1rem}
+  .c1:hover{border-color:#c8a96a}.c1 .card__go{color:#c8a96a}
+  .c2:hover{border-color:#8a9a7b}.c2 .card__go{color:#a8b89a}
+  .c3:hover{border-color:#b87333}.c3 .card__go{color:#d99a5e}
+  footer{border-top:1px solid var(--line);color:#7a7a7a;font-size:.8125rem}
+  footer ul{margin:.75rem 0 0;padding-left:1.1rem}
+</style>
+</head>
+<body>
+
+<div class="shell">
+  <header>
+    <p>Kitchen remodeling · three brands · 21 pages</p>
+    <h1>Three websites. Three agencies.<br>One brief.</h1>
+    <p class="lede">Each of these is a complete seven-page site with its own brand, positioning, customer, colour system, typography, layout philosophy and conversion strategy. No CSS, JavaScript or design token is shared between them — the divergence is the point.</p>
+    <div class="note">
+      These cards open the <b>source</b> sites. The GoHighLevel-ready versions live in
+      <code>dist/</code> — same pages with all CSS, JavaScript and images inlined as base64,
+      so each file pastes into a GHL Custom HTML block with nothing external to upload.
+      Rebuild them any time with <code>python3 scripts/build.py</code>.
+    </div>
+  </header>
+
+  <div class="grid">
+
+    <a class="card c1" href="site-1-northstone/index.html">
+      <div class="card__sw">
+        <i style="background:#111111"></i><i style="background:#f5f4f2"></i>
+        <i style="background:#c8a96a"></i><i style="background:#be9b72"></i>
+      </div>
+      <div class="card__b">
+        <p class="card__n">Site 01</p>
+        <h2>NORTHSTONE<span>Kitchen Architecture</span></h2>
+        <p>The architecture practice that happens to build kitchens. Restraint as status — a strict grid, oversized numerals, hairline rules and no radius anywhere. Converts through qualified scarcity: the form filters rather than flatters.</p>
+        <dl>
+          <div><dt>Market</dt><dd>Scottsdale &amp; Paradise Valley, AZ</dd></div>
+          <div><dt>Customer</dt><dd>$2M+ homes, design-literate</dd></div>
+          <div><dt>Type</dt><dd>Inter Tight · Instrument Serif</dd></div>
+          <div><dt>Feeling</dt><dd>Apple · Porsche · quiet luxury</dd></div>
+        </dl>
+        <span class="card__go">Open Northstone <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+
+    <a class="card c2" href="site-2-hearth-hollis/index.html">
+      <div class="card__sw">
+        <i style="background:#faf6ef"></i><i style="background:#8a9a7b"></i>
+        <i style="background:#5c4433"></i><i style="background:#a87c4f"></i>
+      </div>
+      <div class="card__b">
+        <p class="card__n">Site 02</p>
+        <h2>HEARTH &amp; HOLLIS<span>Kitchen Studio</span></h2>
+        <p>The kitchen your family grows up in. StoryBrand executed literally — the family is the hero. Arched image masks, soft shadows and a warm organic palette. Converts through a multi-step quiz and a written Kitchen-in-Use Promise.</p>
+        <dl>
+          <div><dt>Market</dt><dd>Mill Valley &amp; Marin County, CA</dd></div>
+          <div><dt>Customer</dt><dd>Two-income families, $900k–$2M</dd></div>
+          <div><dt>Type</dt><dd>Fraunces · Karla</dd></div>
+          <div><dt>Feeling</dt><dd>Architectural Digest · warmth</dd></div>
+        </dl>
+        <span class="card__go">Open Hearth &amp; Hollis <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+
+    <a class="card c3" href="site-3-obsidian/index.html">
+      <div class="card__sw">
+        <i style="background:#0a0a0a"></i><i style="background:#0f3d2e"></i>
+        <i style="background:#b87333"></i><i style="background:#ede8e0"></i>
+      </div>
+      <div class="card__b">
+        <p class="card__n">Site 03</p>
+        <h2>OBSIDIAN<span>Kitchen Studio, Miami</span></h2>
+        <p>Anti-contractor. A fashion house that happens to build kitchens. Bodoni at absurd scale, a page-load curtain, a horizontal project rail — and the Transformation Chamber, a scroll-driven cinematic sequence with selectable stone surfaces.</p>
+        <dl>
+          <div><dt>Market</dt><dd>Coral Gables &amp; Miami-Dade, FL</dd></div>
+          <div><dt>Customer</dt><dd>Design-obsessed, brand-fluent</dd></div>
+          <div><dt>Type</dt><dd>Bodoni Moda · Space Grotesk</dd></div>
+          <div><dt>Feeling</dt><dd>Awwwards · car launch · cinema</dd></div>
+        </dl>
+        <span class="card__go">Open Obsidian <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+
+  </div>
+
+  <footer class="shell" style="padding-inline:0;padding-bottom:0;margin-top:clamp(3rem,6vw,5rem)">
+    <p style="margin:0 0 .5rem"><b style="color:#fff">Serve locally</b> — image and video paths are relative, so open this through a web server rather than double-clicking:</p>
+    <ul>
+      <li><code style="color:#e0b878">python3 -m http.server 8080</code> from this folder, then visit <code style="color:#e0b878">http://localhost:8080</code></li>
+      <li>All brand names, addresses, phone numbers, licence numbers, review counts and testimonials are sample data.</li>
+      <li>Photography: Shopify Burst (CC0) and Unsplash. Video: Mixkit Free License. See <code style="color:#e0b878">assets/media/CREDITS.json</code>.</li>
+    </ul>
+  </footer>
+</div>
+
+</body>
+</html>

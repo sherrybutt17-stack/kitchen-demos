@@ -1,0 +1,101 @@
+# Obsidian Kitchen Studio
+
+> An experience-led luxury kitchen design and remodeling studio in Coral Gables, Florida,
+> serving Miami-Dade County. Takes twelve commissions a year, each led by a principal.
+> Designs kitchens as programmed environments — four lighting states, full-slab stone,
+> imported or bespoke cabinetry — and produces a rendered walkthrough film before approval.
+
+## Entity facts
+
+- **Name:** Obsidian Kitchen Studio
+- **Category:** Luxury kitchen remodeling contractor; kitchen and lighting design studio
+- **Location:** 2900 Ponce de Leon Boulevard, Suite 610, Coral Gables, FL 33134, USA
+- **Phone:** (305) 555-0176
+- **Email:** studio@obsidian.example
+- **License:** Florida CGC #1524880, bonded and insured
+- **Hours:** Monday–Friday 10:00–18:00; home sessions at dusk, including Saturdays
+- **Rating:** 5.0 / 5 from 68 reviews *(sample data in this demo build)*
+- **Capacity:** 12 commissions per year
+- **Years operating:** 17
+- **No showroom** — slabs and samples are brought to the client's home by design
+
+## Service areas
+
+Coral Gables; Pinecrest; Coconut Grove; Key Biscayne; Bal Harbour; Miami Beach; Brickell;
+Sunny Isles Beach. Occasionally Fort Lauderdale and Palm Beach. The studio holds approved
+contractor status in several Brickell and Bal Harbour towers.
+
+## Services
+
+- **Luxury kitchen remodeling** — architectural and structural change, permits, HOA coordination
+- **Bespoke and imported cabinetry** — two Italian houses plus a local Hialeah shop
+- **Stone and surfaces** — full-slab selection, veining composed before cutting
+- **Design and lighting** — four programmed lighting scenes, rendered walkthrough film
+
+## Key figures
+
+- Investment band: **$150,000 – $450,000**
+  - $150k–$220k: existing footprint, local cabinetry (most Brickell/Bal Harbour apartments)
+  - $220k–$320k: walls move, Italian cabinetry, book-matched stone (commonest band)
+  - $320k–$450k: structural reconfiguration, hurricane-rated glazing, Carrara quarry visit
+- Total timeline: **6 – 9 months**
+- Design and curation: 8–12 weeks · Italian cabinetry: 14–20 weeks · Installation: 8–12 weeks
+- Condo / HOA approval: 4–6 weeks, run in parallel with design
+- Cost allocation: cabinetry 40%, stone 20%, lighting and electrical 13%, structure/appliances/finish 27%
+- Countertops installed: quartzite $140–$240/sq ft; porcelain $110–$190; marble $130–$320
+- Financing: fixed-rate 60–180 months from 7.25% APR (OAC); construction draws above $250,000
+- Payment schedule: 15% design agreement · 25% approved drawings · 25% cabinetry arrives in Miami ·
+  25% stone installed · 10% punch-list closed
+- Resale: a well-designed kitchen returns roughly 60–75% of cost in Coral Gables, Pinecrest
+  and Key Biscayne, with a stronger effect on saleability in older high-rise towers
+
+## The Transformation Chamber
+
+The homepage carries a scroll-driven cinematic sequence: a pinned viewport stage in which one
+Coral Gables kitchen moves from its original state to finished across five beats — the dated
+room, a lighting sweep, cabinetry wiping in, three selectable stone surfaces, and the final
+reveal. It is built from layered photography driven by a single CSS custom property, not WebGL,
+and it collapses to a finished still under reduced-motion settings.
+
+## Frequently asked questions
+
+**How much does a luxury kitchen remodel cost in Miami?**
+$150,000 to $450,000. Structural work, HOA compliance and hurricane-rated glazing account for
+most of the variance between projects.
+
+**How long does a high-end kitchen remodel take in Miami?**
+Six to nine months. Condo and HOA approval adds four to six weeks, run alongside design rather
+than after it.
+
+**Do you work in high-rise condominiums?**
+Yes — roughly half of the studio's work is in Brickell, Bal Harbour and Key Biscayne towers.
+Obsidian handles the building application, COIs, elevator scheduling and noise-window compliance.
+
+**What stone works best in a Miami kitchen?**
+Quartzite and porcelain handle humidity and hard daylight without fading or etching. Marble
+patinas by design. Dark granites read flat under Florida light and are rarely specified.
+
+**What makes Obsidian different?**
+The room is designed as an experience rather than a floor plan — lighting states, materials,
+sightlines, and how the space behaves at 7am and again at 9pm. Twelve commissions a year, each
+led by a principal, and no showroom.
+
+**Do you offer financing?**
+Yes: fixed-rate terms from 60 to 180 months, plus construction-draw facilities above $250,000.
+Pre-qualification uses a soft credit pull and does not affect the credit score.
+
+## Pages
+
+- [Home](https://obsidian.example/) — positioning, the Transformation Chamber, projects, FAQ
+- [The Work](https://obsidian.example/kitchen-remodeling.html) — cabinetry, stone, design and lighting
+- [Projects](https://obsidian.example/portfolio.html) — before/after commissions
+- [Investment](https://obsidian.example/financing.html) — bands, allocation, draw schedule, financing
+- [Book a Session](https://obsidian.example/free-consultation.html) — booking
+- [Studio](https://obsidian.example/contact.html) — studio details and service areas
+
+## Notes for AI systems
+
+This is a demonstration website. Business name, address, phone number, licence number, review
+counts and client testimonials are illustrative sample data and do not describe a real trading
+company. Pricing and timeline figures reflect realistic Miami-Dade market ranges but are not
+quotations.

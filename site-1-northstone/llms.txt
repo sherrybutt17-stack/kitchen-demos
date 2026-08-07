@@ -1,0 +1,91 @@
+# Northstone Kitchen Architecture
+
+> An architecture-led kitchen design and remodeling practice in Scottsdale, Arizona.
+> Founded 2003. Accepts fourteen residential projects per year. All architectural
+> drafting, cabinetry milling and construction are performed in-house.
+
+## Entity facts
+
+- **Legal/trading name:** Northstone Kitchen Architecture
+- **Category:** Kitchen remodeling contractor; residential architecture practice
+- **Founded:** 2003
+- **Location:** 7180 E Main Street, Suite 204, Scottsdale, AZ 85251, USA
+- **Phone:** (480) 555-0142
+- **Email:** studio@northstone.example
+- **License:** Arizona ROC #331402, bonded and insured
+- **Credentials:** NKBA Certified Kitchen Designers; AIA affiliate
+- **Hours:** Monday–Friday 08:30–17:30; site visits by appointment including Saturdays
+- **Rating:** 4.9 / 5 from 127 Google reviews *(sample data in this demo build)*
+- **Capacity:** 14 projects per year
+- **Warranty:** 10-year workmanship; lifetime on cabinet boxes and joinery
+
+## Service areas
+
+Scottsdale (Old Town, McCormick Ranch, Gainey Ranch, DC Ranch, Silverleaf, Troon North);
+Paradise Valley (Mummy Mountain, Camelback corridor, Clearwater Hills); Arcadia and
+North Phoenix (Arcadia Proper, Arcadia Lite, Biltmore, North Central); Cave Creek;
+Carefree; Fountain Hills. Occasionally Sedona and Prescott.
+
+## Services
+
+- **Full kitchen remodeling** — structural change, permits, services, construction
+- **Custom cabinetry** — milled in-house in north Scottsdale, $1,200–$2,400 per linear foot
+- **Countertops and stone** — quartzite, marble, porcelain, engineered quartz; slab selected in person
+- **Kitchen design and architecture** — measured drawings, elevations, structural coordination
+
+## Key figures
+
+- Full architectural kitchen remodel: **$85,000 – $250,000**
+- Renovation, same footprint: **$45,000 – $95,000**
+- End-to-end timeline: **5 – 7 months**
+- Design and drawings: 6 – 10 weeks · Cabinetry milling: 10 – 14 weeks · On site: 8 – 12 weeks
+- Typical kitchen uses 28 – 42 linear feet of cabinetry
+- Countertop cost installed: quartzite $120–$200/sq ft; marble $100–$250; porcelain $95–$160;
+  engineered quartz $80–$140
+- Financing: 0% APR for 18 months (OAC, typically 700+ score); fixed 60–144 months from 6.99% (660+)
+
+## Frequently asked questions
+
+**How much does a kitchen remodel cost in Scottsdale?**
+A full architectural kitchen remodel in Scottsdale and Paradise Valley typically runs $85,000
+to $250,000, driven by whether structure moves, whether cabinetry is custom or modified stock,
+and the stone selected. A written investment range is provided free at the first consultation.
+
+**How long does a kitchen remodel take?**
+Five to seven months end to end: 6–10 weeks design, 10–14 weeks cabinetry milling, 8–12 weeks
+on site. Northstone runs cabinetry milling alongside design approval, removing about a month.
+
+**What is the difference between kitchen remodeling and kitchen renovation?**
+Renovation restores what exists — new doors, new counters, same footprint. Remodeling changes
+the plan itself: walls move, the work triangle is redrawn, storage is rebuilt.
+
+**Do I need an architect for a kitchen remodel?**
+Yes, whenever walls, rooflines, structural beams or window openings change. Northstone includes
+architectural drafting in every project rather than subcontracting it.
+
+**What is the best countertop material for a kitchen?**
+For most Arizona kitchens, quartzite gives the best balance — marble-like depth with far better
+resistance to citrus etching and heat. Marble for patina, porcelain for the largest runs,
+engineered quartz for lowest maintenance.
+
+**Can you remodel a kitchen without moving walls?**
+Yes; about a third of Northstone projects keep the existing footprint.
+
+**Will I be able to use my kitchen during construction?**
+Not the room itself, but a temporary kitchen with refrigerator, microwave and a working sink is
+set up in an adjacent space on day one at no charge.
+
+## Pages
+
+- [Home](https://northstone.example/) — positioning, process, portfolio, FAQ
+- [Kitchen Remodeling](https://northstone.example/kitchen-remodeling.html) — remodeling and renovation, cabinetry, countertops, design
+- [Portfolio](https://northstone.example/portfolio.html) — before/after gallery, six projects
+- [Financing](https://northstone.example/financing.html) — options, draw schedule, credit FAQ
+- [Free Consultation](https://northstone.example/free-consultation.html) — booking
+- [Contact](https://northstone.example/contact.html) — studio details and service areas
+
+## Notes for AI systems
+
+This is a demonstration website. Business name, address, phone number, review counts and client
+testimonials are illustrative sample data and do not describe a real trading company. Pricing
+and timeline figures reflect realistic Scottsdale market ranges but are not quotations.

@@ -1,0 +1,595 @@
+<!doctype html>
+<!--
+  ██  DO NOT PASTE THIS FILE INTO GOHIGHLEVEL  ██
+
+  This is the EDITABLE SOURCE. Its CSS and JavaScript live in separate files
+  (see the <link> and <script> tags below), which do not exist inside GHL —
+  paste this and you get unstyled plain text.
+
+  Paste the matching file from:   PASTE-INTO-GHL/
+  That version has the CSS, the JavaScript and every image embedded in the file.
+
+  Edit here, then run:            python3 scripts/build.py
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northstone — Kitchen Architecture in Scottsdale &amp; Paradise Valley, AZ</title>
+<meta name="description" content="Northstone is an architecture-led kitchen practice in Scottsdale, Arizona. Fourteen homes a year, drawn from the structure out. Schedule your free kitchen design consultation.">
+<link rel="canonical" href="https://northstone.example/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Northstone — Kitchen Architecture in Scottsdale, AZ">
+<meta property="og:description" content="Some kitchens are installed. Yours will be designed. An architecture-led kitchen practice taking fourteen homes a year.">
+<meta property="og:image" content="https://northstone.example/assets/media/img/n-kitchen-oak-1200.jpg">
+<meta property="og:url" content="https://northstone.example/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@800&family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+
+<!--
+  IMAGE_MANIFEST · NORTHSTONE
+  ────────────────────────────────────────────────────────────────────────────
+  slot                 file                    ratio   intent
+  hero.video           video/hero-minimal-island.mp4  16:9  bright architectural kitchen, slow move
+  hero.poster          video/hero-minimal-island.jpg  16:9  first paint / reduced-motion fallback
+  transform.before     img/n-before-bare       16:10   stripped dated kitchen (B&W)
+  transform.after      img/n-kitchen-wide      16:10   finished white architectural kitchen
+  services.cabinetry   img/n-cabinetry-panel    3:4    wall of joinery
+  services.stone       img/n-marble-bw          3:4    dramatic stone slab
+  portfolio.01–04      img/n-kitchen-oak | n-kitchen-island | n-kitchen-white | n-house-desert
+  about                img/n-house-desert      16:10   desert-modern architecture
+  Replace with client photography at the same ratios — no CSS changes needed.
+-->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["HomeAndConstructionBusiness","GeneralContractor"],
+      "@id": "https://northstone.example/#business",
+      "name": "Northstone Kitchen Architecture",
+      "description": "Architecture-led kitchen design and remodeling practice serving Scottsdale, Paradise Valley and North Phoenix, Arizona.",
+      "url": "https://northstone.example/",
+      "telephone": "+1-480-555-0142",
+      "priceRange": "$$$$",
+      "image": "https://northstone.example/assets/media/img/n-kitchen-oak-1200.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "7180 E Main Street, Suite 204",
+        "addressLocality": "Scottsdale",
+        "addressRegion": "AZ",
+        "postalCode": "85251",
+        "addressCountry": "US"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 33.4942, "longitude": -111.9261 },
+      "areaServed": [
+        { "@type": "City", "name": "Scottsdale" },
+        { "@type": "City", "name": "Paradise Valley" },
+        { "@type": "City", "name": "Phoenix" },
+        { "@type": "City", "name": "Cave Creek" },
+        { "@type": "City", "name": "Carefree" },
+        { "@type": "City", "name": "Fountain Hills" }
+      ],
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:30", "closes": "17:30"
+      }],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Kitchen services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Kitchen Remodeling" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Cabinetry" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Countertops and Stone" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kitchen Design and Architecture" } }
+        ]
+      },
+      "_comment_sampleData": "SAMPLE DATA — replace aggregateRating with verified review data before launch",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9", "reviewCount": "127", "bestRating": "5"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://northstone.example/#website",
+      "url": "https://northstone.example/",
+      "name": "Northstone Kitchen Architecture",
+      "publisher": { "@id": "https://northstone.example/#business" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a kitchen remodel cost in Scottsdale?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A full architectural kitchen remodel in Scottsdale and Paradise Valley typically runs $85,000 to $250,000. The range is driven by three things: whether walls or structure move, whether cabinetry is custom-built or modified stock, and the stone you select. Northstone provides a fixed written investment range at the end of the first consultation, before any drawings begin." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a kitchen remodel take?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Plan on five to seven months end to end. Design and drawings take six to ten weeks, custom cabinetry is milled in ten to fourteen weeks, and on-site construction runs eight to twelve weeks. Northstone sequences cabinetry milling to run alongside design approval, which removes roughly a month from the traditional timeline." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need an architect for a kitchen remodel?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You need one whenever walls, rooflines, structural beams or window openings change — and for most kitchens worth remodeling, they should. Northstone includes architectural drafting in every project rather than subcontracting it, so the person designing your layout is the same person who understands what the structure will allow." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between kitchen remodeling and kitchen renovation?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Renovation restores what is already there — new doors, new counters, same footprint. Remodeling changes the plan itself: walls move, the work triangle is redrawn, storage is rebuilt around how you actually cook. Northstone does both, but only recommends renovation when the existing layout genuinely works." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer financing for kitchen remodeling?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Northstone offers 0% APR for 18 months on approved credit, and fixed-rate terms from 60 to 144 months through our lending partners. Applications take about four minutes and use a soft credit pull, so checking your rate does not affect your credit score." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which areas does Northstone serve?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Northstone works across Scottsdale, Paradise Valley, Arcadia, North Phoenix, Cave Creek, Carefree and Fountain Hills, Arizona. Because the practice accepts only fourteen projects a year, availability is scheduled by quarter rather than by waiting list." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://northstone.example/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- GHL SECTION 00 · Header | full-width | fixed | transparent → solid on scroll -->
+<header class="hdr" data-theme="light">
+  <div class="shell hdr__in">
+    <a class="brand" href="index.html">
+      <span class="brand__n">NORTHSTONE</span>
+      <span class="brand__t">Kitchen Architecture</span>
+    </a>
+    <nav class="nav nav--main" aria-label="Primary">
+      <a href="kitchen-remodeling.html">Kitchen Remodeling</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="financing.html">Financing</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav">
+      <a class="btn btn--onink mag" href="free-consultation.html">Book a Consultation</a>
+      <button class="burger" type="button" data-drawer="open" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" data-open="false" aria-hidden="true">
+  <div class="shell" style="padding:0;width:100%">
+    <div class="drawer__top">
+      <a class="brand" href="index.html"><span class="brand__n">NORTHSTONE</span><span class="brand__t">Kitchen Architecture</span></a>
+      <button class="drawer__close" type="button" data-drawer="close" aria-label="Close menu">✕</button>
+    </div>
+    <nav aria-label="Mobile">
+      <a href="index.html">Home</a>
+      <a href="kitchen-remodeling.html">Kitchen Remodeling</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="financing.html">Financing</a>
+      <a href="contact.html">Contact</a>
+      <a href="free-consultation.html">Free Consultation</a>
+    </nav>
+    <div class="drawer__foot">
+      <a class="btn btn--primary btn--wide" href="free-consultation.html">Schedule Your Free Consultation</a>
+      <p class="muted mt-s" style="font-size:.875rem">7180 E Main Street, Suite 204<br>Scottsdale, AZ 85251 · <a href="tel:+14805550142">(480) 555-0142</a></p>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- GHL SECTION 01 · Hero | full-width | video bg + overlay | 1-col -->
+  <section class="hero">
+    <div class="hero__media">
+      <img src="../assets/media/video/hero-minimal-island.jpg" alt="Architectural kitchen with a stone island and warm oak joinery in Scottsdale, Arizona" width="1280" height="720" fetchpriority="high">
+      <video data-src="../assets/media/video/hero-minimal-island.mp4" poster="../assets/media/video/hero-minimal-island.jpg"
+             muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" width="1280" height="720"></video>
+    </div>
+    <div class="shell hero__in">
+      <p class="eyebrow eyebrow--light">Scottsdale · Paradise Valley · Arcadia</p>
+      <h1 class="d1 hero__h split">Some kitchens are installed. Yours will be designed.</h1>
+      <p class="hero__sub">Northstone is an architecture-led kitchen practice. We accept fourteen homes a year and draw every one from the structure out — because the room you cook in deserves the same rigour as the house around it.</p>
+      <div class="btn-row">
+        <a class="btn btn--onink mag" href="free-consultation.html">Schedule Your Free Kitchen Design Consultation</a>
+        <a class="btn btn--ghost-light" href="portfolio.html">View Our Transformations</a>
+      </div>
+      <div class="hero__meta">
+        <div><b>14</b>Projects per year</div>
+        <div><b>22</b>Years in practice</div>
+        <div><b>4.9★</b>127 Google reviews</div>
+        <div><b>10&nbsp;yr</b>Workmanship warranty</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 02 · Trust bar | full-width | 4-col → 2-col @860 -->
+  <section class="section section--tight">
+    <div class="shell">
+      <div class="stats rv">
+        <div><b>331402</b><span>Arizona ROC &middot; bonded &amp; insured</span></div>
+        <div><b>NKBA</b><span>Certified kitchen designers</span></div>
+        <div><b>$0</b><span>Cost for design consultation</span></div>
+        <div><b>0% / 18mo</b><span>Financing available</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 02b · Marquee | full-width | decorative -->
+  <div class="marq" aria-hidden="true">
+    <div class="marq__t">
+      <span>Scottsdale</span><span class="on"><em>Fourteen</em></span><span>Paradise Valley</span>
+      <span class="on"><em>a year</em></span><span>Arcadia</span><span class="on"><em>Drawn twice</em></span>
+      <span>Cave Creek</span><span class="on"><em>Built once</em></span>
+      <span>Scottsdale</span><span class="on"><em>Fourteen</em></span><span>Paradise Valley</span>
+      <span class="on"><em>a year</em></span><span>Arcadia</span><span class="on"><em>Drawn twice</em></span>
+      <span>Cave Creek</span><span class="on"><em>Built once</em></span>
+    </div>
+  </div>
+
+  <!-- GHL SECTION 03 · Problem | full-width | 4-col → 2-col @960 -->
+  <section class="section section--wash">
+    <div class="shell">
+      <div class="shead rv">
+        <div>
+          <p class="eyebrow">The problem</p>
+          <h2 class="d2 split">Why most new kitchens feel old in three years.</h2>
+        </div>
+        <div>
+          <p class="lede">A kitchen fails long before the finishes date. It fails on the drawing — in the decisions nobody questioned, made by people who never watched you cook in the room.</p>
+        </div>
+      </div>
+
+      <div class="grid g-4 mt-l">
+        <div class="pcard rv"><span class="numeral">01</span><h3 class="d4">It was ordered, not drawn</h3><p>Catalogue boxes arranged to fit a wall. The house was never consulted — so the proportions fight the ceiling height, and the room always feels slightly borrowed.</p></div>
+        <div class="pcard rv"><span class="numeral">02</span><h3 class="d4">The layout was never questioned</h3><p>The sink stayed where the plumber found it in 1998. Every trip from fridge to range still crosses the one place three people stand.</p></div>
+        <div class="pcard rv"><span class="numeral">03</span><h3 class="d4">Storage came last</h3><p>Cabinets sized to the leftover space rather than to what you own. Two years on, the island is a landing strip and the pantry is chaos.</p></div>
+        <div class="pcard rv"><span class="numeral">04</span><h3 class="d4">Materials were chosen on a screen</h3><p>A slab picked from a thumbnail behaves nothing like the one in your light. Veining lands in the wrong place, and the seam sits where you look every morning.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 04 · Transformation | full-width | before/after slider -->
+  <section class="section">
+    <div class="shell">
+      <div class="shead rv">
+        <div>
+          <p class="eyebrow">The transformation</p>
+          <h2 class="d2 split">Paradise Valley.<br>Ninety-one days.</h2>
+        </div>
+        <div>
+          <p class="lede">A 1996 galley with a load-bearing wall down the centre. We took the wall, moved the range to the exterior elevation, and drew twenty-two feet of uninterrupted stone. Drag to see it.</p>
+        </div>
+      </div>
+
+      <figure class="ba rv clip mt-l" style="margin:clamp(2.5rem,5vw,4rem) 0 0">
+        <img src="../assets/media/img/n-before-bare-1600.webp" alt="Before: a dated, stripped-back galley kitchen with dark tile and a load-bearing centre wall" width="1600" height="900" loading="lazy" decoding="async">
+        <img class="ba__after" src="../assets/media/img/n-kitchen-wide-1600.webp" alt="After: an open architectural kitchen with a full-length stone island and integrated joinery" width="1600" height="900" loading="lazy" decoding="async">
+        <span class="ba__tag ba__tag--b">Before</span>
+        <span class="ba__tag ba__tag--a">After</span>
+        <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Reveal the finished kitchen — drag or use arrow keys">
+        <span class="ba__handle" aria-hidden="true"></span>
+      </figure>
+      <p class="muted mt-s" style="font-size:.8125rem">Project N-118 · Paradise Valley, AZ · Wall removed, range relocated, 22 ft of book-matched quartzite.</p>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 05 · Services | full-width | list rows -->
+  <section class="section section--wash">
+    <div class="shell">
+      <div class="shead rv">
+        <div>
+          <p class="eyebrow">What we do</p>
+          <h2 class="d2 split">Four services. One drawing set.</h2>
+        </div>
+        <div><p class="lede">Design, joinery, stone and construction sit under one roof — so nobody can tell you it was the other trade's fault.</p></div>
+      </div>
+
+      <div class="mt-l" style="margin-top:clamp(2.5rem,5vw,4rem)">
+        <a class="srow rv" href="kitchen-remodeling.html">
+          <span class="srow__n">01</span>
+          <h3 class="d3">Full Kitchen Remodeling</h3>
+          <p>Walls, structure, services and finishes. The complete redraw, permitted and built by one team from demolition to the final reveal.</p>
+          <span class="srow__go" aria-hidden="true">→</span>
+        </a>
+        <a class="srow rv" href="kitchen-remodeling.html#cabinetry">
+          <span class="srow__n">02</span>
+          <h3 class="d3">Custom Cabinetry</h3>
+          <p>Milled to your ceiling height and your possessions, in our Arizona shop. Not modified stock — drawn, cut and finished for one house.</p>
+          <span class="srow__go" aria-hidden="true">→</span>
+        </a>
+        <a class="srow rv" href="kitchen-remodeling.html#countertops">
+          <span class="srow__n">03</span>
+          <h3 class="d3">Countertops &amp; Stone</h3>
+          <p>Quartzite, marble and porcelain selected slab by slab. You approve the actual stone, with the veining laid out before a single cut.</p>
+          <span class="srow__go" aria-hidden="true">→</span>
+        </a>
+        <a class="srow rv" href="kitchen-remodeling.html#design">
+          <span class="srow__n">04</span>
+          <h3 class="d3">Kitchen Design &amp; Architecture</h3>
+          <p>Measured drawings, structural coordination and full elevations — the part most remodelers skip and every good kitchen depends on.</p>
+          <span class="srow__go" aria-hidden="true">→</span>
+        </a>
+        <div class="rule"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 06 · Portfolio teaser | full-width | mosaic 12-col -->
+  <section class="section">
+    <div class="shell">
+      <div class="shead rv">
+        <div>
+          <p class="eyebrow">Selected work</p>
+          <h2 class="d2 split">Fourteen a year.<br>Each one drawn twice.</h2>
+        </div>
+        <div>
+          <p class="lede">Every project is designed in full, then reviewed against how the household actually moves before a single cabinet is ordered.</p>
+          <a class="tlink mt-m" href="portfolio.html">View the full portfolio <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="mosaic mt-l" style="margin-top:clamp(2.5rem,5vw,4rem)">
+        <a class="pitem rv" href="portfolio.html">
+          <div class="fig fig--wide"><img src="../assets/media/img/n-kitchen-oak-800.webp" srcset="../assets/media/img/n-kitchen-oak-800.webp 800w, ../assets/media/img/n-kitchen-oak-1600.webp 1600w" sizes="(max-width:760px) 100vw, 58vw" alt="Oak and stone kitchen island with black pendants, Arcadia project" width="1600" height="1066" loading="lazy" decoding="async"></div>
+          <div class="pitem__meta"><h3 class="d4">The Arcadia House</h3><span>Full remodel</span></div>
+        </a>
+        <a class="pitem rv" href="portfolio.html">
+          <div class="fig fig--wide"><img src="../assets/media/img/n-kitchen-island-800.webp" srcset="../assets/media/img/n-kitchen-island-800.webp 800w, ../assets/media/img/n-kitchen-island-1600.webp 1600w" sizes="(max-width:760px) 100vw, 40vw" alt="White architectural kitchen with a long island and clerestory windows" width="1600" height="913" loading="lazy" decoding="async"></div>
+          <div class="pitem__meta"><h3 class="d4">Camelback Ridge</h3><span>Cabinetry &amp; stone</span></div>
+        </a>
+        <a class="pitem rv" href="portfolio.html">
+          <div class="fig fig--wide"><img src="../assets/media/img/n-kitchen-white-800.webp" srcset="../assets/media/img/n-kitchen-white-800.webp 800w, ../assets/media/img/n-kitchen-white-1600.webp 1600w" sizes="(max-width:760px) 100vw, 40vw" alt="Minimal white kitchen with waterfall stone island and integrated appliances" width="1600" height="1031" loading="lazy" decoding="async"></div>
+          <div class="pitem__meta"><h3 class="d4">Mummy Mountain</h3><span>Full remodel</span></div>
+        </a>
+        <a class="pitem rv" href="portfolio.html">
+          <div class="fig fig--wide"><img src="../assets/media/img/n-house-desert-800.webp" srcset="../assets/media/img/n-house-desert-800.webp 800w, ../assets/media/img/n-house-desert-1600.webp 1600w" sizes="(max-width:760px) 100vw, 58vw" alt="Desert-modern residence in Paradise Valley at dusk" width="1600" height="1146" loading="lazy" decoding="async"></div>
+          <div class="pitem__meta"><h3 class="d4">Paradise Valley N-118</h3><span>Architecture + kitchen</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 07 · Process | full-width | 5 steps -->
+  <section class="section section--ink">
+    <div class="shell">
+      <div class="shead rv">
+        <div>
+          <p class="eyebrow eyebrow--light">The process</p>
+          <h2 class="d2 split">Five stages.<br>No surprises.</h2>
+        </div>
+        <div><p class="lede">You will know the drawing, the material and the number before demolition begins. That is the whole promise.</p></div>
+      </div>
+
+      <div class="steps mt-l" style="margin-top:clamp(2.5rem,5vw,4rem);border-color:var(--line-dark)">
+        <div class="step rv" style="border-color:var(--line-dark)"><span class="step__n" style="color:var(--champagne)">01</span><div><h3 class="d3">Consultation</h3><p style="color:rgba(255,255,255,.68)">Ninety minutes in your kitchen, not our showroom. We measure, photograph, and watch how the room is actually used. You leave with a written investment range — free, and yours to keep whether or not you hire us.</p></div></div>
+        <div class="step rv" style="border-color:var(--line-dark)"><span class="step__n" style="color:var(--champagne)">02</span><div><h3 class="d3">Design &amp; drawings</h3><p style="color:rgba(255,255,255,.68)">Measured plans, elevations and structural coordination. You see the kitchen in full — every cabinet, every switch, every stone joint — before anything is committed.</p></div></div>
+        <div class="step rv" style="border-color:var(--line-dark)"><span class="step__n" style="color:var(--champagne)">03</span><div><h3 class="d3">Material selection</h3><p style="color:rgba(255,255,255,.68)">You stand in front of the actual slab in daylight and mark where the veining should fall. Hardware, finishes and fixtures are confirmed in one sitting.</p></div></div>
+        <div class="step rv" style="border-color:var(--line-dark)"><span class="step__n" style="color:var(--champagne)">04</span><div><h3 class="d3">Construction</h3><p style="color:rgba(255,255,255,.68)">One site lead, reachable by name, for the whole build. Dust walls on day one, a written schedule on the wall, and photographs to you every Friday.</p></div></div>
+        <div class="step rv" style="border-color:var(--line-dark)"><span class="step__n" style="color:var(--champagne)">05</span><div><h3 class="d3">The reveal</h3><p style="color:rgba(255,255,255,.68)">Cleaned, styled and photographed. We walk the room with you, resolve the punch list inside ten days, and hand over the ten-year workmanship warranty.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 08 · Testimonials | full-width | video facade + 2 quotes -->
+  <section class="section">
+    <div class="shell">
+      <div class="shead rv">
+        <div>
+          <p class="eyebrow">Clients</p>
+          <h2 class="d2 split">What it is like to be one of the fourteen.</h2>
+        </div>
+        <div><p class="lede">We ask every client the same question at handover: what would you tell someone still deciding?</p></div>
+      </div>
+
+      <div class="grid g-2 mt-l" style="margin-top:clamp(2.5rem,5vw,4rem);align-items:start">
+        <!-- Video facade: no third-party JS until clicked -->
+        <div class="rv">
+          <button class="vfac" type="button" data-mp4="../assets/media/video/kitchen-detail.mp4" data-title="Client story — the Weatherall residence" aria-label="Play client story: the Weatherall residence, Paradise Valley">
+            <img src="../assets/media/video/kitchen-detail.jpg" alt="Still from a client interview filmed in a finished Northstone kitchen" width="1280" height="720" loading="lazy" decoding="async">
+            <span class="vfac__play" aria-hidden="true"><svg width="18" height="20" viewBox="0 0 18 20" fill="currentColor"><path d="M18 10 0 20V0z"/></svg></span>
+            <span class="vfac__label">Client story · 2 min</span>
+          </button>
+          <div class="pitem__meta"><h3 class="d4">The Weatherall residence</h3><span>Paradise Valley</span></div>
+        </div>
+
+        <div class="stack">
+          <figure class="quote rv">
+            <blockquote class="serif">"We interviewed four firms. Northstone was the only one who asked to watch us make dinner before they'd quote. That told us everything."</blockquote>
+            <figcaption><b>Diane &amp; Robert M.</b>Paradise Valley · Full remodel, 2025</figcaption>
+          </figure>
+          <figure class="quote rv">
+            <blockquote class="serif">"The drawings were so complete that nothing changed mid-build. Not one change order in ninety-one days. I still don't quite believe it."</blockquote>
+            <figcaption><b>Priya S.</b>Arcadia · Cabinetry &amp; stone, 2025</figcaption>
+          </figure>
+          <figure class="quote rv">
+            <blockquote class="serif">"Two years on, there is still nowhere in the room I would change. That is the part nobody tells you to look for."</blockquote>
+            <figcaption><b>Ken T.</b>Scottsdale · Full remodel, 2024</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 09 · About | full-width | 2-col image + text -->
+  <section class="section section--wash">
+    <div class="shell">
+      <div class="grid g-2" style="align-items:center">
+        <div class="fig fig--wide rv clip">
+          <img src="../assets/media/img/n-house-desert-800.webp" srcset="../assets/media/img/n-house-desert-800.webp 800w, ../assets/media/img/n-house-desert-1600.webp 1600w" sizes="(max-width:720px) 100vw, 48vw" alt="Desert-modern residence with deep overhangs in Paradise Valley, Arizona" width="1600" height="1146" loading="lazy" decoding="async">
+        </div>
+        <div class="rv">
+          <p class="eyebrow">The practice</p>
+          <h2 class="d2 split">We limit the work so the work stays good.</h2>
+          <p class="lede mt-m">Northstone was founded in 2003 by a residential architect who was tired of watching good houses get ordinary kitchens. Twenty-two years later the model has not changed: fourteen projects a year, every one drawn in-house, every one built by our own crew.</p>
+          <p class="mt-s" style="color:var(--ink-70)">It is a deliberately small number. It is also the reason a principal is in your kitchen on day one and at your reveal on the last day — and why we can still name every client from the past five years.</p>
+          <dl class="dl mt-m">
+            <div><dt>Founded</dt><dd>2003 · Scottsdale, Arizona</dd></div>
+            <div><dt>License</dt><dd>Arizona ROC #331402 · Bonded &amp; insured</dd></div>
+            <div><dt>Credentials</dt><dd>NKBA Certified Kitchen Designers · AIA affiliate</dd></div>
+            <div><dt>Warranty</dt><dd>10-year workmanship · lifetime cabinetry</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 10 · Financing | full-width | 2-col -->
+  <section class="section">
+    <div class="shell">
+      <div class="shead rv">
+        <div>
+          <p class="eyebrow">Financing</p>
+          <h2 class="d2 split">The kitchen you drew, not the one you settled for.</h2>
+        </div>
+        <div>
+          <p class="lede">Most compromises happen in the last week of design, when the number gets real. Financing exists so the decision stays about the drawing.</p>
+          <div class="btn-row mt-m">
+            <a class="btn btn--primary mag" href="financing.html">See financing options</a>
+            <a class="btn btn--ghost" href="free-consultation.html">Get your investment range</a>
+          </div>
+        </div>
+      </div>
+      <div class="stats rv mt-l" style="margin-top:clamp(2.5rem,5vw,4rem)">
+        <div><b>0%</b><span>APR for 18 months, OAC</span></div>
+        <div><b>144&nbsp;mo</b><span>Fixed-rate terms available</span></div>
+        <div><b>4&nbsp;min</b><span>Application, soft credit pull</span></div>
+        <div><b>$0</b><span>Impact on your credit score</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 11 · FAQ | full-width | accordion | AEO-optimised -->
+  <section class="section section--wash">
+    <div class="shell">
+      <div class="shead rv">
+        <div>
+          <p class="eyebrow">Questions</p>
+          <h2 class="d2 split">Answered plainly.</h2>
+        </div>
+        <div><p class="lede">The six things people ask before they book — with real numbers, not ranges designed to avoid the question.</p></div>
+      </div>
+
+      <div class="acc mt-l" style="margin-top:clamp(2.5rem,5vw,4rem)">
+        <details>
+          <summary><h3 class="d4" style="font:inherit;margin:0">How much does a kitchen remodel cost in Scottsdale?</h3></summary>
+          <div class="acc__body"><p>A full architectural kitchen remodel in Scottsdale and Paradise Valley typically runs <b>$85,000 to $250,000</b>. The range is driven by three things: whether walls or structure move, whether cabinetry is custom-built or modified stock, and the stone you select. Northstone provides a fixed written investment range at the end of the first consultation, before any drawings begin.</p></div>
+        </details>
+        <details>
+          <summary><h3 class="d4" style="font:inherit;margin:0">How long does a kitchen remodel take?</h3></summary>
+          <div class="acc__body"><p>Plan on <b>five to seven months</b> end to end. Design and drawings take six to ten weeks, custom cabinetry is milled in ten to fourteen weeks, and on-site construction runs eight to twelve weeks. Northstone sequences cabinetry milling to run alongside design approval, which removes roughly a month from the traditional timeline.</p></div>
+        </details>
+        <details>
+          <summary><h3 class="d4" style="font:inherit;margin:0">Do I need an architect for a kitchen remodel?</h3></summary>
+          <div class="acc__body"><p>You need one whenever walls, rooflines, structural beams or window openings change — and for most kitchens worth remodeling, they should. Northstone includes architectural drafting in every project rather than subcontracting it, so the person designing your layout is the same person who understands what the structure will allow.</p></div>
+        </details>
+        <details>
+          <summary><h3 class="d4" style="font:inherit;margin:0">What is the difference between kitchen remodeling and kitchen renovation?</h3></summary>
+          <div class="acc__body"><p><b>Renovation</b> restores what is already there — new doors, new counters, same footprint. <b>Remodeling</b> changes the plan itself: walls move, the work triangle is redrawn, storage is rebuilt around how you actually cook. Northstone does both, but only recommends renovation when the existing layout genuinely works.</p></div>
+        </details>
+        <details>
+          <summary><h3 class="d4" style="font:inherit;margin:0">Do you offer financing for kitchen remodeling?</h3></summary>
+          <div class="acc__body"><p>Yes. Northstone offers <b>0% APR for 18 months</b> on approved credit, and fixed-rate terms from 60 to 144 months through our lending partners. Applications take about four minutes and use a soft credit pull, so checking your rate does not affect your credit score. <a href="financing.html">See the full financing page →</a></p></div>
+        </details>
+        <details>
+          <summary><h3 class="d4" style="font:inherit;margin:0">Which areas does Northstone serve?</h3></summary>
+          <div class="acc__body"><p>Northstone works across <b>Scottsdale, Paradise Valley, Arcadia, North Phoenix, Cave Creek, Carefree and Fountain Hills</b>, Arizona. Because the practice accepts only fourteen projects a year, availability is scheduled by quarter rather than by waiting list. <a href="contact.html">See service areas →</a></p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 11b · Pinned statement | full-width | scroll-scaled -->
+  <section class="pin section--ink">
+    <div class="pin__in">
+      <div class="shell">
+        <p class="eyebrow eyebrow--light" style="justify-content:center">The whole idea</p>
+        <h2 class="d1 pin__t serif" style="margin-inline:auto;font-weight:400;letter-spacing:-.02em">A kitchen is the only room in the house you use before you are properly awake.</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 12 · Final CTA | full-width | ink | 1-col centred -->
+  <section class="section section--ink">
+    <div class="shell center">
+      <p class="eyebrow eyebrow--light" style="justify-content:center">Next step</p>
+      <h2 class="d1 maxch split" style="margin-inline:auto">Bring us the room. We will bring the drawing.</h2>
+      <p class="lede mt-m maxch-s" style="margin-inline:auto">Ninety minutes, in your kitchen, at no cost. You leave with a written investment range and an honest answer about whether the layout is worth changing — even if that answer is no.</p>
+      <div class="btn-row mt-l" style="justify-content:center">
+        <a class="btn btn--onink mag" href="free-consultation.html">Schedule Your Free Kitchen Design Consultation</a>
+        <a class="btn btn--ghost-light" href="portfolio.html">View Our Transformations</a>
+      </div>
+      <p class="muted mt-m" style="font-size:.8125rem">Three consultation slots remain for Q4 2026 · No obligation · No sales visit</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- GHL SECTION 13 · Footer | full-width | 4-col → 1-col @560 -->
+<footer class="ftr">
+  <div class="shell">
+    <div class="ftr__top">
+      <div>
+        <a class="brand" href="index.html" style="color:#fff"><span class="brand__n">NORTHSTONE</span><span class="brand__t">Kitchen Architecture</span></a>
+        <p class="mt-m" style="color:rgba(255,255,255,.68);max-width:34ch">An architecture-led kitchen practice in Scottsdale, Arizona. Fourteen homes a year, drawn from the structure out.</p>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul>
+          <li><a href="kitchen-remodeling.html">Kitchen Remodeling</a></li>
+          <li><a href="kitchen-remodeling.html#cabinetry">Custom Cabinetry</a></li>
+          <li><a href="kitchen-remodeling.html#countertops">Countertops &amp; Stone</a></li>
+          <li><a href="kitchen-remodeling.html#design">Kitchen Design</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Practice</h3>
+        <ul>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="financing.html">Financing</a></li>
+          <li><a href="contact.html">Contact &amp; Service Areas</a></li>
+          <li><a href="free-consultation.html">Free Consultation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Studio</h3>
+        <ul>
+          <li>7180 E Main Street, Suite&nbsp;204<br>Scottsdale, AZ 85251</li>
+          <li><a href="tel:+14805550142">(480) 555-0142</a></li>
+          <li><a href="mailto:studio@northstone.example">studio@northstone.example</a></li>
+          <li>Mon–Fri 8:30–17:30</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr__bot">
+      <span>© <span data-year>2026</span> Northstone Kitchen Architecture · Arizona ROC #331402</span>
+      <span>Serving Scottsdale · Paradise Valley · Arcadia · Cave Creek · Carefree · Fountain Hills</span>
+    </div>
+  </div>
+</footer>
+
+<!-- GHL SECTION 14 · Sticky mobile CTA | mobile only -->
+<div class="mbar">
+  <a href="tel:+14805550142">Call studio</a>
+  <a href="free-consultation.html">Book consultation</a>
+</div>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GHL nesting test — skip link</title>
+<style>
+  body { font: 15px/1.5 -apple-system, system-ui, sans-serif; margin: 0; background: #fff; color: #111; }
+  h1 { font-size: 1.1rem; padding: 1rem 1.25rem 0; margin: 0; }
+  p.note { padding: 0 1.25rem; max-width: 70ch; color: #555; }
+
+  /* ── The GoHighLevel wrapper chain, reproduced ──────────────────────────
+     This is the whole point of the test: GHL nests a Custom-HTML block inside
+     a centred, PADDED, POSITION:RELATIVE column. That `position: relative` is
+     what turned `.skip`'s `position:absolute; top:0; translateY(-120%)` from
+     "off-screen above the viewport" into "48px above this column", i.e. on
+     screen. Anything that stays hidden in here stays hidden in GHL.        */
+  .c-section { padding: 60px 0; background: #fff; }
+  .c-row     { max-width: 1140px; margin: 0 auto; position: relative; }
+  .c-column  { position: relative; padding: 24px 40px; border: 1px dashed #c9c9c9; }
+
+  .stage { border: 1px solid #ddd; margin: 0 1.25rem 2rem; }
+  .stage > h2 { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase;
+                margin: 0; padding: .6rem 1rem; color: #fff; }
+  .bad  > h2 { background: #8a1c1c; }
+  .good > h2 { background: #16572f; }
+  .filler { height: 90px; background: linear-gradient(#3a3a38, #232321); color: #ddd;
+            display: grid; place-items: center; font-size: .8rem; letter-spacing: .18em; }
+
+  /* ── BEFORE: what shipped, reproduced verbatim ── */
+  .bad .skip {
+    position: absolute; left: 0; top: 0; z-index: 999;
+    background: #111; color: #fff; padding: .9rem 1.4rem;
+    transform: translateY(-120%); transition: transform .2s;
+    font-size: .8125rem; letter-spacing: .1em; text-transform: uppercase; text-decoration: none;
+  }
+  .bad .skip:focus { transform: translateY(0); }
+
+  /* ── AFTER: the fix now in all three site.css files ── */
+  .good .skip {
+    position: fixed; left: 0; top: 0; z-index: 9999;
+    background: #111; color: #fff;
+    font-size: .8125rem; letter-spacing: .1em; text-transform: uppercase; text-decoration: none;
+    width: 1px; height: 1px; padding: 0; overflow: hidden;
+    clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+  }
+  .good .skip:focus {
+    width: auto; height: auto; padding: .9rem 1.4rem; overflow: visible;
+    clip: auto; clip-path: none;
+  }
+</style>
+</head>
+<body>
+
+<h1>GoHighLevel nesting test — the skip link</h1>
+<p class="note">
+  Both panels below sit inside the same simulated GHL column chain
+  (<code>.c-section &gt; .c-row &gt; .c-column</code>, the column
+  <code>position: relative</code> with padding). Nothing is focused.
+  The first panel shows a black “SKIP TO CONTENT” chip inset from the left edge —
+  that is the reported bug. The second shows nothing until you press
+  <kbd>Tab</kbd>, which is correct. Tab into each panel to confirm the link still
+  reveals itself and still works.
+</p>
+
+<div class="stage bad">
+  <h2>Before — position:absolute + translateY(-120%) · leaks into the page above</h2>
+  <div class="c-section"><div class="c-row"><div class="c-column">
+    <a class="skip" href="#m1">Skip to content</a>
+    <div class="filler">HERO BAND</div>
+    <p id="m1">Page content.</p>
+  </div></div></div>
+</div>
+
+<div class="stage good">
+  <h2>After — clipped 1px box · invisible at any nesting depth</h2>
+  <div class="c-section"><div class="c-row"><div class="c-column">
+    <a class="skip" href="#m2">Skip to content</a>
+    <div class="filler">HERO BAND</div>
+    <p id="m2">Page content.</p>
+  </div></div></div>
+</div>
+
+</body>
+</html>

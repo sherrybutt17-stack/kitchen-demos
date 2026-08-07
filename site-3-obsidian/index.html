@@ -1,0 +1,544 @@
+<!doctype html>
+<!--
+  ██  DO NOT PASTE THIS FILE INTO GOHIGHLEVEL  ██
+
+  This is the EDITABLE SOURCE. Its CSS and JavaScript live in separate files
+  (see the <link> and <script> tags below), which do not exist inside GHL —
+  paste this and you get unstyled plain text.
+
+  Paste the matching file from:   PASTE-INTO-GHL/
+  That version has the CSS, the JavaScript and every image embedded in the file.
+
+  Edit here, then run:            python3 scripts/build.py
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obsidian — Kitchen Studio, Coral Gables &amp; Miami</title>
+<meta name="description" content="We don't remodel kitchens. We stage the room where your life happens. An experience-led kitchen studio in Coral Gables serving Miami-Dade. Book a private studio session.">
+<link rel="canonical" href="https://obsidian.example/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Obsidian — Kitchen Studio, Miami">
+<meta property="og:description" content="Every great kitchen starts in the dark. Scroll, and watch one arrive.">
+<meta property="og:image" content="https://obsidian.example/assets/media/img/o-range-dark-1200.jpg">
+<meta property="og:url" content="https://obsidian.example/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+
+<!--
+  IMAGE_MANIFEST · OBSIDIAN
+  ──────────────────────────────────────────────────────────────────────────
+  hero.video       video/hero-dark-modern.mp4   16:9  dark modern kitchen
+  chamber.L1       img/before-granite    16:9  the dated room (desaturated by CSS)
+  chamber.L2       img/o-kitchen-dark    16:9  the finished room (wipes in 40–60%)
+  chamber.L3       img/o-kitchen-navy | o-range-dark   surface variants (swatches)
+  swatch thumbs    img/n-marble-bw | n-marble-abstract | o-wood-dark
+  rail.01–05       img/o-kitchen-mono | o-dining-glass | o-kitchen-navy | o-range-dark | o-house-night
+  texture          img/o-knife-detail | o-wood-corridor | n-quarry
+  Swap for client photography at the same ratios — no CSS changes needed.
+-->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["HomeAndConstructionBusiness","GeneralContractor"],
+      "@id": "https://obsidian.example/#business",
+      "name": "Obsidian Kitchen Studio",
+      "description": "Experience-led luxury kitchen design and remodeling studio in Coral Gables, serving Miami-Dade County, Florida.",
+      "url": "https://obsidian.example/",
+      "telephone": "+1-305-555-0176",
+      "priceRange": "$$$$",
+      "image": "https://obsidian.example/assets/media/img/o-range-dark-1200.jpg",
+      "address": { "@type": "PostalAddress", "streetAddress": "2900 Ponce de Leon Boulevard, Suite 610",
+        "addressLocality": "Coral Gables", "addressRegion": "FL", "postalCode": "33134", "addressCountry": "US" },
+      "geo": { "@type": "GeoCoordinates", "latitude": 25.7489, "longitude": -80.2586 },
+      "areaServed": [
+        { "@type": "City", "name": "Coral Gables" }, { "@type": "City", "name": "Pinecrest" },
+        { "@type": "City", "name": "Bal Harbour" }, { "@type": "City", "name": "Miami Beach" },
+        { "@type": "City", "name": "Key Biscayne" }, { "@type": "City", "name": "Coconut Grove" }
+      ],
+      "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "10:00", "closes": "18:00" }],
+      "_comment_sampleData": "SAMPLE DATA — replace aggregateRating with verified reviews before launch",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "68", "bestRating": "5" }
+    },
+    { "@type": "VideoObject",
+      "name": "The Transformation — an Obsidian kitchen, dark to finished",
+      "description": "A scroll-driven cinematic sequence showing a Coral Gables kitchen move from its original state to a finished Obsidian interior, with three selectable stone surfaces.",
+      "thumbnailUrl": "https://obsidian.example/assets/media/img/o-range-dark-1200.jpg",
+      "uploadDate": "2026-01-15",
+      "contentUrl": "https://obsidian.example/assets/media/video/hero-dark-modern.mp4" },
+    { "@type": "FAQPage", "mainEntity": [
+      { "@type": "Question", "name": "How much does a luxury kitchen remodel cost in Miami?",
+        "acceptedAnswer": { "@type": "Answer", "text": "An Obsidian kitchen runs $150,000 to $450,000. The range is set by three things: how much structure moves, whether the cabinetry is European-imported or built locally, and the stone. Waterfront and high-rise projects sit at the upper end because of access, HOA requirements and hurricane-rated glazing." } },
+      { "@type": "Question", "name": "How long does a high-end kitchen remodel take in Miami?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Six to nine months. Design and material curation take eight to twelve weeks, imported cabinetry runs fourteen to twenty weeks from Italy, and installation is eight to twelve weeks. Condo and HOA approval in Miami-Dade typically adds four to six weeks, which we run in parallel with design." } },
+      { "@type": "Question", "name": "Do you work in high-rise condominiums?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — roughly half of Obsidian's work is in Brickell, Bal Harbour and Key Biscayne towers. We handle the building application, the certificate of insurance, elevator scheduling and the noise-window restrictions that most contractors discover too late." } },
+      { "@type": "Question", "name": "What makes Obsidian different from other Miami kitchen companies?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We design the room as an experience rather than a floor plan — lighting states, materials, sightlines and how the space behaves at 7am and again at 9pm. We take twelve projects a year, every one led by a principal, and we do not run a showroom because slabs and samples come to your home instead." } },
+      { "@type": "Question", "name": "Do you offer financing?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Obsidian offers fixed-rate terms from 60 to 180 months through private lending partners, plus construction-draw arrangements for projects over $250,000. Pre-qualification uses a soft credit pull and does not affect your credit score." } },
+      { "@type": "Question", "name": "Which areas does Obsidian serve?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Obsidian works across Coral Gables, Pinecrest, Coconut Grove, Key Biscayne, Bal Harbour, Miami Beach, Brickell and Sunny Isles, Florida. Because the studio accepts twelve projects a year, the calendar is set by quarter." } }
+    ]},
+    { "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://obsidian.example/" } ] }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- GHL SECTION 00 · Page-load curtain | decorative, auto-dismisses -->
+<div class="curtain" aria-hidden="true"><span>OBSIDIAN</span></div>
+
+<!-- GHL SECTION 01 · Header -->
+<header class="hdr">
+  <div class="shell hdr__in">
+    <a class="brand" href="index.html">
+      <span class="brand__n">Obsidian</span>
+      <span class="brand__t">Kitchen Studio · Miami</span>
+    </a>
+    <nav class="nav nav--main" aria-label="Primary">
+      <a href="kitchen-remodeling.html">The Work</a>
+      <a href="portfolio.html">Projects</a>
+      <a href="financing.html">Investment</a>
+      <a href="contact.html">Studio</a>
+    </nav>
+    <div class="nav">
+      <a class="btn btn--copper" href="free-consultation.html">Book a Session</a>
+      <button class="burger" type="button" data-drawer="open" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" data-open="false" aria-hidden="true">
+  <div class="shell" style="padding:0;width:100%">
+    <div class="drawer__top">
+      <a class="brand" href="index.html"><span class="brand__n">Obsidian</span><span class="brand__t">Kitchen Studio · Miami</span></a>
+      <button class="drawer__close" type="button" data-drawer="close" aria-label="Close menu">✕</button>
+    </div>
+    <nav aria-label="Mobile">
+      <a href="index.html">Home</a><a href="kitchen-remodeling.html">The Work</a>
+      <a href="portfolio.html">Projects</a><a href="financing.html">Investment</a>
+      <a href="contact.html">Studio</a><a href="free-consultation.html">Book a Session</a>
+    </nav>
+    <div class="drawer__foot">
+      <a class="btn btn--copper btn--wide" href="free-consultation.html">Book a Private Session</a>
+      <p class="muted mt-s" style="font-size:.875rem">2900 Ponce de Leon Blvd, Suite 610<br>Coral Gables, FL 33134 · <a href="tel:+13055550176" style="color:var(--copper-lt)">(305) 555-0176</a></p>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- GHL SECTION 02 · Cinematic hero | full-bleed video -->
+  <section class="hero">
+    <div class="hero__media">
+      <img src="../assets/media/video/hero-dark-modern.jpg" alt="A dark, dramatically lit contemporary kitchen in Coral Gables, Miami" width="1280" height="720" fetchpriority="high">
+      <video data-src="../assets/media/video/hero-dark-modern.mp4" poster="../assets/media/video/hero-dark-modern.jpg"
+             muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" width="1280" height="720"></video>
+    </div>
+    <div class="shell hero__in">
+      <p class="eyebrow">Coral Gables · Pinecrest · Bal Harbour</p>
+      <h1 class="d1 hero__h">We don't remodel kitchens.</h1>
+      <p class="hero__sub" style="font-family:var(--ff-display);font-style:italic;font-size:clamp(1.25rem,2.4vw,2rem);line-height:1.24;color:var(--off);max-width:22ch">We stage the room where your life actually happens.</p>
+      <div class="btn-row">
+        <a class="btn btn--copper" href="free-consultation.html">Schedule Your Free Kitchen Design Consultation</a>
+        <a class="btn btn--ghost" href="portfolio.html">View Our Transformations</a>
+      </div>
+      <div class="hero__meta">
+        <div><b>12</b>Projects a year</div>
+        <div><b>17</b>Years in Miami</div>
+        <div><b>5.0★</b>68 reviews</div>
+        <div><b>1</b>Principal per project</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       GHL SECTION 03 · THE ROOM — real WebGL 3D
+       Genuine 3D geometry and procedural stone shaders. No library, no model
+       files, ~14KB. Drag to orbit, scroll to dolly, tap a stone to re-surface
+       the island live. Falls back to a photograph without WebGL.
+       ══════════════════════════════════════════════════════════════════ -->
+  <section class="k3d" id="k3d" tabindex="0" role="img"
+           aria-label="Interactive three-dimensional model of an Obsidian kitchen. Use the arrow keys to orbit the room.">
+    <div class="k3d__fb">
+      <img src="../assets/media/img/o-range-dark-1600.webp" alt="An Obsidian kitchen with blackened cabinetry, stone island and a professional range" width="1600" height="1067" loading="lazy" decoding="async">
+    </div>
+
+    <div class="k3d__ui">
+      <div class="k3d__cap">
+        <p class="eyebrow">The room · live in 3D</p>
+        <h2 class="d2">Turn it around. It's yours.</h2>
+        <p class="lede mt-s">Not a photograph and not a render — an actual three-dimensional room, built in your browser. Drag to walk around it, and change the stone while you do.</p>
+      </div>
+
+      <div class="k3d__foot">
+        <div class="k3d__mats" role="group" aria-label="Choose a countertop stone">
+          <button class="k3d__mat k3d__mat--calacatta" type="button" aria-pressed="true" data-stone="calacatta"
+                  aria-label="Surface the island in Calacatta"><b>Calacatta</b></button>
+          <button class="k3d__mat k3d__mat--nero" type="button" aria-pressed="false" data-stone="nero"
+                  aria-label="Surface the island in Nero Marquina"><b>Nero</b></button>
+          <button class="k3d__mat k3d__mat--copper" type="button" aria-pressed="false" data-stone="copperOre"
+                  aria-label="Surface the island in Copper Ore"><b>Copper</b></button>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:.75rem;align-items:flex-end">
+          <span class="k3d__live"><i></i> Rendering live</span>
+          <span class="k3d__hint">Drag to orbit · scroll to move in</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 03b · Marquee -->
+  <div class="marq" aria-hidden="true">
+    <div class="marq__t">
+      <span>Coral Gables</span><span><em>·</em></span><span>Pinecrest</span><span><em>·</em></span>
+      <span>Key Biscayne</span><span><em>·</em></span><span>Bal Harbour</span><span><em>·</em></span>
+      <span>Brickell</span><span><em>·</em></span><span>Miami Beach</span><span><em>·</em></span>
+      <span>Coral Gables</span><span><em>·</em></span><span>Pinecrest</span><span><em>·</em></span>
+      <span>Key Biscayne</span><span><em>·</em></span><span>Bal Harbour</span><span><em>·</em></span>
+      <span>Brickell</span><span><em>·</em></span><span>Miami Beach</span><span><em>·</em></span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       GHL SECTION 04 · THE TRANSFORMATION CHAMBER
+       Full-width pinned stage. One scroll value drives every layer.
+       Paste as a single Custom HTML block — the CSS + JS travel with it.
+       Degrades to a finished still under reduced-motion or without JS.
+       ══════════════════════════════════════════════════════════════════ -->
+  <section class="chamber" aria-labelledby="chamber-h">
+    <div class="chamber__stage">
+
+      <!-- L1 · the room as we found it -->
+      <div class="chamber__layer ch-dark">
+        <img src="../assets/media/img/before-granite-1600.webp" alt="The kitchen before work began: dated timber cabinetry and granite counters" width="1600" height="1067" loading="lazy" decoding="async">
+      </div>
+
+      <!-- L2 · the finished room, wiped in -->
+      <div class="chamber__layer ch-mid">
+        <img src="../assets/media/img/o-range-dark-1600.webp" alt="The finished Obsidian kitchen: blackened cabinetry, stone backsplash and a professional range" width="1600" height="1067" loading="lazy" decoding="async">
+      </div>
+
+      <!-- L3 · the surface the visitor chooses -->
+      <div class="chamber__layer ch-surface">
+        <img src="../assets/media/img/o-kitchen-navy-1600.webp" alt="" width="1600" height="1067" loading="lazy" decoding="async">
+      </div>
+
+      <div class="chamber__sweep" aria-hidden="true"></div>
+      <div class="chamber__grade" aria-hidden="true"></div>
+
+      <div class="chamber__ui">
+        <h2 id="chamber-h" class="vh">The transformation, in five moments</h2>
+
+        <div class="ch-beat chamber__cap" data-on="true">
+          <p class="eyebrow">01 · As we found it</p>
+          <h2 class="d2">Every great kitchen starts in the dark.</h2>
+        </div>
+        <div class="ch-beat chamber__cap">
+          <p class="eyebrow">02 · Light</p>
+          <h2 class="d2">Then someone turns on the light.</h2>
+        </div>
+        <div class="ch-beat chamber__cap">
+          <p class="eyebrow">03 · Cabinetry</p>
+          <h2 class="d2">Joinery, to the millimetre.</h2>
+        </div>
+        <div class="ch-beat chamber__cap" style="max-width:32ch">
+          <p class="eyebrow">04 · Surface</p>
+          <h2 class="d2">Choose your stone.</h2>
+          <p class="lede mt-s">Tap a surface — the room changes with you. <span data-surface-name style="color:var(--copper-lt)"></span></p>
+        </div>
+        <div class="ch-beat chamber__cap" style="max-width:30ch">
+          <p class="eyebrow">05 · Yours</p>
+          <h2 class="d2">This is where your life happens.</h2>
+          <div class="btn-row mt-m" style="pointer-events:auto">
+            <a class="btn btn--copper" href="free-consultation.html">Begin your project</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- interactive surfaces -->
+      <div class="swatches" data-on="false">
+        <button class="swatch" type="button" aria-pressed="false"
+                data-surface="../assets/media/img/o-kitchen-navy-1600.webp" data-label="Verde Alpi"
+                style="background-image:url('../assets/media/img/n-marble-abstract-400.webp')"
+                aria-label="Show the kitchen in Verde Alpi"><b>Verde</b></button>
+        <button class="swatch" type="button" aria-pressed="false"
+                data-surface="../assets/media/img/o-dining-glass-1600.webp" data-label="Nero Assoluto"
+                style="background-image:url('../assets/media/img/o-wood-dark-400.webp')"
+                aria-label="Show the kitchen in Nero Assoluto"><b>Nero</b></button>
+        <button class="swatch" type="button" aria-pressed="false"
+                data-surface="../assets/media/img/o-kitchen-mono-1600.webp" data-label="Calacatta Oro"
+                style="background-image:url('../assets/media/img/n-marble-abstract-400.webp')"
+                aria-label="Show the kitchen in Calacatta Oro"><b>Oro</b></button>
+      </div>
+
+      <div class="chamber__rail" aria-hidden="true">
+        <span>The transformation</span><i></i><span>Scroll</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 04 · Manifesto | off-white reversal for contrast -->
+  <section class="section section--off">
+    <div class="shell">
+      <div class="shead">
+        <div class="rv">
+          <p class="eyebrow">The premise</p>
+          <h2 class="d2">A kitchen is not a floor plan. It is a room that behaves.</h2>
+        </div>
+        <div class="rv">
+          <p class="lede">At 7am it should be quiet, bright and out of your way. At 9pm it should be low, warm and the best place in the house to stand with a glass of wine. Most kitchens can only manage one of those. We design for both, and for the eleven hours in between.</p>
+        </div>
+      </div>
+      <div class="grid g-3 mt-l">
+        <div class="rv"><p class="eyebrow">01</p><h3 class="d3">Light as a material</h3><p class="mt-s" style="color:rgba(10,10,10,.7)">Four independent lighting states, set on scenes. The room you cook in and the room you entertain in are the same room wearing different clothes.</p></div>
+        <div class="rv"><p class="eyebrow">02</p><h3 class="d3">Nothing you don't touch</h3><p class="mt-s" style="color:rgba(10,10,10,.7)">No handles you don't need, no appliance faces you didn't ask for. Everything that isn't used every day disappears behind joinery.</p></div>
+        <div class="rv"><p class="eyebrow">03</p><h3 class="d3">Stone chosen in person</h3><p class="mt-s" style="color:rgba(10,10,10,.7)">We bring slabs to your house, not photographs to a showroom. Veining is a composition decision and it should be made in your own light.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 05 · Horizontal project rail -->
+  <section class="section">
+    <div class="shell">
+      <div class="shead">
+        <div class="rv"><p class="eyebrow">Selected projects</p><h2 class="d2" data-scramble>Twelve a year.</h2></div>
+        <div class="rv">
+          <p class="lede">Coral Gables villas, Brickell towers, a Key Biscayne beach house. Drag sideways.</p>
+          <a class="tlink mt-m" href="portfolio.html">All projects <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="rail mt-l">
+      <div class="rail__track">
+        <a class="rail__item pitem rv" href="portfolio.html">
+          <div class="fig fig--tall"><img src="../assets/media/img/o-kitchen-mono-800.webp" srcset="../assets/media/img/o-kitchen-mono-800.webp 800w, ../assets/media/img/o-kitchen-mono-1600.webp 1600w" sizes="(max-width:620px) 78vw, 34vw" alt="Monochrome kitchen with sculptural pendants, Coral Gables" width="1600" height="1328" loading="lazy" decoding="async"></div>
+          <div class="pitem__meta"><h3 class="d4">Villa Alcázar</h3><span>Coral Gables</span></div>
+        </a>
+        <a class="rail__item pitem rv" href="portfolio.html">
+          <div class="fig fig--tall"><img src="../assets/media/img/o-dining-glass-800.webp" srcset="../assets/media/img/o-dining-glass-800.webp 800w, ../assets/media/img/o-dining-glass-1600.webp 1600w" sizes="(max-width:620px) 78vw, 34vw" alt="Open living and kitchen volume with timber wall, Coconut Grove" width="1600" height="1088" loading="lazy" decoding="async"></div>
+          <div class="pitem__meta"><h3 class="d4">Grove Residence</h3><span>Coconut Grove</span></div>
+        </a>
+        <a class="rail__item pitem rv" href="portfolio.html">
+          <div class="fig fig--tall"><img src="../assets/media/img/o-kitchen-navy-800.webp" srcset="../assets/media/img/o-kitchen-navy-800.webp 800w, ../assets/media/img/o-kitchen-navy-1600.webp 1600w" sizes="(max-width:620px) 78vw, 34vw" alt="Deep navy kitchen with stainless range, Brickell tower" width="1600" height="1067" loading="lazy" decoding="async"></div>
+          <div class="pitem__meta"><h3 class="d4">Tower 41</h3><span>Brickell</span></div>
+        </a>
+        <a class="rail__item pitem rv" href="portfolio.html">
+          <div class="fig fig--tall"><img src="../assets/media/img/o-range-dark-800.webp" srcset="../assets/media/img/o-range-dark-800.webp 800w, ../assets/media/img/o-range-dark-1600.webp 1600w" sizes="(max-width:620px) 78vw, 34vw" alt="Blackened cabinetry with professional range, Pinecrest" width="1600" height="1067" loading="lazy" decoding="async"></div>
+          <div class="pitem__meta"><h3 class="d4">Pinecrest House</h3><span>Pinecrest</span></div>
+        </a>
+        <a class="rail__item pitem rv" href="portfolio.html">
+          <div class="fig fig--tall"><img src="../assets/media/img/n-house-desert-800.webp" srcset="../assets/media/img/n-house-desert-800.webp 800w, ../assets/media/img/n-house-desert-1600.webp 1600w" sizes="(max-width:620px) 78vw, 34vw" alt="Modern residence photographed at night, Key Biscayne" width="1600" height="1146" loading="lazy" decoding="async"></div>
+          <div class="pitem__meta"><h3 class="d4">Cape Florida</h3><span>Key Biscayne</span></div>
+        </a>
+      </div>
+      <div class="shell"><p class="rail__hint"><span aria-hidden="true">←→</span> Drag, scroll or swipe</p></div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 06 · Materials | emerald -->
+  <section class="section section--ink">
+    <div class="shell">
+      <div class="grid g-asym" style="align-items:center">
+        <div class="rv">
+          <p class="eyebrow">Materials</p>
+          <h2 class="d2">We fly to the quarry. You choose the block.</h2>
+          <p class="lede mt-m">For projects above $250,000 we will take you to Carrara, or bring three full slabs to your driveway — whichever you would rather. Either way the stone is chosen as a whole composition, and the veining is laid out on paper before a single cut is made.</p>
+          <a class="tlink mt-m" href="kitchen-remodeling.html#countertops">How we work with stone <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="grid g-2 rv">
+          <div class="fig fig--sq"><img src="../assets/media/img/n-marble-abstract-800.webp" alt="Dramatic green and white veined marble slab" width="1600" height="2400" loading="lazy" decoding="async"></div>
+          <div class="fig fig--sq"><img src="../assets/media/img/n-quarry-800.webp" alt="Working marble quarry where slabs are extracted" width="800" height="1200" loading="lazy" decoding="async"></div>
+          <div class="fig fig--sq"><img src="../assets/media/img/o-wood-dark-800.webp" alt="Dark figured timber surface" width="800" height="1200" loading="lazy" decoding="async"></div>
+          <div class="fig fig--sq"><img src="../assets/media/img/n-counter-minimal-800.webp" alt="Japanese knife resting on a dark timber counter" width="1600" height="2400" loading="lazy" decoding="async"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 07 · Chapters / process -->
+  <section class="section section--graphite">
+    <div class="shell">
+      <div class="shead">
+        <div class="rv"><p class="eyebrow">The method</p><h2 class="d2">Five chapters.</h2></div>
+        <div class="rv"><p class="lede">One principal from the first conversation to the last. You will never be handed to a project manager you have not met.</p></div>
+      </div>
+      <div class="chapters mt-l">
+        <div class="chapter rv"><span class="chapter__n">01</span><h3 class="d3">The session</h3><p>Two hours at your home, at dusk, because that is when a kitchen's lighting problems reveal themselves. We leave with measurements and you leave with a written investment band.</p></div>
+        <div class="chapter rv"><span class="chapter__n">02</span><h3 class="d3">The film</h3><p>Rather than a floor plan, we produce a short walkthrough of your kitchen as it will be — lighting states, materials, sightlines. Most clients watch it a dozen times before approving.</p></div>
+        <div class="chapter rv"><span class="chapter__n">03</span><h3 class="d3">The materials</h3><p>Slabs and finishes come to your house. Nothing is decided under showroom lighting, and nothing is decided in one sitting.</p></div>
+        <div class="chapter rv"><span class="chapter__n">04</span><h3 class="d3">The build</h3><p>Cabinetry from our Italian and local partners, installed by one crew. Condo boards, elevator windows and COIs are handled by us, not by you.</p></div>
+        <div class="chapter rv"><span class="chapter__n">05</span><h3 class="d3">The reveal</h3><p>We stage, light and photograph the room, then hand you the lighting scenes on your phone. Punch list closed within ten days.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 08 · Before / after -->
+  <section class="section">
+    <div class="shell">
+      <div class="shead">
+        <div class="rv"><p class="eyebrow">Villa Alcázar</p><h2 class="d2">Coral Gables. 1994 to now.</h2></div>
+        <div class="rv"><p class="lede">A Mediterranean revival house with a kitchen that belonged to a different building. We kept the arches, took everything else, and let the stone do the talking.</p></div>
+      </div>
+      <figure class="ba rv mt-l">
+        <img src="../assets/media/img/before-granite-1600.webp" alt="Before: heavy timber cabinetry and granite counters in a closed layout" width="1600" height="1067" loading="lazy" decoding="async">
+        <img class="ba__after" src="../assets/media/img/o-kitchen-mono-1600.webp" alt="After: a monochrome Obsidian kitchen with sculptural pendants and stone island" width="1600" height="1328" loading="lazy" decoding="async">
+        <span class="ba__tag ba__tag--b">1994</span><span class="ba__tag ba__tag--a">Now</span>
+        <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Villa Alcázar: reveal the finished kitchen">
+        <span class="ba__handle" aria-hidden="true"></span>
+      </figure>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 09 · Film + testimonials -->
+  <section class="section section--graphite">
+    <div class="shell">
+      <div class="shead">
+        <div class="rv"><p class="eyebrow">Clients</p><h2 class="d2">The reaction we design for.</h2></div>
+        <div class="rv"><p class="lede">We film every reveal. This is the only marketing we have ever needed.</p></div>
+      </div>
+      <div class="grid g-asym mt-l" style="align-items:start">
+        <div class="rv">
+          <button class="vfac" type="button" data-mp4="../assets/media/video/cook-stove.mp4" data-title="Villa Alcázar — the reveal" aria-label="Play the Villa Alcázar reveal film">
+            <img src="../assets/media/video/cook-stove.jpg" alt="Still from the Villa Alcázar reveal film" width="1280" height="720" loading="lazy" decoding="async">
+            <span class="vfac__play" aria-hidden="true"><svg width="18" height="20" viewBox="0 0 18 20" fill="currentColor"><path d="M18 10 0 20V0z"/></svg></span>
+            <span class="vfac__label">The reveal · Villa Alcázar</span>
+          </button>
+        </div>
+        <div class="stack">
+          <figure class="quote rv">
+            <blockquote>I have built four houses. Nobody has ever shown me a film of a room that did not exist yet. I approved it that evening.</blockquote>
+            <figcaption><b>R. Delacroix</b>Coral Gables · Villa Alcázar</figcaption>
+          </figure>
+          <figure class="quote rv">
+            <blockquote>They dealt with the condo board so completely that I did not know there had been a problem until it was solved.</blockquote>
+            <figcaption><b>M. Okonkwo</b>Brickell · Tower 41</figcaption>
+          </figure>
+          <figure class="quote rv">
+            <blockquote>The lighting scenes are the thing nobody warns you about. The room is genuinely different at night. It is theatre.</blockquote>
+            <figcaption><b>S. Feld</b>Key Biscayne · Cape Florida</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 10 · Investment -->
+  <section class="section">
+    <div class="shell">
+      <div class="shead">
+        <div class="rv"><p class="eyebrow">Investment</p><h2 class="d2">We will tell you the number in the first two hours.</h2></div>
+        <div class="rv">
+          <p class="lede">No staged reveals, no "let's talk about budget later". You get a written band at the end of the first session, and we would rather lose the project there than nine weeks in.</p>
+          <div class="btn-row mt-m">
+            <a class="btn btn--copper" href="financing.html">Investment &amp; financing</a>
+            <a class="btn btn--ghost" href="free-consultation.html">Book a session</a>
+          </div>
+        </div>
+      </div>
+      <div class="stats mt-l">
+        <div class="rv"><b>$150k</b><span>Typical entry point</span></div>
+        <div class="rv"><b>$450k</b><span>Upper band</span></div>
+        <div class="rv"><b>180 mo</b><span>Fixed-rate terms available</span></div>
+        <div class="rv"><b>$0</b><span>Cost for the first session</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 11 · FAQ | AEO-optimised -->
+  <section class="section section--off">
+    <div class="shell">
+      <div class="shead">
+        <div class="rv"><p class="eyebrow">Questions</p><h2 class="d2">Answered without theatre.</h2></div>
+        <div class="rv"><p class="lede">Real numbers for the Miami market, including the parts other studios avoid.</p></div>
+      </div>
+      <div class="acc mt-l">
+        <details class="rv" open><summary><h3 style="font:inherit;margin:0">How much does a luxury kitchen remodel cost in Miami?</h3></summary>
+          <div class="acc__body"><p>An Obsidian kitchen runs <b>$150,000 to $450,000</b>. The band is set by how much structure moves, whether cabinetry is European-imported or built locally, and the stone. Waterfront and high-rise projects sit at the upper end because of access, HOA requirements and hurricane-rated glazing.</p></div></details>
+        <details class="rv"><summary><h3 style="font:inherit;margin:0">How long does a high-end kitchen remodel take in Miami?</h3></summary>
+          <div class="acc__body"><p><b>Six to nine months.</b> Design and material curation take eight to twelve weeks, imported cabinetry runs fourteen to twenty weeks from Italy, installation is eight to twelve weeks. Condo and HOA approval in Miami-Dade typically adds four to six weeks, which we run in parallel with design rather than after it.</p></div></details>
+        <details class="rv"><summary><h3 style="font:inherit;margin:0">Do you work in high-rise condominiums?</h3></summary>
+          <div class="acc__body"><p>Yes — roughly half our work is in Brickell, Bal Harbour and Key Biscayne towers. We handle the building application, the certificate of insurance, elevator scheduling and the noise-window restrictions that most contractors discover in week two.</p></div></details>
+        <details class="rv"><summary><h3 style="font:inherit;margin:0">What makes Obsidian different from other Miami kitchen companies?</h3></summary>
+          <div class="acc__body"><p>We design the room as an experience rather than a floor plan — lighting states, materials, sightlines, and how the space behaves at 7am and again at 9pm. We take <b>twelve projects a year</b>, every one led by a principal, and we run no showroom: slabs and samples come to your home instead.</p></div></details>
+        <details class="rv"><summary><h3 style="font:inherit;margin:0">Do you offer financing?</h3></summary>
+          <div class="acc__body"><p>Yes — fixed-rate terms from 60 to 180 months through private lending partners, plus construction-draw arrangements above $250,000. Pre-qualification uses a soft credit pull and does not affect your credit score. <a href="financing.html">See investment &amp; financing →</a></p></div></details>
+        <details class="rv"><summary><h3 style="font:inherit;margin:0">Which areas does Obsidian serve?</h3></summary>
+          <div class="acc__body"><p><b>Coral Gables, Pinecrest, Coconut Grove, Key Biscayne, Bal Harbour, Miami Beach, Brickell and Sunny Isles.</b> Because the studio takes twelve projects a year, the calendar is set by quarter rather than by waiting list. <a href="contact.html">See the studio →</a></p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 12 · Final CTA -->
+  <section class="section section--ink">
+    <div class="shell center">
+      <p class="eyebrow" style="justify-content:center">The next twelve</p>
+      <h2 class="d1 maxch" style="margin-inline:auto">Bring us a room. We'll bring the film.</h2>
+      <p class="lede mt-m maxch-s" style="margin-inline:auto">Two hours at your home, at dusk, at no cost. You leave with a written investment band and a short film of the kitchen you don't have yet.</p>
+      <div class="btn-row mt-l" style="justify-content:center">
+        <a class="btn btn--copper" href="free-consultation.html">Schedule Your Free Kitchen Design Consultation</a>
+        <a class="btn btn--ghost" href="portfolio.html">View Our Transformations</a>
+      </div>
+      <p class="muted mt-m" style="font-size:.8125rem">Two commissions remain for Q1 2027</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- GHL SECTION 13 · Footer -->
+<footer class="ftr">
+  <div class="shell">
+    <div class="ftr__top">
+      <div>
+        <a class="brand" href="index.html"><span class="brand__n">Obsidian</span><span class="brand__t">Kitchen Studio · Miami</span></a>
+        <p class="mt-m" style="color:var(--off-50);max-width:32ch">An experience-led kitchen studio in Coral Gables. Twelve commissions a year, each led by a principal.</p>
+      </div>
+      <div><h3>The work</h3><ul>
+        <li><a href="kitchen-remodeling.html">Kitchen Remodeling</a></li>
+        <li><a href="kitchen-remodeling.html#cabinetry">Cabinetry</a></li>
+        <li><a href="kitchen-remodeling.html#countertops">Stone &amp; Surfaces</a></li>
+        <li><a href="kitchen-remodeling.html#design">Design &amp; Lighting</a></li>
+      </ul></div>
+      <div><h3>Studio</h3><ul>
+        <li><a href="portfolio.html">Projects</a></li>
+        <li><a href="financing.html">Investment</a></li>
+        <li><a href="contact.html">Studio &amp; Service Areas</a></li>
+        <li><a href="free-consultation.html">Book a Session</a></li>
+      </ul></div>
+      <div><h3>Contact</h3><ul>
+        <li>2900 Ponce de Leon Blvd<br>Suite 610, Coral Gables, FL 33134</li>
+        <li><a href="tel:+13055550176">(305) 555-0176</a></li>
+        <li><a href="mailto:studio@obsidian.example">studio@obsidian.example</a></li>
+        <li>Mon–Fri 10:00–18:00</li>
+      </ul></div>
+    </div>
+    <div class="ftr__bot">
+      <span>© <span data-year>2026</span> Obsidian Kitchen Studio · FL CGC #1524880</span>
+      <span>Coral Gables · Pinecrest · Coconut Grove · Key Biscayne · Bal Harbour · Miami Beach · Brickell</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a href="tel:+13055550176">Call studio</a>
+  <a href="free-consultation.html">Book a session</a>
+</div>
+
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/chamber.js" defer></script>
+<script src="assets/js/kitchen3d.js" defer></script>
+</body>
+</html>

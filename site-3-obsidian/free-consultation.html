@@ -1,0 +1,170 @@
+<!doctype html>
+<!--
+  ██  DO NOT PASTE THIS FILE INTO GOHIGHLEVEL  ██
+
+  This is the EDITABLE SOURCE. Its CSS and JavaScript live in separate files
+  (see the <link> and <script> tags below), which do not exist inside GHL —
+  paste this and you get unstyled plain text.
+
+  Paste the matching file from:   PASTE-INTO-GHL/
+  That version has the CSS, the JavaScript and every image embedded in the file.
+
+  Edit here, then run:            python3 scripts/build.py
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a Private Session | Obsidian Kitchen Studio, Miami</title>
+<meta name="description" content="Two hours at your home, at dusk. You leave with a written investment band and a short film of the kitchen you don't have yet. No cost, no obligation.">
+<link rel="canonical" href="https://obsidian.example/free-consultation.html">
+<meta name="robots" content="noindex, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Book a Private Session | Obsidian, Miami">
+<meta property="og:description" content="Two hours at dusk. A written band, and a film of the kitchen you don't have yet.">
+<meta property="og:image" content="https://obsidian.example/assets/media/img/o-range-dark-1200.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  /* Landing page: no navigation, no exits. The form is the only destination. */
+  .lp { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,.85fr); gap: clamp(2rem,5vw,5rem); align-items: start; }
+  @media (max-width: 980px) { .lp { grid-template-columns: 1fr; } }
+  .lp__form { border: 1px solid var(--line); padding: clamp(1.5rem,3vw,2.5rem); position: sticky; top: 2rem; background: var(--graphite); }
+  @media (max-width: 980px) { .lp__form { position: static; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#form">Skip to the form</a>
+
+<!-- GHL SECTION 00 · LP header | wordmark + phone only, no navigation -->
+<header class="lphdr">
+  <div class="shell lphdr__in">
+    <span class="brand"><span class="brand__n">Obsidian</span><span class="brand__t">Kitchen Studio · Miami</span></span>
+    <a class="tlink" href="tel:+13055550176">(305) 555-0176</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- GHL SECTION 01 · LP hero + form -->
+  <section class="section">
+    <div class="shell lp">
+
+      <div>
+        <p class="eyebrow rv">No cost · No obligation · Twelve commissions a year</p>
+        <h1 class="d2 rv">Two hours, at dusk, at your house.</h1>
+        <p class="lede mt-m rv">We come at the end of the day on purpose — a kitchen only reveals its lighting problems once the sun has gone. Two hours later you have a written investment band, an honest read on what the room can become, and no obligation of any kind.</p>
+
+        <ul class="ticks mt-l rv">
+          <li><i>—</i><span><b>A written investment band</b>, yours to keep, whether or not you commission us.</span></li>
+          <li><i>—</i><span><b>A short walkthrough film</b> of the kitchen you don't have yet, produced within three weeks.</span></li>
+          <li><i>—</i><span><b>An honest structural read.</b> If the wall cannot move, we tell you in hour one rather than month three.</span></li>
+          <li><i>—</i><span><b>Condo and HOA feasibility</b> assessed before you commit — we know most of these buildings already.</span></li>
+        </ul>
+
+        <div class="stats mt-l rv">
+          <div><b>12</b><span>Commissions a year</span></div>
+          <div><b>17</b><span>Years in Miami</span></div>
+          <div><b>5.0★</b><span>68 reviews</span></div>
+          <div><b>1</b><span>Principal per project</span></div>
+        </div>
+
+        <figure class="quote mt-l rv">
+          <blockquote>I have built four houses. Nobody has ever shown me a film of a room that did not exist yet. I approved it that evening.</blockquote>
+          <figcaption><b>R. Delacroix</b>Coral Gables · Villa Alcázar</figcaption>
+        </figure>
+
+        <div class="fig fig--cine mt-l rv">
+          <img src="../assets/media/img/o-range-dark-800.webp" srcset="../assets/media/img/o-range-dark-800.webp 800w, ../assets/media/img/o-range-dark-1600.webp 1600w" sizes="(max-width:980px) 100vw, 52vw" alt="A finished Obsidian kitchen with blackened cabinetry and marble backsplash" width="1600" height="1067" loading="lazy" decoding="async">
+        </div>
+      </div>
+
+      <!-- GHL: replace with a native GHL form element. Field names map 1:1. -->
+      <div class="lp__form" id="form">
+        <h2 class="d3">Request a session</h2>
+        <p class="muted mt-s" style="font-size:.875rem">Two commissions remain for Q1 2027. A principal replies personally within one business day.</p>
+
+        <form class="form mt-m" data-lead="thank-you.html" novalidate>
+          <div class="field--2">
+            <div class="field"><label for="firstName">First name</label><input id="firstName" name="firstName" type="text" autocomplete="given-name" required></div>
+            <div class="field"><label for="lastName">Last name</label><input id="lastName" name="lastName" type="text" autocomplete="family-name" required></div>
+          </div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+          <div class="field">
+            <label for="area">Area</label>
+            <select id="area" name="area" required>
+              <option value="">Select…</option>
+              <option>Coral Gables</option><option>Pinecrest</option><option>Coconut Grove</option>
+              <option>Key Biscayne</option><option>Bal Harbour</option><option>Miami Beach</option>
+              <option>Brickell</option><option>Sunny Isles</option><option>Elsewhere in Miami-Dade</option>
+            </select>
+          </div>
+
+          <fieldset class="field" style="border:0;padding:0;margin:0">
+            <legend>Property type</legend>
+            <div class="pills mt-s">
+              <input type="radio" id="pt1" name="property" value="house"><label for="pt1">House / villa</label>
+              <input type="radio" id="pt2" name="property" value="condo"><label for="pt2">Condominium</label>
+              <input type="radio" id="pt3" name="property" value="waterfront"><label for="pt3">Waterfront</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="field" style="border:0;padding:0;margin:0">
+            <legend>Investment band</legend>
+            <div class="pills mt-s">
+              <input type="radio" id="ib1" name="band" value="150-220"><label for="ib1">$150k – $220k</label>
+              <input type="radio" id="ib2" name="band" value="220-320"><label for="ib2">$220k – $320k</label>
+              <input type="radio" id="ib3" name="band" value="320-450"><label for="ib3">$320k – $450k</label>
+              <input type="radio" id="ib4" name="band" value="unsure"><label for="ib4">Not sure yet</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="field" style="border:0;padding:0;margin:0">
+            <legend>Timing</legend>
+            <div class="pills mt-s">
+              <input type="radio" id="tm1" name="timing" value="q1"><label for="tm1">Q1 2027</label>
+              <input type="radio" id="tm2" name="timing" value="q2"><label for="tm2">Q2 2027</label>
+              <input type="radio" id="tm3" name="timing" value="later"><label for="tm3">Later</label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="notes">The room, in a sentence <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
+            <textarea id="notes" name="notes" rows="3" placeholder="What does the kitchen get wrong at 7am — and again at 9pm?"></textarea>
+          </div>
+
+          <button class="btn btn--copper btn--wide" type="submit">Request a private session</button>
+          <p class="form__note">By submitting you agree to be contacted about your project. We never sell or share your details, and there is no follow-up sequence.</p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GHL SECTION 02 · Risk reversal -->
+  <section class="section section--ink section--tight">
+    <div class="shell center">
+      <p class="eyebrow" style="justify-content:center">What you should know</p>
+      <h2 class="d3 maxch" style="margin-inline:auto">If the room cannot become what you want, we say so in hour one.</h2>
+      <p class="lede mt-m maxch-s" style="margin-inline:auto">Roughly one session in five ends with us telling a client that the structure, the board or the budget will not allow the kitchen they are imagining. Nobody enjoys that conversation. It is considerably better than having it in month three.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ftr" style="padding-block:3rem 2rem">
+  <div class="shell">
+    <div class="ftr__bot" style="margin-top:0;padding-top:0;border:0">
+      <span>© <span data-year>2026</span> Obsidian Kitchen Studio · FL CGC #1524880</span>
+      <span>2900 Ponce de Leon Blvd, Suite 610, Coral Gables, FL 33134 · <a href="tel:+13055550176">(305) 555-0176</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

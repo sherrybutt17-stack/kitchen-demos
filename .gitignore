@@ -1,0 +1,9 @@
+# Scratch pool of downloaded candidates that were never selected (~37 MB).
+media-candidates/
+
+# Byte-identical to dist/ apart from llms.txt; dist/ is the source of truth.
+PASTE-INTO-GHL/
+
+.DS_Store
+__pycache__/
+*.pyc

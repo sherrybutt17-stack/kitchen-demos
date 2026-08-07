@@ -1,0 +1,198 @@
+<!doctype html>
+<!--
+  ██  DO NOT PASTE THIS FILE INTO GOHIGHLEVEL  ██
+
+  This is the EDITABLE SOURCE. Its CSS and JavaScript live in separate files
+  (see the <link> and <script> tags below), which do not exist inside GHL —
+  paste this and you get unstyled plain text.
+
+  Paste the matching file from:   PASTE-INTO-GHL/
+  That version has the CSS, the JavaScript and every image embedded in the file.
+
+  Edit here, then run:            python3 scripts/build.py
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Kitchen Design Consultation in Scottsdale | Northstone</title>
+<meta name="description" content="Ninety minutes in your kitchen with a Northstone principal. You leave with a written investment range and an honest answer — free, with no sales visit afterwards.">
+<link rel="canonical" href="https://northstone.example/free-consultation.html">
+<meta name="robots" content="noindex, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Kitchen Design Consultation | Northstone">
+<meta property="og:description" content="Ninety minutes, in your kitchen, at no cost. Written investment range included.">
+<meta property="og:image" content="https://northstone.example/assets/media/img/n-kitchen-oak-1200.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@800&family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+
+<style>
+  /* Landing page: no nav, no exits. Form is the only destination. */
+  .lp { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,.85fr); gap: clamp(2rem,5vw,5rem); align-items: start; }
+  @media (max-width: 940px) { .lp { grid-template-columns: 1fr; } }
+  /* 4 stat columns inside a half-width column starve each cell; the numerals are
+     sized in vw, so they do not shrink with it. Two-across restores the fit. */
+  .lp .stats { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .lp__form { background: var(--paper); border: 1px solid var(--line); padding: clamp(1.5rem,3vw,2.5rem); position: sticky; top: 2rem; }
+  @media (max-width: 940px) { .lp__form { position: static; } }
+  .lphdr { border-bottom: 1px solid var(--line); }
+  .lphdr__in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 80px; }
+  .ticks { list-style: none; margin: 0; padding: 0; display: grid; gap: .9rem; }
+  .ticks li { display: grid; grid-template-columns: 1.5rem 1fr; gap: .75rem; align-items: start; }
+  .ticks svg { margin-top: .35rem; color: var(--champagne-t); }
+</style>
+</head>
+<body>
+<a class="skip" href="#form">Skip to the form</a>
+
+<!-- GHL SECTION 00 · LP header | logo only, no navigation, no exit links -->
+<header class="lphdr">
+  <div class="shell lphdr__in">
+    <span class="brand"><span class="brand__n">NORTHSTONE</span><span class="brand__t">Kitchen Architecture</span></span>
+    <a class="tlink" href="tel:+14805550142">(480) 555-0142</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- GHL SECTION 01 · LP hero + form | full-width | 2-col → 1-col @940 -->
+  <section class="section">
+    <div class="shell lp">
+
+      <div>
+        <p class="eyebrow">Free · No obligation · No sales visit</p>
+        <h1 class="d2">Ninety minutes in your kitchen will tell you more than ninety hours online.</h1>
+        <p class="lede mt-m">A Northstone principal comes to your house, measures the room, and watches how you actually use it. You leave with a written investment range and a straight answer about whether the layout is worth changing — even when that answer is no.</p>
+
+        <ul class="ticks mt-l" style="margin-top:clamp(2rem,4vw,3rem)">
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8.5 6 12.5 14 3.5"/></svg><span><b>A written investment range</b> — yours to keep, whether or not you hire us.</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8.5 6 12.5 14 3.5"/></svg><span><b>An honest layout assessment.</b> If your plan already works, we will tell you to renovate instead — it costs less.</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8.5 6 12.5 14 3.5"/></svg><span><b>A realistic timeline</b> for your specific house, not a brochure average.</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8.5 6 12.5 14 3.5"/></svg><span><b>No follow-up sales visit.</b> One email a week later. That is the whole sequence.</span></li>
+        </ul>
+
+        <div class="stats rv" style="margin-top:clamp(2.5rem,5vw,3.5rem)">
+          <div><b>14</b><span>Projects per year</span></div>
+          <div><b>22</b><span>Years in practice</span></div>
+          <div><b>4.9★</b><span>127 Google reviews</span></div>
+          <div><b>10 yr</b><span>Workmanship warranty</span></div>
+        </div>
+
+        <figure class="quote rv" style="margin-top:clamp(2.5rem,5vw,3.5rem)">
+          <blockquote class="serif">"We interviewed four firms. Northstone was the only one who asked to watch us make dinner before they'd quote. That told us everything."</blockquote>
+          <figcaption><b>Diane &amp; Robert M.</b>Paradise Valley · Full remodel, 2025</figcaption>
+        </figure>
+
+        <div class="fig fig--wide rv" style="margin-top:clamp(2.5rem,5vw,3.5rem)">
+          <img src="../assets/media/img/n-kitchen-oak-800.webp" srcset="../assets/media/img/n-kitchen-oak-800.webp 800w, ../assets/media/img/n-kitchen-oak-1600.webp 1600w" sizes="(max-width:940px) 100vw, 52vw" alt="Finished Northstone kitchen with oak joinery, stone island and black pendant lighting" width="1600" height="1066" loading="lazy" decoding="async">
+        </div>
+      </div>
+
+      <!-- GHL: replace this form with a native GHL form element. Field names map 1:1. -->
+      <div class="lp__form" id="form">
+        <h2 class="d3">Request your consultation</h2>
+        <p class="muted mt-s" style="font-size:.875rem">Three slots remain for Q4 2026. We reply within one business day.</p>
+
+        <form class="form mt-m" data-lead="thank-you.html" novalidate>
+          <div class="field--2">
+            <div class="field">
+              <label for="firstName">First name</label>
+              <input id="firstName" name="firstName" type="text" autocomplete="given-name" required>
+            </div>
+            <div class="field">
+              <label for="lastName">Last name</label>
+              <input id="lastName" name="lastName" type="text" autocomplete="family-name" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="city">City</label>
+            <select id="city" name="city" required>
+              <option value="">Select…</option>
+              <option>Scottsdale</option>
+              <option>Paradise Valley</option>
+              <option>Arcadia / Phoenix</option>
+              <option>Cave Creek</option>
+              <option>Carefree</option>
+              <option>Fountain Hills</option>
+              <option>Elsewhere in Arizona</option>
+            </select>
+          </div>
+
+          <fieldset class="field" style="border:0;padding:0;margin:0">
+            <legend class="field" style="padding:0;font-size:.6875rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-50)">Project scope</legend>
+            <div class="pills mt-s">
+              <input type="radio" id="s1" name="scope" value="renovation"><label for="s1">Renovation — same layout</label>
+              <input type="radio" id="s2" name="scope" value="remodel"><label for="s2">Remodel — new layout</label>
+              <input type="radio" id="s3" name="scope" value="unsure"><label for="s3">Not sure yet</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="field" style="border:0;padding:0;margin:0">
+            <legend class="field" style="padding:0;font-size:.6875rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-50)">Investment range</legend>
+            <div class="pills mt-s">
+              <input type="radio" id="b1" name="budget" value="under-85"><label for="b1">Under $85k</label>
+              <input type="radio" id="b2" name="budget" value="85-150"><label for="b2">$85k – $150k</label>
+              <input type="radio" id="b3" name="budget" value="150-250"><label for="b3">$150k – $250k</label>
+              <input type="radio" id="b4" name="budget" value="250-plus"><label for="b4">$250k+</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="field" style="border:0;padding:0;margin:0">
+            <legend class="field" style="padding:0;font-size:.6875rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-50)">Timeline</legend>
+            <div class="pills mt-s">
+              <input type="radio" id="t1" name="timeline" value="asap"><label for="t1">Ready now</label>
+              <input type="radio" id="t2" name="timeline" value="3-6"><label for="t2">3 – 6 months</label>
+              <input type="radio" id="t3" name="timeline" value="6-12"><label for="t3">6 – 12 months</label>
+              <input type="radio" id="t4" name="timeline" value="exploring"><label for="t4">Exploring</label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="notes">Anything we should know? <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
+            <textarea id="notes" name="notes" rows="3" placeholder="What frustrates you most about the room today?"></textarea>
+          </div>
+
+          <button class="btn btn--primary btn--wide" type="submit">Schedule Your Free Kitchen Design Consultation</button>
+          <p class="form__note">By submitting you agree to be contacted about your project. We never sell or share your details, and one email a week later is the entire follow-up sequence.</p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GHL SECTION 02 · Risk reversal | full-width | ink -->
+  <section class="section section--ink section--tight">
+    <div class="shell center">
+      <p class="eyebrow eyebrow--light" style="justify-content:center">Our guarantee</p>
+      <h2 class="d3 maxch" style="margin-inline:auto">If we cannot improve on your existing layout, we will say so — and the consultation still costs nothing.</h2>
+      <p class="lede mt-m maxch-s" style="margin-inline:auto">Roughly one in nine consultations ends with us recommending a renovation instead of a remodel, or recommending nothing at all. That is not a loss for us. It is the reason the other eight trust the drawing.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ftr" style="padding-block:3rem 2rem">
+  <div class="shell">
+    <div class="ftr__bot" style="margin-top:0;padding-top:0;border:0">
+      <span>© <span data-year>2026</span> Northstone Kitchen Architecture · Arizona ROC #331402</span>
+      <span>7180 E Main Street, Suite 204, Scottsdale, AZ 85251 · <a href="tel:+14805550142">(480) 555-0142</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

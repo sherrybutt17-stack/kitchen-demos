@@ -1,0 +1,140 @@
+<!doctype html>
+<!--
+  ██  DO NOT PASTE THIS FILE INTO GOHIGHLEVEL  ██
+
+  This is the EDITABLE SOURCE. Its CSS and JavaScript live in separate files
+  (see the <link> and <script> tags below), which do not exist inside GHL —
+  paste this and you get unstyled plain text.
+
+  Paste the matching file from:   PASTE-INTO-GHL/
+  That version has the CSS, the JavaScript and every image embedded in the file.
+
+  Edit here, then run:            python3 scripts/build.py
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thank You — Your Consultation Request | Northstone</title>
+<meta name="description" content="Your consultation request has been received. Here is exactly what happens next, and when.">
+<link rel="canonical" href="https://northstone.example/thank-you.html">
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@800&family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+
+<!--
+  GHL / TRACKING NOTES
+  ─────────────────────────────────────────────────────────────────────────
+  This URL exists so conversion events have somewhere to fire. Add here:
+    · GA4  → gtag('event','generate_lead',{value:…,currency:'USD'})
+    · Meta → fbq('track','Lead')
+    · Google Ads → conversion snippet
+    · GHL  → this is the "Thank You" step of the funnel; workflow triggers
+             on form submission, not on this pageview.
+  Keep noindex,nofollow so the page never appears in search results.
+-->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="lphdr" style="border-bottom:1px solid var(--line)">
+  <div class="shell lphdr__in" style="display:flex;align-items:center;justify-content:space-between;min-height:80px">
+    <a class="brand" href="index.html"><span class="brand__n">NORTHSTONE</span><span class="brand__t">Kitchen Architecture</span></a>
+    <a class="tlink" href="tel:+14805550142">(480) 555-0142</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- GHL SECTION 01 · Confirmation -->
+  <section class="section">
+    <div class="shell">
+      <div class="shead">
+        <div>
+          <p class="eyebrow">Request received</p>
+          <h1 class="d1">Thank you<span id="leadName"></span>.<br>We have your kitchen.</h1>
+        </div>
+        <div>
+          <p class="lede">A principal will review your details personally — not a call centre, not a scheduler. You will hear from us within one business day, and we will offer three specific times rather than asking you to hunt for one.</p>
+          <p class="mt-s" style="color:var(--ink-70)">If it is urgent, call the studio directly on <a href="tel:+14805550142">(480) 555-0142</a>. Someone who has seen your submission will answer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 02 · What happens next -->
+  <section class="section section--wash section--tight">
+    <div class="shell">
+      <p class="eyebrow">What happens next</p>
+      <h2 class="d2 split">Three steps, then we are in your kitchen.</h2>
+      <div class="steps mt-l" style="margin-top:clamp(2rem,4vw,3rem)">
+        <div class="step"><span class="step__n">01</span><div><h3 class="d3">Within one business day</h3><p>A principal emails you three consultation times. Reply with the one that suits — there is no scheduling link to wrestle with.</p></div></div>
+        <div class="step"><span class="step__n">02</span><div><h3 class="d3">The day before</h3><p>A short note confirming who is coming and roughly how long we will need. Ninety minutes, typically.</p></div></div>
+        <div class="step"><span class="step__n">03</span><div><h3 class="d3">In your kitchen</h3><p>We measure, photograph and talk through how the room is actually used. You receive your written investment range within three working days.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 03 · Meanwhile -->
+  <section class="section">
+    <div class="shell">
+      <div class="shead">
+        <div><p class="eyebrow">While you wait</p><h2 class="d2 split">Two things worth ten minutes.</h2></div>
+        <div><p class="lede">Clients who arrive at the consultation having looked at these tend to get more out of the ninety minutes.</p></div>
+      </div>
+      <div class="grid g-2 mt-l" style="margin-top:clamp(2.5rem,5vw,4rem)">
+        <a class="pitem" href="portfolio.html">
+          <div class="fig fig--wide"><img src="../assets/media/img/n-kitchen-wide-800.webp" srcset="../assets/media/img/n-kitchen-wide-800.webp 800w, ../assets/media/img/n-kitchen-wide-1600.webp 1600w" sizes="(max-width:720px) 100vw, 48vw" alt="Finished architectural kitchen with full-length stone island" width="1600" height="1038" loading="lazy" decoding="async"></div>
+          <div class="pitem__meta"><h3 class="d4">The before &amp; after gallery</h3><span>6 projects</span></div>
+          <p class="mt-s" style="color:var(--ink-70)">Drag the sliders. Note which changes you react to — bring that list with you.</p>
+        </a>
+        <a class="pitem" href="financing.html">
+          <div class="fig fig--wide"><img src="../assets/media/img/n-kitchen-island-800.webp" srcset="../assets/media/img/n-kitchen-island-800.webp 800w, ../assets/media/img/n-kitchen-island-1600.webp 1600w" sizes="(max-width:720px) 100vw, 48vw" alt="Architectural kitchen with a long island and clerestory glazing" width="1600" height="913" loading="lazy" decoding="async"></div>
+          <div class="pitem__meta"><h3 class="d4">Financing options</h3><span>4 min read</span></div>
+          <p class="mt-s" style="color:var(--ink-70)">Knowing your number before we draw is the single best way to protect the design.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ftr">
+  <div class="shell">
+    <div class="ftr__top">
+      <div>
+        <a class="brand" href="index.html" style="color:#fff"><span class="brand__n">NORTHSTONE</span><span class="brand__t">Kitchen Architecture</span></a>
+        <p class="mt-m" style="color:rgba(255,255,255,.68);max-width:34ch">An architecture-led kitchen practice in Scottsdale, Arizona. Fourteen homes a year, drawn from the structure out.</p>
+      </div>
+      <div><h3>Services</h3><ul>
+        <li><a href="kitchen-remodeling.html">Kitchen Remodeling</a></li>
+        <li><a href="kitchen-remodeling.html#cabinetry">Custom Cabinetry</a></li>
+        <li><a href="kitchen-remodeling.html#countertops">Countertops &amp; Stone</a></li>
+        <li><a href="kitchen-remodeling.html#design">Kitchen Design</a></li>
+      </ul></div>
+      <div><h3>Practice</h3><ul>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="financing.html">Financing</a></li>
+        <li><a href="contact.html">Contact &amp; Service Areas</a></li>
+        <li><a href="free-consultation.html">Free Consultation</a></li>
+      </ul></div>
+      <div><h3>Studio</h3><ul>
+        <li>7180 E Main Street, Suite&nbsp;204<br>Scottsdale, AZ 85251</li>
+        <li><a href="tel:+14805550142">(480) 555-0142</a></li>
+        <li><a href="mailto:studio@northstone.example">studio@northstone.example</a></li>
+        <li>Mon–Fri 8:30–17:30</li>
+      </ul></div>
+    </div>
+    <div class="ftr__bot">
+      <span>© <span data-year>2026</span> Northstone Kitchen Architecture · Arizona ROC #331402</span>
+      <span>Serving Scottsdale · Paradise Valley · Arcadia · Cave Creek · Carefree · Fountain Hills</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

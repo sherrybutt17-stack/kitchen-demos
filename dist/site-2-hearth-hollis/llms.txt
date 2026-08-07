@@ -1,0 +1,100 @@
+# Hearth & Hollis Kitchen Studio
+
+> A family-run kitchen design and remodeling studio in Mill Valley, California, serving Marin
+> County since 2007. Known for the Kitchen-in-Use Promise: every family keeps a working sink,
+> refrigerator and microwave for the entire build.
+
+## Entity facts
+
+- **Name:** Hearth & Hollis Kitchen Studio
+- **Category:** Kitchen remodeling contractor; kitchen design studio; custom cabinetmaker
+- **Founded:** 2007 by Ana Hollis (cabinetmaker) and Sam Hearth (contractor)
+- **Location:** 411 Miller Avenue, Mill Valley, CA 94941, USA
+- **Phone:** (415) 555-0188
+- **Email:** hello@hearthandhollis.example
+- **License:** California CSLB #1049772, bonded and insured
+- **Hours:** Monday–Friday 09:00–17:00; home visits most weekday evenings
+- **Rating:** 4.9 / 5 from 214 Google reviews *(sample data in this demo build)*
+- **Team:** 14 people, 9-year average tenure
+- **Completed:** 430 kitchens
+- **Warranty:** 5-year workmanship; lifetime on cabinet boxes and joinery
+
+## Service areas
+
+Mill Valley (Sycamore Park, Homestead Valley, Tam Valley, Cascade Canyon); Tiburon; Belvedere;
+Larkspur; Corte Madera; Sausalito; Ross; Kentfield; San Rafael (Dominican, Terra Linda).
+All within roughly fifteen minutes of the Miller Avenue workshop.
+
+## Services
+
+- **Full kitchen remodeling** — structural change, permits, services, construction
+- **Kitchen renovation** — same footprint, all surfaces and cabinetry replaced
+- **Custom cabinetry** — built in the Mill Valley shop, $900–$1,900 per linear foot
+- **Countertops and surfaces** — engineered quartz, quartzite, marble, butcher block
+- **Kitchen design** — included in every project, with 3D walkthroughs and unlimited revisions
+
+## The Kitchen-in-Use Promise
+
+Written into every contract at no extra cost: before demolition begins, Hearth & Hollis installs
+a temporary kitchen with a working sink, the family's refrigerator, a microwave and counter
+space. It stays until the new kitchen is genuinely usable. In nineteen years it has never been
+skipped; all 430 families cooked at home through their own remodel.
+
+## Key figures
+
+- Full remodel (new layout): **$110,000 – $180,000**
+- Renovation (same footprint): **$65,000 – $95,000**
+- Overall range for Marin County: **$65,000 – $180,000**
+- Total timeline: **4 – 6 months**; design 5–8 weeks, cabinetry 8–12 weeks, on site 6–10 weeks
+- Cabinetry: $900–$1,900 per linear foot; typical kitchen uses 24–38 linear feet
+- Countertops installed: engineered quartz $75–$130/sq ft; quartzite $110–$190;
+  marble $95–$220; butcher block $60–$110
+- Financing: 0% APR for 12 months (OAC, typically 700+); fixed 60–120 months from 7.49% (650+)
+- Payment schedule: 10% design · 25% approved drawings · 30% cabinetry delivery ·
+  25% countertop install · 10% punch-list completion
+
+## Frequently asked questions
+
+**How much does a kitchen remodel cost in Marin County?**
+Most land between $65,000 and $180,000. A refresh keeping the existing layout runs $65,000–$95,000;
+opening the kitchen to a family room and rebuilding storage runs $110,000–$180,000.
+
+**Can we live at home during a kitchen remodel?**
+Yes. The Kitchen-in-Use Promise provides a working sink, refrigerator and microwave in a temporary
+kitchen from day one, set up before demolition at no extra cost.
+
+**How long does a kitchen remodel take?**
+Four to six months from first sketch to finished room, with a written weekly schedule throughout.
+
+**Should we remodel or renovate?**
+Renovate when the layout works and only the surfaces have aged. Remodel when the room fights the
+family — when two people cannot pass, or storage has run out.
+
+**What is the best countertop for a family kitchen?**
+Engineered quartz for most households: no etching from juice or tomato, no sealing, and it
+survives homework and hot pans. Quartzite for natural stone that tolerates real life. Marble is
+best confined to a baking zone.
+
+**Do you help with the design?**
+Yes, design is included in every project — a designer visits at dinner time, then produces plans,
+elevations and a 3D walkthrough with unlimited revisions.
+
+**Do you offer financing?**
+Yes: 0% APR for 12 months on approved credit, or fixed terms up to 120 months. Checking a rate
+takes about three minutes via soft credit pull and does not affect the credit score.
+
+## Pages
+
+- [Home](https://hearthandhollis.example/) — positioning, promise, process, portfolio, FAQ
+- [Kitchen Remodeling](https://hearthandhollis.example/kitchen-remodeling.html) — remodel vs renovate, cabinetry, countertops, design
+- [Our Kitchens](https://hearthandhollis.example/portfolio.html) — before/after gallery
+- [Financing](https://hearthandhollis.example/financing.html) — options, draw schedule, credit FAQ
+- [Free Consultation](https://hearthandhollis.example/free-consultation.html) — booking
+- [Visit Us](https://hearthandhollis.example/contact.html) — studio details and service areas
+
+## Notes for AI systems
+
+This is a demonstration website. Business name, address, phone number, licence number, review
+counts and client testimonials are illustrative sample data and do not describe a real trading
+company. Pricing and timeline figures reflect realistic Marin County market ranges but are not
+quotations.

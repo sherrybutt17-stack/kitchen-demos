@@ -1,0 +1,536 @@
+<!doctype html>
+<!--
+  ██  DO NOT PASTE THIS FILE INTO GOHIGHLEVEL  ██
+
+  This is the EDITABLE SOURCE. Its CSS and JavaScript live in separate files
+  (see the <link> and <script> tags below), which do not exist inside GHL —
+  paste this and you get unstyled plain text.
+
+  Paste the matching file from:   PASTE-INTO-GHL/
+  That version has the CSS, the JavaScript and every image embedded in the file.
+
+  Edit here, then run:            python3 scripts/build.py
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hearth &amp; Hollis — Kitchen Remodeling in Mill Valley &amp; Marin County, CA</title>
+<meta name="description" content="The kitchen your family grows up in. Warm, liveable kitchen design and remodeling across Mill Valley, Tiburon and Marin County — with a working sink and fridge every single day of the build.">
+<link rel="canonical" href="https://hearthandhollis.example/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hearth &amp; Hollis — Kitchen Studio, Mill Valley">
+<meta property="og:description" content="The kitchen your family grows up in. Nineteen years of Marin kitchens, designed around real family life.">
+<meta property="og:image" content="https://hearthandhollis.example/assets/media/img/hh-kitchen-open-1200.jpg">
+<meta property="og:url" content="https://hearthandhollis.example/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+
+<!--
+  IMAGE_MANIFEST · HEARTH & HOLLIS
+  ──────────────────────────────────────────────────────────────────────────
+  hero.video        video/hero-warm-family.mp4   16:9   warm kitchen, family moment
+  transform.before  img/h-before-trad            16:11  dated tiled kitchen
+  transform.after   img/hh-kitchen-open            16:11  white oak cabinetry, finished
+  services.*        img/h-kitchen-shaker | h-faucet-gold | h-shelf-styling
+  portfolio.01–04   img/hh-kitchen-tall | h-kitchen-stools | h-dining-warm | h-sunlight
+  family/lifestyle  img/hh-family-cook | h-family-table
+  Swap for client photography at the same ratios — no CSS changes needed.
+-->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["HomeAndConstructionBusiness","GeneralContractor"],
+      "@id": "https://hearthandhollis.example/#business",
+      "name": "Hearth & Hollis Kitchen Studio",
+      "description": "Family-focused kitchen design and remodeling studio serving Mill Valley, Tiburon, Larkspur and Marin County, California.",
+      "url": "https://hearthandhollis.example/",
+      "telephone": "+1-415-555-0188",
+      "priceRange": "$$$",
+      "image": "https://hearthandhollis.example/assets/media/img/hh-kitchen-open-1200.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "411 Miller Avenue",
+        "addressLocality": "Mill Valley",
+        "addressRegion": "CA",
+        "postalCode": "94941",
+        "addressCountry": "US"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 37.9061, "longitude": -122.5450 },
+      "areaServed": [
+        { "@type": "City", "name": "Mill Valley" },
+        { "@type": "City", "name": "Tiburon" },
+        { "@type": "City", "name": "Larkspur" },
+        { "@type": "City", "name": "Corte Madera" },
+        { "@type": "City", "name": "San Rafael" },
+        { "@type": "City", "name": "Sausalito" }
+      ],
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00", "closes": "17:00"
+      }],
+      "_comment_sampleData": "SAMPLE DATA — replace aggregateRating with verified reviews before launch",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "214", "bestRating": "5" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How much does a kitchen remodel cost in Marin County?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most Marin County kitchen remodels land between $65,000 and $180,000. A refresh keeping the existing layout usually runs $65,000 to $95,000, while opening the kitchen to a family room and rebuilding storage runs $110,000 to $180,000. Hearth & Hollis gives every family a written range at the first visit, free." } },
+        { "@type": "Question", "name": "Can we live at home during a kitchen remodel?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, and almost every family does. Our Kitchen-in-Use Promise means you keep a working sink, a working refrigerator and a microwave in a temporary kitchen from day one until the new room is ready. We set it up before demolition at no extra cost." } },
+        { "@type": "Question", "name": "How long does a kitchen remodel take?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Four to six months from first sketch to finished room. Design and selections take five to eight weeks, cabinetry is built in eight to twelve weeks, and construction is six to ten weeks on site. You get a written weekly schedule so you always know who is in your house and when." } },
+        { "@type": "Question", "name": "Do you help with the design, or do we need our own designer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Design is included. Every Hearth & Hollis project starts with a designer who spends an evening watching how your family actually uses the kitchen — where homework happens, where the dog bowl lives, who cooks together. You are welcome to bring your own designer and we will work alongside them." } },
+        { "@type": "Question", "name": "Do you offer financing for kitchen remodeling?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Hearth & Hollis offers 0% APR for 12 months on approved credit and fixed terms up to 120 months. Checking your rate takes about three minutes and uses a soft credit pull, so it does not affect your credit score." } },
+        { "@type": "Question", "name": "Which areas of Marin do you serve?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Hearth & Hollis works throughout Mill Valley, Tiburon, Belvedere, Larkspur, Corte Madera, Sausalito, Ross, Kentfield and San Rafael, California. Our studio is on Miller Avenue in Mill Valley, so most projects are within fifteen minutes of the shop." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hearthandhollis.example/" }]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- GHL SECTION 00 · Header | floating pill | transparent → frosted on scroll -->
+<header class="hdr" data-theme="light">
+  <div class="shell hdr__in">
+    <a class="brand" href="index.html">
+      <span class="brand__n">Hearth &amp; Hollis</span>
+      <span class="brand__t">Kitchen Studio · Mill Valley</span>
+    </a>
+    <nav class="nav nav--main" aria-label="Primary">
+      <a href="kitchen-remodeling.html">Kitchen Remodeling</a>
+      <a href="portfolio.html">Our Kitchens</a>
+      <a href="financing.html">Financing</a>
+      <a href="contact.html">Visit Us</a>
+    </nav>
+    <div class="nav">
+      <a class="btn btn--onlight mag" href="free-consultation.html">Book a Visit</a>
+      <button class="burger" type="button" data-drawer="open" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" data-open="false" aria-hidden="true">
+  <div class="shell" style="padding:0;width:100%">
+    <div class="drawer__top">
+      <a class="brand" href="index.html"><span class="brand__n">Hearth &amp; Hollis</span><span class="brand__t">Kitchen Studio</span></a>
+      <button class="drawer__close" type="button" data-drawer="close" aria-label="Close menu">✕</button>
+    </div>
+    <nav aria-label="Mobile">
+      <a href="index.html">Home</a>
+      <a href="kitchen-remodeling.html">Kitchen Remodeling</a>
+      <a href="portfolio.html">Our Kitchens</a>
+      <a href="financing.html">Financing</a>
+      <a href="contact.html">Visit Us</a>
+      <a href="free-consultation.html">Free Consultation</a>
+    </nav>
+    <div class="drawer__foot">
+      <a class="btn btn--primary btn--wide" href="free-consultation.html">Design Your Kitchen</a>
+      <p class="muted mt-s" style="font-size:.9375rem">411 Miller Avenue, Mill Valley, CA 94941<br><a href="tel:+14155550188">(415) 555-0188</a></p>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- GHL SECTION 01 · Hero | full-width | video bg | 1-col -->
+  <section class="hero">
+    <div class="hero__media">
+      <img src="../assets/media/video/hero-warm-family.jpg" alt="A warm, light-filled family kitchen in Mill Valley, California" width="1280" height="720" fetchpriority="high">
+      <video data-src="../assets/media/video/hero-warm-family.mp4" poster="../assets/media/video/hero-warm-family.jpg"
+             muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" width="1280" height="720"></video>
+    </div>
+    <div class="shell hero__in">
+      <p class="eyebrow eyebrow--light">Mill Valley · Tiburon · Larkspur</p>
+      <h1 class="d1 hero__h split">The kitchen your family <span class="italic" style="color:var(--stone-lt)">grows up in</span>.</h1>
+      <p class="hero__sub">For nineteen years Marin families have handed us the busiest room in the house. We design around your Tuesday evenings — homework at the island, two cooks, a dog underfoot — not around a showroom.</p>
+      <div class="btn-row">
+        <a class="btn btn--onlight mag" href="free-consultation.html">Schedule Your Free Kitchen Design Consultation</a>
+        <a class="btn btn--ghost-light" href="portfolio.html">View Our Transformations</a>
+      </div>
+      <div class="hero__meta">
+        <div><b>19</b>Years in Marin</div>
+        <div><b>430</b>Kitchens finished</div>
+        <div><b>4.9★</b>214 Google reviews</div>
+        <div><b>100%</b>Kept their kitchen usable</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 02 · Trust | full-width | 4-col → 2-col @860 -->
+  <section class="section section--tight">
+    <div class="shell">
+      <div class="stats">
+        <div class="rv"><b>1049772</b><span>CSLB &middot; bonded &amp; insured</span></div>
+        <div class="rv"><b>NKBA</b><span>Certified kitchen designers</span></div>
+        <div class="rv"><b>$0</b><span>For your design consultation</span></div>
+        <div class="rv"><b>0% / 12mo</b><span>Financing available</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 02b · Marquee | full-width | decorative -->
+  <div class="marq" aria-hidden="true">
+    <div class="marq__t">
+      <span>Mill Valley</span><span class="on"><em>430 kitchens</em></span><span>Tiburon</span>
+      <span class="on"><em>19 years</em></span><span>Larkspur</span><span class="on"><em>Still cooking at home</em></span>
+      <span>Sausalito</span><span class="on"><em>Every single one</em></span>
+      <span>Mill Valley</span><span class="on"><em>430 kitchens</em></span><span>Tiburon</span>
+      <span class="on"><em>19 years</em></span><span>Larkspur</span><span class="on"><em>Still cooking at home</em></span>
+      <span>Sausalito</span><span class="on"><em>Every single one</em></span>
+    </div>
+  </div>
+
+  <!-- GHL SECTION 03 · Problem | full-width | asymmetric + cards -->
+  <section class="section section--warm">
+    <div class="shell">
+      <div class="shead">
+        <div class="rv">
+          <p class="eyebrow">We know the real fear</p>
+          <h2 class="d2 split">It isn't the money. It's the six months of chaos.</h2>
+        </div>
+        <div class="rv">
+          <p class="lede">Every family we meet asks the same question three different ways: <span class="italic">what happens to us while this is going on?</span> Nobody wants a beautiful kitchen badly enough to lose half a year of normal life for it.</p>
+        </div>
+      </div>
+
+      <div class="grid g-3 mt-l">
+        <div class="card rv"><span class="card__ico">01</span><h3 class="d4">Nowhere to feed anyone</h3><p>Six weeks of takeout on the coffee table. It gets old by day four, and it quietly costs more than most families expect.</p></div>
+        <div class="card rv"><span class="card__ico">02</span><h3 class="d4">Strangers, unannounced</h3><p>A different crew every morning, nobody who can answer a question, and no one who tells you when it will be quiet again.</p></div>
+        <div class="card rv"><span class="card__ico">03</span><h3 class="d4">The timeline that slides</h3><p>"Another two weeks" repeated until the holidays arrive and the island is still wrapped in plastic sheeting.</p></div>
+        <div class="card rv"><span class="card__ico">04</span><h3 class="d4">Storage that still doesn't fit</h3><p>A brand-new kitchen with the same countertop clutter, because nobody ever asked what you actually own.</p></div>
+        <div class="card rv"><span class="card__ico">05</span><h3 class="d4">A room designed for photos</h3><p>Beautiful, and faintly hostile to real life. Nowhere to drop a schoolbag, nowhere for two people to work at once.</p></div>
+        <div class="card rv"><span class="card__ico">06</span><h3 class="d4">Decisions made under pressure</h3><p>Choosing tile in a showroom on a Saturday with a deadline is how families end up with a kitchen nobody chose.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 04 · The Promise | full-width | clay | risk reversal -->
+  <section class="section section--clay">
+    <div class="shell">
+      <div class="grid g-asym" style="align-items:center">
+        <div class="rv">
+          <p class="eyebrow eyebrow--light">Our promise to your family</p>
+          <h2 class="d2 split">The Kitchen-in-Use Promise.</h2>
+        </div>
+        <div class="rv">
+          <p class="lede" style="color:rgba(255,253,249,.9)">Before a single cabinet comes out, we build you a temporary kitchen — a working sink, your refrigerator, a microwave and counter space, in whatever room suits your house. It stays until the new kitchen is genuinely usable.</p>
+          <p class="mt-s" style="color:rgba(255,253,249,.78)">It is written into every contract, it costs you nothing extra, and in nineteen years we have never once skipped it. Four hundred and thirty families have cooked dinner at home through their own remodel.</p>
+          <ul class="ticks mt-m" style="color:rgba(255,253,249,.92)">
+            <li><i>✓</i><span>Working sink and refrigerator, from day one</span></li>
+            <li><i>✓</i><span>Dust walls sealed before demolition, not after</span></li>
+            <li><i>✓</i><span>One project lead you can text by name</span></li>
+            <li><i>✓</i><span>A written weekly schedule on your fridge</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 05 · Transformation | full-width | before/after slider -->
+  <section class="section">
+    <div class="shell">
+      <div class="shead">
+        <div class="rv">
+          <p class="eyebrow">The transformation</p>
+          <h2 class="d2 split">The Bellamy family.<br>Larkspur, eleven weeks.</h2>
+        </div>
+        <div class="rv">
+          <p class="lede">A 1979 kitchen closed off from everything, with a peninsula that three people could not pass. We opened the wall to the family room, built white oak cabinetry to the ceiling, and gave two working parents a proper island. Drag to see it.</p>
+        </div>
+      </div>
+
+      <figure class="ba rv clip mt-l">
+        <img src="../assets/media/img/h-before-trad-1600.webp" alt="Before: a dated 1979 kitchen with tiled backsplash and closed-in peninsula" width="1600" height="1068" loading="lazy" decoding="async">
+        <img class="ba__after" src="../assets/media/img/hh-kitchen-open-1600.webp" alt="An open-plan family kitchen with an island and ceiling-height cabinetry" width="1600" height="1067" loading="lazy" decoding="async">
+        <span class="ba__tag ba__tag--b">Before</span>
+        <span class="ba__tag ba__tag--a">After</span>
+        <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Reveal the finished Bellamy kitchen — drag or use arrow keys">
+        <span class="ba__handle" aria-hidden="true"></span>
+      </figure>
+      <p class="muted mt-s" style="font-size:.875rem">Larkspur · 11 weeks on site · Wall opened to family room · White oak inset cabinetry · Honed quartz</p>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 06 · Services | full-width | 2-col image cards -->
+  <section class="section section--stone">
+    <div class="shell">
+      <div class="shead">
+        <div class="rv"><p class="eyebrow">What we do</p><h2 class="d2 split">Everything, by one studio.</h2></div>
+        <div class="rv"><p class="lede">Design, cabinetry and construction live under one roof on Miller Avenue — so there is never a moment where one trade blames another.</p></div>
+      </div>
+
+      <div class="grid g-3 mt-l">
+        <a class="pitem rv" href="kitchen-remodeling.html">
+          <div class="fig fig--arch fig--tall"><img src="../assets/media/img/hh-kitchen-light-800.webp" srcset="../assets/media/img/hh-kitchen-light-800.webp 800w, ../assets/media/img/hh-kitchen-light-1600.webp 1600w" sizes="(max-width:900px) 100vw, 32vw" alt="A bright family kitchen with natural light across the worktops" width="1600" height="1032" loading="lazy" decoding="async"></div>
+          <div class="pitem__meta"><h3 class="d4">Full Kitchen Remodeling</h3><span>01</span></div>
+          <p class="mt-s" style="color:var(--ink-70)">Walls, light, storage and finishes — rebuilt around how your household actually moves through the morning.</p>
+        </a>
+        <a class="pitem rv" href="kitchen-remodeling.html#cabinetry">
+          <div class="fig fig--arch fig--tall"><img src="../assets/media/img/hh-detail-shelf-800.webp" srcset="../assets/media/img/hh-detail-shelf-800.webp 800w, ../assets/media/img/hh-detail-shelf-1600.webp 1600w" sizes="(max-width:900px) 100vw, 32vw" alt="Open shelving detail in a Hearth &amp; Hollis kitchen" width="1600" height="2388" loading="lazy" decoding="async"></div>
+          <div class="pitem__meta"><h3 class="d4">Custom Cabinetry</h3><span>02</span></div>
+          <p class="mt-s" style="color:var(--ink-70)">Built in our Mill Valley shop, sized to what you own — the stand mixer, the platters, the lunchboxes, all of it.</p>
+        </a>
+        <a class="pitem rv" href="kitchen-remodeling.html#countertops">
+          <div class="fig fig--arch fig--tall"><img src="../assets/media/img/hh-detail-tap-800.webp" srcset="../assets/media/img/hh-detail-tap-800.webp 800w, ../assets/media/img/hh-detail-tap-1600.webp 1600w" sizes="(max-width:900px) 100vw, 32vw" alt="Tap and sink detail in a finished kitchen" width="1600" height="2388" loading="lazy" decoding="async"></div>
+          <div class="pitem__meta"><h3 class="d4">Countertops &amp; Surfaces</h3><span>03</span></div>
+          <p class="mt-s" style="color:var(--ink-70)">Surfaces chosen for families first: forgiving with juice, homework, hot pans and a decade of Sunday mornings.</p>
+        </a>
+      </div>
+      <div class="btn-row mt-l"><a class="btn btn--primary mag" href="kitchen-remodeling.html">Explore kitchen remodeling</a></div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 07 · Portfolio | full-width | asymmetric gallery -->
+  <section class="section">
+    <div class="shell">
+      <div class="shead">
+        <div class="rv"><p class="eyebrow">Our kitchens</p><h2 class="d2 split">Four hundred and thirty Marin families.</h2></div>
+        <div class="rv">
+          <p class="lede">No two are alike, because no two households cook alike. These are a few from the last two years.</p>
+          <a class="tlink mt-m" href="portfolio.html">See every kitchen <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="grid g-asym mt-l" style="align-items:center">
+        <div class="rv-l">
+          <div class="fig fig--wide"><img src="../assets/media/img/hh-kitchen-tall-800.webp" srcset="../assets/media/img/hh-kitchen-tall-800.webp 800w, ../assets/media/img/hh-kitchen-tall-1600.webp 1600w" sizes="(max-width:1024px) 100vw, 42vw" alt="A Hearth &amp; Hollis kitchen seen from the dining side" width="1600" height="2388" loading="lazy" decoding="async"></div>
+          <div class="pitem__meta"><h3 class="d4">The Ashworth kitchen</h3><span>Tiburon</span></div>
+        </div>
+        <div class="grid g-2 rv">
+          <div>
+            <div class="fig fig--sq"><img src="../assets/media/img/hh-kitchen-main-800.webp" alt="A finished Hearth &amp; Hollis family kitchen in Marin County" width="1600" height="1052" loading="lazy" decoding="async"></div>
+            <div class="pitem__meta"><h3 class="d4">The Okafor kitchen</h3><span>Mill Valley</span></div>
+          </div>
+          <div>
+            <div class="fig fig--sq"><img src="../assets/media/img/hh-dining-tall-800.webp" alt="The dining end of a Hearth &amp; Hollis kitchen" width="1600" height="2388" loading="lazy" decoding="async"></div>
+            <div class="pitem__meta"><h3 class="d4">The Reyes kitchen</h3><span>Corte Madera</span></div>
+          </div>
+          <div>
+            <div class="fig fig--sq"><img src="../assets/media/img/hh-kitchen-sun-800.webp" alt="Morning light across a finished family kitchen" width="1600" height="1067" loading="lazy" decoding="async"></div>
+            <div class="pitem__meta"><h3 class="d4">The Brennan kitchen</h3><span>Larkspur</span></div>
+          </div>
+          <div>
+            <div class="fig fig--sq"><img src="../assets/media/img/hh-detail-shelf-800.webp" alt="Open shelving detail in a Hearth &amp; Hollis kitchen" width="1600" height="2388" loading="lazy" decoding="async"></div>
+            <div class="pitem__meta"><h3 class="d4">The Salas kitchen</h3><span>Sausalito</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 08 · Process | full-width | walnut | 5 steps -->
+  <section class="section section--walnut">
+    <div class="shell">
+      <div class="shead">
+        <div class="rv"><p class="eyebrow eyebrow--light">How it goes</p><h2 class="d2 split">Five steps, and you always know which one you're in.</h2></div>
+        <div class="rv"><p class="lede">Nobody enjoys not knowing what happens next. So we tell you, in writing, before anything starts.</p></div>
+      </div>
+
+      <div class="steps mt-l">
+        <div class="step rv"><span class="step__n">1</span><div><h3 class="d3">An evening at your table</h3><p>Ninety minutes in your kitchen around dinner time, on purpose. We watch where the bottleneck is, where homework lands, who reaches over whom. Free, and you keep the written range we leave behind.</p></div></div>
+        <div class="step rv"><span class="step__n">2</span><div><h3 class="d3">Design you can walk through</h3><p>Full plans plus a 3D walkthrough you can send to your mother. We revise until it is right — there is no revision limit, because a kitchen you half-like is a bad outcome for both of us.</p></div></div>
+        <div class="step rv"><span class="step__n">3</span><div><h3 class="d3">Selections, in one afternoon</h3><p>Cabinetry, stone, tile, hardware and paint chosen together at the studio with everything laid out at once. No Saturday showroom marathons, no decisions made under pressure.</p></div></div>
+        <div class="step rv"><span class="step__n">4</span><div><h3 class="d3">Build — with your kitchen still working</h3><p>Temporary kitchen in, dust walls sealed, weekly written schedule on the fridge. One project lead, reachable by text, who is on your site every day.</p></div></div>
+        <div class="step rv"><span class="step__n">5</span><div><h3 class="d3">The first dinner</h3><p>We clean, style and photograph the room, then leave. Punch list closed within ten days, and we call at six months and again at two years to check how it is actually living.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 09 · Testimonials | full-width | video facade + quotes -->
+  <section class="section section--warm">
+    <div class="shell">
+      <div class="shead">
+        <div class="rv"><p class="eyebrow">Marin families</p><h2 class="d2 split">The part we're proudest of.</h2></div>
+        <div class="rv"><p class="lede">We ask every family the same thing a year later: is it still working for you?</p></div>
+      </div>
+
+      <div class="grid g-asym mt-l" style="align-items:start">
+        <div class="rv">
+          <button class="vfac" type="button" data-mp4="../assets/media/video/kitchen-sink.mp4" data-title="The Bellamy family — Larkspur" aria-label="Play the Bellamy family's story, Larkspur">
+            <img src="../assets/media/video/kitchen-sink.jpg" alt="Still from a filmed interview with the Bellamy family in their finished kitchen" width="1280" height="720" loading="lazy" decoding="async">
+            <span class="vfac__play" aria-hidden="true"><svg width="18" height="20" viewBox="0 0 18 20" fill="currentColor"><path d="M18 10 0 20V0z"/></svg></span>
+            <span class="vfac__label">The Bellamy family · 3 min</span>
+          </button>
+          <p class="mt-s" style="color:var(--ink-70)">"We cooked dinner at home every night except two. I still tell people that and they don't believe me."</p>
+        </div>
+
+        <div class="grid g-2">
+          <figure class="quote rv">
+            <blockquote>They asked what time my kids get home from school before they asked about my budget. That's when I knew.</blockquote>
+            <figcaption><span class="quote__av"><img src="../assets/media/img/hh-family-table-400.webp" alt="A family at the table in their new kitchen" width="1600" height="1067" loading="lazy" decoding="async"></span><span><b>Nadia &amp; Tom Bellamy</b>Larkspur · 2025</span></figcaption>
+          </figure>
+          <figure class="quote rv">
+            <blockquote>Eleven weeks, exactly as written. The schedule on the fridge never changed once. I've never had a trade do that.</blockquote>
+            <figcaption><span class="quote__av"><img src="../assets/media/img/hh-family-cook-400.webp" alt="A family cooking together in their finished kitchen" width="1600" height="1067" loading="lazy" decoding="async"></span><span><b>Priya Ashworth</b>Tiburon · 2025</span></figcaption>
+          </figure>
+          <figure class="quote rv">
+            <blockquote>Two years in and there is still not one thing I'd change. My sister has redone hers twice in that time.</blockquote>
+            <figcaption><span class="quote__av"><img src="../assets/media/img/hh-kitchen-main-400.webp" alt="A finished Hearth &amp; Hollis family kitchen in Marin County" width="1600" height="1052" loading="lazy" decoding="async"></span><span><b>Daniel Okafor</b>Mill Valley · 2024</span></figcaption>
+          </figure>
+          <figure class="quote rv">
+            <blockquote>The storage plan was the whole thing. Everything I own has a home now, and the counters just stay clear.</blockquote>
+            <figcaption><span class="quote__av"><img src="../assets/media/img/hh-detail-shelf-400.webp" alt="Open shelving detail in a Hearth &amp; Hollis kitchen" width="1600" height="2388" loading="lazy" decoding="async"></span><span><b>Marisol Reyes</b>Corte Madera · 2025</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 10 · About | full-width | asymmetric -->
+  <section class="section">
+    <div class="shell">
+      <div class="grid g-asym-r" style="align-items:center">
+        <div class="rv-l">
+          <p class="eyebrow">The studio</p>
+          <h2 class="d2 split">We are a family business that builds kitchens for families.</h2>
+          <p class="lede mt-m">Hearth &amp; Hollis began in 2007 when Ana Hollis, a cabinetmaker, and her brother-in-law Sam Hearth, a contractor, got tired of watching Marin families endure remodels that treated them as an obstacle.</p>
+          <p class="mt-s" style="color:var(--ink-70)">Nineteen years later the shop is still on Miller Avenue, Ana still signs off on every cabinet drawing, and we still cap the calendar so no family ever competes for attention. Our crew has been together an average of nine years — the person who tiles your backsplash has tiled four hundred before it.</p>
+          <dl class="dl mt-m">
+            <div><dt>Founded</dt><dd>2007 · Mill Valley, California</dd></div>
+            <div><dt>License</dt><dd>California CSLB #1049772 · Bonded &amp; insured</dd></div>
+            <div><dt>Team</dt><dd>14 people · 9-year average tenure</dd></div>
+            <div><dt>Warranty</dt><dd>5-year workmanship · lifetime cabinetry</dd></div>
+          </dl>
+        </div>
+        <div class="fig fig--blob rv clip"><img src="../assets/media/img/hh-family-cook-800.webp" srcset="../assets/media/img/hh-family-cook-800.webp 800w, ../assets/media/img/hh-family-cook-1600.webp 1600w" sizes="(max-width:1024px) 100vw, 40vw" alt="A family cooking together in their finished kitchen" width="1600" height="1067" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 11 · Financing | full-width | stone -->
+  <section class="section section--stone">
+    <div class="shell">
+      <div class="shead">
+        <div class="rv"><p class="eyebrow">Financing</p><h2 class="d2 split">So the budget conversation happens once, early, and kindly.</h2></div>
+        <div class="rv">
+          <p class="lede">The worst version of this is finding out in week nine that the island has to go. We would rather know your number on day one and design something you can genuinely afford to love.</p>
+          <div class="btn-row mt-m">
+            <a class="btn btn--primary mag" href="financing.html">See financing options</a>
+            <a class="btn btn--ghost" href="free-consultation.html">Get your written range</a>
+          </div>
+        </div>
+      </div>
+      <div class="stats mt-l">
+        <div class="rv"><b>0%</b><span>APR for 12 months, OAC</span></div>
+        <div class="rv"><b>120 mo</b><span>Fixed-rate terms available</span></div>
+        <div class="rv"><b>3 min</b><span>Application, soft credit pull</span></div>
+        <div class="rv"><b>$0</b><span>Impact on your credit score</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 12 · FAQ | full-width | AEO-optimised accordion -->
+  <section class="section section--warm">
+    <div class="shell">
+      <div class="shead">
+        <div class="rv"><p class="eyebrow">Questions</p><h2 class="d2 split">Everything families ask us first.</h2></div>
+        <div class="rv"><p class="lede">Real numbers, real timelines. If we don't know, we say so.</p></div>
+      </div>
+
+      <div class="acc mt-l">
+        <details class="rv" open>
+          <summary><h3 style="font:inherit;margin:0;color:inherit">How much does a kitchen remodel cost in Marin County?</h3></summary>
+          <div class="acc__body"><p>Most Marin County kitchen remodels land between <b>$65,000 and $180,000</b>. A refresh keeping the existing layout usually runs $65,000–$95,000, while opening the kitchen to a family room and rebuilding storage runs $110,000–$180,000. We give every family a written range at the first visit, free.</p></div>
+        </details>
+        <details class="rv">
+          <summary><h3 style="font:inherit;margin:0;color:inherit">Can we live at home during a kitchen remodel?</h3></summary>
+          <div class="acc__body"><p>Yes, and almost every family does. Our <b>Kitchen-in-Use Promise</b> means you keep a working sink, your refrigerator and a microwave in a temporary kitchen from day one until the new room is ready. We set it up before demolition, at no extra cost.</p></div>
+        </details>
+        <details class="rv">
+          <summary><h3 style="font:inherit;margin:0;color:inherit">How long does a kitchen remodel take?</h3></summary>
+          <div class="acc__body"><p><b>Four to six months</b> from first sketch to finished room — five to eight weeks of design and selections, eight to twelve weeks building cabinetry, six to ten weeks on site. You get a written weekly schedule so you always know who is in your house and when.</p></div>
+        </details>
+        <details class="rv">
+          <summary><h3 style="font:inherit;margin:0;color:inherit">Do you help with the design, or do we need our own designer?</h3></summary>
+          <div class="acc__body"><p>Design is included. Every project starts with a designer who spends an evening watching how your family actually uses the kitchen — where homework happens, where the dog bowl lives, who cooks together. You are also welcome to bring your own designer; we work alongside them happily.</p></div>
+        </details>
+        <details class="rv">
+          <summary><h3 style="font:inherit;margin:0;color:inherit">Do you offer financing for kitchen remodeling?</h3></summary>
+          <div class="acc__body"><p>Yes — <b>0% APR for 12 months</b> on approved credit, and fixed terms up to 120 months. Checking your rate takes about three minutes and uses a soft credit pull, so it does not affect your credit score. <a href="financing.html">See financing →</a></p></div>
+        </details>
+        <details class="rv">
+          <summary><h3 style="font:inherit;margin:0;color:inherit">Which areas of Marin do you serve?</h3></summary>
+          <div class="acc__body"><p>We work throughout <b>Mill Valley, Tiburon, Belvedere, Larkspur, Corte Madera, Sausalito, Ross, Kentfield and San Rafael</b>. Our studio is on Miller Avenue in Mill Valley, so most projects sit within fifteen minutes of the shop. <a href="contact.html">See service areas →</a></p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 13 · Final CTA | full-width | clay -->
+  <section class="section section--clay">
+    <div class="shell center">
+      <p class="eyebrow eyebrow--light" style="justify-content:center">Come and sit at your own table with us</p>
+      <h2 class="d1 maxch split" style="margin-inline:auto;color:var(--warm)">Let's design the room where the next ten years happen.</h2>
+      <p class="lede mt-m maxch-s" style="margin-inline:auto;color:rgba(255,253,249,.9)">Ninety minutes, in your kitchen, around dinner time. It costs nothing, you keep the written range, and there is no follow-up visit unless you ask for one.</p>
+      <div class="btn-row mt-l" style="justify-content:center">
+        <a class="btn btn--onlight mag" href="free-consultation.html">Schedule Your Free Kitchen Design Consultation</a>
+        <a class="btn btn--ghost-light" href="portfolio.html">View Our Transformations</a>
+      </div>
+      <p class="mt-m" style="font-size:.875rem;color:rgba(255,253,249,.72)">We take six families a quarter · Four spots left for spring 2027</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- GHL SECTION 14 · Footer -->
+<footer class="ftr">
+  <div class="shell">
+    <div class="ftr__top">
+      <div>
+        <a class="brand" href="index.html" style="color:var(--cream)"><span class="brand__n">Hearth &amp; Hollis</span><span class="brand__t">Kitchen Studio · Mill Valley</span></a>
+        <p class="mt-m" style="color:rgba(250,246,239,.72);max-width:32ch">A family business building kitchens for Marin families since 2007. Your kitchen stays usable the entire time — that's in writing.</p>
+      </div>
+      <div><h3>Kitchens</h3><ul>
+        <li><a href="kitchen-remodeling.html">Kitchen Remodeling</a></li>
+        <li><a href="kitchen-remodeling.html#cabinetry">Custom Cabinetry</a></li>
+        <li><a href="kitchen-remodeling.html#countertops">Countertops</a></li>
+        <li><a href="kitchen-remodeling.html#design">Kitchen Design</a></li>
+      </ul></div>
+      <div><h3>Studio</h3><ul>
+        <li><a href="portfolio.html">Our Kitchens</a></li>
+        <li><a href="financing.html">Financing</a></li>
+        <li><a href="contact.html">Visit Us &amp; Service Areas</a></li>
+        <li><a href="free-consultation.html">Free Consultation</a></li>
+      </ul></div>
+      <div><h3>Find us</h3><ul>
+        <li>411 Miller Avenue<br>Mill Valley, CA 94941</li>
+        <li><a href="tel:+14155550188">(415) 555-0188</a></li>
+        <li><a href="mailto:hello@hearthandhollis.example">hello@hearthandhollis.example</a></li>
+        <li>Mon–Fri 9:00–17:00</li>
+      </ul></div>
+    </div>
+    <div class="ftr__bot">
+      <span>© <span data-year>2026</span> Hearth &amp; Hollis Kitchen Studio · CSLB #1049772</span>
+      <span>Mill Valley · Tiburon · Belvedere · Larkspur · Corte Madera · Sausalito · Ross · San Rafael</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a href="tel:+14155550188">Call us</a>
+  <a href="free-consultation.html">Book a visit</a>
+</div>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

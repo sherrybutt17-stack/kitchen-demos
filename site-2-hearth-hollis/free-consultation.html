@@ -1,0 +1,218 @@
+<!doctype html>
+<!--
+  ██  DO NOT PASTE THIS FILE INTO GOHIGHLEVEL  ██
+
+  This is the EDITABLE SOURCE. Its CSS and JavaScript live in separate files
+  (see the <link> and <script> tags below), which do not exist inside GHL —
+  paste this and you get unstyled plain text.
+
+  Paste the matching file from:   PASTE-INTO-GHL/
+  That version has the CSS, the JavaScript and every image embedded in the file.
+
+  Edit here, then run:            python3 scripts/build.py
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design Your Kitchen — Free Consultation | Hearth &amp; Hollis, Mill Valley</title>
+<meta name="description" content="Ninety minutes at your own table, around dinner time. Free, with a written investment range you keep — and no follow-up visit unless you ask for one.">
+<link rel="canonical" href="https://hearthandhollis.example/free-consultation.html">
+<meta name="robots" content="noindex, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Design Your Kitchen — Free Consultation | Hearth &amp; Hollis">
+<meta property="og:description" content="Ninety minutes at your table, around dinner time. Free, and you keep the written range.">
+<meta property="og:image" content="https://hearthandhollis.example/assets/media/img/hh-kitchen-open-1200.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  /* Landing page: no navigation, no exits. The quiz is the only destination. */
+  .lp { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,.9fr); gap: clamp(2rem,5vw,4.5rem); align-items: start; }
+  @media (max-width: 980px) { .lp { grid-template-columns: 1fr; } }
+  /* 4 stat columns inside a half-width column starve each cell; the numerals are
+     sized in vw, so they do not shrink with it. Two-across restores the fit. */
+  .lp .stats { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .lp__form { position: sticky; top: 1.5rem; }
+  @media (max-width: 980px) { .lp__form { position: static; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#quiz">Skip to the form</a>
+
+<!-- GHL SECTION 00 · LP header | logo + phone only, no navigation -->
+<header class="lphdr">
+  <div class="shell lphdr__in">
+    <span class="brand"><span class="brand__n">Hearth &amp; Hollis</span><span class="brand__t">Kitchen Studio · Mill Valley</span></span>
+    <a class="tlink" href="tel:+14155550188">(415) 555-0188</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- GHL SECTION 01 · LP hero + multi-step quiz | 2-col → 1-col @980 -->
+  <section class="section">
+    <div class="shell lp">
+
+      <div>
+        <p class="eyebrow rv">Free · No obligation · No follow-up visit</p>
+        <h1 class="d2 rv">Let's design the room where the next ten years happen.</h1>
+        <p class="lede mt-m rv">A Hearth &amp; Hollis designer comes to your kitchen at dinner time — on purpose, because a kitchen at 6pm tells the truth. Ninety minutes later you have a written investment range, an honest read on your layout, and no obligation whatsoever.</p>
+
+        <ul class="ticks mt-l rv">
+          <li><i>✓</i><span><b>A written investment range</b> — yours to keep, whether or not you hire us.</span></li>
+          <li><i>✓</i><span><b>An honest layout answer.</b> If renovating is enough, we say so — it costs you less and us too.</span></li>
+          <li><i>✓</i><span><b>The Kitchen-in-Use Promise explained</b> — how your family keeps cooking through the whole build.</span></li>
+          <li><i>✓</i><span><b>No follow-up visit</b> unless you ask. One email a week later, and that is the entire sequence.</span></li>
+        </ul>
+
+        <div class="stats mt-l rv">
+          <div><b>19</b><span>Years in Marin</span></div>
+          <div><b>430</b><span>Kitchens finished</span></div>
+          <div><b>4.9★</b><span>214 Google reviews</span></div>
+          <div><b>100%</b><span>Kept cooking at home</span></div>
+        </div>
+
+        <figure class="quote mt-l rv">
+          <blockquote>They asked what time my kids get home from school before they asked about my budget. That's when I knew.</blockquote>
+          <figcaption><span class="quote__av"><img src="../assets/media/img/hh-family-table-400.webp" alt="A family at the table in their new kitchen" width="1600" height="1067" loading="lazy" decoding="async"></span><span><b>Nadia &amp; Tom Bellamy</b>Larkspur · 2025</span></figcaption>
+        </figure>
+
+        <div class="fig fig--arch fig--wide mt-l rv">
+          <img src="../assets/media/img/hh-kitchen-open-800.webp" srcset="../assets/media/img/hh-kitchen-open-800.webp 800w, ../assets/media/img/hh-kitchen-open-1600.webp 1600w" sizes="(max-width:980px) 100vw, 50vw" alt="An open-plan family kitchen with an island and ceiling-height cabinetry" width="1600" height="1067" loading="lazy" decoding="async">
+        </div>
+      </div>
+
+      <!-- GHL: replace with a native GHL multi-step form. Field names map 1:1. -->
+      <div class="lp__form">
+        <div class="quiz" id="quiz" data-quiz>
+          <div class="quiz__bar" role="presentation"><i></i></div>
+
+          <form class="form" data-lead="thank-you.html" novalidate>
+
+            <!-- step 1 -->
+            <div class="quiz__step" data-active="true">
+              <p class="quiz__count">Question 1 of 5</p>
+              <h2 class="d3 quiz__q">What's the kitchen doing wrong today?</h2>
+              <fieldset class="field" style="border:0;padding:0;margin:0">
+                <legend class="vh">What's the kitchen doing wrong today?</legend>
+                <div class="pills">
+                  <input type="radio" id="p1" name="problem" value="layout" data-required><label for="p1">The layout fights us</label>
+                  <input type="radio" id="p2" name="problem" value="storage" data-required><label for="p2">Nowhere near enough storage</label>
+                  <input type="radio" id="p3" name="problem" value="dated" data-required><label for="p3">It just looks dated</label>
+                  <input type="radio" id="p4" name="problem" value="closed" data-required><label for="p4">It's closed off from everyone</label>
+                  <input type="radio" id="p5" name="problem" value="all" data-required><label for="p5">Honestly — all of it</label>
+                </div>
+                <p class="form__note" data-quiz-error hidden style="color:var(--clay-dk);font-weight:700">Please choose one to continue.</p>
+              </fieldset>
+            </div>
+
+            <!-- step 2 -->
+            <div class="quiz__step">
+              <p class="quiz__count">Question 2 of 5</p>
+              <h2 class="d3 quiz__q">Who lives in the house?</h2>
+              <fieldset class="field" style="border:0;padding:0;margin:0">
+                <legend class="vh">Who lives in the house?</legend>
+                <div class="pills">
+                  <input type="radio" id="h1" name="household" value="couple" data-required><label for="h1">Just the two of us</label>
+                  <input type="radio" id="h2" name="household" value="young" data-required><label for="h2">Young children</label>
+                  <input type="radio" id="h3" name="household" value="teens" data-required><label for="h3">Teenagers</label>
+                  <input type="radio" id="h4" name="household" value="multi" data-required><label for="h4">Multi-generational</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <!-- step 3 -->
+            <div class="quiz__step">
+              <p class="quiz__count">Question 3 of 5</p>
+              <h2 class="d3 quiz__q">Roughly what have you set aside?</h2>
+              <fieldset class="field" style="border:0;padding:0;margin:0">
+                <legend class="vh">Roughly what have you set aside?</legend>
+                <div class="pills">
+                  <input type="radio" id="b1" name="budget" value="under-65" data-required><label for="b1">Under $65k</label>
+                  <input type="radio" id="b2" name="budget" value="65-110" data-required><label for="b2">$65k – $110k</label>
+                  <input type="radio" id="b3" name="budget" value="110-180" data-required><label for="b3">$110k – $180k</label>
+                  <input type="radio" id="b4" name="budget" value="180-plus" data-required><label for="b4">$180k+</label>
+                  <input type="radio" id="b5" name="budget" value="unsure" data-required><label for="b5">Not sure yet</label>
+                </div>
+                <p class="form__note mt-s">There is no wrong answer here — it only helps us design something realistic from the first sketch.</p>
+              </fieldset>
+            </div>
+
+            <!-- step 4 -->
+            <div class="quiz__step">
+              <p class="quiz__count">Question 4 of 5</p>
+              <h2 class="d3 quiz__q">When would you like to be cooking in it?</h2>
+              <fieldset class="field" style="border:0;padding:0;margin:0">
+                <legend class="vh">When would you like to be cooking in it?</legend>
+                <div class="pills">
+                  <input type="radio" id="t1" name="timeline" value="asap" data-required><label for="t1">As soon as possible</label>
+                  <input type="radio" id="t2" name="timeline" value="6mo" data-required><label for="t2">Within 6 months</label>
+                  <input type="radio" id="t3" name="timeline" value="year" data-required><label for="t3">Within a year</label>
+                  <input type="radio" id="t4" name="timeline" value="exploring" data-required><label for="t4">Just exploring</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <!-- step 5 -->
+            <div class="quiz__step">
+              <p class="quiz__count">Last one</p>
+              <h2 class="d3 quiz__q">Where should we come and see you?</h2>
+              <div class="field--2">
+                <div class="field"><label for="firstName">First name</label><input id="firstName" name="firstName" type="text" autocomplete="given-name" required></div>
+                <div class="field"><label for="lastName">Last name</label><input id="lastName" name="lastName" type="text" autocomplete="family-name" required></div>
+              </div>
+              <div class="field mt-s"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+              <div class="field mt-s"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+              <div class="field mt-s">
+                <label for="city">Town</label>
+                <select id="city" name="city" required>
+                  <option value="">Select…</option>
+                  <option>Mill Valley</option><option>Tiburon</option><option>Belvedere</option>
+                  <option>Larkspur</option><option>Corte Madera</option><option>Sausalito</option>
+                  <option>Ross</option><option>Kentfield</option><option>San Rafael</option>
+                  <option>Elsewhere in Marin</option>
+                </select>
+              </div>
+              <p class="form__note mt-s">We reply within one business day with three evening times to choose from.</p>
+            </div>
+
+            <div class="quiz__nav">
+              <button class="btn btn--ghost" type="button" data-quiz-prev>Back</button>
+              <button class="btn btn--clay" type="button" data-quiz-next>Continue</button>
+              <button class="btn btn--primary mag" type="submit" data-quiz-submit hidden>Book my consultation</button>
+            </div>
+          </form>
+
+          <p class="form__note mt-m">We never sell or share your details. One email a week later is the entire follow-up.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GHL SECTION 02 · Risk reversal -->
+  <section class="section section--clay section--tight">
+    <div class="shell center">
+      <p class="eyebrow eyebrow--light" style="justify-content:center">Our promise</p>
+      <h2 class="d3 maxch" style="margin-inline:auto;color:var(--warm)">If renovating is enough, we will tell you — even though a remodel would pay us more.</h2>
+      <p class="lede mt-m maxch-s" style="margin-inline:auto;color:rgba(255,253,249,.9)">About one visit in seven ends with us recommending something smaller than the family expected, or nothing at all. That is not a loss. It is exactly why the other six trust the drawing.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ftr" style="padding-block:3rem 2rem">
+  <div class="shell">
+    <div class="ftr__bot" style="margin-top:0;padding-top:0;border:0">
+      <span>© <span data-year>2026</span> Hearth &amp; Hollis Kitchen Studio · CSLB #1049772</span>
+      <span>411 Miller Avenue, Mill Valley, CA 94941 · <a href="tel:+14155550188">(415) 555-0188</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
