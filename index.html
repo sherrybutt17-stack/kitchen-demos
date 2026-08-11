@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Three Kitchen Remodeling Brands — Demo Launcher</title>
-<meta name="description" content="Three complete kitchen remodeling websites, each built as if by a different agency. Open any of them, or the GHL-ready build.">
+<title>Four Brands, One Toolchain — Demo Launcher</title>
+<meta name="description" content="Four complete websites — three kitchen remodeling brands and one security firm — each built as if by a different agency. Open any of them, or the GHL-ready build.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,9 +22,10 @@
   .note{margin-top:1.5rem;padding:1rem 1.25rem;border:1px solid var(--line);color:#a8a8a8;
         font-size:.875rem;max-width:70ch}
   .note code{color:#e0b878;font-size:.8125rem}
-  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,2vw,1.75rem);
+  .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(1rem,2vw,1.75rem);
         margin-top:clamp(2.5rem,5vw,4rem)}
-  @media(max-width:960px){.grid{grid-template-columns:1fr}}
+  @media(max-width:1400px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
   .card{display:flex;flex-direction:column;text-decoration:none;border:1px solid var(--line);
         overflow:hidden;transition:transform .5s var(--e),border-color .5s var(--e)}
   .card:hover{transform:translateY(-6px)}
@@ -44,8 +45,9 @@
             border-top:1px solid var(--line);padding-top:1.25rem;transition:gap .35s var(--e)}
   .card:hover .card__go{gap:1.1rem}
   .c1:hover{border-color:#c8a96a}.c1 .card__go{color:#c8a96a}
-  .c2:hover{border-color:#8a9a7b}.c2 .card__go{color:#a8b89a}
+  .c2:hover{border-color:#b08968}.c2 .card__go{color:#c99f79}
   .c3:hover{border-color:#b87333}.c3 .card__go{color:#d99a5e}
+  .c4:hover{border-color:#4d8dff}.c4 .card__go{color:#7fb0ff}
   footer{border-top:1px solid var(--line);color:#7a7a7a;font-size:.8125rem}
   footer ul{margin:.75rem 0 0;padding-left:1.1rem}
 </style>
@@ -54,9 +56,9 @@
 
 <div class="shell">
   <header>
-    <p>Kitchen remodeling · three brands · 21 pages</p>
-    <h1>Three websites. Three agencies.<br>One brief.</h1>
-    <p class="lede">Each of these is a complete seven-page site with its own brand, positioning, customer, colour system, typography, layout philosophy and conversion strategy. No CSS, JavaScript or design token is shared between them — the divergence is the point.</p>
+    <p>Four brands · two industries · 28 pages</p>
+    <h1>Four websites. Four agencies.<br>One toolchain.</h1>
+    <p class="lede">Each of these is a complete seven-page site with its own brand, positioning, customer, colour system, typography, layout philosophy and conversion strategy. No CSS, JavaScript or design token is shared between them — the divergence is the point. Three are kitchen remodeling; the fourth is a security firm, built to prove the pattern travels.</p>
     <div class="note">
       These cards open the <b>source</b> sites. The GoHighLevel-ready versions live in
       <code>dist/</code> — same pages with all CSS, JavaScript and images inlined as base64,
@@ -88,7 +90,7 @@
 
     <a class="card c2" href="site-2-hearth-hollis/index.html">
       <div class="card__sw">
-        <i style="background:#faf6ef"></i><i style="background:#8a9a7b"></i>
+        <i style="background:#faf6ef"></i><i style="background:#b08968"></i>
         <i style="background:#5c4433"></i><i style="background:#a87c4f"></i>
       </div>
       <div class="card__b">
@@ -107,7 +109,7 @@
 
     <a class="card c3" href="site-3-obsidian/index.html">
       <div class="card__sw">
-        <i style="background:#0a0a0a"></i><i style="background:#0f3d2e"></i>
+        <i style="background:#0a0a0a"></i><i style="background:#101a26"></i>
         <i style="background:#b87333"></i><i style="background:#ede8e0"></i>
       </div>
       <div class="card__b">
@@ -124,6 +126,25 @@
       </div>
     </a>
 
+    <a class="card c4" href="site-4-vantage/index.html">
+      <div class="card__sw">
+        <i style="background:#06070a"></i><i style="background:#0d1117"></i>
+        <i style="background:#4d8dff"></i><i style="background:#e8eaed"></i>
+      </div>
+      <div class="card__b">
+        <p class="card__n">Site 04</p>
+        <h2>VANTAGE<span>Security Systems, DFW</span></h2>
+        <p>A different industry entirely — home and commercial security. A command surface: near-black glass, a hairline column grid, mono data readouts and luminous 1px lit edges. Its centrepiece, The Perimeter, is a live canvas coverage plan whose camera cones are ray-marched and clipped against the buildings, so the coverage percentage is measured rather than claimed.</p>
+        <dl>
+          <div><dt>Market</dt><dd>Westlake &amp; Dallas–Fort Worth, TX</dd></div>
+          <div><dt>Customer</dt><dd>$1.5M+ homes, plus commercial</dd></div>
+          <div><dt>Type</dt><dd>Sora · JetBrains Mono</dd></div>
+          <div><dt>Feeling</dt><dd>Instrument · night watch · certainty</dd></div>
+        </dl>
+        <span class="card__go">Open Vantage <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+
   </div>
 
   <footer class="shell" style="padding-inline:0;padding-bottom:0;margin-top:clamp(3rem,6vw,5rem)">
@@ -131,7 +152,7 @@
     <ul>
       <li><code style="color:#e0b878">python3 -m http.server 8080</code> from this folder, then visit <code style="color:#e0b878">http://localhost:8080</code></li>
       <li>All brand names, addresses, phone numbers, licence numbers, review counts and testimonials are sample data.</li>
-      <li>Photography: Shopify Burst (CC0) and Unsplash. Video: Mixkit Free License. See <code style="color:#e0b878">assets/media/CREDITS.json</code>.</li>
+      <li>Photography: Shopify Burst (CC0), Unsplash and Pexels. Video: Mixkit Free License. See <code style="color:#e0b878">assets/media/CREDITS.json</code>.</li>
     </ul>
   </footer>
 </div>

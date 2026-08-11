@@ -1,170 +1,310 @@
 {
- "n-house-desert": {
-  "src": "https://burst.shopifycdn.com/photos/luxurious-home-in-the-desert.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "n-kitchen-wide": {
-  "src": "https://burst.shopifycdn.com/photos/full-view-of-modern-kitchen.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "n-kitchen-white": {
-  "src": "https://burst.shopifycdn.com/photos/modern-white-tiled-kitchen.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "n-kitchen-island": {
-  "src": "https://burst.shopifycdn.com/photos/new-modern-kitchen-with-large-island.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "n-marble-bw": {
-  "src": "https://burst.shopifycdn.com/photos/black-and-white-marble-texture.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "n-marble-abstract": {
-  "src": "https://burst.shopifycdn.com/photos/abstract-white-marble-and-gold.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "n-counter-minimal": {
-  "src": "https://burst.shopifycdn.com/photos/a-counter-and-accompanying-stool.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "n-counter-rose": {
-  "src": "https://burst.shopifycdn.com/photos/counter-top-at-home.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "n-quarry": {
-  "src": "https://burst.shopifycdn.com/photos/top-of-a-marble-quarry.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "n-cabinetry-panel": {
-  "src": "https://burst.shopifycdn.com/photos/modern-wood-panelled-wall-shelving.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "n-before-bare": {
-  "src": "https://burst.shopifycdn.com/photos/bare-kitchen.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "n-kitchen-oak": {
-  "src": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=2000&q=80&auto=format&fit=crop",
-  "credit": "Unsplash"
- },
- "n-kitchen-dark-min": {
-  "src": "https://images.unsplash.com/photo-1600607686527-6fb886090705?w=2000&q=80&auto=format&fit=crop",
-  "credit": "Unsplash"
- },
- "n-house-dusk": {
-  "src": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=2000&q=80&auto=format&fit=crop",
-  "credit": "Unsplash"
- },
- "h-kitchen-green": {
-  "src": "https://burst.shopifycdn.com/photos/country-styled-modern-kitchen.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "h-kitchen-shaker": {
-  "src": "https://burst.shopifycdn.com/photos/white-kitchen-with-window.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "h-family-kitchen": {
-  "src": "https://burst.shopifycdn.com/photos/family-time-in-the-kitchen.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "h-family-table": {
-  "src": "https://burst.shopifycdn.com/photos/parents-and-two-daughters-in-family-room.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "h-dining-wood": {
-  "src": "https://burst.shopifycdn.com/photos/natural-wooden-dining.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "h-dining-warm": {
-  "src": "https://burst.shopifycdn.com/photos/open-door-in-dining-area-of-home.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "h-sunlight": {
-  "src": "https://burst.shopifycdn.com/photos/sunlight-creeps-through-a-bright-living-room.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "h-shelf-styling": {
-  "src": "https://burst.shopifycdn.com/photos/beautiful-kitchen-utensils-in-bright-wooden-kitchen.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "h-morning-pour": {
-  "src": "https://burst.shopifycdn.com/photos/a-morning-pour-on-the-kitchen-counter.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "h-before-trad": {
-  "src": "https://burst.shopifycdn.com/photos/kitchen-counter-and-cabinets.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "h-kitchen-sage": {
-  "src": "https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=2000&q=80&auto=format&fit=crop",
-  "credit": "Unsplash"
- },
- "h-kitchen-stools": {
-  "src": "https://images.unsplash.com/photo-1556912167-f556f1f39fdf?w=2000&q=80&auto=format&fit=crop",
-  "credit": "Unsplash"
- },
- "h-faucet-gold": {
-  "src": "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=2000&q=80&auto=format&fit=crop",
-  "credit": "Unsplash"
- },
- "h-living-warm": {
-  "src": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=2000&q=80&auto=format&fit=crop",
-  "credit": "Unsplash"
- },
- "o-kitchen-dark": {
-  "src": "https://burst.shopifycdn.com/photos/kitchen-living.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "o-range-dark": {
-  "src": "https://burst.shopifycdn.com/photos/gas-cooking-range-in-a-large-kitchen.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "o-kitchen-navy": {
-  "src": "https://burst.shopifycdn.com/photos/modern-updated-kitchen-interior.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "o-knife-detail": {
-  "src": "https://burst.shopifycdn.com/photos/japanese-kitchen-knife-and-tomato.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "o-wood-dark": {
-  "src": "https://burst.shopifycdn.com/photos/wooden-room.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "o-wood-corridor": {
-  "src": "https://burst.shopifycdn.com/photos/wood-covered-waiting-room.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "o-hardware": {
-  "src": "https://burst.shopifycdn.com/photos/ornate-lock-on-antique-cabinet.jpg?width=2000",
-  "credit": "Burst CC0"
- },
- "o-dining-glass": {
-  "src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=2000&q=80&auto=format&fit=crop",
-  "credit": "Unsplash"
- },
- "o-house-night": {
-  "src": "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=2000&q=80&auto=format&fit=crop",
-  "credit": "Unsplash"
- },
- "o-kitchen-mono": {
-  "src": "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=2000&q=80&auto=format&fit=crop",
-  "credit": "Unsplash"
- },
  "before-granite": {
-  "src": "https://burst.shopifycdn.com/photos/open-plan-kitchen-with-wooden-cabinets.jpg?width=2000",
-  "credit": "Burst CC0"
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/open-plan-kitchen-with-wooden-cabinets.jpg?width=2000"
  },
  "before-oldshelf": {
-  "src": "https://burst.shopifycdn.com/photos/old-kitchen-shelves.jpg?width=2000",
-  "credit": "Burst CC0"
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/old-kitchen-shelves.jpg?width=2000"
  },
- "tex-brick": {
-  "src": "https://burst.shopifycdn.com/photos/aged-wood-brick.jpg?width=2000",
-  "credit": "Burst CC0"
+ "h-before-trad": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/kitchen-counter-and-cabinets.jpg?width=2000"
+ },
+ "h-dining-warm": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/open-door-in-dining-area-of-home.jpg?width=2000"
+ },
+ "h-dining-wood": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/natural-wooden-dining.jpg?width=2000"
+ },
+ "h-family-kitchen": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/family-time-in-the-kitchen.jpg?width=2000"
+ },
+ "h-family-table": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/parents-and-two-daughters-in-family-room.jpg?width=2000"
+ },
+ "h-faucet-gold": {
+  "credit": "Unsplash",
+  "src": "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=2000&q=80&auto=format&fit=crop"
+ },
+ "h-kitchen-green": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/country-styled-modern-kitchen.jpg?width=2000"
+ },
+ "h-kitchen-sage": {
+  "credit": "Unsplash",
+  "src": "https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=2000&q=80&auto=format&fit=crop"
+ },
+ "h-kitchen-shaker": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/white-kitchen-with-window.jpg?width=2000"
+ },
+ "h-kitchen-stools": {
+  "credit": "Unsplash",
+  "src": "https://images.unsplash.com/photo-1556912167-f556f1f39fdf?w=2000&q=80&auto=format&fit=crop"
+ },
+ "h-living-warm": {
+  "credit": "Unsplash",
+  "src": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=2000&q=80&auto=format&fit=crop"
+ },
+ "h-morning-pour": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/a-morning-pour-on-the-kitchen-counter.jpg?width=2000"
+ },
+ "h-shelf-styling": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/beautiful-kitchen-utensils-in-bright-wooden-kitchen.jpg?width=2000"
+ },
+ "h-sunlight": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/sunlight-creeps-through-a-bright-living-room.jpg?width=2000"
  },
  "mid-century": {
-  "src": "https://burst.shopifycdn.com/photos/mid-century-modern-home-interior.jpg?width=2000",
-  "credit": "Burst CC0"
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/mid-century-modern-home-interior.jpg?width=2000"
+ },
+ "n-before-bare": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/bare-kitchen.jpg?width=2000"
+ },
+ "n-cabinetry-panel": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/modern-wood-panelled-wall-shelving.jpg?width=2000"
+ },
+ "n-counter-minimal": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/a-counter-and-accompanying-stool.jpg?width=2000"
+ },
+ "n-counter-rose": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/counter-top-at-home.jpg?width=2000"
+ },
+ "n-house-desert": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/luxurious-home-in-the-desert.jpg?width=2000"
+ },
+ "n-house-dusk": {
+  "credit": "Unsplash",
+  "src": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=2000&q=80&auto=format&fit=crop"
+ },
+ "n-kitchen-dark-min": {
+  "credit": "Unsplash",
+  "src": "https://images.unsplash.com/photo-1600607686527-6fb886090705?w=2000&q=80&auto=format&fit=crop"
+ },
+ "n-kitchen-island": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/new-modern-kitchen-with-large-island.jpg?width=2000"
+ },
+ "n-kitchen-oak": {
+  "credit": "Unsplash",
+  "src": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=2000&q=80&auto=format&fit=crop"
+ },
+ "n-kitchen-white": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/modern-white-tiled-kitchen.jpg?width=2000"
+ },
+ "n-kitchen-wide": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/full-view-of-modern-kitchen.jpg?width=2000"
+ },
+ "n-marble-abstract": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/abstract-white-marble-and-gold.jpg?width=2000"
+ },
+ "n-marble-bw": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/black-and-white-marble-texture.jpg?width=2000"
+ },
+ "n-quarry": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/top-of-a-marble-quarry.jpg?width=2000"
+ },
+ "o-dining-glass": {
+  "credit": "Unsplash",
+  "src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=2000&q=80&auto=format&fit=crop"
+ },
+ "o-hardware": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/ornate-lock-on-antique-cabinet.jpg?width=2000"
+ },
+ "o-house-night": {
+  "credit": "Unsplash",
+  "src": "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=2000&q=80&auto=format&fit=crop"
+ },
+ "o-kitchen-dark": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/kitchen-living.jpg?width=2000"
+ },
+ "o-kitchen-mono": {
+  "credit": "Unsplash",
+  "src": "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=2000&q=80&auto=format&fit=crop"
+ },
+ "o-kitchen-navy": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/modern-updated-kitchen-interior.jpg?width=2000"
+ },
+ "o-knife-detail": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/japanese-kitchen-knife-and-tomato.jpg?width=2000"
+ },
+ "o-range-dark": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/gas-cooking-range-in-a-large-kitchen.jpg?width=2000"
+ },
+ "o-wood-corridor": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/wood-covered-waiting-room.jpg?width=2000"
+ },
+ "o-wood-dark": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/wooden-room.jpg?width=2000"
+ },
+ "tex-brick": {
+  "credit": "Burst CC0",
+  "src": "https://burst.shopifycdn.com/photos/aged-wood-brick.jpg?width=2000"
+ },
+ "v-access-terminal": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/37538043/pexels-photo-37538043.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-building-night": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/27597027/pexels-photo-27597027.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-cables-dark": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/2881229/pexels-photo-2881229.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-cam-concrete": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-cam-corner": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/18969854/pexels-photo-18969854.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-cam-corrugated": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/11790823/pexels-photo-11790823.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-cam-dome-glass": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/37591155/pexels-photo-37591155.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-cam-macro": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/7508683/pexels-photo-7508683.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-cam-minimal": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/274895/pexels-photo-274895.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-cam-pair": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/27765780/pexels-photo-27765780.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-cam-tower": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/19782580/pexels-photo-19782580.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-commercial-night": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/9218593/pexels-photo-9218593.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-dark-windows": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/18192420/pexels-photo-18192420.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-entry-keypad": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/1703563/pexels-photo-1703563.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-facade-glass": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/7078620/pexels-photo-7078620.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-garage-dark": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/13599611/pexels-photo-13599611.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-hall-dark": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/13705213/pexels-photo-13705213.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-home-entry": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/31737861/pexels-photo-31737861.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-home-hero": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/9592437/pexels-photo-9592437.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-home-night": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/31737860/pexels-photo-31737860.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-home-trees": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/18950082/pexels-photo-18950082.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-intercom-bw": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/22710744/pexels-photo-22710744.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-keypad-lit": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/7824263/pexels-photo-7824263.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-lens-blue": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/217380/pexels-photo-217380.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-lens-dark": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/3616964/pexels-photo-3616964.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-living-dark": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/13722886/pexels-photo-13722886.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-nvr-aisle": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/17323801/pexels-photo-17323801.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-panel-hand": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/6689288/pexels-photo-6689288.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-rack-blue": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/17489160/pexels-photo-17489160.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-smart-lock": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/20901468/pexels-photo-20901468.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-street-night": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/12689692/pexels-photo-12689692.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-suburb-dusk": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/11175907/pexels-photo-11175907.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-warehouse-blue": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/257636/pexels-photo-257636.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-wiring-detail": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/5691589/pexels-photo-5691589.jpeg?auto=compress&cs=tinysrgb&w=2400"
+ },
+ "v-wood-slot": {
+  "credit": "Pexels licence (free to use, no attribution required)",
+  "src": "https://images.pexels.com/photos/34549311/pexels-photo-34549311.jpeg?auto=compress&cs=tinysrgb&w=2400"
  }
 }

@@ -1,10 +1,11 @@
-# Kitchen Remodeling — Three Brand Websites
+# Four Brand Websites — Three Kitchen Remodeling, One Security
 
 ## What this project is
 
-Three **completely separate** kitchen remodeling websites, built to look like the work of three
-different world-class agencies. Different brand, positioning, customer, color system, typography,
-layout philosophy, and conversion strategy for each.
+Four **completely separate** websites, built to look like the work of four different world-class
+agencies. Different brand, positioning, customer, color system, typography, layout philosophy, and
+conversion strategy for each. Sites 1–3 are kitchen remodeling; **Site 4 is a security firm**,
+added to prove the pattern and the toolchain travel to another industry without being adapted.
 
 They are demo/sample sites: fictional brands anchored to real affluent metros so local SEO,
 service-area content, and schema read as genuine.
@@ -19,10 +20,11 @@ Static HTML/CSS/JS you can open in a browser and show a client — structured so
 | Question | Decision |
 |---|---|
 | Deliverable | Coded demos only — no separate markdown strategy docs |
-| Scope | **7 pages per site = 21 pages total**, all at full fidelity |
+| Scope | **7 pages per site = 28 pages total**, all at full fidelity |
 | Media | Photography throughout + hero video loops + click-to-load testimonial video |
 | Website 3 "3D" | **Real WebGL** (`kitchen3d.js`, raw — no Three.js) **plus** the scroll-driven Chamber. Both, not either. |
 | Brands | Fictional, each anchored to a real affluent metro |
+| Site 4 source | Content structure adapted from truelovesecurity.com; brand, NAP and licences invented |
 | Build system | **None.** No framework, no bundler, no package manager. |
 
 ### Nothing from the original 19-page brief was lost — it relocated
@@ -35,7 +37,7 @@ would cannibalize it. Privacy and Terms are footer links to be added at real lau
 
 ---
 
-## The seven pages (identical set across all three sites)
+## The seven pages (identical set across all four sites)
 
 | # | File | Role | Absorbs |
 |---|---|---|---|
@@ -52,7 +54,7 @@ pixels fire. An inline post-submit state cannot do that cleanly.
 
 ---
 
-## The three brands
+## The four brands
 
 ### Site 1 — NORTHSTONE · *Kitchen Architecture* → `site-1-northstone/`
 **Metro:** Scottsdale / Paradise Valley, Arizona
@@ -173,6 +175,67 @@ sticky copper progress rail doubles as a persistent CTA. Portfolio-first funnel:
 
 ---
 
+### Site 4 — VANTAGE · *Security Systems* → `site-4-vantage/`
+**Metro:** Westlake / Southlake / Colleyville, Texas — serving the Dallas–Fort Worth Metroplex
+**Industry:** Home and commercial security — cameras, monitored alarms, CCTV, access control.
+**Source:** Content structure, service list, no-contract positioning, warranty terms, monitoring
+price ladder and DFW service area are adapted from truelovesecurity.com. The brand, address, phone,
+email, licence numbers and reviews are **invented** and flagged as sample throughout.
+**Positioning:** The firm for people who want to *know*, not to worry. Systems engineered per
+property and installed by the people who designed them. Month to month — never a contract.
+**Customer:** $1.5M+ DFW homes plus commercial — dealerships, medical, warehouse, multi-site retail.
+**Emotional angle:** Certainty, never fear. The site never sells on threat.
+*"The dark was never the problem. Not knowing was."*
+**Layout — command surface.** Dark glass panels on a hairline column grid, mono data readouts,
+HUD corner ticks, faint scanlines, and **luminous 1px lit edges instead of shadows**. Radius is 4px
+everywhere — distinct from Northstone's 0, Hearth's 24–48px and Obsidian's editorial flatness.
+
+| Token | Value |
+|---|---|
+| Void | `#06070A` — page base |
+| Panel | `#0D1117` — raised glass |
+| Platinum | `#E8EAED` — body text, 16:1 on void |
+| Steel | `#9AA4B2` — secondary, **7.99:1** |
+| Signal | `#4D8DFF` — accent, **6.30:1 on void, so it is AA-safe at body size** |
+| Signal-lt | `#7FB0FF` — accent on panels |
+| Signal-dk | `#2F6BD4` — small text on light surfaces |
+| Display + body | `Sora` 300/400/600/700 |
+| Micro-caps / data | `JetBrains Mono` 400/500 |
+
+Signal blue clearing 4.5:1 on the base is a real advantage over Obsidian's copper: the accent needs
+no "large text only" caveat. **No green and no red** anywhere, palette or photography — so status
+indicators break convention deliberately. Armed reads signal blue; an alert pulses hot white.
+
+#### The Perimeter — live coverage plan (`assets/js/perimeter.js`)
+
+Raw 2D canvas, no library, DPR-aware, `ResizeObserver`. ~14KB. Site 4's answer to Obsidian's WebGL
+room. A top-down property plan — house, garage, shop, pool, driveway, street:
+
+- camera cones are **ray-marched and clipped against the building footprints**, so structures cast
+  real coverage shadows. That occlusion is what separates engineering from decorative wedges
+- the coverage percentage is **measured from the same ray field the cones are drawn from**, so what
+  you see and what the readout claims cannot disagree. Drag a camera and the number moves
+- clicking a node opens that camera's view — a real photograph under a HUD frame
+- a radar sweep, a walking subject that draws a detection box, and a live event feed
+- scroll drives dusk → night; `IntersectionObserver` pauses the loop off-screen
+- `prefers-reduced-motion` renders one static night frame, keeping drag and keyboard live
+
+**One plan unit is 2 ft.** The lot inside the boundary is 90 × 62 units = 0.51 acres, and the
+default cameras are a real 2.8 mm lens (110°) at 58 units = 116 ft of IR. That configuration
+measures **76%**, which is the best whole-lot figure five cameras with honest optics can deliver.
+Starting at a plausible number rather than a perfect one is deliberate: there is headroom, so
+dragging a camera earns something instead of only ever spoiling a 99% nobody could claim.
+
+**The camera nodes are real `<button>`s layered over the canvas** — focusable, draggable,
+announced, 46px hit area. The canvas only ever draws; it is never the control surface. That is what
+makes the whole feature keyboard-operable without a parallel implementation.
+
+**Conversion — measured certainty.** The Perimeter does the persuading, so the ask stays short
+(name, phone, ZIP, email, property type). Risk reversal is that **the drawn coverage plan is yours
+either way**, including if you hand it to a competitor.
+
+---
+
 ## Repository structure
 
 ```
@@ -190,6 +253,7 @@ sticky copper progress rail doubles as a persistent CTA. Portfolio-first funnel:
 │   └── llms.txt
 ├── site-2-hearth-hollis/           ← same 7 pages, wholly independent CSS/JS
 ├── site-3-obsidian/                ← same 7 pages, own CSS/JS + chamber.js
+├── site-4-vantage/                 ← same 7 pages, own CSS/JS + perimeter.js
 └── dist/                           ← BUILT: what you paste into GoHighLevel
     └── site-*/ *.html              (CSS + JS + all images inlined, zero external files)
 ```
@@ -222,11 +286,12 @@ carrying an inlined hero video.
 > contain backslashes that Python's `re.sub` would otherwise parse as escape sequences.
 
 ### 🚫 Do not
-- **Do not share CSS, JS, or design tokens across the three sites.** Divergence is the deliverable.
+- **Do not share CSS, JS, or design tokens across the four sites.** Divergence is the deliverable.
 - Do not add a framework, bundler, or package manager. `build.py` (stdlib + Pillow) is the whole toolchain.
 - Do not add jQuery or an animation library.
 - Do not exceed the JS budget: ≤20KB for Sites 1–2 (currently ~15.5KB each);
-  ≤40KB for Site 3 (currently ~39KB across `site.js` + `chamber.js` + `kitchen3d.js`).
+  ≤40KB for Site 3 (currently ~39KB across `site.js` + `chamber.js` + `kitchen3d.js`);
+  ≤30KB for Site 4 (currently ~27KB across `site.js` + `perimeter.js`).
   The ceiling moved from 35KB to 40KB to pay for the lighting/material upgrade in
   `kitchen3d.js` — that was a deliberate trade, not drift.
 - Do not hand-edit `dist/`.
@@ -240,6 +305,24 @@ carrying an inlined hero video.
 but `unsplash.com` (401), `pexels.com` (403) and all stock **video** CDNs (Pexels/Mixkit/Coverr,
 403) are bot-blocked. The Pexels and Unsplash search APIs both require a key. Openverse is
 reachable but only indexes amateur Flickr photography — unusable at this quality bar.
+
+**The 403 is a `curl` fact, not a network fact — `WebFetch` reads Pexels search pages fine.**
+Discovered while sourcing Site 4's pool. `curl https://www.pexels.com/search/...` still returns 403,
+but `WebFetch` on the same URL returns the full result list, and every photo page URL ends in its
+numeric ID. So the working harvest loop is:
+
+1. `WebFetch` a `pexels.com/search/<term>/` page and read off ~24 `ID — description` pairs
+2. build the CDN URL from the ID alone:
+   `https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=2400`
+3. download, contact-sheet with PIL, **review visually**, then encode the variant ladder
+
+That beats guessing slugs: it produced 35 usable photographs from 84 candidates in two rounds.
+`WebSearch` restricted to `pexels.com` also surfaces IDs but far fewer per call. Stock **video**
+CDNs remain 403 to everything — re-verified against `videos.pexels.com` and `assets.mixkit.co`.
+
+**Consequence for Site 4: it has no hero video and never will get one from stock.** Its homepage
+hero is a photograph, which CLAUDE.md already names as the only way to make a hero genuinely sharp
+— the three video heroes are capped at their 1280×720 poster grabs, and Vantage's is 2200px.
 
 Consequence: media is **downloaded into `assets/media/`**, not hotlinked, so the demos are
 self-contained and work offline. Every candidate is visually verified via a PIL contact sheet
@@ -287,7 +370,8 @@ touch-draggable, no library.
 <!-- GHL SECTION 03 · Transformation | full-width | 2-col → 1-col @768 | bg: image + overlay -->
 ```
 
-**Homepage section order** (all three sites — differentiation is in execution, not sequence):
+**Homepage section order** (all four sites — differentiation is in execution, not sequence;
+Site 4 substitutes The Perimeter for the before/after slot and a photographic hero for the video):
 Hero (video) → Trust bar → Problem → Transformation before/after → Services → Portfolio teaser →
 Process → Testimonials (video facades) → About → Financing → FAQ → Final CTA.
 
@@ -334,7 +418,8 @@ site via `preconnect` + `display=swap`; all below-fold media lazy; animations re
 3. **Site 1 — Northstone.** Establishes the seven-page pattern.
 4. **Site 2 — Hearth & Hollis.** Same page set, independent design system + multi-step form.
 5. **Site 3 — Obsidian.** Same page set, plus `chamber.js` and horizontal portfolio rail.
-6. Root `index.html` launcher — three cards, one line of positioning each.
+6. Root `index.html` launcher — four cards, one line of positioning each.
+7. **Site 4 — Vantage.** Same page set in a different industry, plus `perimeter.js`.
 
 ---
 
@@ -358,7 +443,7 @@ python3 -m http.server 8080
   immediately, no scroll-jacking; hero videos show posters only.
 - **Keyboard:** Tab each homepage start to finish — skip link fires first, focus ring always
   visible, accordions / sliders / video facades operable, no focus trap.
-- **Links:** every nav and footer link on all three sites resolves; all 21 pages, no 404s.
+- **Links:** every nav and footer link on all four sites resolves; all 28 pages, no 404s.
 - **Funnel:** each site's CTAs reach `free-consultation.html`; submitting lands on `thank-you.html`.
 
 ---
@@ -404,6 +489,29 @@ image ever hit the 1500px rule — everything built at the 820/1000px fallback a
 which is what made the photography look soft. Roles are now assigned by sweeping the
 wrapper (`in_wrapper("hero")` / `in_wrapper("ba")`) before the generic `<img>` pass.
 If you add a role, add it as a wrapper sweep and verify the count changes.
+
+**`overflow-x: hidden` hides the evidence, so measuring `scrollWidth` is not an
+overflow test.** Site 4's header put a `flex: none` wordmark and a `flex: none`
+CTA group in one bar. Below 640px they out-measured the viewport and shoved the
+burger past the right edge — and because `body { overflow-x: hidden }` clips
+rather than scrolls, `documentElement.scrollWidth - clientWidth` stayed **0** at
+every width. The QA sweep reported zero overflow on all 21 page/viewport
+combinations while the only navigation control on phones was unreachable. It
+surfaced only when Playwright tried to click `.burger` and reported "element is
+outside of the viewport".
+
+The honest check walks every element and compares its `getBoundingClientRect()`
+against the viewport box, ignoring `position: fixed` chrome:
+
+```js
+r.right > innerWidth + 1.5 || r.left < -1.5
+```
+
+`scripts/`-external `offscreen.py` in the session scratchpad does this at
+320/375/390/414/768/1024/1440/2560px. **Run it alongside the scrollWidth check,
+never instead of it** — one catches content that pushes the page wide, the other
+catches content silently clipped off the edge. The fix was to drop the header CTA
+and the wordmark subtitle at ≤640px, where `.mbar` already carries "Book a survey".
 
 **Fixed CTA bar.** `.mbar` is `position: fixed`, so each site pairs
 `.mbar { display: grid }` with a matching `body { padding-bottom }` in the same media

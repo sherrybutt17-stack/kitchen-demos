@@ -37,6 +37,7 @@ SITES = [
     ("site-1-northstone",    "northstone",    "northstone",   "northstone.example",       "NORTHSTONE"),
     ("site-2-hearth-hollis", "hearth-hollis", "hearthhollis", "hearthandhollis.example",  "HEARTH & HOLLIS"),
     ("site-3-obsidian",      "obsidian",      "obsidian",     "obsidian.example",         "OBSIDIAN"),
+    ("site-4-vantage",       "vantage",       "vantage",      "vantage.example",          "VANTAGE"),
 ]
 
 GH_USER = "sherrybutt17-stack"

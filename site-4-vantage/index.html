@@ -1,0 +1,634 @@
+<!doctype html>
+<!--
+  ██  DO NOT PASTE THIS FILE INTO GOHIGHLEVEL  ██
+
+  This is the EDITABLE SOURCE. Its CSS and JavaScript live in separate files
+  (see the <link> and <script> tags below), which do not exist inside GHL —
+  paste this and you get unstyled plain text.
+
+  Paste the matching file from:   dist/site-4-vantage/
+  That version has the CSS, the JavaScript and every image embedded in the file.
+
+  Edit here, then run:            python3 scripts/build.py
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vantage — Security Systems, Westlake &amp; Dallas–Fort Worth</title>
+<meta name="description" content="Cameras, alarms, access control and 24/7 monitoring for DFW homes and businesses. Every system drawn to a coverage plan before it is quoted. Month to month — never a contract.">
+<link rel="canonical" href="https://vantage.example/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vantage — Security Systems, Dallas–Fort Worth">
+<meta property="og:description" content="The dark was never the problem. Not knowing was. Coverage-planned security for DFW homes and businesses.">
+<meta property="og:image" content="https://vantage.example/assets/media/img/v-home-hero-1200.jpg">
+<meta property="og:url" content="https://vantage.example/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#06070a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+
+<!--
+  IMAGE_MANIFEST · VANTAGE
+  ──────────────────────────────────────────────────────────────────────────
+  hero              img/v-home-hero        3:2   dark modern home, lit glass, night
+  problem           img/v-cam-corner       2:3   lone camera against a dark wall
+  perimeter.views   img/v-street-night | v-home-entry | v-entry-keypad
+                    img/v-suburb-dusk | v-garage-dark    16:10 crop, one per camera
+  perimeter.fb      img/v-home-night       2:3   static stand-in when canvas is absent
+  services.01–06    img/v-cam-dome-glass | v-panel-hand | v-warehouse-blue
+                    img/v-access-terminal | v-cam-tower | v-nvr-aisle    4:3 cards
+  gallery.01–03     img/v-home-entry | v-keypad-lit | v-garage-dark
+  about             img/v-wiring-detail    2:3   hands, wiring, real work
+  investment        img/v-living-dark      4:5   the room the system protects
+  Swap for client photography at the same ratios — no CSS changes needed.
+-->
+
+<!-- SAMPLE DATA — licence numbers, review counts and ratings below are
+     placeholders for a demo brand. Replace with verified values before launch. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness","HomeAndConstructionBusiness"],
+      "@id": "https://vantage.example/#business",
+      "name": "Vantage Security Systems",
+      "description": "Security camera, alarm, access control and 24/7 monitoring design and installation for homes and businesses across the Dallas–Fort Worth Metroplex.",
+      "url": "https://vantage.example/",
+      "telephone": "+1-817-555-0142",
+      "email": "desk@vantagesecurity.example",
+      "priceRange": "$$",
+      "image": "https://vantage.example/assets/media/img/v-home-hero-1200.jpg",
+      "address": { "@type": "PostalAddress", "streetAddress": "1580 Solana Boulevard, Suite 4200",
+        "addressLocality": "Westlake", "addressRegion": "TX", "postalCode": "76262", "addressCountry": "US" },
+      "geo": { "@type": "GeoCoordinates", "latitude": 32.9918, "longitude": -97.1961 },
+      "areaServed": [
+        { "@type": "City", "name": "Westlake" }, { "@type": "City", "name": "Southlake" },
+        { "@type": "City", "name": "Colleyville" }, { "@type": "City", "name": "Grapevine" },
+        { "@type": "City", "name": "Trophy Club" }, { "@type": "City", "name": "Keller" },
+        { "@type": "City", "name": "Flower Mound" }, { "@type": "City", "name": "Fort Worth" },
+        { "@type": "City", "name": "Arlington" }, { "@type": "City", "name": "Mansfield" }
+      ],
+      "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "09:00", "closes": "18:00" }],
+      "_comment_sampleData": "SAMPLE DATA — replace aggregateRating with verified reviews before launch",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "127", "bestRating": "5" }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vantage.example/#coverage-survey",
+      "name": "Security coverage survey",
+      "serviceType": "Security system design and survey",
+      "provider": { "@id": "https://vantage.example/#business" },
+      "areaServed": { "@type": "AdministrativeArea", "name": "Dallas–Fort Worth Metroplex" },
+      "description": "A walked survey of every approach to a property — driveway, entries, gates, service side and blind corners — producing a drawn camera coverage plan before any equipment is quoted."
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://vantage.example/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Do I have to sign a contract?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Every Vantage monitoring plan is month to month. You can cancel with thirty days' notice and the equipment stays yours because you bought it outright. Camera-only systems that record locally carry no monthly fee at all." } },
+        { "@type": "Question", "name": "How much does a home security system cost in Fort Worth?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most DFW homes land between $1,800 and $4,600 installed, depending on camera count, cable runs and whether access control is included. Monitoring starts at $21.95 a month. You get a fixed written price after the coverage survey, never a phone estimate." } },
+        { "@type": "Question", "name": "Can you use my existing security system?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Often, yes. If your panel and sensors are compatible we take over monitoring and reprogram the system rather than selling you new hardware. We tell you during the survey whether a takeover is honest or whether the equipment is genuinely past it." } },
+        { "@type": "Question", "name": "How long does installation take?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A typical eight-camera home is one day. Larger properties, brick exteriors and commercial sites with conduit runs take two to three. We give you the day count in writing with the quote, and we do not leave until you can operate the system yourself." } },
+        { "@type": "Question", "name": "Do the cameras work at night?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every camera we install has infrared night vision, and the ones covering driveways and entries have colour night vision with a spotlight. Person and vehicle detection runs on the camera, so it alerts on people rather than on moving branches." } },
+        { "@type": "Question", "name": "What is covered by the warranty?",
+          "acceptedAnswer": { "@type": "Answer", "text": "One year on our installation labour and workmanship, and a minimum two years from the manufacturer on equipment defects. If a camera fails inside that window we replace it and re-aim it to the original coverage plan at no charge." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- GHL SECTION 01 · Header -->
+<header class="hdr" data-solid="false">
+  <div class="hdr__in">
+    <a class="wm" href="index.html" aria-label="Vantage Security Systems, home">
+      <span class="wm__n">Vantage</span>
+      <span class="wm__s">Security Systems</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="security-systems.html">Systems</a>
+      <a href="gallery.html">Installations</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="hdr__cta">
+      <a class="hdr__tel" href="tel:+18175550142">(817) 555-0142</a>
+      <a class="btn btn--sm" href="free-consultation.html">Book a survey</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" data-open="false" aria-hidden="true">
+  <nav aria-label="Mobile">
+    <a href="index.html">Home</a>
+    <a href="security-systems.html">Systems</a>
+    <a href="gallery.html">Installations</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="drawer__foot">
+    <a class="btn btn--wide" href="free-consultation.html">Book a coverage survey</a>
+    <a class="btn btn--ghost btn--wide" href="tel:+18175550142">(817) 555-0142</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- GHL SECTION 02 · Hero | full-bleed photograph + HUD frame -->
+  <section class="hero">
+    <div class="hero__media">
+      <img src="../assets/media/img/v-home-hero-1600.webp"
+           srcset="../assets/media/img/v-home-hero-800.webp 800w, ../assets/media/img/v-home-hero-1600.webp 1600w, ../assets/media/img/v-home-hero-2400.webp 2400w"
+           sizes="100vw" alt="A modern home at night, its glass walls lit from within, seen from the dark garden" width="1600" height="1067" fetchpriority="high" decoding="async">
+    </div>
+    <div class="hero__frame" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <p class="hero__stamp" aria-hidden="true">
+      Westlake, TX<br>32.9918° N · 97.1961° W<br><b data-clock>00:00:00</b> local
+    </p>
+    <div class="hero__in">
+      <div class="shell">
+        <p class="eyebrow rv">Dallas–Fort Worth · Est. 2016</p>
+        <!-- no whitespace between the .rvt lines: each is display:block, and a text
+             node between them indents the following line by a space width -->
+        <h1 class="d1 hero__h"><span class="rvt">The dark was never</span><span class="rvt">the problem.</span><span class="rvt thin">Not knowing was.</span></h1>
+        <p class="lede hero__p rv" style="--d:220ms">Vantage designs, installs and monitors security systems for homes and businesses across the Metroplex. Every camera is placed against a drawn coverage plan — before anyone quotes you a price. Month to month. Never a contract.</p>
+        <div class="hero__cta rv" style="--d:340ms">
+          <a class="btn" href="free-consultation.html">Book a coverage survey <span class="btn__ar" aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="#perimeter">See how coverage is planned</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 03 · Trust bar | 4-col → 2-col @1024 → 1-col @640 -->
+  <section class="section section--tight" style="padding-block:0">
+    <div class="shell">
+      <div class="trust">
+        <div class="trust__i rv"><p class="trust__k">Licensed</p><p class="trust__v">Texas DPS B-24417301 · Technician 91260744</p></div>
+        <div class="trust__i rv"><p class="trust__k">Monitoring</p><p class="trust__v">Five Diamond certified central station, 24/7/365</p></div>
+        <div class="trust__i rv"><p class="trust__k">Agreement</p><p class="trust__v">Month to month — cancel with 30 days' notice</p></div>
+        <div class="trust__i rv"><p class="trust__k">Warranty</p><p class="trust__v">1 year on our labour · 2 years on equipment</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 04 · Problem | 2-col → 1-col @860 -->
+  <section class="section section--grid">
+    <div class="shell">
+      <div class="split split--wide">
+        <div>
+          <p class="eyebrow rv">Ch. 01 / The problem</p>
+          <h2 class="d2 rv">Most systems are sold by the box. Yours should be drawn by the property.</h2>
+          <div class="mt-m rv" style="--d:120ms">
+            <p class="lede">A national firm quotes a package before anyone has seen your house. Six cameras, one doorbell, a three-year agreement. Then the truck arrives and the installer puts the cameras where the cable is easy.</p>
+            <p class="muted mt-s">So the driveway camera watches the sky. The side gate — the way people actually come in — has nothing on it. And you find out the night you need the footage, which is the one night it costs you something.</p>
+            <p class="muted">We do it in the other order. We walk the property first, at the hour you are actually worried about, and draw the coverage. The equipment list falls out of the plan. Not the other way round.</p>
+          </div>
+          <p class="mt-m rv" style="--d:200ms"><a class="tlink" href="security-systems.html">What we install <span aria-hidden="true">→</span></a></p>
+        </div>
+        <figure class="fig fig--tall rv ticks" style="--d:150ms; margin:0">
+          <img src="../assets/media/img/v-cam-corner-800.webp"
+               srcset="../assets/media/img/v-cam-corner-400.webp 400w, ../assets/media/img/v-cam-corner-800.webp 800w, ../assets/media/img/v-cam-corner-1600.webp 1600w"
+               sizes="(max-width:860px) 100vw, 38vw" alt="A single security camera mounted high on a dark exterior wall" width="800" height="1200" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       GHL SECTION 05 · THE PERIMETER — live coverage plan (canvas 2D)
+       Camera nodes are real <button>s over the canvas: focusable, draggable,
+       announced. Without JS or canvas the static plan + spec list below shows
+       instead. Behaviour lives in assets/js/perimeter.js.
+       ══════════════════════════════════════════════════════════════════════ -->
+  <section class="section section--panel" id="perimeter">
+    <div class="shell">
+      <div class="shead">
+        <div class="rv">
+          <p class="eyebrow">Ch. 02 / Coverage</p>
+          <h2 class="d2">Before we quote you, we draw your property.</h2>
+        </div>
+        <div class="rv" style="--d:120ms">
+          <p class="lede">A coverage survey maps every approach — driveway, entries, gates, the service side, the corner nobody thinks about — and places cameras against that map. Structures cast real shadows, so a wall between a camera and a gate shows up as a gap, not as wishful thinking. Move a camera below and watch the covered area change.</p>
+        </div>
+      </div>
+
+      <div class="perim__stage panel ticks scan rv" id="perim-stage" data-ready="false">
+        <canvas class="perim__cv" id="perim-cv" aria-hidden="true"></canvas>
+
+        <div class="perim__chrome">
+          <div class="perim__bar">
+            <span class="perim__state"><i aria-hidden="true"></i> Armed · away</span>
+            <span>Coverage plan · <span data-clock>00:00:00</span></span>
+          </div>
+
+          <div class="perim__view" id="perim-view" data-on="false">
+            <figure data-view="01" hidden>
+              <img src="../assets/media/img/v-street-night-800.webp" alt="Camera 1 view: the driveway approach after dark" width="800" height="533" loading="lazy" decoding="async">
+              <figcaption><span>Cam 01 · Driveway</span><span>2688 × 1520</span></figcaption>
+            </figure>
+            <figure data-view="02" hidden>
+              <img src="../assets/media/img/v-home-entry-800.webp" alt="Camera 2 view: the lit front entrance" width="800" height="1200" loading="lazy" decoding="async">
+              <figcaption><span>Cam 02 · Front door</span><span>2688 × 1520</span></figcaption>
+            </figure>
+            <figure data-view="03" hidden>
+              <img src="../assets/media/img/v-entry-keypad-800.webp" alt="Camera 3 view: the side gate and its keypad" width="800" height="1200" loading="lazy" decoding="async">
+              <figcaption><span>Cam 03 · Side gate</span><span>2688 × 1520</span></figcaption>
+            </figure>
+            <figure data-view="04" hidden>
+              <img src="../assets/media/img/v-suburb-dusk-800.webp" alt="Camera 4 view: the rear garden at dusk" width="800" height="533" loading="lazy" decoding="async">
+              <figcaption><span>Cam 04 · Back yard</span><span>2688 × 1520</span></figcaption>
+            </figure>
+            <figure data-view="05" hidden>
+              <img src="../assets/media/img/v-garage-dark-800.webp" alt="Camera 5 view: the unlit shop and parking bay" width="800" height="1200" loading="lazy" decoding="async">
+              <figcaption><span>Cam 05 · Shop</span><span>2688 × 1520</span></figcaption>
+            </figure>
+          </div>
+
+          <ul class="perim__feed" id="perim-feed">
+            <li><b>02:14:07</b><span>Driveway · person detected</span></li>
+            <li><b>02:09:51</b><span>Street · vehicle passed</span></li>
+            <li><b>01:56:22</b><span>Side gate · all clear</span></li>
+          </ul>
+
+          <div class="perim__read">
+            <div>
+              <p class="perim__rk">Coverage</p>
+              <p class="perim__rv"><span id="perim-cov">0</span><small>%</small></p>
+            </div>
+            <div>
+              <p class="perim__rk">Uncovered</p>
+              <p class="perim__rv"><span id="perim-un">0</span><small>ft²</small></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shown whenever canvas is unavailable or JS is off -->
+        <div class="perim__fb">
+          <img src="../assets/media/img/v-home-night-800.webp" alt="A modern two-storey home lit at night, the kind of property a coverage plan is drawn for" width="800" height="1200" loading="lazy" decoding="async">
+          <dl>
+            <div><dt>Cam 01</dt><dd>Driveway · 110° · 116 ft</dd></div>
+            <div><dt>Cam 02</dt><dd>Front door · 110° · 92 ft</dd></div>
+            <div><dt>Cam 03</dt><dd>Side gate · 110° · 116 ft</dd></div>
+            <div><dt>Cam 04</dt><dd>Back yard · 120° · 116 ft</dd></div>
+            <div><dt>Cam 05</dt><dd>Shop · 110° · 116 ft</dd></div>
+            <div><dt>Coverage</dt><dd>76% of 0.51 acres</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="perim__hint">
+        <span>Drag a camera to move it</span>
+        <span>Tab to a camera, arrows to reposition, Shift + arrows to aim</span>
+        <span>Press a camera to open its view</span>
+        <button class="btn btn--ghost btn--sm" type="button" id="perim-reset">Reset plan</button>
+      </div>
+
+      <dl class="stats mt-l">
+        <div class="rv"><dt>Cameras placed</dt><dd><span data-count="6400">0</span><span>+</span></dd></div>
+        <div class="rv"><dt>Properties surveyed</dt><dd><span data-count="812">0</span></dd></div>
+        <div class="rv"><dt>Avg. response, verified alarm</dt><dd><span data-count="18">0</span><span>sec</span></dd></div>
+        <div class="rv"><dt>Contracts required</dt><dd>0</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 06 · Services | 3-col → 2-col @1024 → 1-col @860 -->
+  <section class="section section--grid">
+    <div class="shell">
+      <div class="shead">
+        <div class="rv">
+          <p class="eyebrow">Ch. 03 / Systems</p>
+          <h2 class="d2">Six things we install, and nothing we don't.</h2>
+        </div>
+        <div class="rv" style="--d:120ms">
+          <p class="lede">We are not a hardware shop and we do not resell whatever has the best margin this quarter. We install Reolink and Uniview cameras on Alarm.com, because they are the platforms we can still service in year six.</p>
+        </div>
+      </div>
+
+      <div class="grid g-3">
+        <a class="svc panel rv" href="security-systems.html#residential">
+          <div class="svc__m"><span class="svc__n">01</span>
+            <img src="../assets/media/img/v-cam-dome-glass-800.webp" srcset="../assets/media/img/v-cam-dome-glass-400.webp 400w, ../assets/media/img/v-cam-dome-glass-800.webp 800w, ../assets/media/img/v-cam-dome-glass-1600.webp 1600w" sizes="(max-width:860px) 100vw, 32vw" alt="A white dome camera mounted against modern blue glazing" width="800" height="600" loading="lazy" decoding="async"></div>
+          <div class="svc__b">
+            <h3>Residential camera systems</h3>
+            <p>Four to twenty-four cameras, recorded locally on your own NVR with no monthly fee. Colour night vision on every approach, person and vehicle detection on the camera rather than in the cloud.</p>
+            <span class="svc__go">Residential <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+        <a class="svc panel rv" href="security-systems.html#monitoring">
+          <div class="svc__m"><span class="svc__n">02</span>
+            <img src="../assets/media/img/v-panel-hand-800.webp" srcset="../assets/media/img/v-panel-hand-400.webp 400w, ../assets/media/img/v-panel-hand-800.webp 800w, ../assets/media/img/v-panel-hand-1600.webp 1600w" sizes="(max-width:860px) 100vw, 32vw" alt="A hand resting on a wall-mounted entry control panel in a dark hallway" width="800" height="533" loading="lazy" decoding="async"></div>
+          <div class="svc__b">
+            <h3>Alarms &amp; 24/7 monitoring</h3>
+            <p>Doors, windows, glass-break and motion on an Alarm.com panel, watched by a Five Diamond central station. Arm and disarm from your phone. From $21.95 a month, month to month.</p>
+            <span class="svc__go">Monitoring <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+        <a class="svc panel rv" href="security-systems.html#commercial">
+          <div class="svc__m"><span class="svc__n">03</span>
+            <img src="../assets/media/img/v-warehouse-blue-800.webp" srcset="../assets/media/img/v-warehouse-blue-400.webp 400w, ../assets/media/img/v-warehouse-blue-800.webp 800w, ../assets/media/img/v-warehouse-blue-1600.webp 1600w" sizes="(max-width:860px) 100vw, 32vw" alt="A large empty warehouse floor lit blue-white overhead" width="800" height="533" loading="lazy" decoding="async"></div>
+          <div class="svc__b">
+            <h3>Commercial CCTV</h3>
+            <p>Lots, docks, tills, yards and multi-site dashboards. Retention sized to your insurer's requirement, not to whatever the box came with. Conduit runs done properly, to code.</p>
+            <span class="svc__go">Commercial <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+        <a class="svc panel rv" href="security-systems.html#access">
+          <div class="svc__m"><span class="svc__n">04</span>
+            <img src="../assets/media/img/v-access-terminal-800.webp" srcset="../assets/media/img/v-access-terminal-400.webp 400w, ../assets/media/img/v-access-terminal-800.webp 800w, ../assets/media/img/v-access-terminal-1600.webp 1600w" sizes="(max-width:860px) 100vw, 32vw" alt="An access control terminal beside a glass office door" width="800" height="533" loading="lazy" decoding="async"></div>
+          <div class="svc__b">
+            <h3>Access control</h3>
+            <p>Every door, every credential, one dashboard. Mobile keys, time-limited vendor access, badge-to-disarm, and video attached to every single access event so you see who, not just when.</p>
+            <span class="svc__go">Access control <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+        <a class="svc panel rv" href="security-systems.html#solar">
+          <div class="svc__m"><span class="svc__n">05</span>
+            <img src="../assets/media/img/v-cam-tower-800.webp" srcset="../assets/media/img/v-cam-tower-400.webp 400w, ../assets/media/img/v-cam-tower-800.webp 800w, ../assets/media/img/v-cam-tower-1600.webp 1600w" sizes="(max-width:860px) 100vw, 32vw" alt="Cameras mounted on a pole against a blue glass tower" width="800" height="534" loading="lazy" decoding="async"></div>
+          <div class="svc__b">
+            <h3>Solar &amp; remote-site cameras</h3>
+            <p>Build sites, storage yards, acreage and anywhere without power or cable. Solar, LTE, buy or rent by the month. Up in an afternoon, moved to the next site when this one closes.</p>
+            <span class="svc__go">Remote sites <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+        <a class="svc panel rv" href="security-systems.html#takeover">
+          <div class="svc__m"><span class="svc__n">06</span>
+            <img src="../assets/media/img/v-nvr-aisle-800.webp" srcset="../assets/media/img/v-nvr-aisle-400.webp 400w, ../assets/media/img/v-nvr-aisle-800.webp 800w, ../assets/media/img/v-nvr-aisle-1600.webp 1600w" sizes="(max-width:860px) 100vw, 32vw" alt="A dark equipment aisle lit blue, racks receding into the distance" width="800" height="534" loading="lazy" decoding="async"></div>
+          <div class="svc__b">
+            <h3>Takeover of your existing system</h3>
+            <p>If your panel and sensors are compatible we reprogram them and take over monitoring rather than selling you hardware you already own. If they are genuinely past it, we say so.</p>
+            <span class="svc__go">Takeovers <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 07 · Installations teaser | 3-col → 1-col @860 -->
+  <section class="section section--tight section--deep">
+    <div class="shell">
+      <div class="shead">
+        <div class="rv">
+          <p class="eyebrow">Ch. 04 / Installations</p>
+          <h2 class="d2">Cable you can't see. Angles you can.</h2>
+        </div>
+        <div class="rv" style="--d:120ms">
+          <p class="lede">An install is judged twice: the day it goes in, and the night you need it. Both matter. Every job below was photographed after handover, not staged.</p>
+        </div>
+      </div>
+      <div class="grid g-3">
+        <figure class="rv" style="margin:0">
+          <div class="fig fig--tall ticks"><img src="../assets/media/img/v-home-entry-800.webp" srcset="../assets/media/img/v-home-entry-400.webp 400w, ../assets/media/img/v-home-entry-800.webp 800w, ../assets/media/img/v-home-entry-1600.webp 1600w" sizes="(max-width:860px) 100vw, 32vw" alt="A modern home's lit entrance at night with concealed camera coverage" width="800" height="1200" loading="lazy" decoding="async"></div>
+          <figcaption class="figcap">Vaquero · 11 cameras · access control</figcaption>
+        </figure>
+        <figure class="rv" style="margin:0">
+          <div class="fig fig--tall ticks"><img src="../assets/media/img/v-keypad-lit-800.webp" srcset="../assets/media/img/v-keypad-lit-400.webp 400w, ../assets/media/img/v-keypad-lit-800.webp 800w, ../assets/media/img/v-keypad-lit-1600.webp 1600w" sizes="(max-width:860px) 100vw, 32vw" alt="An illuminated entry keypad on an exterior wall at night" width="800" height="532" loading="lazy" decoding="async"></div>
+          <figcaption class="figcap">Terra Bella · gate + pedestrian entry</figcaption>
+        </figure>
+        <figure class="rv" style="margin:0">
+          <div class="fig fig--tall ticks"><img src="../assets/media/img/v-garage-dark-800.webp" srcset="../assets/media/img/v-garage-dark-400.webp 400w, ../assets/media/img/v-garage-dark-800.webp 800w, ../assets/media/img/v-garage-dark-1600.webp 1600w" sizes="(max-width:860px) 100vw, 32vw" alt="A dim concrete parking structure covered end to end" width="800" height="1200" loading="lazy" decoding="async"></div>
+          <figcaption class="figcap">Alliance corridor · 34-camera lot</figcaption>
+        </figure>
+      </div>
+      <p class="mt-l rv"><a class="tlink" href="gallery.html">All installations <span aria-hidden="true">→</span></a></p>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 08 · Process | 4-col → 2-col @1024 → 1-col @640 -->
+  <section class="section">
+    <div class="shell">
+      <div class="shead">
+        <div class="rv">
+          <p class="eyebrow">Ch. 05 / Process</p>
+          <h2 class="d2">Four steps. No surprises in any of them.</h2>
+        </div>
+        <div class="rv" style="--d:120ms">
+          <p class="lede">You get a fixed written price after the survey and before anything is ordered. If the number moves after that, it is because you asked it to.</p>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="rv"><p class="steps__n">01</p><h3>Survey</h3><p>We walk the property with you — at dusk if the worry is night-time. Every approach, every blind corner, every existing camera that isn't earning its keep.</p></div>
+        <div class="rv"><p class="steps__n">02</p><h3>Plan</h3><p>You get a drawn coverage map: camera by camera, angle, range, what each one sees and what it deliberately doesn't. Then the price. In that order.</p></div>
+        <div class="rv"><p class="steps__n">03</p><h3>Install</h3><p>Licensed technicians, cable concealed, penetrations sealed. One day for most homes, two to three for larger or commercial sites. Told to you in writing beforehand.</p></div>
+        <div class="rv"><p class="steps__n">04</p><h3>Handover</h3><p>We don't leave until you can pull up any camera, review a clip and arm the system from your phone — with someone else in the house, so it's actually been tested.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 09 · Testimonials | 3-col → 1-col @860 -->
+  <!-- SAMPLE DATA — names and quotes are illustrative for this demo brand. -->
+  <section class="section section--panel section--tight">
+    <div class="shell">
+      <div class="shead">
+        <div class="rv">
+          <p class="eyebrow">Ch. 06 / Clients</p>
+          <h2 class="d2">What people say once it's in.</h2>
+        </div>
+        <div class="rv" style="--d:120ms"><p class="lede">Verified reviews across Google and Nextdoor. The pattern is boringly consistent: the survey, and the fact that we explain the thing instead of handing over an app.</p></div>
+      </div>
+      <div class="grid g-3">
+        <figure class="quote panel rv">
+          <div class="quote__stars" role="img" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg>
+          </div>
+          <blockquote>“He walked the whole property with me before quoting a thing — and told me two of the cameras I'd asked for were pointless where I wanted them. Ten out of ten.”</blockquote>
+          <figcaption><b>R. Alvarez</b>Southlake · 9-camera home system</figcaption>
+        </figure>
+        <figure class="quote panel rv">
+          <div class="quote__stars" role="img" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg>
+          </div>
+          <blockquote>“Neat work — you cannot see a run of cable anywhere. And he sat down and explained every setting instead of handing me an app and leaving.”</blockquote>
+          <figcaption><b>J. Whitfield</b>Colleyville · alarm takeover + 6 cameras</figcaption>
+        </figure>
+        <figure class="quote panel rv">
+          <div class="quote__stars" role="img" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg>
+          </div>
+          <blockquote>“We're in our seventies and wanted something we could actually operate. He took plenty of time, and he came back a fortnight later to check we still could.”</blockquote>
+          <figcaption><b>P. Doherty</b>Keller · monitored alarm + doorbell</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 10 · About | 2-col → 1-col @860 -->
+  <section class="section section--grid">
+    <div class="shell">
+      <div class="split">
+        <figure class="fig fig--tall rv ticks" style="margin:0">
+          <img src="../assets/media/img/v-wiring-detail-800.webp" srcset="../assets/media/img/v-wiring-detail-400.webp 400w, ../assets/media/img/v-wiring-detail-800.webp 800w, ../assets/media/img/v-wiring-detail-1600.webp 1600w" sizes="(max-width:860px) 100vw, 46vw" alt="Hands terminating low-voltage wiring into a modular device" width="800" height="1198" loading="lazy" decoding="async">
+        </figure>
+        <div>
+          <p class="eyebrow rv">Ch. 07 / About</p>
+          <h2 class="d2 rv">We left over the contracts.</h2>
+          <div class="mt-m rv" style="--d:120ms">
+            <p class="lede">Vantage started because of a clause. Our founder spent six years installing for a national alarm company in the DFW area, and every job ended the same way: a homeowner signing thirty-six months for equipment worth less than the agreement.</p>
+            <p class="muted mt-s">The systems were good. The business model was the problem. So in 2016 we started one that sells the same grade of equipment — Reolink, Uniview, Alarm.com, a Five Diamond central station — with nothing to sign beyond this month.</p>
+            <p class="muted">Every technician on the van is licensed, background-checked and directly employed. We don't subcontract, because the person who drew your coverage plan should be the person who mounts the camera.</p>
+          </div>
+          <dl class="spec mt-m rv" style="--d:180ms">
+            <div><dt>Founded</dt><dd>2016 · Westlake, Texas</dd></div>
+            <div><dt>Licence</dt><dd>Texas DPS B-24417301</dd></div>
+            <div><dt>Coverage</dt><dd>Tarrant, Denton, Dallas and Parker counties</dd></div>
+            <div><dt>Crew</dt><dd>Directly employed — never subcontracted</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 11 · Investment | 2-col → 1-col @860 | bg: panel -->
+  <section class="section section--panel">
+    <div class="shell">
+      <div class="split split--wide">
+        <div>
+          <p class="eyebrow rv">Ch. 08 / Investment</p>
+          <h2 class="d2 rv">Monitoring from $21.95. Nothing to sign.</h2>
+          <div class="mt-m rv" style="--d:120ms">
+            <p class="lede">Camera-only systems record to your own NVR and cost nothing per month, ever. If you want a central station watching the alarm, plans run $21.95 to $44.95 for homes and $29.95 to $54.95 for businesses — all month to month.</p>
+            <p class="muted mt-s">Equipment and installation are separate, quoted once after the survey, and financeable over 12 to 60 months if you'd rather spread it. Most DFW homes land between $1,800 and $4,600 installed.</p>
+          </div>
+          <div class="hero__cta mt-m rv" style="--d:200ms">
+            <a class="btn" href="pricing.html">See every plan <span class="btn__ar" aria-hidden="true">→</span></a>
+            <a class="btn btn--ghost" href="free-consultation.html">Get a fixed price</a>
+          </div>
+        </div>
+        <figure class="fig fig--tall rv ticks" style="margin:0">
+          <img src="../assets/media/img/v-living-dark-800.webp" srcset="../assets/media/img/v-living-dark-400.webp 400w, ../assets/media/img/v-living-dark-800.webp 800w, ../assets/media/img/v-living-dark-1600.webp 1600w" sizes="(max-width:860px) 100vw, 40vw" alt="A dark, quietly lit living room at night — the room the system exists to protect" width="800" height="1000" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 12 · FAQ | AEO-optimised, one accordion -->
+  <section class="section">
+    <div class="shell">
+      <div class="shead">
+        <div class="rv">
+          <p class="eyebrow">Ch. 09 / Questions</p>
+          <h2 class="d2">The six we're asked every week.</h2>
+        </div>
+        <div class="rv" style="--d:120ms"><p class="lede">If yours isn't here, call and ask. You'll get a technician, not a script.</p></div>
+      </div>
+      <div class="acc">
+        <details class="rv">
+          <summary><h3 class="d4">Do I have to sign a contract?</h3></summary>
+          <div class="acc__b"><p>No. Every Vantage monitoring plan is month to month. You can cancel with thirty days' notice and the equipment stays yours, because you bought it outright rather than leasing it. Camera-only systems that record locally carry no monthly fee at all.</p></div>
+        </details>
+        <details class="rv">
+          <summary><h3 class="d4">How much does a home security system cost in Fort Worth?</h3></summary>
+          <div class="acc__b"><p>Most DFW homes land between $1,800 and $4,600 installed, depending on camera count, cable runs and whether access control is included. Monitoring starts at $21.95 a month. You get a fixed written price after the coverage survey — never a phone estimate.</p></div>
+        </details>
+        <details class="rv">
+          <summary><h3 class="d4">Can you use my existing security system?</h3></summary>
+          <div class="acc__b"><p>Often, yes. If your panel and sensors are compatible we take over monitoring and reprogram the system rather than selling you new hardware. We tell you at the survey whether a takeover is honest or whether the equipment is genuinely past it.</p></div>
+        </details>
+        <details class="rv">
+          <summary><h3 class="d4">How long does installation take?</h3></summary>
+          <div class="acc__b"><p>A typical eight-camera home is one day. Larger properties, brick exteriors and commercial sites needing conduit take two to three. We give you the day count in writing with the quote, and we do not leave until you can operate the system yourself.</p></div>
+        </details>
+        <details class="rv">
+          <summary><h3 class="d4">Do the cameras actually work at night?</h3></summary>
+          <div class="acc__b"><p>Yes. Every camera we install has infrared night vision, and the ones covering driveways and entries have colour night vision with a spotlight. Person and vehicle detection runs on the camera itself, so it alerts you about people rather than about moving branches.</p></div>
+        </details>
+        <details class="rv">
+          <summary><h3 class="d4">What does the warranty actually cover?</h3></summary>
+          <div class="acc__b"><p>One year on our installation labour and workmanship, plus a minimum two years from the manufacturer on equipment defects. If a camera fails inside that window we replace it and re-aim it to the original coverage plan, at no charge to you.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 13 · Final CTA | full-width | bg: deep -->
+  <section class="section section--deep">
+    <div class="shell shell--narrow" style="text-align:center">
+      <p class="eyebrow eyebrow--plain rv" style="justify-content:center">Ch. 10 / Next</p>
+      <h2 class="d2 rv">Two hours, at dusk, at your property.</h2>
+      <p class="lede mt-m rv" style="--d:120ms; margin-inline:auto">That is what a coverage survey costs you. No charge, no obligation, and you keep the drawn plan whether or not you use us — including if you hand it to another installer.</p>
+      <div class="hero__cta mt-l rv" style="--d:220ms; justify-content:center">
+        <a class="btn" href="free-consultation.html">Book a coverage survey <span class="btn__ar" aria-hidden="true">→</span></a>
+        <a class="btn btn--ghost" href="tel:+18175550142">(817) 555-0142</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- GHL SECTION 14 · Footer -->
+<footer class="ftr">
+  <div class="shell">
+    <div class="ftr__grid">
+      <div>
+        <a class="wm" href="index.html" aria-label="Vantage Security Systems, home">
+          <span class="wm__n">Vantage</span><span class="wm__s">Security Systems</span>
+        </a>
+        <p class="muted mt-s" style="max-width:34ch; font-size:.9rem">Coverage-planned security for homes and businesses across the Dallas–Fort Worth Metroplex. Month to month, since 2016.</p>
+      </div>
+      <div>
+        <h4>Systems</h4>
+        <ul>
+          <li><a href="security-systems.html#residential">Residential cameras</a></li>
+          <li><a href="security-systems.html#monitoring">Alarms &amp; monitoring</a></li>
+          <li><a href="security-systems.html#commercial">Commercial CCTV</a></li>
+          <li><a href="security-systems.html#access">Access control</a></li>
+          <li><a href="security-systems.html#solar">Solar &amp; remote sites</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="gallery.html">Installations</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact &amp; service areas</a></li>
+          <li><a href="free-consultation.html">Book a survey</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Desk</h4>
+        <address>
+          1580 Solana Boulevard, Suite 4200<br>
+          Westlake, TX 76262<br>
+          <a href="tel:+18175550142">(817) 555-0142</a><br>
+          <a href="mailto:desk@vantagesecurity.example">desk@vantagesecurity.example</a><br>
+          <span class="dim">Mon–Sat 9:00–18:00 · Monitoring 24/7</span>
+        </address>
+      </div>
+    </div>
+    <div class="ftr__bot">
+      <span>© <span data-year>2026</span> Vantage Security Systems · Texas DPS B-24417301</span>
+      <span>Demonstration site · sample reviews and licence numbers</span>
+    </div>
+  </div>
+</footer>
+
+<!-- GHL SECTION 15 · Sticky mobile CTA (fixed; paired with body padding-bottom) -->
+<div class="mbar">
+  <a href="tel:+18175550142">Call</a>
+  <a href="free-consultation.html">Book a survey</a>
+</div>
+
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/perimeter.js" defer></script>
+</body>
+</html>

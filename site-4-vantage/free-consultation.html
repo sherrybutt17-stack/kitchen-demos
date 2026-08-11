@@ -1,0 +1,180 @@
+<!doctype html>
+<!--
+  ██  DO NOT PASTE THIS FILE INTO GOHIGHLEVEL  ██
+  This is the EDITABLE SOURCE — its CSS and JS are external files that do not
+  exist inside GHL. Paste dist/site-4-vantage/free-consultation.html instead.
+  Edit here, then run: python3 scripts/build.py
+
+  CONVERSION LANDING PAGE — deliberately no navigation and no exit links.
+  The only ways off this page are the form, the phone number and the logo.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a Free Coverage Survey — Vantage Security Systems, DFW</title>
+<meta name="description" content="Two hours at your property, at the hour that worries you. You keep the drawn coverage plan whether or not you use us. Fort Worth and the DFW Metroplex.">
+<link rel="canonical" href="https://vantage.example/free-consultation.html">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#06070a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- GHL SECTION 00 · LP header | wordmark + phone only, no navigation -->
+<header class="lphdr">
+  <div class="lphdr__in">
+    <a class="wm" href="index.html" aria-label="Vantage Security Systems, home">
+      <span class="wm__n">Vantage</span><span class="wm__s">Security Systems</span>
+    </a>
+    <a class="hdr__tel" href="tel:+18175550142">(817) 555-0142</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- GHL SECTION 01 · LP hero + form | 2-col → 1-col @860 -->
+  <section class="section">
+    <div class="shell">
+      <div class="split split--wide">
+        <div>
+          <p class="eyebrow rv">No charge · no obligation</p>
+          <h1 class="d2 rv">Two hours, at dusk, at your property.</h1>
+          <p class="lede mt-m rv" style="--d:100ms">A Vantage technician walks the whole property with you — every approach, every gate, every corner you have never thought about — and draws the coverage plan on the spot.</p>
+          <p class="muted mt-s rv" style="--d:140ms">You keep that plan. If you take it to another installer and have them build it, that is genuinely fine. We would rather you had a good system than a bad one with our name on it.</p>
+
+          <dl class="spec mt-l rv" style="--d:180ms">
+            <div><dt>What it costs</dt><dd>Nothing, and there is no follow-up call schedule</dd></div>
+            <div><dt>How long</dt><dd>90 minutes to two hours, at the time you choose</dd></div>
+            <div><dt>What you get</dt><dd>A drawn coverage plan and a fixed written price, valid 60 days</dd></div>
+            <div><dt>Who turns up</dt><dd>A licensed, background-checked Vantage technician — never a salesperson</dd></div>
+            <div><dt>Where</dt><dd>Tarrant, Denton, Dallas and Parker counties</dd></div>
+          </dl>
+
+          <!-- two columns here, not four: this band sits in the LP's narrower
+               left column and a 4-up grid clipped the longer labels -->
+          <dl class="stats mt-l rv" style="--d:220ms; grid-template-columns:repeat(2,minmax(0,1fr))">
+            <div><dt>Properties surveyed</dt><dd><span data-count="812">0</span></dd></div>
+            <div><dt>Avg. survey length</dt><dd><span data-count="104">0</span><span>min</span></dd></div>
+            <div><dt>Plans handed over free</dt><dd>100<span>%</span></dd></div>
+            <div><dt>Contracts required</dt><dd>0</dd></div>
+          </dl>
+        </div>
+
+        <div class="panel ticks rv" style="padding:clamp(1.4rem,2.4vw,2.25rem); align-self:start; position:sticky; top:1.5rem">
+          <h2 class="d3">Book your survey</h2>
+          <p class="muted mt-s" style="font-size:.9375rem">Five fields. We call back the same working day to agree a time.</p>
+          <form class="form mt-m" data-lead="thank-you.html" novalidate>
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required placeholder="Full name">
+              <p class="field__e" hidden>Please tell us your name.</p>
+            </div>
+            <div class="g-2f">
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="(817) 000-0000">
+                <p class="field__e" hidden>A 10-digit phone number, please.</p>
+              </div>
+              <div class="field">
+                <label for="zip">ZIP</label>
+                <input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" required placeholder="76262">
+                <p class="field__e" hidden>We need the ZIP to check the service area.</p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+              <p class="field__e" hidden>That email address doesn't look right.</p>
+            </div>
+            <div class="field">
+              <label for="ptype">Property</label>
+              <select id="ptype" name="ptype" required>
+                <option value="">Choose one…</option>
+                <option>Home — under 3,000 sq ft</option>
+                <option>Home — 3,000 to 6,000 sq ft</option>
+                <option>Home — over 6,000 sq ft or multi-building</option>
+                <option>Business — single site</option>
+                <option>Business — multiple sites</option>
+                <option>Yard, build site or acreage</option>
+              </select>
+              <p class="field__e" hidden>Please choose a property type.</p>
+            </div>
+            <div class="field">
+              <label for="note">Anything specific? <span class="dim">(optional)</span></label>
+              <textarea id="note" name="note" rows="3" placeholder="Existing system, a gate, a corner that worries you…"></textarea>
+            </div>
+            <label class="consent">
+              <input type="checkbox" name="consent" required>
+              <span>I agree that Vantage may contact me by phone, text and email about this request. Message rates may apply; reply STOP to opt out at any time.</span>
+            </label>
+            <button class="btn btn--wide" type="submit">Book my coverage survey</button>
+            <p class="formnote">No obligation. We do not sell or share your details, ever.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 02 · Risk reversal -->
+  <section class="section section--tight section--panel">
+    <div class="shell shell--narrow" style="text-align:center">
+      <p class="eyebrow eyebrow--plain rv" style="justify-content:center">Our side of it</p>
+      <h2 class="d3 rv">The plan is yours either way.</h2>
+      <p class="lede mt-m rv" style="--d:120ms; margin-inline:auto">Every survey ends with a drawn coverage plan and a fixed written price. Both are yours to keep, to compare, or to hand to a competitor. We are confident enough in the number to let you shop it.</p>
+    </div>
+  </section>
+
+  <!-- GHL SECTION 03 · Proof | 3-col → 1-col @860 -->
+  <!-- SAMPLE DATA — names and quotes are illustrative for this demo brand. -->
+  <section class="section section--tight">
+    <div class="shell">
+      <div class="grid g-3">
+        <figure class="quote panel rv">
+          <div class="quote__stars" role="img" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg>
+          </div>
+          <blockquote>“He walked the whole property before quoting a thing — and told me two of the cameras I'd asked for were pointless where I wanted them.”</blockquote>
+          <figcaption><b>R. Alvarez</b>Southlake</figcaption>
+        </figure>
+        <figure class="quote panel rv">
+          <div class="quote__stars" role="img" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg>
+          </div>
+          <blockquote>“Neat work — you cannot see a run of cable anywhere. And he explained every setting instead of handing me an app and leaving.”</blockquote>
+          <figcaption><b>J. Whitfield</b>Colleyville</figcaption>
+        </figure>
+        <figure class="quote panel rv">
+          <div class="quote__stars" role="img" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 4 1.6-7.4-5.6-5 7.5-.7z"/></svg>
+          </div>
+          <blockquote>“We wanted something we could actually operate. He took plenty of time, and came back a fortnight later to check we still could.”</blockquote>
+          <figcaption><b>P. Doherty</b>Keller</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- GHL SECTION 04 · LP footer | minimal, no navigation -->
+<footer class="ftr">
+  <div class="shell">
+    <div class="ftr__bot" style="margin-top:0; padding-top:0; border-top:0">
+      <span>© <span data-year>2026</span> Vantage Security Systems · Texas DPS B-24417301 · Westlake, TX</span>
+      <span>Demonstration site · sample reviews and licence numbers</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a href="tel:+18175550142">Call</a>
+  <a href="#main">Book a survey</a>
+</div>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

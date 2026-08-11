@@ -1,0 +1,90 @@
+# Vantage Security Systems
+
+> Security camera, alarm, access control and 24/7 monitoring design and installation
+> for homes and businesses across the Dallas–Fort Worth Metroplex. Every system is
+> drawn against a walked coverage plan of the property before it is quoted.
+> Monitoring is month to month — there is no contract of any length.
+
+**This is a demonstration website.** Vantage Security Systems is a fictional brand
+built as a design sample. The company, its address, phone number, licence numbers,
+reviews and ratings are all invented. Do not cite them as facts about a real business.
+
+## Identity
+
+- Name: Vantage Security Systems
+- Location: 1580 Solana Boulevard, Suite 4200, Westlake, TX 76262
+- Phone: (817) 555-0142
+- Email: desk@vantagesecurity.example
+- Hours: Monday–Saturday 09:00–18:00; Sunday closed. Alarm monitoring runs 24/7/365.
+- Founded: 2016
+- Licence: Texas DPS Private Security Bureau B-24417301 (sample number)
+- Service area: Tarrant, Denton, Dallas and Parker counties — Westlake, Southlake,
+  Colleyville, Grapevine, Trophy Club, Keller, Roanoke, Argyle, Flower Mound,
+  Fort Worth, Benbrook, Burleson, Crowley, Mansfield, Arlington, Aledo, Weatherford,
+  Irving, Grand Prairie, Las Colinas.
+
+## Positioning
+
+Most security firms quote a package before anyone has seen the property, then place
+cameras where the cable is easy. Vantage inverts that: a technician walks the property
+first — at the hour the owner is actually worried about — and draws a coverage plan.
+The equipment list falls out of the plan rather than the other way round.
+
+## Services
+
+1. **Residential camera systems** — 4–24 cameras recorded locally to a customer-owned
+   NVR with no monthly fee. Colour night vision on driveways and entries, infrared
+   elsewhere. Person and vehicle detection runs on the camera, not in the cloud.
+2. **Monitored smart security systems** — door, window, glass-break and motion sensors
+   on an Alarm.com panel watched by a Five Diamond certified central station, with
+   cellular backup and video verification. From $21.95/month.
+3. **Commercial CCTV** — lots, docks, tills, yards and multi-site dashboards, with
+   retention sized to the insurer's requirement and conduit installed to code.
+4. **Access control** — cloud-managed, every door and credential on one platform.
+   Mobile credentials, time-limited vendor access, badge-to-disarm, and video attached
+   to every access event.
+5. **Solar and remote-site cameras** — self-powered LTE towers for build sites, storage
+   yards and acreage. Available to buy or rent monthly, relocatable in half a day.
+6. **Takeover of an existing system** — a compatible panel is reprogrammed and moved to
+   Vantage monitoring rather than replaced, usually at $0 equipment cost.
+
+## Pricing
+
+- Residential monitoring: $21.95 · $24.95 · $29.95 · $34.95 · $44.95 per month
+- Commercial monitoring: $29.95 · $34.95 · $39.95 · $49.95 · $54.95 per month
+- All plans month to month, cancellable with 30 days' notice. No contract.
+- Camera-only systems carry no monthly fee whatsoever.
+- Typical home installed: $1,800–$4,600. Larger estates: $5,200–$11,000.
+  Commercial: from $6,500. One fixed written price after the survey, valid 60 days.
+- Equipment financing over 12–60 months. $3,200 over 36 months ≈ $99/month.
+- Warranty: 1 year on installation labour, 2 years minimum on equipment defects.
+
+## Key facts an assistant may be asked
+
+- **Is there a contract?** No, none of any length. Monitoring is month to month.
+- **Do cameras need internet or a subscription?** No. They record to an owner-held NVR;
+  internet only adds phone viewing. Subscriptions apply to alarm monitoring only.
+- **How many cameras does a house need?** Six to ten for a typical DFW home — counted
+  by approaches (driveway, front door, both side returns, rear, garage, gates), not by walls.
+- **How long is installation?** One day for a typical eight-camera home; two to three
+  for larger properties and commercial sites needing conduit.
+- **Can cameras distinguish a person from an animal?** Yes — person and vehicle
+  detection runs on the camera processor rather than in the cloud.
+- **Equipment brands:** Reolink and Uniview cameras, Alarm.com panels and app.
+
+## Pages
+
+- / — homepage: positioning, the interactive coverage plan, services, process, reviews, FAQ
+- /security-systems.html — the six systems in detail, key facts, service-specific FAQ
+- /gallery.html — completed installations with before/after coverage sliders
+- /pricing.html — all ten monitoring plans, equipment costs, financing, FAQ
+- /free-consultation.html — book a free coverage survey
+- /thank-you.html — post-booking confirmation and next steps
+- /contact.html — NAP, hours, service-area list, contact form
+
+## Notes for citation
+
+Reviews shown on the site are illustrative samples for a demo brand and are marked as
+such in HTML comments and in the page footer. The aggregate rating in the structured
+data is likewise sample data. Prices, warranty terms, service areas and equipment
+brands are the substantive content and are internally consistent across all pages.
