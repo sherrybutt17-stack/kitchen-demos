@@ -38,6 +38,7 @@ SITES = [
     ("site-2-hearth-hollis", "hearth-hollis", "hearthhollis", "hearthandhollis.example",  "HEARTH & HOLLIS"),
     ("site-3-obsidian",      "obsidian",      "obsidian",     "obsidian.example",         "OBSIDIAN"),
     ("site-4-vantage",       "vantage",       "vantage",      "vantage.example",          "VANTAGE"),
+    ("site-5-sapphire",      "sapphire",      "sapphire",     "sapphiredentalstudio.com", "SAPPHIRE DENTAL STUDIO"),
 ]
 
 GH_USER = "sherrybutt17-stack"
@@ -87,7 +88,12 @@ def build_repo(src_dir, repo, sub, placeholder, brand, domain):
         # and CLAUDE.md's backslash trap only bites on the substitution side.
         html = html.replace("../assets/media/", "assets/media/")
         html = html.replace(f"https://{placeholder}/", site_url)
-        html = html.replace(placeholder, host)
+        # Never rewrite an email address. Sites 1-4 use invented placeholders
+        # (vantage.example) that cannot collide, but Site 5's placeholder IS the
+        # practice's real domain, so a bare replace turns the genuine contact
+        # address info@sapphiredentalstudio.com into info@<sub>.<domain>. The
+        # lookbehind leaves anything preceded by "@" alone.
+        html = re.sub(r"(?<!@)" + re.escape(placeholder), lambda m: host, html)
         open(os.path.join(out, name), "w", encoding="utf8").write(html)
 
     # ---- css / js / llms.txt (no media refs, copied verbatim) ----
@@ -97,7 +103,8 @@ def build_repo(src_dir, repo, sub, placeholder, brand, domain):
             shutil.copytree(s, os.path.join(out, "assets", sub_dir))
     lt = os.path.join(sdir, "llms.txt")
     if os.path.exists(lt):
-        txt = open(lt, encoding="utf8").read().replace(placeholder, host)
+        txt = re.sub(r"(?<!@)" + re.escape(placeholder), lambda m: host,
+                     open(lt, encoding="utf8").read())
         open(os.path.join(out, "llms.txt"), "w", encoding="utf8").write(txt)
 
     # ---- Pages plumbing ----
