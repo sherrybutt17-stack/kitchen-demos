@@ -1,14 +1,18 @@
-# Four Brand Websites — Three Kitchen Remodeling, One Security
+# Five Brand Websites — Three Kitchen Remodeling, One Security, One Dental
 
 ## What this project is
 
-Four **completely separate** websites, built to look like the work of four different world-class
+Five **completely separate** websites, built to look like the work of five different world-class
 agencies. Different brand, positioning, customer, color system, typography, layout philosophy, and
-conversion strategy for each. Sites 1–3 are kitchen remodeling; **Site 4 is a security firm**,
-added to prove the pattern and the toolchain travel to another industry without being adapted.
+conversion strategy for each. Sites 1–3 are kitchen remodeling; **Site 4 is a security firm** and
+**Site 5 is a dental practice**, each added to prove the pattern and the toolchain travel to
+another industry without being adapted.
 
-They are demo/sample sites: fictional brands anchored to real affluent metros so local SEO,
-service-area content, and schema read as genuine.
+Sites 1–4 are demo/sample sites: fictional brands anchored to real affluent metros so local SEO,
+service-area content, and schema read as genuine. **Site 5 is different — it is a redesign of a
+real practice** (sapphiredentalstudio.com) using that practice's own content, doctors, prices,
+photography and logo palette. Nothing about it is invented, which changes the rules: see its
+brand block.
 
 Static HTML/CSS/JS you can open in a browser and show a client — structured so every section maps
 1:1 onto a GoHighLevel landing-page block for the real build.
@@ -20,10 +24,10 @@ Static HTML/CSS/JS you can open in a browser and show a client — structured so
 | Question | Decision |
 |---|---|
 | Deliverable | Coded demos only — no separate markdown strategy docs |
-| Scope | **7 pages per site = 28 pages total**, all at full fidelity |
+| Scope | **7 pages per site for Sites 1–4; 9 for Site 5 = 37 pages total**, all at full fidelity |
 | Media | Photography throughout + hero video loops + click-to-load testimonial video |
 | Website 3 "3D" | **Real WebGL** (`kitchen3d.js`, raw — no Three.js) **plus** the scroll-driven Chamber. Both, not either. |
-| Brands | Fictional, each anchored to a real affluent metro |
+| Brands | Sites 1–4 fictional, each anchored to a real affluent metro. **Site 5 is a real practice.** |
 | Site 4 source | Content structure adapted from truelovesecurity.com; brand, NAP and licences invented |
 | Build system | **None.** No framework, no bundler, no package manager. |
 
@@ -236,6 +240,113 @@ either way**, including if you hand it to a competitor.
 
 ---
 
+### Site 5 — SAPPHIRE · *Dental Studio* → `site-5-sapphire/`
+**Metro:** Winter Garden / Windermere / Horizon West, Florida — west Orange County
+**Industry:** Dentistry — implants, prosthodontics, periodontics, cosmetic, sedation, sleep apnea.
+**Source:** A redesign of **sapphiredentalstudio.com**. Unlike Sites 1–4 this is a **real business**,
+so the NAP, the three doctors and their credentials, the membership tiers and their prices, the
+financing partners, the hours and the service list are all **real and taken from the practice's own
+published material**. The before/after case photography and the three headshots are the practice's
+own files. The **palette is sampled from their actual logo**: `#001868` navy, `#D8B860` gold.
+
+> **The rule that follows from that.** Because the business is real, nothing may be invented about
+> it. No fabricated reviews, no invented licence numbers, no made-up clinical claims about an
+> identifiable patient. The three homepage testimonial cards are therefore **explicit placeholders**
+> marked SAMPLE in an HTML comment and in the footer, to be replaced with real attributed Google
+> reviews. The `aggregateRating` (5.0 / 40) is the practice's genuine public Google rating, checked
+> August 2026, with an HTML comment telling whoever launches it to re-confirm the count.
+
+**Positioning:** Three board-certified specialists under one roof — a periodontist who places the
+implant, a prosthodontist who restores it, and a dentist anesthesiologist who handles sedation. In
+most towns those are three referrals; here it is one plan, one building, one day.
+**Customer:** Implant, full-arch and cosmetic patients, plus the large group who avoid dentistry
+entirely out of fear. The anxiety segment is the wedge, and the in-house anesthesiologist is the
+proof.
+**Emotional angle:** Relief, not aspiration. *"The dentistry was never the hard part. The dread was."*
+**Layout — porcelain and cut gem.** A light, luminous, jewel-clean surface: near-white porcelain
+ground, deep sapphire full-bleed "gem" bands for contrast, champagne gold hairlines, and generous
+air. The signature motif is the **facet** — a chamfered corner cut from the logo's tessellated gem,
+plus a faint 60°/-60° facet lattice — used instead of a border-radius anywhere a softer language
+would have reached for one.
+
+| Token | Value |
+|---|---|
+| Porcelain | `#F7F9FD` — page base |
+| Paper | `#FFFFFF` — raised panel |
+| Sapphire | `#001868` — brand ink, **15.78:1 on porcelain** |
+| Abyss | `#000B2E` — the gem bands and footer |
+| Ink | `#0A1330` — body text, 17.34:1 |
+| Slate | `#46527A` — secondary, **7.25:1** |
+| Gold | `#D8B860` — **1.92:1 on porcelain, so large display / rules / icons only; 10.07:1 on abyss, so legal as text on the gem** |
+| Gold-deep | `#8A6B22` — small gold text on light, **4.99:1** |
+| Display | `Cormorant Garamond` 300–600 + italic |
+| Body / UI | `Manrope` 400/500/600/700 |
+
+**Why this does not collide with Vantage,** which is also blue: Vantage is a *bright* azure
+(`#4D8DFF`) on near-black, ~96% dark pixels, mono type, HUD ticks and 4px radius. Sapphire is a
+*deep* indigo on near-white, ~90% light pixels, a Garamond display face, facet chamfers and gold.
+Same colour family, opposite pole, opposite ground; the two can never produce a similar screenshot.
+Sapphire never uses `#4D8DFF`, a mono family, or `.18em` uppercase micro-caps.
+
+#### The Smile Studio — WebGL over real paired case photography (`assets/js/smile-studio.js`)
+
+Site 5's answer to Obsidian's WebGL room and Vantage's Perimeter. ~16KB, raw WebGL, one fullscreen
+quad, three textures, no library.
+
+The practice publishes ten genuine before/after cases. Because each case is a **pair**, the tooth
+mask never had to be hand-traced onto a photograph — it is **derived offline from the before→after
+difference** plus a luminance and redness gate, cleaned with a largest-connected-component pass and
+a median/blur, and shipped as a greyscale image beside the pair. The mask is therefore a
+*measurement of the case*, not an artist's guess about it, and re-shooting a case regenerates its
+mask rather than breaking it. Four cases (01, 02, 07, 08) segment cleanly and are the ones the
+Studio offers; the rest are ordinary sliders in the gallery.
+
+- the **whitening slider shades the before photograph** inside the mask, in the fragment shader:
+  pull the enamel toward neutral, then lift toward white weighted by its own luminance so the
+  tooth's shading and texture survive instead of flattening to a white paste
+- the **reveal button cross-fades to the genuine clinical after**, so shape and alignment change,
+  not just shade
+- a divider wipes between "Today" and the live state — done **inside the canvas**, deliberately, so
+  no `clip-path`-ed DOM element exists for an `IntersectionObserver` to deadlock on
+- a one-shot entrance reveals the real result on its own after 900ms, because with nothing applied
+  both halves are the same photograph and the widget otherwise arrives looking inert. Any visitor
+  interaction cancels it.
+- an "I get anxious at the dentist" checkbox rewrites the plan readout **and** the CTA and its href
+  — a lead qualifier disguised as a control, mapping straight onto the practice's real differentiator
+
+> **Simulation and real outcome are labelled separately and never blended.** The whitening is
+> called a simulation everywhere it appears and **never claims a VITA shade number**, because you
+> cannot honestly measure an absolute shade through an unknown white balance. The revealed side is
+> an unretouched photograph. A tool that blurred those two would be the exact thing dental
+> advertising rules exist to police, and for a real practice with three named board-certified
+> doctors that is not a footnote — it is the deciding constraint.
+
+**The canvas is `aria-hidden` and only ever draws.** Every control is a real form element beside
+it — `input[type=range]`, `button[aria-pressed]`, `input[type=checkbox]` — and the plan readout is
+a native `<output>`, which is implicitly `role="status" aria-live="polite"`, debounced 260ms so a
+slider drag does not fire a hundred announcements. That is what makes the whole feature
+keyboard-operable with no parallel implementation.
+
+**Texture loading.** The case images ship `loading="lazy"` so the three cases nobody opens are never
+fetched — but they live in a 1px clipped `.vh` box, where the lazy loader has no viewport proximity
+to react to and **would never start them at all**. `whenReady()` therefore promotes just the
+requested case's images to `loading="eager"` at the moment that case is needed. Marking them eager
+in the markup instead would pull all twelve down on every visit.
+
+**Conversion — relief, then proof.** The Studio persuades, the ask stays short. Risk reversal is
+that the first visit is diagnosis only: *"You can come in, meet the team, look at the room and leave
+again without anyone touching your teeth."*
+
+#### The nine pages
+
+Site 5 breaks the seven-page lock: `meet-the-team.html` and `sedation-dentistry.html` earn their own
+URLs because the three named specialists and the in-house anesthesiologist **are** the positioning,
+and folding either into a homepage section would bury the two things that actually differentiate the
+practice. Order: `index` · `services` · `smile-gallery` · `sedation-dentistry` · `meet-the-team` ·
+`membership` · `book-appointment` · `thank-you` · `contact`.
+
+---
+
 ## Repository structure
 
 ```
@@ -254,6 +365,7 @@ either way**, including if you hand it to a competitor.
 ├── site-2-hearth-hollis/           ← same 7 pages, wholly independent CSS/JS
 ├── site-3-obsidian/                ← same 7 pages, own CSS/JS + chamber.js
 ├── site-4-vantage/                 ← same 7 pages, own CSS/JS + perimeter.js
+├── site-5-sapphire/                ← 9 pages, own CSS/JS + smile-studio.js
 └── dist/                           ← BUILT: what you paste into GoHighLevel
     └── site-*/ *.html              (CSS + JS + all images inlined, zero external files)
 ```
@@ -286,12 +398,13 @@ carrying an inlined hero video.
 > contain backslashes that Python's `re.sub` would otherwise parse as escape sequences.
 
 ### 🚫 Do not
-- **Do not share CSS, JS, or design tokens across the four sites.** Divergence is the deliverable.
+- **Do not share CSS, JS, or design tokens across the five sites.** Divergence is the deliverable.
 - Do not add a framework, bundler, or package manager. `build.py` (stdlib + Pillow) is the whole toolchain.
 - Do not add jQuery or an animation library.
 - Do not exceed the JS budget: ≤20KB for Sites 1–2 (currently ~15.5KB each);
   ≤40KB for Site 3 (currently ~39KB across `site.js` + `chamber.js` + `kitchen3d.js`);
-  ≤30KB for Site 4 (currently ~27KB across `site.js` + `perimeter.js`).
+  ≤30KB for Site 4 (currently ~27KB across `site.js` + `perimeter.js`);
+  ≤36KB for Site 5 (currently ~27KB across `site.js` + `smile-studio.js`).
   The ceiling moved from 35KB to 40KB to pay for the lighting/material upgrade in
   `kitchen3d.js` — that was a deliberate trade, not drift.
 - Do not hand-edit `dist/`.
@@ -399,6 +512,10 @@ the service page. `llms.txt` at each site root.
   and the harbor blue that briefly replaced it was removed for being cool.
 - **No green and no red** in either the palettes or the photography — client instruction.
   Photos carrying either were swapped out; see `scripts/`-adjacent notes in git history.
+  **This rule is scoped to Sites 1–4.** It cannot bind Site 5: gingiva and lips are pink in every
+  real clinical photograph, and the practice's own before/after cases are the proof the page is
+  built on. Site 5 keeps the spirit of it instead — no green or red is used as a *brand or status*
+  colour anywhere; status reads sapphire, never a traffic light.
 - Every site: skip link, visible `:focus-visible` rings, `aria-label`s on icon buttons,
   keyboard-operable accordions/sliders/video facades, honors `prefers-reduced-motion`.
 
@@ -418,8 +535,9 @@ site via `preconnect` + `display=swap`; all below-fold media lazy; animations re
 3. **Site 1 — Northstone.** Establishes the seven-page pattern.
 4. **Site 2 — Hearth & Hollis.** Same page set, independent design system + multi-step form.
 5. **Site 3 — Obsidian.** Same page set, plus `chamber.js` and horizontal portfolio rail.
-6. Root `index.html` launcher — four cards, one line of positioning each.
+6. Root `index.html` launcher — five cards, one line of positioning each.
 7. **Site 4 — Vantage.** Same page set in a different industry, plus `perimeter.js`.
+8. **Site 5 — Sapphire.** A real practice redesigned from its own content, plus `smile-studio.js`.
 
 ---
 
@@ -516,6 +634,29 @@ and the wordmark subtitle at ≤640px, where `.mbar` already carries "Book a sur
 **Fixed CTA bar.** `.mbar` is `position: fixed`, so each site pairs
 `.mbar { display: grid }` with a matching `body { padding-bottom }` in the same media
 query. Drop one and the last rows of every page sit under the bar.
+
+**Custom properties inherit, so two effects must never share a variable name.**
+Site 5's cursor-follow CTA (`.magnet`) reads `--mx` / `--my`. The pointer spotlight on
+its dark bands was written with the same two names and declared
+`.gem { --mx: 50%; --my: 50% }` as its at-rest default. Those cascade into every
+descendant, so **every magnetic button inside a gem section was translated by half its
+own width and height** — `translate3d(50%, 50%, 0)` — pushing the final CTA off the
+right edge of six pages at once. It surfaced as `A.btn.btn--gold` sitting at
+`left:187 right:393` in a 375px viewport, and `scrollWidth` did catch this one because
+the buttons genuinely widened the page.
+
+The fix was to namespace the spotlight to `--gx` / `--gy`. The rule: **a custom
+property consumed by a `transform` is effectively global**, because any ancestor may
+set it. Give every such variable an owner prefix, and never declare a bare `--mx` on a
+container.
+
+**A deliberately over-scaled element is not an overflow bug — check `scrollDelta`.**
+Site 5's hero image is `scale(1 + var(--sp) * .07)`, so its rect necessarily exceeds
+the viewport; it sits inside `.hero { overflow: hidden }` and the page never scrolls.
+The element-rect sweep flags it at every width with `scrollDelta: 0`. Same category as
+`.marq`'s `width: max-content` track. Both are excluded from the sweep by ancestor
+(`.marq`), and the hero is verified by its zero scroll delta rather than excluded —
+read the two signals together, never one alone.
 
 ## What the QA sweep does and does not flag
 

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Four Brands, One Toolchain — Demo Launcher</title>
-<meta name="description" content="Four complete websites — three kitchen remodeling brands and one security firm — each built as if by a different agency. Open any of them, or the GHL-ready build.">
+<title>Five Brands, One Toolchain — Demo Launcher</title>
+<meta name="description" content="Five complete websites — three kitchen remodeling brands, a security firm and a dental practice — each built as if by a different agency. Open any of them, or the GHL-ready build.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
   .note{margin-top:1.5rem;padding:1rem 1.25rem;border:1px solid var(--line);color:#a8a8a8;
         font-size:.875rem;max-width:70ch}
   .note code{color:#e0b878;font-size:.8125rem}
-  .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(1rem,2vw,1.75rem);
+  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,2vw,1.75rem);
         margin-top:clamp(2.5rem,5vw,4rem)}
   @media(max-width:1400px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
   @media(max-width:760px){.grid{grid-template-columns:1fr}}
@@ -48,6 +48,7 @@
   .c2:hover{border-color:#b08968}.c2 .card__go{color:#c99f79}
   .c3:hover{border-color:#b87333}.c3 .card__go{color:#d99a5e}
   .c4:hover{border-color:#4d8dff}.c4 .card__go{color:#7fb0ff}
+  .c5:hover{border-color:#d8b860}.c5 .card__go{color:#d8b860}
   footer{border-top:1px solid var(--line);color:#7a7a7a;font-size:.8125rem}
   footer ul{margin:.75rem 0 0;padding-left:1.1rem}
 </style>
@@ -56,9 +57,9 @@
 
 <div class="shell">
   <header>
-    <p>Four brands · two industries · 28 pages</p>
-    <h1>Four websites. Four agencies.<br>One toolchain.</h1>
-    <p class="lede">Each of these is a complete seven-page site with its own brand, positioning, customer, colour system, typography, layout philosophy and conversion strategy. No CSS, JavaScript or design token is shared between them — the divergence is the point. Three are kitchen remodeling; the fourth is a security firm, built to prove the pattern travels.</p>
+    <p>Five brands · three industries · 37 pages</p>
+    <h1>Five websites. Five agencies.<br>One toolchain.</h1>
+    <p class="lede">Each of these is a complete seven-page site with its own brand, positioning, customer, colour system, typography, layout philosophy and conversion strategy. No CSS, JavaScript or design token is shared between them — the divergence is the point. Three are kitchen remodeling, the fourth a security firm, and the fifth a real dental practice rebuilt from its own content — each one proving the pattern travels to another industry.</p>
     <div class="note">
       These cards open the <b>source</b> sites. The GoHighLevel-ready versions live in
       <code>dist/</code> — same pages with all CSS, JavaScript and images inlined as base64,
@@ -142,6 +143,24 @@
           <div><dt>Feeling</dt><dd>Instrument · night watch · certainty</dd></div>
         </dl>
         <span class="card__go">Open Vantage <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+    <a class="card c5" href="site-5-sapphire/index.html">
+      <div class="card__sw">
+        <i style="background:#001868"></i><i style="background:#d8b860"></i>
+        <i style="background:#f7f9fd"></i><i style="background:#000b2e"></i>
+      </div>
+      <div class="card__b">
+        <p class="card__n">Site 05</p>
+        <h2>SAPPHIRE<span>Dental Studio, Winter Garden FL</span></h2>
+        <p>A third industry, and the only one rebuilt from a real practice's own content. Porcelain light, cut-gem geometry, sapphire navy and champagne gold taken from the client's actual logo. Its centrepiece, The Smile Studio, runs WebGL over genuine paired patient photography: the whitening is simulated inside a tooth mask derived from each case's own before/after difference, and the reveal cross-fades to the real clinical result.</p>
+        <dl>
+          <div><dt>Market</dt><dd>Winter Garden &amp; west Orlando, FL</dd></div>
+          <div><dt>Customer</dt><dd>Implant, cosmetic &amp; anxious patients</dd></div>
+          <div><dt>Type</dt><dd>Cormorant Garamond · Manrope</dd></div>
+          <div><dt>Feeling</dt><dd>Jeweller · clinic · calm authority</dd></div>
+        </dl>
+        <span class="card__go">Open Sapphire <span aria-hidden="true">→</span></span>
       </div>
     </a>
 

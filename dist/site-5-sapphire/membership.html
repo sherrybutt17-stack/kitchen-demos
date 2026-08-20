@@ -1,0 +1,1514 @@
+<!--
+  ════════════════════════════════════════════════════════════════════════════
+  PASTE THIS FILE — NOT the one in site-*/ . This build has the CSS, the
+  JavaScript and every photograph embedded; the source version links to
+  ./assets/ files that do not exist inside GoHighLevel, which is why it
+  renders unstyled there.
+
+  In GHL:
+    1. Add a Section, set its width to FULL WIDTH and its padding to 0.
+    2. Drop in a Custom HTML / Code element.
+    3. Paste this entire file.
+  The stylesheet above makes every band span the viewport even if the
+  section is left at its default width.
+  ════════════════════════════════════════════════════════════════════════════
+-->
+<!doctype html>
+<!--  ██  DO NOT PASTE THIS FILE INTO GOHIGHLEVEL  ██
+      This is the SOURCE page. It links an external stylesheet and external scripts
+      and points at relative image paths, none of which exist inside GHL.
+      Run `python3 scripts/build.py` and paste dist/site-5-sapphire/membership.html.      -->
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Membership Plans &amp; Financing | Sapphire Dental Studio, Winter Garden FL</title>
+<meta name="description" content="In-house dental membership plans from $550 a year — no deductibles, no waiting periods, no claims, plus 15% off all other treatment. CareCredit and Cherry financing available.">
+<link rel="canonical" href="https://sapphiredentalstudio.com/membership.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Membership Plans &amp; Financing | Sapphire Dental Studio, Winter Garden FL">
+<meta property="og:description" content="In-house dental membership plans from $550 a year — no deductibles, no waiting periods, no claims, plus 15% off all other treatment. CareCredit and Cherry financing available.">
+<meta property="og:image" content="https://sapphiredentalstudio.com/assets/media/img/d-reception-wood-1200.jpg">
+<meta property="og:url" content="https://sapphiredentalstudio.com/membership.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#001868">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================================
+   SAPPHIRE DENTAL STUDIO — Winter Garden, FL
+   Porcelain light, cut-gem geometry, sapphire navy ink, champagne gold hairlines.
+   Palette taken from the practice's real logo: #001868 navy, #D8B860 gold.
+   The signature motif is the FACET — chamfered corners cut from the logo's
+   tessellated gem, never a border-radius.
+   Nothing here is shared with Northstone, Hearth & Hollis, Obsidian or Vantage.
+   SOURCE OF TRUTH — inlined into every page by scripts/build.py
+   ========================================================================= */
+
+/* ---------- 1. Tokens ---------- */
+:root {
+  /* surfaces — light, cool, porcelain */
+  --porcelain: #f7f9fd;   /* page base */
+  --paper:     #ffffff;   /* raised panel */
+  --mist:      #ecf0f8;   /* quiet mid-tone between porcelain and paper */
+  --frost:     #e2e9f6;   /* inset / rule ground */
+
+  /* the gem — deep sapphire, used full-bleed for contrast sections */
+  --sapphire:  #001868;   /* brand ink — 15.78:1 on porcelain */
+  --sapphire-2:#0b2a8a;   /* raised gem panel */
+  --sapphire-3:#12379f;   /* hover / gradient stop */
+  --abyss:     #000b2e;   /* deepest — footer and gem bands */
+
+  /* text ramp */
+  --ink:       #0a1330;   /* body on light — 17.34:1 */
+  --slate:     #46527a;   /* secondary on light — 7.25:1 */
+  --slate-dim: #6f7a9d;   /* tertiary, decorative only — never body copy */
+  --on-gem:    #eef2fb;   /* body on sapphire — 17.8:1 on abyss */
+  --on-gem-dim:#a9b6dc;   /* secondary on sapphire — 7.4:1 on abyss */
+
+  /* accent ramp — champagne gold, with its legal uses spelled out */
+  --gold:      #d8b860;   /* 1.92:1 on porcelain -> LARGE display, rules, icons only
+                             10.07:1 on abyss    -> legal as text on the gem */
+  --gold-dp:   #8a6b22;   /* 4.99:1 on porcelain -> small gold text on light */
+  --gold-lt:   #ebd9a0;   /* 13.77:1 on abyss    -> gold body text on the gem */
+
+  /* lines, glass, light */
+  --line:      rgba(10,19,48,.14);
+  --line-soft: rgba(10,19,48,.07);
+  --line-gold: rgba(216,184,96,.42);
+  --line-gem:  rgba(238,242,251,.16);
+  --sheen:     linear-gradient(100deg,transparent 20%,rgba(216,184,96,.42) 48%,transparent 76%);
+  --lift-1:    0 1px 2px rgba(0,24,104,.05), 0 4px 14px -6px rgba(0,24,104,.10);
+  --lift-2:    0 2px 6px rgba(0,24,104,.07), 0 18px 44px -18px rgba(0,24,104,.20);
+  --lift-3:    0 8px 20px rgba(0,24,104,.10), 0 40px 80px -32px rgba(0,24,104,.30);
+
+  --ff:        "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ff-d:      "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+
+  --shell:     1440px;
+  --gut:       clamp(1.25rem, 4.2vw, 5rem);
+  --sect:      clamp(4rem, 7vw, 8rem);
+  --r:         2px;                        /* micro-radius; the language is the chamfer */
+  --facet:     clamp(14px, 2.1vw, 28px);   /* the cut-gem corner */
+
+  --e:         cubic-bezier(.22,.61,.28,1);
+  --e-out:     cubic-bezier(.16,1,.3,1);
+  --e-io:      cubic-bezier(.76,0,.24,1);
+}
+
+/* ---------- 2. Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--porcelain); color: var(--ink);
+  font: 400 clamp(1rem, .96rem + .18vw, 1.125rem)/1.68 var(--ff);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  overflow-x: clip;   /* clip, not hidden — hidden on an ancestor kills position:sticky */
+}
+img, video, canvas, svg { display: block; max-width: 100%; }
+img { height: auto; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; }
+h1, h2, h3, h4, p, figure, dl, dd, ul, ol { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+
+/* ---------- 3. Type ---------- */
+/* Display sizes use em/ch-free measures. `ch` is a BODY-font unit: an 18ch cap on a
+   Cormorant heading measures 18 Manrope characters, which is far narrower than the
+   glyphs it is holding. See CLAUDE.md. */
+.d1, .d2, .d3, .d4 {
+  font-family: var(--ff-d); font-weight: 400; line-height: 1.02;
+  letter-spacing: -.018em; text-wrap: balance; color: var(--sapphire);
+}
+.d1 { font-size: clamp(2.9rem, 1.1rem + 7.4vw, 8.2rem); line-height: .98; }
+.d2 { font-size: clamp(2.3rem, 1.1rem + 4.6vw, 5.4rem); }
+.d3 { font-size: clamp(1.75rem, 1.1rem + 2.5vw, 3.3rem); line-height: 1.08; }
+.d4 { font-size: clamp(1.35rem, 1.05rem + 1.2vw, 2rem); line-height: 1.16; letter-spacing: -.01em; }
+.d1 em, .d2 em, .d3 em { font-style: italic; color: var(--gold-dp); }
+.gem .d1, .gem .d2, .gem .d3, .gem .d4 { color: var(--paper); }
+.gem .d1 em, .gem .d2 em, .gem .d3 em { color: var(--gold); }
+
+.eyebrow {
+  font: 600 .72rem/1.3 var(--ff); letter-spacing: .22em; text-transform: uppercase;
+  color: var(--gold-dp); display: flex; align-items: center; gap: .7rem; margin-bottom: 1.1rem;
+}
+.eyebrow::before {
+  content: ""; width: clamp(18px, 3vw, 40px); height: 1px; background: var(--gold);
+  flex: none; transform-origin: left; 
+}
+.eyebrow--plain::before { display: none; }
+.gem .eyebrow { color: var(--gold); }
+
+.lede { font-size: clamp(1.08rem, 1rem + .5vw, 1.4rem); line-height: 1.62; color: var(--slate); }
+.gem .lede { color: var(--on-gem-dim); }
+.muted { color: var(--slate); }
+.gem .muted { color: var(--on-gem-dim); }
+.dim   { color: var(--slate-dim); font-size: .84rem; }
+.gold  { color: var(--gold-dp); }
+.gem .gold { color: var(--gold); }
+.tnum  { font-variant-numeric: tabular-nums; }
+p + p { margin-top: 1.05em; }
+
+/* ---------- 4. Layout ---------- */
+.shell { max-width: var(--shell); margin-inline: auto; padding-inline: var(--gut); }
+.shell--narrow { max-width: 1020px; }
+.shell--tight  { max-width: 780px; }
+main > section { padding-block: var(--sect); position: relative; }
+.section--tight { padding-block: calc(var(--sect) * .6); }
+.section--flush { padding-block: 0; }
+.section--mist  { background: var(--mist); }
+.section--paper { background: var(--paper); }
+
+/* the gem band — full-bleed deep sapphire with a faint facet lattice */
+.gem { background: var(--abyss); color: var(--on-gem); }
+.gem::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
+  background:
+    radial-gradient(120% 90% at 12% -10%, rgba(18,55,159,.55), transparent 60%),
+    radial-gradient(90% 80% at 92% 108%, rgba(0,24,104,.85), transparent 62%);
+}
+.gem > * { position: relative; z-index: 1; }
+
+.grid { display: grid; gap: clamp(1rem, 1.8vw, 1.9rem); }
+.g-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.g-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+.g-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
+.g-2f{ grid-template-columns: 1.35fr 1fr; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.6rem, 4.4vw, 5.5rem); align-items: center; }
+.split--wide { grid-template-columns: 7fr 5fr; }
+.split--flip > *:first-child { order: 2; }
+
+/* Section head: 6fr/5fr, bottom-aligned. A tall display headline in a narrow column
+   used to leave the right 60% of the head empty — see CLAUDE.md. */
+.shead { display: grid; grid-template-columns: 6fr 5fr; gap: clamp(1.5rem,3vw,4rem);
+         align-items: end; margin-bottom: clamp(2rem,3.6vw,3.6rem); }
+.shead > *:last-child { padding-bottom: .4rem; }
+.mt-s{margin-top:.6rem}.mt-m{margin-top:1.2rem}.mt-l{margin-top:2rem}.mt-xl{margin-top:3.2rem}
+.rule { height: 1px; background: var(--line); border: 0; }
+.rule--gold { background: linear-gradient(90deg, var(--gold), transparent); }
+.gem .rule { background: var(--line-gem); }
+
+/* ---------- 5. The facet — the signature geometry ---------- */
+/* A cut-gem chamfer on two opposing corners. This is the house shape: it replaces
+   border-radius everywhere a softer language would have used one. */
+.fct { clip-path: polygon(var(--facet) 0, 100% 0, 100% calc(100% - var(--facet)), calc(100% - var(--facet)) 100%, 0 100%, 0 var(--facet)); }
+.fct--all { clip-path: polygon(var(--facet) 0, calc(100% - var(--facet)) 0, 100% var(--facet), 100% calc(100% - var(--facet)), calc(100% - var(--facet)) 100%, var(--facet) 100%, 0 calc(100% - var(--facet)), 0 var(--facet)); }
+.fct--tr  { clip-path: polygon(0 0, calc(100% - var(--facet)) 0, 100% var(--facet), 100% 100%, 0 100%); }
+
+/* The lattice — the logo's tessellation, drawn as hairlines. Decorative only. */
+.lattice { position: relative; }
+.lattice::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .55;
+  background-image:
+    linear-gradient(60deg,  var(--line-soft) 0 1px, transparent 1px 100%),
+    linear-gradient(-60deg, var(--line-soft) 0 1px, transparent 1px 100%);
+  background-size: 92px 160px;
+  mask-image: linear-gradient(180deg, transparent, #000 22%, #000 78%, transparent);
+}
+.gem .lattice::before,
+.lattice--gem::before {
+  background-image:
+    linear-gradient(60deg,  var(--line-gem) 0 1px, transparent 1px 100%),
+    linear-gradient(-60deg, var(--line-gem) 0 1px, transparent 1px 100%);
+}
+@media (max-width: 860px) { .lattice::before { display: none; } }
+
+/* ---------- 6. Panels & cards ---------- */
+.panel {
+  background: var(--paper); border: 1px solid var(--line-soft);
+  box-shadow: var(--lift-1); padding: clamp(1.4rem, 2.4vw, 2.4rem);
+  position: relative;
+}
+.panel--inset { background: var(--mist); box-shadow: none; }
+.panel--flat  { box-shadow: none; }
+.gem .panel {
+  background: rgba(238,242,251,.045); border-color: var(--line-gem);
+  box-shadow: none; backdrop-filter: blur(6px);
+}
+/* a hairline gold seam along the chamfer */
+.seam::after {
+  content: ""; position: absolute; right: -1px; bottom: -1px;
+  width: calc(var(--facet) * 1.42); height: 1px; background: var(--gold);
+  transform-origin: right bottom; transform: rotate(-45deg); opacity: .85; pointer-events: none;
+}
+
+.fig { overflow: hidden; position: relative; background: var(--frost); }
+.fig img { width: 100%; height: 100%; object-fit: cover; }
+.fig--tall { aspect-ratio: 3/4; }
+.fig--wide { aspect-ratio: 16/9; }
+.fig--sq   { aspect-ratio: 1/1; }
+.fig--port { aspect-ratio: 4/5; }
+.figcap { font: 500 .74rem/1.4 var(--ff); letter-spacing: .14em; text-transform: uppercase;
+          color: var(--slate); margin-top: .8rem; }
+
+/* ---------- 7. Buttons ---------- */
+.btn {
+  --bg: var(--sapphire); --fg: var(--paper);
+  display: inline-flex; align-items: center; justify-content: center; gap: .65rem;
+  min-height: 54px; padding: 0 clamp(1.4rem, 2.4vw, 2.2rem);
+  background: var(--bg); color: var(--fg);
+  font: 600 .92rem/1 var(--ff); letter-spacing: .04em;
+  border: 1px solid var(--bg); cursor: pointer; position: relative; overflow: hidden;
+  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+  transition: transform .5s var(--e-out), background .4s var(--e), color .4s var(--e), border-color .4s var(--e);
+  will-change: transform;
+}
+.btn > * { position: relative; z-index: 1; }
+/* the refraction sweep — a gold sheen that crosses the face on hover */
+.btn::after {
+  content: ""; position: absolute; inset: 0; background: var(--sheen);
+  transform: translateX(-115%); transition: transform .85s var(--e-out); z-index: 0;
+}
+.btn:hover::after, .btn:focus-visible::after { transform: translateX(115%); }
+.btn:hover { background: var(--sapphire-3); border-color: var(--sapphire-3); }
+.btn--gold  { --bg: var(--gold); --fg: #2b1f00; }
+.btn--gold:hover { background: #e6c874; border-color: #e6c874; }
+.btn--ghost { --bg: transparent; --fg: var(--sapphire); border-color: var(--line); }
+.btn--ghost:hover { background: var(--sapphire); color: var(--paper); border-color: var(--sapphire); }
+.gem .btn--ghost { --fg: var(--paper); border-color: var(--line-gem); }
+.gem .btn--ghost:hover { background: var(--paper); color: var(--sapphire); border-color: var(--paper); }
+.btn--sm { min-height: 46px; font-size: .84rem; padding: 0 1.15rem; }
+.btn--wide { width: 100%; }
+.btn[disabled] { opacity: .55; cursor: not-allowed; }
+
+/* a text link that draws its own gold underline */
+/* padding-block on an inline-block grows the hit rectangle to the 44px floor
+   without changing the line box, so a standalone "→" link is a real target while a
+   link inside a sentence still sits on its baseline. */
+.tlink { position: relative; font-weight: 600; color: var(--sapphire); display: inline-block;
+         padding-block: .6rem; }
+.tlink::after {
+  content: ""; position: absolute; left: 0; bottom: .45rem; width: 100%; height: 1px;
+  background: var(--gold); transform: scaleX(0); transform-origin: right;
+  transition: transform .5s var(--e-out);
+}
+.tlink:hover::after, .tlink:focus-visible::after { transform: scaleX(1); transform-origin: left; }
+.gem .tlink { color: var(--gold); }
+
+/* ---------- 8. Accessibility ---------- */
+/* A clipped box is invisible at any nesting depth; a translated one is only invisible
+   if you know its containing block. Never hide chrome by moving it off-screen. */
+.skip {
+  position: fixed; top: .75rem; left: .75rem; z-index: 9999;
+  width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%);
+  background: var(--sapphire); color: var(--paper); padding: 0;
+  font: 600 .85rem/1 var(--ff); letter-spacing: .1em; text-transform: uppercase;
+}
+.skip:focus {
+  width: auto; height: auto; clip: auto; clip-path: none;
+  padding: .95rem 1.3rem; outline: 2px solid var(--gold); outline-offset: 2px;
+}
+.vh { position: absolute !important; width: 1px; height: 1px; margin: -1px;
+      padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
+.gem :focus-visible, .hdr :focus-visible { outline-color: var(--gold); }
+
+/* ---------- 9. Motion system ---------- */
+/* transform / opacity / filter only. Every reveal is IntersectionObserver-driven
+   and one-shot. NOTE: `.fct` clips its element, and a clipped box has a zero-area
+   intersection rectangle — an observer watching it never fires. So a clipped element
+   is NEVER a reveal target: site.js observes an unclipped ancestor and forwards
+   data-in down to [data-rvchild]. See CLAUDE.md. */
+.rv  { opacity: 0; transform: translateY(26px) scale(.988); filter: blur(5px);
+       transition: opacity .8s var(--e-out), transform .9s var(--e-out), filter .8s var(--e-out);
+       transition-delay: var(--d, 0ms); }
+.rv[data-in="true"] { opacity: 1; transform: none; filter: none; }
+
+/* line mask. .18em of descender headroom — at .06em the tails of g, y and p
+   grazed the mask edge at display sizes. */
+.rvt { display: block; overflow: hidden; padding-bottom: .18em; margin-bottom: -.18em; }
+.rvt > span { display: block; transform: translateY(106%);
+              transition: transform 1.05s var(--e-out); transition-delay: var(--d, 0ms); }
+.rvt[data-in="true"] > span { transform: none; }
+
+.rvl { transform: scaleX(0); transform-origin: left;
+       transition: transform 1s var(--e-io); transition-delay: var(--d, 0ms); }
+.rvl[data-in="true"] { transform: scaleX(1); }
+
+/* the bloom — light expands behind a focal element. The inverse of a dark site's
+   lit edge: it is what makes a white page feel lit rather than blank. */
+.bloom { position: relative; isolation: isolate; }
+.bloom::before {
+  content: ""; position: absolute; z-index: -1; inset: -18% -12%;
+  background: radial-gradient(60% 60% at 50% 45%, rgba(27,63,160,.16), transparent 70%);
+  transform: scale(.55); opacity: 0;
+  transition: transform 1.3s var(--e-out), opacity 1.1s var(--e);
+  transition-delay: var(--d, 0ms);
+}
+.bloom[data-in="true"]::before { transform: scale(1); opacity: 1; }
+.gem .bloom::before { background: radial-gradient(60% 60% at 50% 45%, rgba(216,184,96,.16), transparent 70%); }
+
+/* the refraction sweep — a one-shot specular pass across media on entry */
+.sheen { position: relative; overflow: hidden; }
+.sheen::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 2;
+  background: linear-gradient(104deg, transparent 38%, rgba(255,255,255,.55) 50%, transparent 62%);
+  transform: translateX(-130%);
+}
+.sheen[data-in="true"]::after { animation: sweep 1.5s var(--e-out) .35s 1 both; }
+@keyframes sweep { to { transform: translateX(130%); } }
+
+/* per-character rise, used on one h1 per page only */
+.chars .w { display: inline-block; overflow: hidden; padding-bottom: .18em; margin-bottom: -.18em; }
+.chars .c { display: inline-block; transform: translateY(106%);
+            transition: transform .72s var(--e-out); transition-delay: calc(var(--i, 0) * 11ms); }
+.chars[data-in="true"] .c { transform: none; }
+
+/* scroll-linked: written by ONE rAF-batched driver in site.js */
+.pll  { transform: translate3d(0, calc(var(--sp, 0) * 34px), 0); will-change: transform; }
+/* a source registers with the scroll driver to receive --sp, but is not itself moved;
+   its children read the value by inheritance */
+.pll-src { }
+.pll--slow { transform: translate3d(0, calc(var(--sp, 0) * 16px), 0); }
+
+/* magnetic CTA — desktop, fine pointer only */
+.magnet { transform: translate3d(var(--mx, 0), var(--my, 0), 0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .rv, .rvt > span, .rvl, .chars .c { opacity: 1 !important; transform: none !important; filter: none !important; }
+  .bloom::before { opacity: 1 !important; transform: none !important; }
+  .sheen::after { display: none; }
+  .pll, .pll--slow, .magnet { transform: none !important; }
+  * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
+
+/* ---------- 10. Header ---------- */
+.hdr {
+  position: fixed; inset: 0 0 auto; z-index: 900;
+  transition: background .45s var(--e), box-shadow .45s var(--e), transform .55s var(--e-out);
+}
+.hdr[data-solid="true"] {
+  background: rgba(247,249,253,.86); backdrop-filter: blur(18px) saturate(1.4);
+  box-shadow: 0 1px 0 var(--line-soft), var(--lift-1);
+}
+.hdr[data-hide="true"] { transform: translateY(-102%); }
+/* Over a dark hero the header has no background yet, so navy chrome disappears
+   into the photograph. Light it until data-solid flips. */
+.hdr--over:not([data-solid="true"]) .wm__n,
+.hdr--over:not([data-solid="true"]) .nav a,
+.hdr--over:not([data-solid="true"]) .hdr__tel { color: #fff; }
+.hdr--over:not([data-solid="true"]) .wm__s { color: var(--gold); }
+.hdr--over:not([data-solid="true"]) .nav a::after { background: var(--gold); }
+.hdr--over:not([data-solid="true"]) .burger { border-color: rgba(255,255,255,.4); }
+.hdr--over:not([data-solid="true"]) .burger i,
+.hdr--over:not([data-solid="true"]) .burger i::before,
+.hdr--over:not([data-solid="true"]) .burger i::after { background: #fff; }
+.hdr__in { display: flex; align-items: center; gap: clamp(1rem, 2.5vw, 2.4rem);
+           min-height: 82px; padding-block: .7rem; }
+.wm { display: flex; align-items: baseline; gap: .6rem; flex: none;
+      min-height: 44px; align-content: center; padding-block: .5rem; }
+.wm__n { font: 400 1.42rem/1 var(--ff-d); letter-spacing: .04em; color: var(--sapphire);
+         text-transform: uppercase; }
+.wm__s { font: 600 .7rem/1 var(--ff); letter-spacing: .3em; text-transform: uppercase;
+         color: var(--gold-dp); }
+.nav { display: flex; align-items: center; gap: clamp(.4rem, 1.2vw, 1rem); margin-left: auto; }
+.nav a {
+  position: relative; padding: .7rem .85rem; font-weight: 500; font-size: .95rem;
+  color: var(--ink); white-space: nowrap; min-height: 44px; display: inline-flex;
+  align-items: center; transition: color .35s var(--e);
+}
+.nav a::after {
+  content: ""; position: absolute; left: .85rem; right: .85rem; bottom: .42rem; height: 1px;
+  background: var(--gold); transform: scaleX(0); transform-origin: right;
+  transition: transform .5s var(--e-out);
+}
+.nav a:hover::after, .nav a:focus-visible::after, .nav a[aria-current="page"]::after {
+  transform: scaleX(1); transform-origin: left;
+}
+.nav a[aria-current="page"] { color: var(--sapphire); }
+.hdr__cta { display: flex; align-items: center; gap: .8rem; flex: none; }
+.hdr__tel { font-weight: 600; font-size: .95rem; color: var(--sapphire); white-space: nowrap;
+            min-height: 44px; display: inline-flex; align-items: center; }
+
+/* read-progress arc. NOTE: sits inside .hdr so it adds no height, and it is
+   listed in build.py's fixed-chrome exemption so GHL's full-bleed escape skips it. */
+.rail { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: transparent; }
+.rail i { display: block; height: 100%; background: linear-gradient(90deg, var(--sapphire), var(--gold));
+          transform: scaleX(var(--read, 0)); transform-origin: left; }
+
+.burger { display: none; width: 48px; height: 48px; align-items: center; justify-content: center;
+          background: none; border: 1px solid var(--line); cursor: pointer; border-radius: var(--r); }
+.burger i { display: block; width: 20px; height: 1px; background: var(--ink); position: relative;
+            transition: background .3s var(--e); }
+.burger i::before, .burger i::after {
+  content: ""; position: absolute; left: 0; width: 20px; height: 1px; background: var(--ink);
+  transition: transform .45s var(--e-out);
+}
+.burger i::before { top: -6px; } .burger i::after { top: 6px; }
+.burger[aria-expanded="true"] i { background: transparent; }
+.burger[aria-expanded="true"] i::before { transform: translateY(6px) rotate(45deg); }
+.burger[aria-expanded="true"] i::after  { transform: translateY(-6px) rotate(-45deg); }
+
+.drawer {
+  position: fixed; inset: 0; z-index: 950; background: var(--abyss); color: var(--on-gem);
+  display: grid; grid-template-rows: auto 1fr auto; padding: 1.1rem var(--gut) 2rem;
+  opacity: 0; visibility: hidden; transform: translateY(-2%);
+  transition: opacity .45s var(--e), transform .55s var(--e-out), visibility .45s;
+}
+.drawer[data-open="true"] { opacity: 1; visibility: visible; transform: none; }
+.drawer__top { display: flex; align-items: center; justify-content: space-between; min-height: 62px; }
+.drawer__top .wm__n { color: var(--paper); }
+.drawer nav { display: grid; align-content: center; gap: .3rem; }
+.drawer nav a {
+  font: 400 clamp(1.7rem, 7vw, 2.6rem)/1.24 var(--ff-d); color: var(--paper);
+  padding: .3rem 0; opacity: 0; transform: translateY(14px);
+  transition: opacity .5s var(--e-out), transform .6s var(--e-out), color .3s var(--e);
+}
+.drawer[data-open="true"] nav a { opacity: 1; transform: none; }
+.drawer nav a:hover { color: var(--gold); }
+.drawer__foot { display: grid; gap: .7rem; border-top: 1px solid var(--line-gem); padding-top: 1.3rem; }
+.drawer__foot a { color: var(--on-gem-dim); font-size: .95rem; min-height: 44px; display: flex; align-items: center; }
+.drawer__foot .btn { color: var(--paper); }
+/* the close control sits on the dark drawer, so it cannot inherit the header's
+   navy bars or its light-ground border */
+.drawer .burger { border-color: var(--line-gem); }
+.drawer .burger i,
+.drawer .burger i::before,
+.drawer .burger i::after { background: var(--paper); }
+.drawer .burger[aria-expanded="true"] i { background: transparent; }
+
+/* ---------- 11. Hero ---------- */
+/* NOTE for build.py: the wrapper must be exactly <div class="hero__media"> with no
+   extra classes — the role regex is a literal string, and a miss silently drops the
+   hero from the 2200px rule to the 1100px card fallback. Decoration goes on an inner
+   element, never on the wrapper. */
+.hero { position: relative; min-height: 94svh; display: grid; align-items: end;
+        padding-block: clamp(7rem, 14vw, 11rem) clamp(2.6rem, 5vw, 5rem); overflow: hidden; }
+.hero__media { position: absolute; inset: 0; z-index: 0; }
+.hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; }
+.hero__media::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0,11,46,.60) 0%, rgba(0,11,46,.30) 28%, rgba(0,11,46,.72) 72%, rgba(0,11,46,.92) 100%),
+    linear-gradient(94deg, rgba(0,11,46,.80) 0%, rgba(0,11,46,.34) 52%, transparent 78%);
+}
+.hero__in { position: relative; z-index: 2; }
+.hero__h { color: var(--paper); max-width: 15.5em; }
+.hero__h em { color: var(--gold); font-style: italic; }
+.hero__p { color: #dfe6f7; max-width: 34em; margin-top: clamp(1.1rem, 2vw, 1.7rem); }
+.hero__cta { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: clamp(1.6rem, 3vw, 2.6rem); }
+.hero__meta { display: flex; flex-wrap: wrap; gap: clamp(1.2rem, 3vw, 3rem);
+              margin-top: clamp(2rem, 4vw, 3.4rem); padding-top: 1.5rem;
+              border-top: 1px solid rgba(238,242,251,.2); }
+.hero__meta div { display: grid; gap: .2rem; }
+.hero__meta dt, .hero__meta b { font: 400 clamp(1.5rem,3vw,2.3rem)/1 var(--ff-d); color: var(--gold); }
+.hero__meta dd, .hero__meta span { margin: 0; font-size: .82rem; letter-spacing: .1em;
+              text-transform: uppercase; color: #c3cde8; font-weight: 500; }
+
+/* page hero — the inner-page variant */
+.phero { padding-block: clamp(8.5rem, 15vw, 12rem) clamp(2.5rem, 5vw, 4rem); position: relative; }
+.phero__h { max-width: 14em; }
+.crumb { display: flex; flex-wrap: wrap; gap: .5rem; font-size: .8rem; color: var(--slate);
+         margin-bottom: 1.4rem; }
+.crumb a { min-height: 44px; display: inline-flex; align-items: center; }
+.crumb a:hover { color: var(--sapphire); }
+.crumb span { color: var(--slate-dim); }
+
+/* ---------- 12. Trust bar ---------- */
+.trust { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: clamp(1rem,2vw,2rem); }
+.trust div { display: grid; gap: .35rem; padding-left: 1.1rem; border-left: 1px solid var(--line); }
+.trust b { font: 400 clamp(1.7rem,3.2vw,2.6rem)/1 var(--ff-d); color: var(--sapphire); }
+.trust span { font-size: .86rem; color: var(--slate); line-height: 1.45; }
+
+/* credential marquee */
+.marq { overflow: hidden; padding-block: 1.4rem; border-block: 1px solid var(--line-soft);
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+        mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marq ul { display: flex; gap: clamp(2rem,5vw,5rem); width: max-content; animation: marq 46s linear infinite; }
+.marq li { font: 500 .8rem/1 var(--ff); letter-spacing: .18em; text-transform: uppercase;
+           color: var(--slate); white-space: nowrap; display: flex; align-items: center; gap: 1rem; }
+.marq li::after { content: "◆"; color: var(--gold); font-size: .55rem; }
+@keyframes marq { to { transform: translateX(-50%); } }
+.marq:hover ul { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .marq ul { animation: none; } }
+
+/* ---------- 13. Cards ---------- */
+.card {
+  background: var(--paper); border: 1px solid var(--line-soft); box-shadow: var(--lift-1);
+  padding: clamp(1.3rem, 2.2vw, 2rem); display: flex; flex-direction: column; gap: .7rem;
+  position: relative; overflow: hidden;
+  transition: box-shadow .55s var(--e), transform .55s var(--e-out), border-color .45s var(--e);
+}
+.card:hover { box-shadow: var(--lift-2); transform: translateY(-4px); border-color: var(--line-gold); }
+.card__n { font: 500 .72rem/1 var(--ff); letter-spacing: .2em; text-transform: uppercase;
+           color: var(--gold-dp); }
+.card__t { font: 400 clamp(1.25rem,1.7vw,1.6rem)/1.2 var(--ff-d); color: var(--sapphire); }
+.card__b { color: var(--slate); font-size: .96rem; line-height: 1.6; flex: 1; }
+.card__go { font-weight: 600; font-size: .88rem; color: var(--sapphire); display: inline-flex;
+            align-items: center; gap: .45rem; margin-top: .3rem; }
+.card__go span { transition: transform .45s var(--e-out); }
+.card:hover .card__go span { transform: translateX(5px); }
+a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
+.card ul { display: grid; gap: .35rem; margin-top: .3rem; }
+.card ul li { font-size: .9rem; color: var(--slate); padding-left: 1.1rem; position: relative; }
+.card ul li::before { content: "◆"; position: absolute; left: 0; top: .28em; font-size: .5rem; color: var(--gold); }
+
+/* doctor card — the portrait treatment unifies three photographs shot in three
+   different places: same crop, same grade at rest, full colour on hover. */
+.doc { display: grid; gap: 1rem; }
+.doc__p { position: relative; overflow: hidden; aspect-ratio: 4/5; background: var(--frost); }
+.doc__p img { width: 100%; height: 100%; object-fit: cover;
+              filter: saturate(.62) contrast(1.04); transform: scale(1.02);
+              transition: filter .8s var(--e), transform 1.1s var(--e-out); }
+.doc:hover .doc__p img, .doc:focus-within .doc__p img { filter: none; transform: scale(1.06); }
+.doc__p::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, transparent 52%, rgba(0,11,46,.62));
+}
+.doc__cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.1rem; z-index: 1; }
+.doc__n { font: 400 1.4rem/1.15 var(--ff-d); color: var(--paper); }
+.doc__r { font: 600 .7rem/1 var(--ff); letter-spacing: .2em; text-transform: uppercase;
+          color: var(--gold); margin-top: .45rem; }
+.doc__b { color: var(--slate); font-size: .95rem; line-height: 1.62; }
+
+/* ---------- 14. Stats ---------- */
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: clamp(1rem,2.4vw,2.4rem); }
+.stats div { display: grid; gap: .4rem; }
+.stats b { font: 400 clamp(2.4rem,5vw,4.2rem)/1 var(--ff-d); color: var(--sapphire); }
+.gem .stats b { color: var(--gold); }
+.stats span { font-size: .84rem; color: var(--slate); line-height: 1.5; }
+.gem .stats span { color: var(--on-gem-dim); }
+
+/* ---------- 15. Process ---------- */
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: clamp(1.2rem,2.4vw,2.4rem); }
+.steps > li { position: relative; padding-top: 2.6rem; }
+.steps > li::before {
+  content: ""; position: absolute; top: 1.1rem; left: 0; right: 0; height: 1px; background: var(--line);
+}
+.steps__n { position: absolute; top: 0; left: 0; font: 400 1.05rem/1 var(--ff-d); color: var(--gold-dp);
+            background: var(--porcelain); padding-right: .7rem; }
+.steps h3 { font: 400 clamp(1.15rem,1.6vw,1.45rem)/1.2 var(--ff-d); color: var(--sapphire);
+            margin-bottom: .5rem; }
+.steps p { font-size: .95rem; color: var(--slate); line-height: 1.62; }
+
+/* ---------- 16. Testimonials ---------- */
+.quote { display: grid; gap: 1rem; }
+.quote__stars { display: flex; gap: .2rem; color: var(--gold); font-size: .85rem; letter-spacing: .1em; }
+.quote blockquote { font: 400 clamp(1.15rem,1.8vw,1.6rem)/1.5 var(--ff-d); color: var(--sapphire); }
+.gem .quote blockquote { color: var(--paper); }
+.quote figcaption { font-size: .86rem; color: var(--slate); }
+.gem .quote figcaption { color: var(--on-gem-dim); }
+.quote cite { font-style: normal; font-weight: 600; color: var(--ink); }
+.gem .quote cite { color: var(--gold); }
+
+/* ---------- 17. Before / after slider ---------- */
+/* Pure CSS clip-path driven by a range input. The WRAPPER is never the
+   IntersectionObserver target — a clipped box has a zero-area intersection
+   rectangle and the observer would never fire. site.js observes an ancestor. */
+.ba { --p: 50%; position: relative; overflow: hidden; aspect-ratio: 108/65;
+      background: var(--frost); touch-action: pan-y; }
+.ba img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ba__after { clip-path: inset(0 0 0 var(--p)); }
+.ba__range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0;
+             cursor: ew-resize; -webkit-appearance: none; appearance: none; background: none; z-index: 3; }
+.ba__range::-webkit-slider-thumb { -webkit-appearance: none; width: 56px; height: 100vh; cursor: ew-resize; }
+.ba__range::-moz-range-thumb { width: 56px; height: 100vh; border: 0; background: transparent; cursor: ew-resize; }
+.ba__handle { position: absolute; top: 0; bottom: 0; left: var(--p); width: 0; z-index: 2; pointer-events: none; }
+.ba__handle::after {
+  content: ""; position: absolute; top: 0; bottom: 0; left: -1px; width: 2px;
+  background: var(--paper); box-shadow: 0 0 0 1px rgba(0,11,46,.25);
+}
+.ba__handle::before {
+  content: ""; position: absolute; top: 50%; left: 50%; width: 46px; height: 46px;
+  transform: translate(-50%,-50%) rotate(45deg); background: var(--paper);
+  box-shadow: var(--lift-2); border: 1px solid var(--line);
+}
+.ba__range:focus-visible + .ba__handle::after { background: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
+.ba__tag { position: absolute; bottom: .85rem; z-index: 2; font: 600 .72rem/1 var(--ff);
+           letter-spacing: .18em; text-transform: uppercase; padding: .55rem .8rem;
+           background: rgba(0,11,46,.72); color: var(--paper); backdrop-filter: blur(4px); }
+.ba__tag--b { left: .85rem; } .ba__tag--a { right: .85rem; color: var(--gold); }
+.ba__note { font-size: .78rem; color: var(--slate-dim); margin-top: .7rem; }
+
+/* ---------- 18. THE SMILE STUDIO ---------- */
+/* The canvas is aria-hidden and only ever DRAWS. Every piece of state lives in a
+   real form control beside it, so the whole feature is keyboard-operable with no
+   parallel implementation — the same contract Vantage's perimeter.js keeps. */
+.ss { display: grid; grid-template-columns: 1.55fr 1fr; gap: clamp(1.4rem, 3vw, 3rem); align-items: start; }
+.ss__stage { position: relative; aspect-ratio: 108/65; background: var(--abyss);
+             overflow: hidden; box-shadow: var(--lift-3); }
+.ss__cv { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ss__stage[data-ready="false"] .ss__cv,
+.ss__stage[data-ready="false"] .ss__chrome { display: none; }
+.ss__stage[data-ready="true"]  .ss__fb { display: none; }
+.ss__fb { position: absolute; inset: 0; }
+.ss__fb img { width: 100%; height: 100%; object-fit: cover; }
+
+.ss__chrome { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.ss__chrome > * { pointer-events: auto; }
+.ss__cap { position: absolute; bottom: .9rem; left: .9rem; right: .9rem; display: flex;
+           justify-content: space-between; font: 600 .72rem/1 var(--ff);
+           letter-spacing: .18em; text-transform: uppercase; pointer-events: none; }
+.ss__cap span { padding: .5rem .75rem; background: rgba(0,11,46,.7); color: var(--paper);
+                backdrop-filter: blur(4px); }
+.ss__cap span:last-child { color: var(--gold); }
+.ss__seam { position: absolute; top: 0; bottom: 0; left: var(--p, 50%); width: 0; z-index: 3; pointer-events: none; }
+.ss__seam::after { content: ""; position: absolute; inset: 0 -1px; width: 2px; background: var(--gold); opacity: .9; }
+
+.ss__panel { display: grid; gap: clamp(1rem, 1.8vw, 1.5rem); }
+.ss__set { border: 0; padding: 0; margin: 0; display: grid; gap: .7rem; }
+.ss__set legend { padding: 0; font: 600 .7rem/1 var(--ff); letter-spacing: .2em;
+                  text-transform: uppercase; color: var(--gold-dp); }
+.ss__hint { font-size: .8rem; color: var(--slate-dim); }
+
+/* the shade guide — a WRAPPING grid, never a horizontal scroller. A wide row of
+   swatches is exactly the content that overflow-x:hidden clips into invisibility
+   while scrollWidth still reports zero. See CLAUDE.md. */
+.ss__shades { display: grid; grid-template-columns: repeat(auto-fill, minmax(56px, 1fr)); gap: .45rem; }
+.ss__sw { position: relative; display: grid; gap: .3rem; justify-items: center; cursor: pointer;
+          padding: .45rem .2rem; min-height: 62px; }
+/* radios hidden with the CLIP recipe, never left:-9999px — a clipped box is
+   invisible at any nesting depth; a moved one is only invisible if you know its
+   containing block. */
+.ss__sw input { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+                overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); border: 0; }
+.ss__chip { width: 30px; height: 30px; background: var(--c); border: 1px solid rgba(10,19,48,.55);
+            border-radius: 50%; transition: transform .4s var(--e-out), box-shadow .4s var(--e); }
+.ss__code { font: 500 .72rem/1 var(--ff); color: var(--slate); letter-spacing: .04em; }
+.ss__sw:hover .ss__chip { transform: scale(1.1); }
+.ss__sw input:checked + .ss__chip { transform: scale(1.16); box-shadow: 0 0 0 2px var(--porcelain), 0 0 0 4px var(--sapphire); }
+.ss__sw input:checked ~ .ss__code { color: var(--sapphire); font-weight: 700; }
+.ss__sw input:focus-visible + .ss__chip { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
+
+.ss__layers { display: flex; flex-wrap: wrap; gap: .5rem; }
+.ss__layer { display: inline-flex; align-items: center; gap: .5rem; min-height: 46px;
+             padding: 0 1rem; background: var(--paper); border: 1px solid var(--line);
+             font: 500 .86rem/1 var(--ff); cursor: pointer; color: var(--ink);
+             transition: background .35s var(--e), border-color .35s var(--e), color .35s var(--e); }
+.ss__layer::before { content: ""; width: 9px; height: 9px; background: transparent;
+                     border: 1px solid var(--slate-dim); transform: rotate(45deg);
+                     transition: background .35s var(--e), border-color .35s var(--e); }
+.ss__layer[aria-pressed="true"] { background: var(--sapphire); border-color: var(--sapphire); color: var(--paper); }
+.ss__layer[aria-pressed="true"]::before { background: var(--gold); border-color: var(--gold); }
+
+.ss__range { width: 100%; height: 44px; -webkit-appearance: none; appearance: none;
+             background: none; cursor: ew-resize; }
+.ss__range::-webkit-slider-runnable-track { height: 3px; background: var(--frost); }
+.ss__range::-moz-range-track { height: 3px; background: var(--frost); }
+.ss__range::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px;
+    margin-top: -11.5px; background: var(--sapphire); border: 2px solid var(--paper);
+    box-shadow: var(--lift-1); border-radius: 50%; cursor: ew-resize; }
+.ss__range::-moz-range-thumb { width: 26px; height: 26px; background: var(--sapphire);
+    border: 2px solid var(--paper); border-radius: 50%; cursor: ew-resize; }
+.ss__range:disabled { opacity: .4; cursor: not-allowed; }
+
+/* <output> is implicitly role="status" aria-live="polite" — the correct element,
+   so no hand-rolled live region is needed. */
+.ss__plan { display: grid; gap: .55rem; padding: clamp(1rem,1.6vw,1.4rem);
+            background: var(--abyss); color: var(--on-gem); }
+.ss__plan b { font: 400 clamp(1.15rem,1.6vw,1.45rem)/1.2 var(--ff-d); color: var(--gold); }
+.ss__plan p { font-size: .9rem; color: var(--on-gem-dim); line-height: 1.6; }
+.ss__plan .who { font: 600 .7rem/1.4 var(--ff); letter-spacing: .14em; text-transform: uppercase;
+                 color: var(--gold-lt); }
+.ss__disc { font-size: .78rem; color: var(--slate-dim); line-height: 1.55; }
+.gem .ss__disc { color: var(--on-gem-dim); }
+.ss__cases { display: flex; flex-wrap: wrap; gap: .4rem; }
+.ss__case { min-height: 44px; padding: 0 .85rem; background: none; border: 1px solid var(--line);
+            font: 500 .8rem/1 var(--ff); cursor: pointer; transition: all .35s var(--e); }
+.ss__case[aria-pressed="true"] { background: var(--sapphire); color: var(--paper); border-color: var(--sapphire); }
+
+/* ---------- 19. Accordion / FAQ ---------- */
+.acc { display: grid; }
+.acc details { border-bottom: 1px solid var(--line); }
+.acc summary { list-style: none; cursor: pointer; padding: 1.35rem 3rem 1.35rem 0;
+               position: relative; font: 400 clamp(1.05rem,1.5vw,1.3rem)/1.35 var(--ff-d);
+               color: var(--sapphire); min-height: 56px; display: flex; align-items: center;
+               transition: color .35s var(--e); }
+.acc summary::-webkit-details-marker { display: none; }
+.acc summary::after, .acc summary::before {
+  content: ""; position: absolute; right: .55rem; top: 50%; background: var(--gold-dp);
+  transition: transform .45s var(--e-out), opacity .35s var(--e);
+}
+.acc summary::after  { width: 15px; height: 1px; transform: translateY(-50%); }
+.acc summary::before { width: 1px; height: 15px; right: 1.02rem; transform: translateY(-50%); }
+.acc details[open] summary::before { transform: translateY(-50%) rotate(90deg); opacity: 0; }
+.acc summary:hover { color: var(--sapphire-3); }
+.acc__b { padding: 0 3rem 1.5rem 0; color: var(--slate); font-size: .98rem; line-height: 1.7; }
+.acc__b p + p { margin-top: .8em; }
+
+/* ---------- 20. Key facts (AEO extractable) ---------- */
+.spec { display: grid; gap: 0; }
+.spec > div { display: grid; grid-template-columns: 15rem 1fr; gap: clamp(1rem,2vw,2rem);
+              padding: 1.15rem 0; border-bottom: 1px solid var(--line-soft); }
+.spec dt { font: 600 .78rem/1.5 var(--ff); letter-spacing: .12em; text-transform: uppercase;
+           color: var(--gold-dp); }
+.spec dd { margin: 0; color: var(--ink); font-size: .98rem; line-height: 1.65; }
+.spec dd > .tlink { min-height: 44px; display: inline-flex; align-items: center; }
+
+/* ---------- 21. Membership / pricing ---------- */
+.plans { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: clamp(1rem,2vw,1.8rem); align-items: start; }
+.plan { background: var(--paper); border: 1px solid var(--line); padding: clamp(1.4rem,2.2vw,2.1rem);
+        display: grid; gap: .9rem; position: relative;
+        transition: box-shadow .5s var(--e), transform .5s var(--e-out); }
+.plan:hover { box-shadow: var(--lift-2); transform: translateY(-4px); }
+.plan--best { border-color: var(--sapphire); box-shadow: var(--lift-2); }
+.plan--best::before { content: "Most chosen"; position: absolute; top: 0; right: 0;
+    background: var(--sapphire); color: var(--paper); font: 600 .72rem/1 var(--ff);
+    letter-spacing: .16em; text-transform: uppercase; padding: .55rem .8rem; }
+.plan__n { font: 400 clamp(1.3rem,1.9vw,1.7rem)/1.15 var(--ff-d); color: var(--sapphire); }
+.plan__p { display: flex; align-items: baseline; gap: .4rem; }
+.plan__p b { font: 400 clamp(2.2rem,4vw,3.2rem)/1 var(--ff-d); color: var(--ink); }
+.plan__p span { font-size: .85rem; color: var(--slate); }
+.plan__v { font-size: .82rem; color: var(--gold-dp); font-weight: 600; }
+.plan ul { display: grid; gap: .5rem; }
+.plan ul li { font-size: .92rem; color: var(--slate); padding-left: 1.3rem; position: relative; line-height: 1.55; }
+.plan ul li::before { content: "✓"; position: absolute; left: 0; color: var(--gold-dp); font-weight: 700; font-size: .82rem; }
+.plan__perk { font-size: .85rem; color: var(--ink); background: var(--mist); padding: .8rem; }
+
+/* ---------- 22. Forms ---------- */
+.form { display: grid; gap: 1rem; }
+.field { display: grid; gap: .4rem; }
+.field > label { font: 600 .76rem/1 var(--ff); letter-spacing: .1em; text-transform: uppercase; color: var(--slate); }
+.field input, .field select, .field textarea {
+  font: 400 1rem/1.4 var(--ff); color: var(--ink); background: var(--paper);
+  border: 1px solid var(--line); padding: .95rem 1rem; min-height: 54px; width: 100%;
+  transition: border-color .3s var(--e), box-shadow .3s var(--e);
+}
+.field textarea { min-height: 120px; resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-color: var(--sapphire); box-shadow: 0 0 0 3px rgba(0,24,104,.12);
+}
+.field--err input, .field--err select, .field--err textarea { border-color: #8a2f2f; }
+.field__e { font-size: .8rem; color: #8a2f2f; font-weight: 600; }
+.field__e[hidden] { display: none; }
+.form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form__note { font-size: .78rem; color: var(--slate-dim); line-height: 1.55; }
+.check { display: flex; gap: .7rem; align-items: flex-start; font-size: .88rem; color: var(--slate); }
+.check { min-height: 44px; align-items: center; }
+.check input { width: 24px; height: 24px; flex: none; accent-color: var(--sapphire); }
+
+/* ---------- 23. Landing-page header + footer ---------- */
+.lphdr { position: relative; z-index: 5; border-bottom: 1px solid var(--line-gem); }
+.lphdr__in { display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+             min-height: 76px; padding-block: .8rem; }
+.lphdr .wm__n { color: var(--paper); } .lphdr .wm__s { color: var(--gold); }
+.lphdr a { color: var(--gold); font-weight: 600;
+           min-height: 44px; display: inline-flex; align-items: center; }
+
+.ftr { background: var(--abyss); color: var(--on-gem); padding-block: clamp(3rem,6vw,5.5rem) 2rem; }
+.ftr__grid { display: grid; grid-template-columns: 1.7fr 1fr 1fr 1.3fr; gap: clamp(1.5rem,3vw,3rem); }
+.ftr h3 { font: 600 .72rem/1 var(--ff); letter-spacing: .2em; text-transform: uppercase;
+          color: var(--gold); margin-bottom: 1.1rem; }
+.ftr a, .ftr li { color: var(--on-gem-dim); font-size: .92rem; }
+.ftr li a, .ftr__grid > div a { min-height: 44px; display: inline-flex; align-items: center; }
+.ftr a:hover { color: var(--gold); }
+.ftr .wm__n { color: var(--paper); font-size: 1.6rem; }
+.ftr__bot { margin-top: clamp(2.4rem,4vw,3.6rem); padding-top: 1.6rem; border-top: 1px solid var(--line-gem);
+            display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between;
+            font-size: .8rem; color: var(--slate-dim); }
+
+/* ---------- 24. Sticky mobile CTA ---------- */
+/* .mbar is position:fixed, so every breakpoint that shows it must also add the
+   matching body padding-bottom in the SAME media query. Drop one and the last rows
+   of every page sit under the bar. */
+.mbar { position: fixed; inset: auto 0 0; z-index: 800; display: none;
+        grid-template-columns: 1fr 1.3fr; border-top: 1px solid var(--line);
+        background: rgba(247,249,253,.94); backdrop-filter: blur(14px);
+        padding-bottom: env(safe-area-inset-bottom); }
+.mbar a { display: flex; align-items: center; justify-content: center; gap: .5rem;
+          min-height: 58px; font: 600 .9rem/1 var(--ff); color: var(--sapphire); }
+.mbar a + a { background: var(--sapphire); color: var(--paper); }
+
+/* ---------- 25. Breakpoints ---------- */
+@media (max-width: 1180px) {
+  .nav { display: none; }
+  .burger { display: inline-flex; margin-left: auto; }
+  .hdr__tel { display: none; }
+  .ftr__grid { grid-template-columns: 1fr 1fr; }
+  .spec > div { grid-template-columns: 11rem 1fr; }
+  .ss { grid-template-columns: 1fr; }
+}
+@media (max-width: 1024px) {
+  .trust { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .g-4 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .steps { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .plans { grid-template-columns: 1fr; }
+  .g-2f { grid-template-columns: 1fr; }
+}
+@media (max-width: 860px) {
+  /* .mbar appears here — and body gains the matching padding in the SAME block. */
+  .mbar { display: grid; }
+  body { padding-bottom: calc(58px + env(safe-area-inset-bottom)); }
+  .shead { grid-template-columns: 1fr; }
+  .shead > *:last-child { padding-bottom: 0; }
+  .split, .split--wide { grid-template-columns: 1fr; }
+  .split--flip > *:first-child { order: 0; }
+  .g-3 { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .hero { min-height: 88svh; }
+  .ss__stage { aspect-ratio: 4/3; }
+  .ba { aspect-ratio: 4/3; }
+}
+@media (max-width: 640px) {
+  /* The header used to put a flex:none wordmark AND a flex:none CTA group in one
+     bar; below 640 they out-measured the viewport and shoved the burger past the
+     right edge. body{overflow-x:clip} hid the evidence, so scrollWidth stayed 0
+     at every width while the only nav control on phones was unreachable. */
+  .hdr__cta .btn { display: none; }
+  .wm__s { display: none; }
+  .g-2, .g-4, .g-2f { grid-template-columns: 1fr; }
+  .steps, .trust, .stats { grid-template-columns: 1fr; }
+  .ftr__grid { grid-template-columns: 1fr; }
+  .spec > div { grid-template-columns: 1fr; gap: .3rem; }
+  .form__row { grid-template-columns: 1fr; }
+  .hero__meta { gap: 1.1rem 2rem; }
+  .acc summary { padding-right: 2.4rem; }
+  .acc__b { padding-right: 0; }
+}
+
+/* ============================================================================
+   26. The second motion layer — depth, light and entrance
+   Everything here is transform / opacity / filter, driven either by CSS alone or
+   by the single rAF scroll driver in site.js. Nothing here is required for the
+   page to be usable, and all of it is switched off under prefers-reduced-motion.
+   ========================================================================= */
+
+/* ---------- 26a. Page-load curtain ---------- */
+/* Pure CSS animation, deliberately: if this depended on JS and the script failed,
+   a full-viewport panel would sit over the page forever. An animation runs whether
+   or not JS does, and fill-mode holds the finished state. */
+.curtain {
+  position: fixed; inset: 0; z-index: 9998; pointer-events: none;
+  background: var(--abyss); transform-origin: top;
+  animation: curtain-up .9s var(--e-io) .12s both;
+}
+.curtain::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.curtain i {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font: 400 clamp(1.6rem, 4vw, 2.6rem)/1 var(--ff-d); letter-spacing: .16em;
+  text-transform: uppercase; color: var(--paper); font-style: normal;
+  animation: curtain-mark .62s var(--e-out) both;
+}
+@keyframes curtain-up   { to { transform: translateY(-101%); } }
+@keyframes curtain-mark { 0% { opacity: 0; transform: translateY(9px); }
+                          55% { opacity: 1; transform: none; }
+                          100% { opacity: 0; transform: translateY(-9px); } }
+
+/* ---------- 26b. Pointer spotlight on the gem bands ---------- */
+/* A light that follows the cursor across the dark sections. The inverse of a dark
+   site's lit edge, and the thing that stops a large flat navy band reading as dead. */
+/* NOTE the --gx/--gy names. These MUST NOT be --mx/--my: custom properties inherit,
+   and .magnet (the cursor-following CTA) reads --mx/--my. A gem section declaring
+   --mx:50% therefore translated every magnetic button inside it by half its own
+   width — which is what pushed the final CTA off the page on six pages at once. */
+.gem { --gx: 50%; --gy: 50%; }
+.gem::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background: radial-gradient(420px circle at var(--gx) var(--gy),
+              rgba(216,184,96,.13), rgba(18,55,159,.10) 42%, transparent 68%);
+  opacity: 0; transition: opacity .6s var(--e);
+}
+.gem[data-lit="true"]::after { opacity: 1; }
+
+/* ---------- 26c. Card tilt ---------- */
+.tilt { transform: perspective(1100px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--ty, 0)); 
+        transform-style: preserve-3d; transition: transform .45s var(--e-out); }
+.tilt[data-tilting="true"] { transition: transform .08s linear; }
+
+/* ---------- 26d. Facet reveal for media ---------- */
+/* The chamfer opens as the figure enters. NOTE: this element is CLIPPED, so it must
+   never be the IntersectionObserver target — it carries data-rvchild and site.js
+   forwards data-in to it from an unclipped ancestor. */
+.rvf {
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  transition: clip-path 1.15s var(--e-io); transition-delay: var(--d, 0ms);
+}
+.rvf[data-in="true"] {
+  clip-path: polygon(var(--facet) 0, 100% 0, 100% calc(100% - var(--facet)),
+                     calc(100% - var(--facet)) 100%, 0 100%, 0 var(--facet));
+}
+
+/* ---------- 26e. Gold shimmer across a display heading on reveal ---------- */
+.shine { position: relative; }
+.shine[data-in="true"] {
+  background-image: linear-gradient(96deg, currentColor 34%, var(--gold) 50%, currentColor 66%);
+  background-size: 260% 100%; background-position: 130% 0;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 1.7s var(--e-out) .45s 1 forwards;
+}
+.shine em { -webkit-text-fill-color: var(--gold-dp); }
+.gem .shine em, .hero .shine em { -webkit-text-fill-color: var(--gold); }
+@keyframes shine { to { background-position: -30% 0; } }
+
+/* ---------- 26f. Scroll-linked hero ---------- */
+.hero__media img { will-change: transform; transform: scale(calc(1 + var(--sp, 0) * .07)) translate3d(0, calc(var(--sp, 0) * 26px), 0); }
+.hero__in { transform: translate3d(0, calc(var(--sp, 0) * -18px), 0); }
+
+/* ---------- 26g. Figure hover: the image breathes, the frame does not ---------- */
+.fig img { transition: transform 1.2s var(--e-out), filter .8s var(--e); }
+.fig:hover img, a:hover .fig img { transform: scale(1.045); }
+
+/* ---------- 26h. Section seam ---------- */
+/* A hairline that draws itself across the joint between two bands. */
+.seam { position: relative; height: 1px; background: var(--line-soft); overflow: visible; }
+.seam::after {
+  content: ""; position: absolute; left: 50%; top: 0; width: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform: translateX(-50%); transition: width 1.4s var(--e-io);
+}
+.seam[data-in="true"]::after { width: min(560px, 70%); }
+
+@media (prefers-reduced-motion: reduce) {
+  .curtain { display: none; }
+  .gem::after { display: none; }
+  .tilt { transform: none !important; }
+  .rvf { clip-path: polygon(var(--facet) 0, 100% 0, 100% calc(100% - var(--facet)),
+                            calc(100% - var(--facet)) 100%, 0 100%, 0 var(--facet)) !important; }
+  .shine[data-in="true"] { animation: none; -webkit-text-fill-color: currentColor;
+                           background-image: none; }
+  .hero__media img, .hero__in { transform: none !important; }
+  .fig:hover img, a:hover .fig img { transform: none; }
+  .seam[data-in="true"]::after { width: min(560px, 70%); transition: none; }
+}
+
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://sapphiredentalstudio.com/"},
+ {"@type":"ListItem","position":2,"name":"Membership","item":"https://sapphiredentalstudio.com/membership.html"}]},
+{"@type":"Service","@id":"https://sapphiredentalstudio.com/membership.html#plans",
+ "name":"Sapphire Dental Studio Membership Plans",
+ "serviceType":"In-house dental membership plan",
+ "provider":{"@id":"https://sapphiredentalstudio.com/#practice"},
+ "areaServed":{"@type":"City","name":"Winter Garden"},
+ "offers":[
+  {"@type":"Offer","name":"Sapphire Renew","price":"550","priceCurrency":"USD","description":"Denture care plan: professional denture cleaning, denture evaluation and adjustment, emergency exams, all diagnostic X-rays, oral cancer and sleep apnea screening, implant consultation with CBCT, five nitrous sedation visits and 20% off new dentures and repairs."},
+  {"@type":"Offer","name":"Sapphire Classic","price":"650","priceCurrency":"USD","description":"Preventive plan: two regular cleanings, two emergency exams with X-rays, all diagnostic X-rays, periodic exam, UV light oral cancer screening, sleep apnea screening, implant consultation with CBCT and five nitrous sedation visits."},
+  {"@type":"Offer","name":"Sapphire Restore","price":"850","priceCurrency":"USD","description":"Periodontal plan: three periodontal maintenance cleanings, two emergency exams with X-rays, 35% off deep cleaning, periodontal evaluation, all diagnostic X-rays, periodic exam, oral cancer and sleep apnea screening, implant consultation with CBCT and five nitrous sedation visits."}]},
+{"@type":"FAQPage","mainEntity":[
+ {"@type":"Question","name":"Is a dental membership plan the same as insurance?","acceptedAnswer":{"@type":"Answer","text":"No. It is a direct agreement between you and the practice, so there is no third party deciding what is covered. That is why there are no deductibles, no annual maximum, no waiting periods, no claims to submit and no rejections."}},
+ {"@type":"Question","name":"What if I need treatment beyond what the plan includes?","acceptedAnswer":{"@type":"Answer","text":"Every member receives 15% off all other treatment, and the Restore plan adds 35% off deep cleaning while Renew adds 20% off new dentures and repairs. Larger treatment can also be financed through CareCredit or Cherry."}},
+ {"@type":"Question","name":"Which membership plan should I choose?","acceptedAnswer":{"@type":"Answer","text":"Classic suits healthy gums needing routine prevention. Restore suits anyone with a history of gum disease, because it provides three periodontal maintenance visits rather than two standard cleanings. Renew is built for denture wearers. If you are unsure, the exam will tell you which one fits."}},
+ {"@type":"Question","name":"Do you accept dental insurance as well?","acceptedAnswer":{"@type":"Answer","text":"Yes, we file with most PPO plans as a courtesy. The membership plans exist for people who have no insurance, or whose plan has an annual maximum so low that it runs out before the treatment is finished."}}]}]}
+</script>
+
+<style id="ghl-fullbleed">
+/* ── Paste-into-GoHighLevel full-bleed escape ───────────────────────────────
+   Neutralises the width, padding and margin GHL's column wrapper imposes.
+   Harmless when the file is opened directly as a normal web page.        */
+/* Nesting-agnostic: GHL puts this markup several levels inside its own column,
+   so these cannot be anchored to `body >`. calc(50% - 50vw) resolves against the
+   parent's width, which makes the break-out correct at any depth. */
+.hdr, .lphdr, .ftr, main, main > section, main > div.marq, .marq {
+  width: 100vw; max-width: 100vw;
+  margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
+}
+/* fixed/absolute chrome is already out of flow — leave it alone */
+.mbar, .curtain, .drawer, .cur, .cur-dot {
+  width: auto; max-width: none; margin-left: 0; margin-right: 0;
+}
+main > section { margin-left: 0; margin-right: 0; }   /* main already spans */
+html, body { max-width: 100%; overflow-x: clip; }
+img, video, canvas, svg, iframe { max-width: 100%; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- GHL SECTION 01 · Header | fixed, solidifies on scroll | nav collapses to drawer @1180 -->
+<header class="hdr" data-solid="false" data-hide="false">
+  <div class="shell hdr__in">
+    <a class="wm" href="index.html" aria-label="Sapphire Dental Studio, home">
+      <span class="wm__n">Sapphire</span><span class="wm__s">Dental Studio</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="services.html">Services</a>
+      <a href="smile-gallery.html">Smile Gallery</a>
+      <a href="sedation-dentistry.html">Sedation</a>
+      <a href="meet-the-team.html">Our Doctors</a>
+      <a href="membership.html" aria-current="page">Membership</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="hdr__cta">
+      <a class="hdr__tel" href="tel:+14079067555">(407) 906-7555</a>
+      <a class="btn btn--sm magnet" href="book-appointment.html"><span>Book an appointment</span></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><i></i></button>
+    </div>
+  </div>
+  <div class="rail"><i></i></div>
+</header>
+
+<div class="drawer" id="drawer" data-open="false" aria-hidden="true">
+  <div class="shell drawer__top">
+    <span class="wm__n">Sapphire</span>
+    <button class="burger drawer__x" type="button" aria-label="Close menu" aria-expanded="true"><i></i></button>
+  </div>
+  <nav class="shell" aria-label="Mobile">
+    <a href="services.html">Services</a>
+    <a href="smile-gallery.html">Smile Gallery</a>
+    <a href="sedation-dentistry.html">Sedation</a>
+    <a href="meet-the-team.html">Our Doctors</a>
+    <a href="membership.html">Membership</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="shell drawer__foot">
+    <a href="tel:+14079067555">(407) 906-7555</a>
+    <a href="mailto:info@sapphiredentalstudio.com">info@sapphiredentalstudio.com</a>
+    <a class="btn btn--gold" href="book-appointment.html"><span>Book an appointment</span></a>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- GHL SECTION 01 · Page hero -->
+<section class="phero lattice">
+  <div class="shell">
+    <p class="crumb"><a href="index.html">Home</a> <span>/</span> Membership &amp; Financing</p>
+    <h1 class="d1 phero__h chars">Dental care without an insurance company in the room</h1>
+    <p class="lede mt-m rv" style="--d:200ms;max-width:44em">Dental insurance is designed around what it will not pay for. Our membership plans are the opposite — a flat annual fee, the care you actually need included, and 15% off everything else. No third party gets a vote.</p>
+  </div>
+</section>
+
+<!-- GHL SECTION 02 · The negatives, as positives -->
+<section class="section--tight gem">
+  <div class="shell">
+    <div class="grid g-3">
+      <div class="rv"><h2 class="d4" style="color:var(--gold)">No annual maximum</h2><p class="mt-s muted">Insurance caps out around $1,500 — usually halfway through the treatment that mattered.</p></div>
+      <div class="rv" style="--d:100ms"><h2 class="d4" style="color:var(--gold)">No waiting periods</h2><p class="mt-s muted">Your benefits start the day you join, not six or twelve months later.</p></div>
+      <div class="rv" style="--d:200ms"><h2 class="d4" style="color:var(--gold)">No claims, no rejections</h2><p class="mt-s muted">Nothing to submit, nothing to appeal, nobody overruling the specialist who examined you.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GHL SECTION 03 · Plans | 3-col → 1 @1024 -->
+<section id="plans" class="lattice">
+  <div class="shell">
+    <div class="shead">
+      <div>
+        <p class="eyebrow rv">Three plans</p>
+        <h2 class="d2 rv" style="--d:80ms">Pick the one that <em>matches your mouth</em></h2>
+      </div>
+      <p class="lede rv" style="--d:140ms">All three include five nitrous sedation visits a year, priority scheduling, early access to promotional bundles and 15% off all other treatment.</p>
+    </div>
+    <div class="plans">
+      <article class="plan tilt rv">
+        <h3 class="plan__n">Sapphire Renew</h3>
+        <p class="plan__p"><b>$550</b><span>/ year</span></p>
+        <p class="plan__v">Value at $3,573+</p>
+        <hr class="rule">
+        <ul><li>1 professional denture cleaning, with tissue massage and a home product</li><li>1 denture evaluation, exam and adjustment</li><li>2 emergency exams with X-rays</li><li>All necessary diagnostic X-rays</li><li>1 UV light oral cancer screening</li><li>1 sleep apnea screening</li><li>Implant consultation with CBCT</li><li>5 nitrous sedation visits</li><li>20% off new dentures and denture repairs</li></ul>
+        <p class="plan__perk"><strong>Annual perk, your choice:</strong> Hard reline per arch, soft reline per arch, or a StellaLife product</p>
+        <a class="btn btn--wide" href="book-appointment.html?p=renew"><span>Join Renew</span></a>
+      </article>
+      <article class="plan tilt plan--best rv">
+        <h3 class="plan__n">Sapphire Classic</h3>
+        <p class="plan__p"><b>$650</b><span>/ year</span></p>
+        <p class="plan__v">Value at $3,624+</p>
+        <hr class="rule">
+        <ul><li>2 regular cleanings</li><li>2 emergency exams with X-rays</li><li>All necessary diagnostic X-rays</li><li>1 periodic exam</li><li>1 UV light oral cancer screening</li><li>1 sleep apnea screening</li><li>Implant consultation with CBCT</li><li>5 nitrous sedation visits</li></ul>
+        <p class="plan__perk"><strong>Annual perk, your choice:</strong> Night guard, BOTOX lip flip, StellaLife product, or fluoride varnish</p>
+        <a class="btn btn--wide" href="book-appointment.html?p=classic"><span>Join Classic</span></a>
+      </article>
+      <article class="plan tilt rv">
+        <h3 class="plan__n">Sapphire Restore</h3>
+        <p class="plan__p"><b>$850</b><span>/ year</span></p>
+        <p class="plan__v">Value at $5,951+</p>
+        <hr class="rule">
+        <ul><li>3 periodontal maintenance cleanings</li><li>2 emergency exams with X-rays</li><li>Deep cleaning (SRP) at 35% off</li><li>1 periodontal evaluation after SRP</li><li>All necessary diagnostic X-rays</li><li>1 periodic exam</li><li>1 UV light oral cancer screening</li><li>1 sleep apnea screening</li><li>Implant consultation with CBCT</li><li>5 nitrous sedation visits</li></ul>
+        <p class="plan__perk"><strong>Annual perk, your choice:</strong> Night guard, BOTOX lip flip, StellaLife product, or fluoride varnish</p>
+        <a class="btn btn--wide" href="book-appointment.html?p=restore"><span>Join Restore</span></a>
+      </article>
+    </div>
+    <p class="ba__note mt-l">Membership is an annual agreement with the practice and is not dental insurance. It cannot be combined with insurance benefits. Stated values are the practice's standard fees for the included services.</p>
+  </div>
+</section>
+
+<!-- GHL SECTION 04 · Which plan -->
+<section class="section--mist">
+  <div class="shell shell--narrow">
+    <p class="eyebrow rv">Choosing</p>
+    <h2 class="d2 rv mt-s" style="--d:80ms">Which one is yours</h2>
+    <dl class="spec mt-l">
+      <div class="rv"><dt>Choose Classic</dt><dd>Your gums are healthy and you need prevention: two cleanings, exams, X-rays and screenings. This is the standard adult plan and the one most members hold.</dd></div>
+      <div class="rv"><dt>Choose Restore</dt><dd>You have a history of gum disease. Periodontal maintenance is three visits a year rather than two, because the interval is what controls the disease — and the deep cleaning itself is 35% off.</dd></div>
+      <div class="rv"><dt>Choose Renew</dt><dd>You wear dentures. Professional denture cleaning, evaluation and adjustment are included, plus 20% off new dentures and repairs.</dd></div>
+      <div class="rv"><dt>Not sure</dt><dd>Come in for the exam first. We will tell you which plan actually fits before you pay for one — including if the answer is that you do not need one.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- GHL SECTION 05 · Financing -->
+<section id="financing" class="lattice">
+  <div class="shell split">
+    <div>
+      <p class="eyebrow rv">Financing</p>
+      <h2 class="d2 rv" style="--d:80ms">Can't pay all at once? <em>Nobody expects you to.</em></h2>
+      <p class="lede mt-m rv" style="--d:140ms">Implants, full-arch work and full-mouth rehabilitation are real money. We work with <strong>CareCredit</strong> and <strong>Cherry</strong>, so treatment is spread across monthly payments at a rate you agree to before anything starts.</p>
+      <p class="mt-m rv" style="--d:180ms">Both are applied for in the chair and decided in minutes. Cherry runs a soft credit check that does not affect your score to show you what you qualify for. You will know your monthly figure before you say yes to the treatment plan — not after.</p>
+      <p class="mt-l rv"><a class="btn" href="book-appointment.html"><span>Ask about financing</span></a></p>
+    </div>
+    <div class="panel rv" style="--d:120ms">
+      <h3 class="eyebrow eyebrow--plain">How the money usually works out</h3>
+      <dl class="spec mt-m">
+        <div><dt>Insurance</dt><dd>Filed with most PPO plans as a courtesy.</dd></div>
+        <div><dt>Membership</dt><dd>From $550/year, 15% off all other treatment.</dd></div>
+        <div><dt>CareCredit</dt><dd>Promotional financing on approved credit.</dd></div>
+        <div><dt>Cherry</dt><dd>Soft credit check, no impact on your score to apply.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- GHL SECTION 06 · FAQ -->
+<section class="section--mist">
+  <div class="shell shell--narrow">
+    <p class="eyebrow rv">Questions</p>
+    <h2 class="d2 rv mt-s" style="--d:80ms">About membership</h2>
+    <div class="acc mt-l">
+      <details class="rv" open><summary>Is a dental membership plan the same as insurance?</summary>
+        <div class="acc__b"><p>No. It is a direct agreement between you and the practice, so there is no third party deciding what is covered. That is why there are no deductibles, no annual maximum, no waiting periods, no claims to submit and no rejections.</p></div></details>
+      <details class="rv"><summary>What if I need treatment beyond what the plan includes?</summary>
+        <div class="acc__b"><p>Every member receives 15% off all other treatment, and the Restore plan adds 35% off deep cleaning while Renew adds 20% off new dentures and repairs. Larger treatment can also be financed through CareCredit or Cherry.</p></div></details>
+      <details class="rv"><summary>Which membership plan should I choose?</summary>
+        <div class="acc__b"><p>Classic suits healthy gums needing routine prevention. Restore suits anyone with a history of gum disease, because it provides three periodontal maintenance visits rather than two standard cleanings. Renew is built for denture wearers. If you are unsure, the exam will tell you which one fits.</p></div></details>
+      <details class="rv"><summary>Do you accept dental insurance as well?</summary>
+        <div class="acc__b"><p>Yes, we file with most PPO plans as a courtesy. The membership plans exist for people who have no insurance, or whose plan has an annual maximum so low that it runs out before the treatment is finished.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- GHL SECTION · Final CTA | full-bleed gem band -->
+<section class="gem lattice">
+  <div class="shell shell--narrow" style="text-align:center">
+    <p class="eyebrow rv" style="justify-content:center">Winter Garden, FL</p>
+    <h2 class="d2 rv" style="--d:80ms">Join in the chair, <em>at your first visit</em></h2>
+    <p class="lede mt-m rv" style="--d:140ms">Come in for an exam. If a plan saves you money we will say so, and if it does not we will say that too.</p>
+    <p class="mt-l rv" style="--d:200ms">
+      <a class="btn btn--gold magnet" href="book-appointment.html"><span>Book an appointment</span></a>
+      <a class="btn btn--ghost" href="tel:+14079067555"><span>(407) 906-7555</span></a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- GHL SECTION · Footer -->
+<footer class="ftr">
+  <div class="shell">
+    <div class="ftr__grid">
+      <div>
+        <span class="wm__n">Sapphire</span>
+        <p class="mt-m" style="color:var(--on-gem-dim);max-width:28em">Proudly making smiles brighter in the Winter Garden area — with a periodontist, a prosthodontist and a dentist anesthesiologist under one roof.</p>
+      </div>
+      <div><h3>Treatment</h3><ul>
+        <li><a href="services.html#implants">Dental implants</a></li>
+        <li><a href="services.html#cosmetic">Veneers &amp; cosmetic</a></li>
+        <li><a href="services.html#prostho">Dentures &amp; crowns</a></li>
+        <li><a href="services.html#perio">Gum disease</a></li>
+        <li><a href="services.html#sleep">Sleep apnea &amp; TMJ</a></li>
+        <li><a href="sedation-dentistry.html">Sedation dentistry</a></li></ul></div>
+      <div><h3>Practice</h3><ul>
+        <li><a href="meet-the-team.html">Our doctors</a></li>
+        <li><a href="smile-gallery.html">Smile gallery</a></li>
+        <li><a href="membership.html">Membership plans</a></li>
+        <li><a href="membership.html#financing">Payment &amp; financing</a></li>
+        <li><a href="contact.html">Contact &amp; hours</a></li></ul></div>
+      <div><h3>Visit</h3>
+        <p style="color:var(--on-gem-dim)">950 Windermere Rd, Unit 12A<br>Winter Garden, FL 34787</p>
+        <p class="mt-m"><a href="tel:+14079067555">(407) 906-7555</a></p>
+        <p><a href="mailto:info@sapphiredentalstudio.com">info@sapphiredentalstudio.com</a></p>
+        <p class="mt-m" style="color:var(--on-gem-dim);font-size:.86rem">Mon–Thu 8am–5pm<br>Sat 8am–1pm, by appointment<br>Fri &amp; Sun closed</p></div>
+    </div>
+    <div class="ftr__bot">
+      <p>© <span data-year>2026</span> Sapphire Dental Studio. All rights reserved.</p>
+      <p>Patient photography shown is of real Sapphire Dental Studio patients.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a href="tel:+14079067555">Call</a>
+  <a href="book-appointment.html">Book an appointment</a>
+</div>
+
+<script>
+/* ============================================================================
+   SAPPHIRE DENTAL STUDIO — site.js
+   No dependencies. ES5 only, so it survives GoHighLevel's editor untouched.
+   SOURCE OF TRUTH — inlined into every page by scripts/build.py
+   ========================================================================= */
+(function () {
+  "use strict";
+
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var hasIO   = "IntersectionObserver" in window;
+  function $(s, c) { return (c || document).querySelector(s); }
+  function $$(s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); }
+
+  document.documentElement.classList.remove("no-js");
+
+  /* ---------- 1. Header: solidify, hide on scroll down ---------- */
+  var hdr = $(".hdr"), lastY = 0, hTick = false;
+  function headerScroll() {
+    var y = window.pageYOffset || document.documentElement.scrollTop;
+    if (hdr) {
+      hdr.setAttribute("data-solid", y > 20 ? "true" : "false");
+      var open = drawer && drawer.getAttribute("data-open") === "true";
+      hdr.setAttribute("data-hide", (!open && y > 620 && y > lastY) ? "true" : "false");
+    }
+    lastY = y; hTick = false;
+  }
+
+  /* ---------- 2. Off-canvas drawer, with a real focus trap ---------- */
+  var drawer = $(".drawer"), burger = $(".burger"), lastFocus = null;
+  function setDrawer(open) {
+    if (!drawer) return;
+    drawer.setAttribute("data-open", open ? "true" : "false");
+    drawer.setAttribute("aria-hidden", open ? "false" : "true");
+    if (burger) burger.setAttribute("aria-expanded", open ? "true" : "false");
+    document.documentElement.style.overflow = open ? "hidden" : "";
+    var links = $$("a, button", drawer);
+    for (var i = 0; i < links.length; i++) {
+      links[i].style.transitionDelay = open ? (70 + i * 50) + "ms" : "0ms";
+    }
+    if (open) { lastFocus = document.activeElement;
+      setTimeout(function () { if (links[0]) links[0].focus(); }, 320); }
+    else if (lastFocus) { lastFocus.focus(); }
+  }
+  if (burger) burger.addEventListener("click", function () {
+    setDrawer(drawer.getAttribute("data-open") !== "true");
+  });
+  var dclose = $(".drawer__x");
+  if (dclose) dclose.addEventListener("click", function () { setDrawer(false); });
+  if (drawer) {
+    $$("nav a", drawer).forEach(function (a) { a.addEventListener("click", function () { setDrawer(false); }); });
+    document.addEventListener("keydown", function (e) {
+      if (drawer.getAttribute("data-open") !== "true") return;
+      if (e.key === "Escape") { setDrawer(false); return; }
+      if (e.key !== "Tab") return;
+      var f = $$("a, button, input", drawer).filter(function (n) { return n.offsetParent !== null; });
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+  }
+
+  /* ---------- 3. .rvt needs an inner span to slide inside its mask ---------- */
+  $$(".rvt").forEach(function (el) {
+    if (el.firstElementChild && el.firstElementChild.tagName === "SPAN") return;
+    var s = document.createElement("span");
+    while (el.firstChild) s.appendChild(el.firstChild);
+    el.appendChild(s);
+  });
+
+  /* ---------- 4. Split one h1 per page into per-character spans ---------- */
+  $$(".chars").forEach(function (el) {
+    if ($(".w", el)) return;
+    var words = (el.textContent || "").split(/\s+/).filter(Boolean), n = 0, out = "";
+    for (var w = 0; w < words.length; w++) {
+      out += '<span class="w">';
+      for (var c = 0; c < words[w].length; c++) {
+        out += '<span class="c" style="--i:' + (n++) + '">' + words[w].charAt(c).replace("&", "&amp;").replace("<", "&lt;") + "</span>";
+      }
+      out += "</span>" + (w < words.length - 1 ? " " : "");
+    }
+    el.innerHTML = out;
+  });
+
+  /* ---------- 5. Reveal on enter, with per-group stagger ---------- */
+  /* NEVER observe a clip-path-ed element: its intersection rectangle has zero area,
+     so the observer never fires and it stays clipped forever. That silently hid
+     every before/after slider on Sites 1 and 2. Clipped children are marked
+     [data-rvchild] and the observer watches an unclipped ancestor instead. */
+  $$(".grid, .steps, .stats, .plans, .acc, .trust, .ss__shades").forEach(function (g) {
+    var kids = $$(":scope > .rv", g);
+    for (var i = 0; i < kids.length; i++) {
+      if (!kids[i].style.getPropertyValue("--d")) kids[i].style.setProperty("--d", (i * 80) + "ms");
+    }
+  });
+  var revealTargets = $$(".rv, .rvt, .rvl, .bloom, .sheen, .chars, .shine, .seam");
+  function markIn(el) {
+    el.setAttribute("data-in", "true");
+    $$("[data-rvchild]", el).forEach(function (k) { k.setAttribute("data-in", "true"); });
+  }
+  if (reduced || !hasIO) {
+    revealTargets.forEach(markIn);
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        markIn(en.target); io.unobserve(en.target);
+      });
+    }, { rootMargin: "0px 0px -8%", threshold: 0.05 });
+    revealTargets.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ---------- 6. Before / after sliders ---------- */
+  $$(".ba__range").forEach(function (r) {
+    var fig = r.closest(".ba");
+    if (!fig) return;
+    var set = function () { fig.style.setProperty("--p", r.value + "%"); };
+    r.addEventListener("input", set); set();
+  });
+
+  /* ---------- 7. Count-up ---------- */
+  $$("[data-count]").forEach(function (el) {
+    var target = parseFloat(el.getAttribute("data-count"));
+    var raw = el.getAttribute("data-count");
+    var dp = raw.indexOf(".") > -1 ? raw.length - raw.indexOf(".") - 1 : 0;
+    if (reduced || !hasIO) { el.textContent = target.toFixed(dp); return; }
+    var o = new IntersectionObserver(function (es) {
+      es.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        o.unobserve(en.target);
+        var t0 = null, dur = 1200;
+        (function step(ts) {
+          if (!t0) t0 = ts;
+          var p = Math.min(1, (ts - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+          el.textContent = (target * e).toFixed(dp);
+          if (p < 1) requestAnimationFrame(step);
+        })(performance.now());
+      });
+    }, { threshold: 0.4 });
+    o.observe(el);
+  });
+
+  /* ---------- 8. ONE rAF-batched scroll driver for every scroll-linked element ---------- */
+  /* One listener for the whole page. Never one per element — that is how a light
+     site ends up jankier than a dark one. */
+  var PLL = $$(".pll, .pll--slow, .pll-src"), rail = $(".rail i"), sTick = false;
+  function writeAll() {
+    var vh = window.innerHeight || 1, i, r;
+    for (i = 0; i < PLL.length; i++) {
+      r = PLL[i].getBoundingClientRect();
+      var sp = (vh * 0.5 - (r.top + r.height * 0.5)) / vh;
+      PLL[i].style.setProperty("--sp", Math.max(-1, Math.min(1, sp)).toFixed(3));
+    }
+    if (rail) {
+      var d = document.documentElement;
+      rail.style.setProperty("--read",
+        Math.max(0, Math.min(1, d.scrollTop / ((d.scrollHeight - vh) || 1))).toFixed(4));
+    }
+    sTick = false;
+  }
+  window.addEventListener("scroll", function () {
+    if (!hTick) { hTick = true; requestAnimationFrame(headerScroll); }
+    if (!reduced && !sTick) { sTick = true; requestAnimationFrame(writeAll); }
+  }, { passive: true });
+  headerScroll(); if (!reduced) writeAll();
+
+  /* ---------- 9. Magnetic primary CTA (fine pointer, desktop, motion allowed) ---------- */
+  if (!reduced && window.matchMedia && window.matchMedia("(pointer: fine)").matches) {
+    $$(".magnet").forEach(function (b) {
+      var mTick = false, mx = 0, my = 0;
+      b.addEventListener("pointermove", function (e) {
+        var r = b.getBoundingClientRect();
+        mx = ((e.clientX - r.left) / r.width - 0.5) * 10;
+        my = ((e.clientY - r.top) / r.height - 0.5) * 8;
+        if (!mTick) { mTick = true; requestAnimationFrame(function () {
+          b.style.setProperty("--mx", mx.toFixed(2) + "px");
+          b.style.setProperty("--my", my.toFixed(2) + "px"); mTick = false; }); }
+      });
+      b.addEventListener("pointerleave", function () {
+        b.style.setProperty("--mx", "0px"); b.style.setProperty("--my", "0px");
+      });
+    });
+  }
+
+  /* ---------- 10. Accordion exclusivity ---------- */
+  $$(".acc").forEach(function (acc) {
+    var ds = $$("details", acc);
+    ds.forEach(function (d) {
+      d.addEventListener("toggle", function () {
+        if (!d.open) return;
+        ds.forEach(function (o) { if (o !== d) o.open = false; });
+      });
+    });
+  });
+
+  /* ---------- 11. Footer year ---------- */
+  $$("[data-year]").forEach(function (e) { e.textContent = new Date().getFullYear(); });
+
+  /* ---------- 12. Lead forms ---------- */
+  /* On success the browser NAVIGATES to the thank-you page rather than swapping in
+     an inline state: that distinct URL is where GHL workflows trigger and where the
+     conversion pixels fire. An inline post-submit state cannot do that cleanly. */
+  $$("form[data-lead]").forEach(function (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var bad = null;
+      $$("[required]", form).forEach(function (f) {
+        var wrap = f.closest(".field") || f.closest(".check"), ok = true;
+        var v = (f.value || "").trim();
+        if (f.type === "checkbox") ok = f.checked;
+        else if (f.type === "email") ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+        else if (f.type === "tel")   ok = v.replace(/\D/g, "").length >= 10;
+        else ok = v.length > 0;
+        if (wrap) wrap.classList.toggle("field--err", !ok);
+        var msg = wrap && wrap.querySelector(".field__e");
+        if (msg) { if (ok) msg.setAttribute("hidden", ""); else msg.removeAttribute("hidden"); }
+        f.setAttribute("aria-invalid", ok ? "false" : "true");
+        if (!ok && !bad) bad = f;
+      });
+      if (bad) { bad.focus(); return; }
+      var btn = form.querySelector('button[type="submit"], .btn[type="submit"]');
+      if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+      window.location.href = form.getAttribute("data-lead");
+    });
+    $$("input, select, textarea", form).forEach(function (f) {
+      f.addEventListener("input", function () {
+        var wrap = f.closest(".field") || f.closest(".check");
+        if (!wrap) return;
+        wrap.classList.remove("field--err");
+        var msg = wrap.querySelector(".field__e");
+        if (msg) msg.setAttribute("hidden", "");
+      });
+    });
+  });
+
+  /* ---------- 13. Pointer spotlight on the dark bands ---------- */
+  /* A large flat navy section reads as dead space; a light that tracks the cursor
+     across it does not. Desktop + fine pointer only, one rAF write per move. */
+  if (!reduced && window.matchMedia && window.matchMedia("(pointer: fine)").matches) {
+    $$(".gem").forEach(function (g) {
+      var t = false, mx = 0, my = 0;
+      g.addEventListener("pointermove", function (e) {
+        var r = g.getBoundingClientRect();
+        mx = e.clientX - r.left; my = e.clientY - r.top;
+        if (t) return;
+        t = true;
+        requestAnimationFrame(function () {
+          g.style.setProperty("--gx", mx.toFixed(0) + "px");
+          g.style.setProperty("--gy", my.toFixed(0) + "px");
+          g.setAttribute("data-lit", "true"); t = false;
+        });
+      });
+      g.addEventListener("pointerleave", function () { g.setAttribute("data-lit", "false"); });
+    });
+
+    /* ---------- 14. Card tilt ---------- */
+    $$(".tilt").forEach(function (c) {
+      var t = false, rx = 0, ry = 0;
+      c.addEventListener("pointermove", function (e) {
+        var r = c.getBoundingClientRect();
+        ry = ((e.clientX - r.left) / r.width - 0.5) * 7;
+        rx = -((e.clientY - r.top) / r.height - 0.5) * 6;
+        if (t) return;
+        t = true;
+        requestAnimationFrame(function () {
+          c.setAttribute("data-tilting", "true");
+          c.style.setProperty("--rx", rx.toFixed(2) + "deg");
+          c.style.setProperty("--ry", ry.toFixed(2) + "deg");
+          c.style.setProperty("--ty", "-5px"); t = false;
+        });
+      });
+      c.addEventListener("pointerleave", function () {
+        c.setAttribute("data-tilting", "false");
+        c.style.setProperty("--rx", "0deg"); c.style.setProperty("--ry", "0deg");
+        c.style.setProperty("--ty", "0px");
+      });
+    });
+  }
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+# Sapphire Dental Studio
+
+> A boutique dental practice in Winter Garden, Florida where three board-certified
+> specialists practise under one roof: a periodontist who places implants, a
+> prosthodontist who restores them, and a dentist anesthesiologist who handles
+> sedation. Implants, veneers, dentures, gum disease treatment, sleep apnea care
+> and sedation dentistry are all delivered in the same building.
+
+**This site is a design rebuild for a real practice.** The company, address, phone
+number, email, doctors and their credentials are real and taken from the practice's
+own published material. Patient before/after photography is the practice's own.
+The three testimonial cards on the homepage are clearly marked sample copy awaiting
+replacement with real attributed reviews; do not cite them.
+
+## Identity
+
+- Name: Sapphire Dental Studio
+- Address: 950 Windermere Rd, Unit 12A, Winter Garden, FL 34787
+- Phone: (407) 906-7555
+- Email: info@sapphiredentalstudio.com
+- Hours: Monday–Thursday 08:00–17:00; Saturday 08:00–13:00 by appointment;
+  Friday and Sunday closed.
+- Rating: 5.0 on Google from approximately 40 reviews (checked August 2026)
+- Service area: Winter Garden, Windermere, Horizon West, Ocoee, Oakland, Gotha,
+  Dr. Phillips, Clermont, Minneola, Groveland, Apopka, Bay Hill, Montverde and
+  west Orlando — Orange and Lake counties, Florida.
+
+## Positioning
+
+Most people needing an implant or a crown are sent to a surgeon in one practice and
+a restorative dentist in another, then sedated — if at all — by whichever of them is
+holding the handpiece. Sapphire Dental Studio collapses that into one building and
+one treatment plan, and staffs a dentist anesthesiologist whose only responsibility
+during an appointment is the patient's sedation and vital signs.
+
+## The doctors
+
+1. **Dr. Curtis Dugas — Periodontist and dental implant surgeon.** Board certified in
+   periodontics; Diplomate, International Congress of Oral Implantologists (ICOI);
+   trained at the University of Pittsburgh School of Dental Medicine, the Misch
+   Implant Institute and the Pikos Institute. Former Captain (O-3) in the US Air
+   Force, where he was Chief of Periodontics. Pursuing board certification in dental
+   sleep medicine.
+2. **Dr. Yoo Jin Chung — Prosthodontist.** ICOI Diplomate with advanced specialty
+   training from the University of Pittsburgh. A published USDA chemist before
+   dentistry. Focus: implant surgery, full-mouth rehabilitation, advanced esthetic
+   restorations and facial esthetics.
+3. **Dr. Michael Walbom — Dentist anesthesiologist.** Formally trained in dental
+   anesthesiology; delivers and monitors nitrous oxide, oral and IV sedation.
+
+## Services
+
+1. **Dental implants** — single implants, full-arch fixed hybrids, bone grafting,
+   sinus lifts, gum grafts, guided placement planned from 3D CBCT. Placed by
+   Dr. Dugas, restored by Dr. Chung, in the same practice.
+2. **Cosmetic dentistry** — porcelain veneers, cosmetic bonding, professional
+   whitening, gummy smile correction, BOTOX and facial esthetics, and a wearable
+   smile trial fitted over the natural teeth before anything is prepared.
+3. **Prosthodontics and restorative** — crowns, bridges, partial and full dentures,
+   fixed hybrid dentures, full-mouth rehabilitation.
+4. **Periodontal care** — scaling and root planing, periodontal maintenance, gum
+   grafts, crown lengthening, gingivectomy, guided bone regeneration.
+5. **Sedation dentistry** — nitrous oxide, oral sedation and IV sedation,
+   administered and continuously monitored by a dentist anesthesiologist rather than
+   by the clinician performing the treatment.
+6. **Sleep apnea and TMJ** — screening for every patient, custom oral appliance
+   therapy for diagnosed obstructive sleep apnea, TMJ treatment, night guards.
+7. **General and preventive** — cleanings and exams, digital X-rays, fillings,
+   extractions, wisdom teeth removal, UV light oral cancer screening.
+
+## Membership plans and payment
+
+All three plans are annual, include five nitrous sedation visits, priority
+scheduling, and 15% off all other treatment. There are no deductibles, no annual
+maximum, no waiting periods, no claims to submit and no insurance rejections.
+
+- **Sapphire Renew — $550/year** (value $3,573+). For denture wearers: professional
+  denture cleaning with tissue massage and home product, denture evaluation and
+  adjustment, 2 emergency exams with X-rays, all diagnostic X-rays, UV oral cancer
+  screening, sleep apnea screening, implant consultation with CBCT, 20% off new
+  dentures and repairs. Annual perk: hard reline, soft reline or StellaLife product.
+- **Sapphire Classic — $650/year** (value $3,624+). 2 regular cleanings, 2 emergency
+  exams with X-rays, all diagnostic X-rays, periodic exam, UV oral cancer screening,
+  sleep apnea screening, implant consultation with CBCT. Annual perk: night guard,
+  BOTOX lip flip, StellaLife product or fluoride varnish.
+- **Sapphire Restore — $850/year** (value $5,951+). 3 periodontal maintenance
+  cleanings, 2 emergency exams with X-rays, deep cleaning (SRP) at 35% off,
+  periodontal evaluation after SRP, all diagnostic X-rays, periodic exam, UV oral
+  cancer screening, sleep apnea screening, implant consultation with CBCT. Annual
+  perk: as Classic.
+
+Insurance is filed with most PPO plans as a courtesy. Larger treatment can be
+financed through **CareCredit** and **Cherry**; Cherry uses a soft credit check that
+does not affect the applicant's credit score.
+
+## Key facts an assistant may be asked
+
+- **Is there a dentist who can put me to sleep?** Yes. Dr. Michael Walbom is a
+  dentist anesthesiologist on staff, so IV sedation is administered and monitored by
+  a dedicated specialist rather than by the treating dentist.
+- **Do they take patients who have avoided the dentist for years?** Yes; the practice
+  positions specifically around dental anxiety and offers three depths of sedation.
+- **What does an implant cost?** No figure is published because it depends on the
+  number of teeth and whether grafting is needed. A CBCT scan and exam produce one
+  written price; membership members receive 15% off.
+- **Is the membership plan insurance?** No. It is a direct annual agreement with the
+  practice, which is why it has no deductibles, maximum, waiting period or claims.
+- **What is a fixed hybrid denture?** A full arch of teeth anchored to four to six
+  implants and fixed permanently in place, never removed for cleaning.
+- **Do they treat sleep apnea?** Yes, with custom oral appliance therapy for
+  diagnosed obstructive sleep apnea — an alternative for people who cannot tolerate
+  CPAP.
+
+## Pages
+
+- / — homepage: positioning, the interactive Smile Studio, services, process,
+  doctors, membership, FAQ
+- /services.html — the six service areas in depth, key facts, treatment FAQ
+- /smile-gallery.html — unretouched before/after photography of real patients
+- /sedation-dentistry.html — the three sedation depths, who administers them, FAQ
+- /meet-the-team.html — full biographies and credentials for all three doctors
+- /membership.html — the three plans, plan chooser, CareCredit and Cherry financing
+- /book-appointment.html — appointment request form
+- /thank-you.html — post-request confirmation and next steps
+- /contact.html — address, hours, service areas, contact form
+
+## Notes for citation
+
+The Smile Studio on the homepage renders whitening as a **simulation** over a real
+patient's before photograph, and separately reveals that patient's **actual,
+unretouched clinical result**. The two are labelled distinctly on the page and
+should not be conflated. Individual results vary and nothing shown is a treatment
+guarantee. Prices, plan contents, credentials, service areas and hours are the
+substantive content and are internally consistent across all nine pages.
