@@ -91,8 +91,8 @@
   --lift-2:    0 2px 6px rgba(32,88,112,.07), 0 18px 44px -18px rgba(32,88,112,.20);
   --lift-3:    0 8px 20px rgba(32,88,112,.10), 0 40px 80px -32px rgba(32,88,112,.30);
 
-  --ff:        "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --ff-d:      "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --ff:        "Manrope", "Manrope Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ff-d:      "Cormorant Garamond", "Cormorant Fallback", "Iowan Old Style", Georgia, serif;
 
   --shell:     1440px;
   --gut:       clamp(1.25rem, 4.2vw, 5rem);
@@ -109,6 +109,35 @@
   --e:         cubic-bezier(.22,.61,.28,1);
   --e-out:     cubic-bezier(.16,1,.3,1);
   --e-io:      cubic-bezier(.76,0,.24,1);
+}
+
+/* ---------- 1b. Metric-matched fallback faces ---------- */
+/* With display=swap the real faces arrive after first paint, and because the
+   hero h1 is set in the display face at clamp() sizes, its line COUNT changed
+   when the swap happened — which pushed the hero paragraph and CTA down. That
+   single reflow measured 0.131 of a 0.149 CLS on the homepage at 390px.
+   size-adjust makes the fallback occupy the same advance width, so the headline
+   wraps identically before and after the swap and nothing moves. Ratios were
+   measured against the real faces at 100px:
+     Cormorant Garamond / Times New Roman = 96.6%
+     Manrope            / Arial           = 102.0%
+   Calibrated by averaging the real/fallback advance-width ratio over 7 strings
+   at 5 sizes, not from a single sample — a single-string ratio was 2.4% out and
+   still flipped a line break in the meet-the-team h1.
+   Only size-adjust is overridden: this site sets explicit line-heights almost
+   everywhere, so ascent/descent overrides would buy nothing and risk changing
+   line boxes where line-height is `normal`. */
+@font-face {
+  font-family: "Cormorant Fallback";
+  src: local("Times New Roman"), local("Times"), local("Liberation Serif"), local("Nimbus Roman");
+  size-adjust: 96.6%;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Manrope Fallback";
+  src: local("Arial"), local("Helvetica"), local("Liberation Sans"), local("Nimbus Sans");
+  size-adjust: 102.0%;
+  font-display: swap;
 }
 
 /* ---------- 2. Reset ---------- */
@@ -609,7 +638,8 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
 
 /* ---------- 16. Testimonials ---------- */
 .quote { display: grid; gap: 1rem; }
-.quote__stars { display: flex; gap: .2rem; color: var(--gold); font-size: .85rem; letter-spacing: .1em; }
+.quote__stars { display: flex; gap: .2rem; color: var(--gold-dp); font-size: .85rem; letter-spacing: .1em; }
+.gem .quote__stars { color: var(--gold); }   /* --gold-dp is for LIGHT grounds only */
 .quote blockquote { font: 400 clamp(1.15rem,1.8vw,1.6rem)/1.5 var(--ff-d); color: var(--sapphire); }
 .gem .quote blockquote { color: var(--paper); }
 .quote figcaption { font-size: .86rem; color: var(--slate); }
@@ -768,6 +798,40 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
 .gem .ss__sw input:checked ~ .ss__code { color: var(--gold); }
 .gem .ss__range::-webkit-slider-runnable-track { background: rgba(234,246,251,.30); }
 .gem .ss__range::-moz-range-track              { background: rgba(234,246,251,.30); }
+
+/* --- Light island inside a dark band -------------------------------------
+   A .panel that keeps a light background inside a .gem section is a LIGHT
+   ground again, but every `.gem X` colour override above is written for the
+   dark band and cascades straight into it. That put --on-gem-dim text at
+   1.72:1 and a gold .tlink at 1.42:1 on a white form panel. Reset the ramp for
+   anything inside such a panel rather than hand-patching each element inline. */
+.gem .panel--light { color: var(--ink); }
+.gem .panel--light .d1, .gem .panel--light .d2,
+.gem .panel--light .d3, .gem .panel--light .d4 { color: var(--sapphire); }
+.gem .panel--light .d1 em, .gem .panel--light .d2 em,
+.gem .panel--light .d3 em { color: var(--gold-dp); }
+.gem .panel--light .lede,
+.gem .panel--light .muted,
+.gem .panel--light .check,
+.gem .panel--light .ss__hint,
+.gem .panel--light .ss__code,
+.gem .panel--light .form__note { color: var(--slate); }
+.gem .panel--light .eyebrow { color: var(--gold-dp); }
+.gem .panel--light .tlink   { color: var(--sapphire); }
+.gem .panel--light .rule    { background: var(--line); }
+/* the custom dark-band checkbox reverts to the native control on a light panel */
+.gem .panel--light .check input {
+  appearance: auto; -webkit-appearance: auto;
+  background: none; border: 0; border-radius: 0; accent-color: var(--sapphire);
+}
+.gem .panel--light :focus-visible { outline-color: var(--gold-dp); }
+
+/* --gold-dp is the LIGHT-ground yellow (4.78:1 on porcelain, but only 3.08:1 on
+   --abyss). On the band the numerals take the band's own yellow, at 10.96:1. */
+.gem .steps__n,
+.gem .ss__set legend { color: var(--gold); }
+.gem .plan ul li::before,
+.gem .card ul li::before { color: var(--gold); }
 
 .gem .check input {
   appearance: none; -webkit-appearance: none; margin: 0;
