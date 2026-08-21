@@ -40,8 +40,8 @@
    SAPPHIRE DENTAL STUDIO — Winter Garden, FL
    Porcelain light, cut-gem geometry, sapphire navy ink, champagne gold hairlines.
    Palette taken from the practice's real logo: #001868 navy, #D8B860 gold.
-   The signature motif is the FACET — chamfered corners cut from the logo's
-   tessellated gem, never a border-radius.
+   The signature motif is the SOFTENED GEM — the logo's tessellation kept in the
+   lattice and the diamond bullets, with rounded corners on every surface.
    Nothing here is shared with Northstone, Hearth & Hollis, Obsidian or Vantage.
    SOURCE OF TRUTH — inlined into every page by scripts/build.py
    ========================================================================= */
@@ -89,8 +89,14 @@
   --shell:     1440px;
   --gut:       clamp(1.25rem, 4.2vw, 5rem);
   --sect:      clamp(4rem, 7vw, 8rem);
-  --r:         2px;                        /* micro-radius; the language is the chamfer */
-  --facet:     clamp(14px, 2.1vw, 28px);   /* the cut-gem corner */
+  /* Radius scale. The house shape is a SOFTENED gem: round, but tighter and cooler
+     than Hearth & Hollis's 24-48px organic curves, so the two never read alike. */
+  --r:         8px;                        /* micro — chips, tags, badges, burger */
+  --r-m:       14px;                       /* mid — inputs, small controls */
+  --r-l:       20px;                       /* large — cards, panels, plans */
+  --r-xl:      clamp(22px, 2.6vw, 34px);   /* the big surfaces — figures, stages */
+  --r-pill:    999px;                      /* buttons and pills */
+  --facet:     var(--r-xl);                /* legacy alias — kept so calc() sites hold */
 
   --e:         cubic-bezier(.22,.61,.28,1);
   --e-out:     cubic-bezier(.16,1,.3,1);
@@ -190,12 +196,12 @@ main > section { padding-block: var(--sect); position: relative; }
 .rule--gold { background: linear-gradient(90deg, var(--gold), transparent); }
 .gem .rule { background: var(--line-gem); }
 
-/* ---------- 5. The facet — the signature geometry ---------- */
-/* A cut-gem chamfer on two opposing corners. This is the house shape: it replaces
-   border-radius everywhere a softer language would have used one. */
-.fct { clip-path: polygon(var(--facet) 0, 100% 0, 100% calc(100% - var(--facet)), calc(100% - var(--facet)) 100%, 0 100%, 0 var(--facet)); }
-.fct--all { clip-path: polygon(var(--facet) 0, calc(100% - var(--facet)) 0, 100% var(--facet), 100% calc(100% - var(--facet)), calc(100% - var(--facet)) 100%, var(--facet) 100%, 0 calc(100% - var(--facet)), 0 var(--facet)); }
-.fct--tr  { clip-path: polygon(0 0, calc(100% - var(--facet)) 0, 100% var(--facet), 100% 100%, 0 100%); }
+/* ---------- 5. Rounded surfaces ---------- */
+/* Was a cut-gem chamfer (clip-path). Now a radius: same job, soft corner.
+   overflow:clip, never hidden — hidden on an ancestor kills position:sticky. */
+.fct      { border-radius: var(--r-xl); overflow: clip; }
+.fct--all { border-radius: var(--r-xl); overflow: clip; }
+.fct--tr  { border-radius: var(--r-xl); overflow: clip; }
 
 /* The lattice — the logo's tessellation, drawn as hairlines. Decorative only. */
 .lattice { position: relative; }
@@ -219,7 +225,7 @@ main > section { padding-block: var(--sect); position: relative; }
 .panel {
   background: var(--paper); border: 1px solid var(--line-soft);
   box-shadow: var(--lift-1); padding: clamp(1.4rem, 2.4vw, 2.4rem);
-  position: relative;
+  position: relative; border-radius: var(--r-l);
 }
 .panel--inset { background: var(--mist); box-shadow: none; }
 .panel--flat  { box-shadow: none; }
@@ -227,14 +233,7 @@ main > section { padding-block: var(--sect); position: relative; }
   background: rgba(238,242,251,.045); border-color: var(--line-gem);
   box-shadow: none; backdrop-filter: blur(6px);
 }
-/* a hairline gold seam along the chamfer */
-.seam::after {
-  content: ""; position: absolute; right: -1px; bottom: -1px;
-  width: calc(var(--facet) * 1.42); height: 1px; background: var(--gold);
-  transform-origin: right bottom; transform: rotate(-45deg); opacity: .85; pointer-events: none;
-}
-
-.fig { overflow: hidden; position: relative; background: var(--frost); }
+.fig { overflow: hidden; position: relative; background: var(--frost); border-radius: var(--r-xl); }
 .fig img { width: 100%; height: 100%; object-fit: cover; }
 .fig--tall { aspect-ratio: 3/4; }
 .fig--wide { aspect-ratio: 16/9; }
@@ -251,7 +250,7 @@ main > section { padding-block: var(--sect); position: relative; }
   background: var(--bg); color: var(--fg);
   font: 600 .92rem/1 var(--ff); letter-spacing: .04em;
   border: 1px solid var(--bg); cursor: pointer; position: relative; overflow: hidden;
-  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+  border-radius: var(--r-pill);
   transition: transform .5s var(--e-out), background .4s var(--e), color .4s var(--e), border-color .4s var(--e);
   will-change: transform;
 }
@@ -429,7 +428,7 @@ main > section { padding-block: var(--sect); position: relative; }
           transform: scaleX(var(--read, 0)); transform-origin: left; }
 
 .burger { display: none; width: 48px; height: 48px; align-items: center; justify-content: center;
-          background: none; border: 1px solid var(--line); cursor: pointer; border-radius: var(--r); }
+          background: none; border: 1px solid var(--line); cursor: pointer; border-radius: var(--r-m); }
 .burger i { display: block; width: 20px; height: 1px; background: var(--ink); position: relative;
             transition: background .3s var(--e); }
 .burger i::before, .burger i::after {
@@ -527,6 +526,7 @@ main > section { padding-block: var(--sect); position: relative; }
 /* ---------- 13. Cards ---------- */
 .card {
   background: var(--paper); border: 1px solid var(--line-soft); box-shadow: var(--lift-1);
+  border-radius: var(--r-l);
   padding: clamp(1.3rem, 2.2vw, 2rem); display: flex; flex-direction: column; gap: .7rem;
   position: relative; overflow: hidden;
   transition: box-shadow .55s var(--e), transform .55s var(--e-out), border-color .45s var(--e);
@@ -548,7 +548,8 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
 /* doctor card — the portrait treatment unifies three photographs shot in three
    different places: same crop, same grade at rest, full colour on hover. */
 .doc { display: grid; gap: 1rem; }
-.doc__p { position: relative; overflow: hidden; aspect-ratio: 4/5; background: var(--frost); }
+.doc__p { position: relative; overflow: hidden; aspect-ratio: 4/5; background: var(--frost);
+          border-radius: var(--r-xl); }
 .doc__p img { width: 100%; height: 100%; object-fit: cover;
               filter: saturate(.62) contrast(1.04); transform: scale(1.02);
               transition: filter .8s var(--e), transform 1.1s var(--e-out); }
@@ -598,7 +599,7 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
    IntersectionObserver target — a clipped box has a zero-area intersection
    rectangle and the observer would never fire. site.js observes an ancestor. */
 .ba { --p: 50%; position: relative; overflow: hidden; aspect-ratio: 108/65;
-      background: var(--frost); touch-action: pan-y; }
+      background: var(--frost); touch-action: pan-y; border-radius: var(--r-xl); }
 .ba img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .ba__after { clip-path: inset(0 0 0 var(--p)); }
 .ba__range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0;
@@ -612,13 +613,14 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
 }
 .ba__handle::before {
   content: ""; position: absolute; top: 50%; left: 50%; width: 46px; height: 46px;
-  transform: translate(-50%,-50%) rotate(45deg); background: var(--paper);
+  transform: translate(-50%,-50%); background: var(--paper); border-radius: 50%;
   box-shadow: var(--lift-2); border: 1px solid var(--line);
 }
 .ba__range:focus-visible + .ba__handle::after { background: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
 .ba__tag { position: absolute; bottom: .85rem; z-index: 2; font: 600 .72rem/1 var(--ff);
            letter-spacing: .18em; text-transform: uppercase; padding: .55rem .8rem;
-           background: rgba(0,11,46,.72); color: var(--paper); backdrop-filter: blur(4px); }
+           background: rgba(0,11,46,.72); color: var(--paper); backdrop-filter: blur(4px);
+           border-radius: var(--r-pill); }
 .ba__tag--b { left: .85rem; } .ba__tag--a { right: .85rem; color: var(--gold); }
 .ba__note { font-size: .78rem; color: var(--slate-dim); margin-top: .7rem; }
 
@@ -628,6 +630,7 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
    parallel implementation — the same contract Vantage's perimeter.js keeps. */
 .ss { display: grid; grid-template-columns: 1.55fr 1fr; gap: clamp(1.4rem, 3vw, 3rem); align-items: start; }
 .ss__stage { position: relative; aspect-ratio: 108/65; background: var(--abyss);
+             border-radius: var(--r-xl); overflow: hidden;
              overflow: hidden; box-shadow: var(--lift-3); }
 .ss__cv { position: absolute; inset: 0; width: 100%; height: 100%; }
 .ss__stage[data-ready="false"] .ss__cv,
@@ -642,6 +645,7 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
            justify-content: space-between; font: 600 .72rem/1 var(--ff);
            letter-spacing: .18em; text-transform: uppercase; pointer-events: none; }
 .ss__cap span { padding: .5rem .75rem; background: rgba(0,11,46,.7); color: var(--paper);
+                border-radius: var(--r-pill);
                 backdrop-filter: blur(4px); }
 .ss__cap span:last-child { color: var(--gold); }
 .ss__seam { position: absolute; top: 0; bottom: 0; left: var(--p, 50%); width: 0; z-index: 3; pointer-events: none; }
@@ -676,17 +680,18 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
 .ss__layer { display: inline-flex; align-items: center; gap: .5rem; min-height: 46px;
              padding: 0 1rem; background: var(--paper); border: 1px solid var(--line);
              font: 500 .86rem/1 var(--ff); cursor: pointer; color: var(--ink);
+             border-radius: var(--r-pill);
              transition: background .35s var(--e), border-color .35s var(--e), color .35s var(--e); }
 .ss__layer::before { content: ""; width: 9px; height: 9px; background: transparent;
-                     border: 1px solid var(--slate-dim); transform: rotate(45deg);
+                     border: 1px solid var(--slate-dim); border-radius: 50%;
                      transition: background .35s var(--e), border-color .35s var(--e); }
 .ss__layer[aria-pressed="true"] { background: var(--sapphire); border-color: var(--sapphire); color: var(--paper); }
 .ss__layer[aria-pressed="true"]::before { background: var(--gold); border-color: var(--gold); }
 
 .ss__range { width: 100%; height: 44px; -webkit-appearance: none; appearance: none;
              background: none; cursor: ew-resize; }
-.ss__range::-webkit-slider-runnable-track { height: 3px; background: var(--frost); }
-.ss__range::-moz-range-track { height: 3px; background: var(--frost); }
+.ss__range::-webkit-slider-runnable-track { height: 3px; background: var(--frost); border-radius: var(--r-pill); }
+.ss__range::-moz-range-track { height: 3px; background: var(--frost); border-radius: var(--r-pill); }
 .ss__range::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px;
     margin-top: -11.5px; background: var(--sapphire); border: 2px solid var(--paper);
     box-shadow: var(--lift-1); border-radius: 50%; cursor: ew-resize; }
@@ -697,7 +702,7 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
 /* <output> is implicitly role="status" aria-live="polite" — the correct element,
    so no hand-rolled live region is needed. */
 .ss__plan { display: grid; gap: .55rem; padding: clamp(1rem,1.6vw,1.4rem);
-            background: var(--abyss); color: var(--on-gem); }
+            background: var(--abyss); color: var(--on-gem); border-radius: var(--r-l); }
 .ss__plan b { font: 400 clamp(1.15rem,1.6vw,1.45rem)/1.2 var(--ff-d); color: var(--gold); }
 .ss__plan p { font-size: .9rem; color: var(--on-gem-dim); line-height: 1.6; }
 .ss__plan .who { font: 600 .7rem/1.4 var(--ff); letter-spacing: .14em; text-transform: uppercase;
@@ -706,7 +711,8 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
 .gem .ss__disc { color: var(--on-gem-dim); }
 .ss__cases { display: flex; flex-wrap: wrap; gap: .4rem; }
 .ss__case { min-height: 44px; padding: 0 .85rem; background: none; border: 1px solid var(--line);
-            font: 500 .8rem/1 var(--ff); cursor: pointer; transition: all .35s var(--e); }
+            font: 500 .8rem/1 var(--ff); cursor: pointer; transition: all .35s var(--e);
+            border-radius: var(--r-pill); }
 .ss__case[aria-pressed="true"] { background: var(--sapphire); color: var(--paper); border-color: var(--sapphire); }
 
 /* ---------- 19. Accordion / FAQ ---------- */
@@ -740,13 +746,14 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
 /* ---------- 21. Membership / pricing ---------- */
 .plans { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: clamp(1rem,2vw,1.8rem); align-items: start; }
 .plan { background: var(--paper); border: 1px solid var(--line); padding: clamp(1.4rem,2.2vw,2.1rem);
-        display: grid; gap: .9rem; position: relative;
+        display: grid; gap: .9rem; position: relative; border-radius: var(--r-l);
         transition: box-shadow .5s var(--e), transform .5s var(--e-out); }
 .plan:hover { box-shadow: var(--lift-2); transform: translateY(-4px); }
 .plan--best { border-color: var(--sapphire); box-shadow: var(--lift-2); }
 .plan--best::before { content: "Most chosen"; position: absolute; top: 0; right: 0;
     background: var(--sapphire); color: var(--paper); font: 600 .72rem/1 var(--ff);
-    letter-spacing: .16em; text-transform: uppercase; padding: .55rem .8rem; }
+    letter-spacing: .16em; text-transform: uppercase; padding: .55rem .8rem;
+    border-radius: 0 var(--r-l) 0 var(--r-l); }
 .plan__n { font: 400 clamp(1.3rem,1.9vw,1.7rem)/1.15 var(--ff-d); color: var(--sapphire); }
 .plan__p { display: flex; align-items: baseline; gap: .4rem; }
 .plan__p b { font: 400 clamp(2.2rem,4vw,3.2rem)/1 var(--ff-d); color: var(--ink); }
@@ -755,7 +762,8 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
 .plan ul { display: grid; gap: .5rem; }
 .plan ul li { font-size: .92rem; color: var(--slate); padding-left: 1.3rem; position: relative; line-height: 1.55; }
 .plan ul li::before { content: "✓"; position: absolute; left: 0; color: var(--gold-dp); font-weight: 700; font-size: .82rem; }
-.plan__perk { font-size: .85rem; color: var(--ink); background: var(--mist); padding: .8rem; }
+.plan__perk { font-size: .85rem; color: var(--ink); background: var(--mist); padding: .8rem;
+              border-radius: var(--r-m); }
 
 /* ---------- 22. Forms ---------- */
 .form { display: grid; gap: 1rem; }
@@ -764,9 +772,10 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
 .field input, .field select, .field textarea {
   font: 400 1rem/1.4 var(--ff); color: var(--ink); background: var(--paper);
   border: 1px solid var(--line); padding: .95rem 1rem; min-height: 54px; width: 100%;
+  border-radius: var(--r-m); -webkit-appearance: none; appearance: none;
   transition: border-color .3s var(--e), box-shadow .3s var(--e);
 }
-.field textarea { min-height: 120px; resize: vertical; }
+.field textarea { min-height: 120px; resize: vertical; border-radius: var(--r-l); }
 .field input:focus, .field select:focus, .field textarea:focus {
   outline: none; border-color: var(--sapphire); box-shadow: 0 0 0 3px rgba(0,24,104,.12);
 }
@@ -777,7 +786,8 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
 .form__note { font-size: .78rem; color: var(--slate-dim); line-height: 1.55; }
 .check { display: flex; gap: .7rem; align-items: flex-start; font-size: .88rem; color: var(--slate); }
 .check { min-height: 44px; align-items: center; }
-.check input { width: 24px; height: 24px; flex: none; accent-color: var(--sapphire); }
+.check input { width: 24px; height: 24px; flex: none; accent-color: var(--sapphire);
+               border-radius: var(--r); }
 
 /* ---------- 23. Landing-page header + footer ---------- */
 .lphdr { position: relative; z-index: 5; border-bottom: 1px solid var(--line-gem); }
@@ -910,17 +920,18 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
         transform-style: preserve-3d; transition: transform .45s var(--e-out); }
 .tilt[data-tilting="true"] { transition: transform .08s linear; }
 
-/* ---------- 26d. Facet reveal for media ---------- */
-/* The chamfer opens as the figure enters. NOTE: this element is CLIPPED, so it must
-   never be the IntersectionObserver target — it carries data-rvchild and site.js
-   forwards data-in to it from an unclipped ancestor. */
+/* ---------- 26d. Wipe reveal for media ---------- */
+/* The image wipes open as the figure enters, landing on a full rounded rectangle.
+   NOTE: this element is CLIPPED, so it must never be the IntersectionObserver
+   target — it carries data-rvchild and site.js forwards data-in to it from an
+   unclipped ancestor. Both ends stay polygon() so the clip-path can interpolate. */
 .rvf {
+  border-radius: var(--r-xl);
   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
   transition: clip-path 1.15s var(--e-io); transition-delay: var(--d, 0ms);
 }
 .rvf[data-in="true"] {
-  clip-path: polygon(var(--facet) 0, 100% 0, 100% calc(100% - var(--facet)),
-                     calc(100% - var(--facet)) 100%, 0 100%, 0 var(--facet));
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
 /* ---------- 26e. Gold shimmer across a display heading on reveal ---------- */
@@ -958,8 +969,7 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
   .curtain { display: none; }
   .gem::after { display: none; }
   .tilt { transform: none !important; }
-  .rvf { clip-path: polygon(var(--facet) 0, 100% 0, 100% calc(100% - var(--facet)),
-                            calc(100% - var(--facet)) 100%, 0 100%, 0 var(--facet)) !important; }
+  .rvf { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%) !important; }
   .shine[data-in="true"] { animation: none; -webkit-text-fill-color: currentColor;
                            background-image: none; }
   .hero__media img, .hero__in { transform: none !important; }
