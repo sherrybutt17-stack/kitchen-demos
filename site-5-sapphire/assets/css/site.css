@@ -1,7 +1,7 @@
 /* ============================================================================
    SAPPHIRE DENTAL STUDIO — Winter Garden, FL
-   Porcelain light, cut-gem geometry, sapphire navy ink, champagne gold hairlines.
-   Palette taken from the practice's real logo: #001868 navy, #D8B860 gold.
+   Clinical light, rounded surfaces, deep-teal ink, warm yellow accents.
+   Palette taken from the practice's LIVE SITE theme: #40b0df cyan, #ffd53d yellow.
    The signature motif is the SOFTENED GEM — the logo's tessellation kept in the
    lattice and the diamond bullets, with rounded corners on every surface.
    Nothing here is shared with Northstone, Hearth & Hollis, Obsidian or Vantage.
@@ -10,40 +10,54 @@
 
 /* ---------- 1. Tokens ---------- */
 :root {
-  /* surfaces — light, cool, porcelain */
-  --porcelain: #f7f9fd;   /* page base */
-  --paper:     #ffffff;   /* raised panel */
-  --mist:      #ecf0f8;   /* quiet mid-tone between porcelain and paper */
-  --frost:     #e2e9f6;   /* inset / rule ground */
+  /* Palette taken from the practice's LIVE SITE theme tokens
+     (--wp--preset--color--*), not from the logo:
+        primary #40b0df / primary-dark #2d7b9c / primary-extra-dark #205870
+        primary-light #d9eff9 / primary-extra-light #ecf7fc
+        secondary #ffd53d / secondary-dark #ccaa31 / secondary-extra-dark #b3952b
+     The theme ships NO near-black and NO yellow that clears 4.5:1 on a light
+     ground (its darkest, #b3952b, is 2.90:1), so --abyss, --ink, --slate,
+     --slate-dim and --gold-dp are derived by darkening the theme hues until
+     they hit their contrast target. Every value below is measured on the
+     ground it is actually used against. */
 
-  /* the gem — deep sapphire, used full-bleed for contrast sections */
-  --sapphire:  #001868;   /* brand ink — 15.78:1 on porcelain */
-  --sapphire-2:#0b2a8a;   /* raised gem panel */
-  --sapphire-3:#12379f;   /* hover / gradient stop */
-  --abyss:     #000b2e;   /* deepest — footer and gem bands */
+  /* surfaces — light, cool, clinical */
+  --porcelain: #f4fafd;   /* page base — a tint of primary-extra-light */
+  --paper:     #ffffff;   /* raised panel — theme "base" */
+  --mist:      #ecf7fc;   /* theme primary-extra-light */
+  --frost:     #d9eff9;   /* theme primary-light */
 
-  /* text ramp */
-  --ink:       #0a1330;   /* body on light — 17.34:1 */
-  --slate:     #46527a;   /* secondary on light — 7.25:1 */
-  --slate-dim: #6f7a9d;   /* tertiary, decorative only — never body copy */
-  --on-gem:    #eef2fb;   /* body on sapphire — 17.8:1 on abyss */
-  --on-gem-dim:#a9b6dc;   /* secondary on sapphire — 7.4:1 on abyss */
+  /* the band — deep teal, derived; the theme has no dark step this low */
+  --sapphire:  #205870;   /* theme primary-extra-dark — brand ink, 7.41:1 */
+  --sapphire-2:#2d7b9c;   /* theme primary-dark — raised panel on the band */
+  --sapphire-3:#2d7b9c;   /* hover — lighter than rest, white still 4.75:1 */
+  --cyan:      #40b0df;   /* theme primary — 2.35:1 on porcelain, so FILLS,
+                             rules and icons only, never small text on light */
+  --abyss:     #0e2731;   /* derived — the full-bleed bands and footer */
 
-  /* accent ramp — champagne gold, with its legal uses spelled out */
-  --gold:      #d8b860;   /* 1.92:1 on porcelain -> LARGE display, rules, icons only
-                             10.07:1 on abyss    -> legal as text on the gem */
-  --gold-dp:   #8a6b22;   /* 4.99:1 on porcelain -> small gold text on light */
-  --gold-lt:   #ebd9a0;   /* 13.77:1 on abyss    -> gold body text on the gem */
+  /* text ramp — derived from the primary hue, desaturated so it reads neutral */
+  --ink:       #112f3c;   /* body on light — 13.33:1 on porcelain */
+  --slate:     #385765;   /* secondary — 7.33:1 */
+  --slate-dim: #527483;   /* tertiary — 4.76:1, still AA */
+  --on-gem:    #eaf6fb;   /* body on the band — 14.10:1 on abyss */
+  --on-gem-dim:#99cde2;   /* secondary on the band — 9.00:1 */
+
+  /* accent ramp — the theme's yellow, with its legal uses spelled out */
+  --gold:      #ffd53d;   /* theme secondary. 1.34:1 on porcelain -> LARGE
+                             display, rules, icons only.
+                             10.96:1 on abyss -> legal as text on the band */
+  --gold-dp:   #836d1f;   /* derived — small yellow text on light, 4.78:1 */
+  --gold-lt:   #f8e290;   /* yellow body text on the band — 12.02:1 */
 
   /* lines, glass, light */
-  --line:      rgba(10,19,48,.14);
-  --line-soft: rgba(10,19,48,.07);
-  --line-gold: rgba(216,184,96,.42);
-  --line-gem:  rgba(238,242,251,.16);
-  --sheen:     linear-gradient(100deg,transparent 20%,rgba(216,184,96,.42) 48%,transparent 76%);
-  --lift-1:    0 1px 2px rgba(0,24,104,.05), 0 4px 14px -6px rgba(0,24,104,.10);
-  --lift-2:    0 2px 6px rgba(0,24,104,.07), 0 18px 44px -18px rgba(0,24,104,.20);
-  --lift-3:    0 8px 20px rgba(0,24,104,.10), 0 40px 80px -32px rgba(0,24,104,.30);
+  --line:      rgba(17,47,60,.14);
+  --line-soft: rgba(17,47,60,.07);
+  --line-gold: rgba(255,213,61,.42);
+  --line-gem:  rgba(234,246,251,.16);
+  --sheen:     linear-gradient(100deg,transparent 20%,rgba(255,213,61,.42) 48%,transparent 76%);
+  --lift-1:    0 1px 2px rgba(32,88,112,.05), 0 4px 14px -6px rgba(32,88,112,.10);
+  --lift-2:    0 2px 6px rgba(32,88,112,.07), 0 18px 44px -18px rgba(32,88,112,.20);
+  --lift-3:    0 8px 20px rgba(32,88,112,.10), 0 40px 80px -32px rgba(32,88,112,.30);
 
   --ff:        "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --ff-d:      "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
@@ -134,8 +148,8 @@ main > section { padding-block: var(--sect); position: relative; }
 .gem::before {
   content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
   background:
-    radial-gradient(120% 90% at 12% -10%, rgba(18,55,159,.55), transparent 60%),
-    radial-gradient(90% 80% at 92% 108%, rgba(0,24,104,.85), transparent 62%);
+    radial-gradient(120% 90% at 12% -10%, rgba(64,176,223,.55), transparent 60%),
+    radial-gradient(90% 80% at 92% 108%, rgba(32,88,112,.85), transparent 62%);
 }
 .gem > * { position: relative; z-index: 1; }
 
@@ -192,7 +206,7 @@ main > section { padding-block: var(--sect); position: relative; }
 .panel--inset { background: var(--mist); box-shadow: none; }
 .panel--flat  { box-shadow: none; }
 .gem .panel {
-  background: rgba(238,242,251,.045); border-color: var(--line-gem);
+  background: rgba(234,246,251,.045); border-color: var(--line-gem);
   box-shadow: none; backdrop-filter: blur(6px);
 }
 .fig { overflow: hidden; position: relative; background: var(--frost); border-radius: var(--r-xl); }
@@ -224,8 +238,8 @@ main > section { padding-block: var(--sect); position: relative; }
 }
 .btn:hover::after, .btn:focus-visible::after { transform: translateX(115%); }
 .btn:hover { background: var(--sapphire-3); border-color: var(--sapphire-3); }
-.btn--gold  { --bg: var(--gold); --fg: #2b1f00; }
-.btn--gold:hover { background: #e6c874; border-color: #e6c874; }
+.btn--gold  { --bg: var(--gold); --fg: var(--sapphire); }
+.btn--gold:hover { background: #ffe173; border-color: #ffe173; }
 .btn--ghost { --bg: transparent; --fg: var(--sapphire); border-color: var(--line); }
 .btn--ghost:hover { background: var(--sapphire); color: var(--paper); border-color: var(--sapphire); }
 .gem .btn--ghost { --fg: var(--paper); border-color: var(--line-gem); }
@@ -293,13 +307,13 @@ main > section { padding-block: var(--sect); position: relative; }
 .bloom { position: relative; isolation: isolate; }
 .bloom::before {
   content: ""; position: absolute; z-index: -1; inset: -18% -12%;
-  background: radial-gradient(60% 60% at 50% 45%, rgba(27,63,160,.16), transparent 70%);
+  background: radial-gradient(60% 60% at 50% 45%, rgba(64,176,223,.16), transparent 70%);
   transform: scale(.55); opacity: 0;
   transition: transform 1.3s var(--e-out), opacity 1.1s var(--e);
   transition-delay: var(--d, 0ms);
 }
 .bloom[data-in="true"]::before { transform: scale(1); opacity: 1; }
-.gem .bloom::before { background: radial-gradient(60% 60% at 50% 45%, rgba(216,184,96,.16), transparent 70%); }
+.gem .bloom::before { background: radial-gradient(60% 60% at 50% 45%, rgba(255,213,61,.16), transparent 70%); }
 
 /* the refraction sweep — a one-shot specular pass across media on entry */
 .sheen { position: relative; overflow: hidden; }
@@ -341,7 +355,7 @@ main > section { padding-block: var(--sect); position: relative; }
   transition: background .45s var(--e), box-shadow .45s var(--e), transform .55s var(--e-out);
 }
 .hdr[data-solid="true"] {
-  background: rgba(247,249,253,.86); backdrop-filter: blur(18px) saturate(1.4);
+  background: rgba(244,250,253,.86); backdrop-filter: blur(18px) saturate(1.4);
   box-shadow: 0 1px 0 var(--line-soft), var(--lift-1);
 }
 .hdr[data-hide="true"] { transform: translateY(-102%); }
@@ -358,7 +372,22 @@ main > section { padding-block: var(--sect); position: relative; }
 .hdr--over:not([data-solid="true"]) .burger i::after { background: #fff; }
 .hdr__in { display: flex; align-items: center; gap: clamp(1rem, 2.5vw, 2.4rem);
            min-height: 82px; padding-block: .7rem; }
-.wm { display: flex; align-items: baseline; gap: .6rem; flex: none;
+/* The practice's real logo. The lockup is stacked (gem over two lines of type),
+   so at a 62px header height its wordmark would be unreadable — the header takes
+   the GEM MARK only and keeps the typographic wordmark beside it, and the footer,
+   which has the room, takes the full lockup. The mark is navy + gold on
+   transparent, so a reversed variant (navy -> --on-gem, gold untouched) is used
+   on every dark ground: the drawer, the landing-page header and the hero header
+   before it goes solid. */
+.wm__mk { display: block; flex: none; width: auto; height: 34px; align-self: center; }
+.wm__mk--lt { display: none; }
+.hdr--over:not([data-solid="true"]) .wm__mk--dk { display: none; }
+.hdr--over:not([data-solid="true"]) .wm__mk--lt { display: block; }
+.drawer__top .wm__mk, .lphdr .wm__mk { height: 30px; }
+.ftr__logo { display: block; width: clamp(150px, 15vw, 200px); height: auto; margin-bottom: .4rem; }
+@media (max-width: 520px) { .wm__mk { height: 28px; } }
+
+.wm { display: flex; align-items: center; gap: .55rem; flex: none;
       min-height: 44px; align-content: center; padding-block: .5rem; }
 .wm__n { font: 400 1.42rem/1 var(--ff-d); letter-spacing: .04em; color: var(--sapphire);
          text-transform: uppercase; }
@@ -442,21 +471,21 @@ main > section { padding-block: var(--sect); position: relative; }
 .hero__media::after {
   content: ""; position: absolute; inset: 0;
   background:
-    linear-gradient(180deg, rgba(0,11,46,.60) 0%, rgba(0,11,46,.30) 28%, rgba(0,11,46,.72) 72%, rgba(0,11,46,.92) 100%),
-    linear-gradient(94deg, rgba(0,11,46,.80) 0%, rgba(0,11,46,.34) 52%, transparent 78%);
+    linear-gradient(180deg, rgba(14,39,49,.60) 0%, rgba(14,39,49,.30) 28%, rgba(14,39,49,.72) 72%, rgba(14,39,49,.92) 100%),
+    linear-gradient(94deg, rgba(14,39,49,.80) 0%, rgba(14,39,49,.34) 52%, transparent 78%);
 }
 .hero__in { position: relative; z-index: 2; }
 .hero__h { color: var(--paper); max-width: 15.5em; }
 .hero__h em { color: var(--gold); font-style: italic; }
-.hero__p { color: #dfe6f7; max-width: 34em; margin-top: clamp(1.1rem, 2vw, 1.7rem); }
+.hero__p { color: #dbeef8; max-width: 34em; margin-top: clamp(1.1rem, 2vw, 1.7rem); }
 .hero__cta { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: clamp(1.6rem, 3vw, 2.6rem); }
 .hero__meta { display: flex; flex-wrap: wrap; gap: clamp(1.2rem, 3vw, 3rem);
               margin-top: clamp(2rem, 4vw, 3.4rem); padding-top: 1.5rem;
-              border-top: 1px solid rgba(238,242,251,.2); }
+              border-top: 1px solid rgba(234,246,251,.2); }
 .hero__meta div { display: grid; gap: .2rem; }
 .hero__meta dt, .hero__meta b { font: 400 clamp(1.5rem,3vw,2.3rem)/1 var(--ff-d); color: var(--gold); }
 .hero__meta dd, .hero__meta span { margin: 0; font-size: .82rem; letter-spacing: .1em;
-              text-transform: uppercase; color: #c3cde8; font-weight: 500; }
+              text-transform: uppercase; color: #b6dcec; font-weight: 500; }
 
 /* page hero — the inner-page variant */
 .phero { padding-block: clamp(8.5rem, 15vw, 12rem) clamp(2.5rem, 5vw, 4rem); position: relative; }
@@ -518,7 +547,7 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
 .doc:hover .doc__p img, .doc:focus-within .doc__p img { filter: none; transform: scale(1.06); }
 .doc__p::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(180deg, transparent 52%, rgba(0,11,46,.62));
+  background: linear-gradient(180deg, transparent 52%, rgba(14,39,49,.62));
 }
 .doc__cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.1rem; z-index: 1; }
 .doc__n { font: 400 1.4rem/1.15 var(--ff-d); color: var(--paper); }
@@ -571,7 +600,7 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
 .ba__handle { position: absolute; top: 0; bottom: 0; left: var(--p); width: 0; z-index: 2; pointer-events: none; }
 .ba__handle::after {
   content: ""; position: absolute; top: 0; bottom: 0; left: -1px; width: 2px;
-  background: var(--paper); box-shadow: 0 0 0 1px rgba(0,11,46,.25);
+  background: var(--paper); box-shadow: 0 0 0 1px rgba(14,39,49,.25);
 }
 .ba__handle::before {
   content: ""; position: absolute; top: 50%; left: 50%; width: 46px; height: 46px;
@@ -581,7 +610,7 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
 .ba__range:focus-visible + .ba__handle::after { background: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
 .ba__tag { position: absolute; bottom: .85rem; z-index: 2; font: 600 .72rem/1 var(--ff);
            letter-spacing: .18em; text-transform: uppercase; padding: .55rem .8rem;
-           background: rgba(0,11,46,.72); color: var(--paper); backdrop-filter: blur(4px);
+           background: rgba(14,39,49,.72); color: var(--paper); backdrop-filter: blur(4px);
            border-radius: var(--r-pill); }
 .ba__tag--b { left: .85rem; } .ba__tag--a { right: .85rem; color: var(--gold); }
 .ba__note { font-size: .78rem; color: var(--slate-dim); margin-top: .7rem; }
@@ -606,7 +635,7 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
 .ss__cap { position: absolute; bottom: .9rem; left: .9rem; right: .9rem; display: flex;
            justify-content: space-between; font: 600 .72rem/1 var(--ff);
            letter-spacing: .18em; text-transform: uppercase; pointer-events: none; }
-.ss__cap span { padding: .5rem .75rem; background: rgba(0,11,46,.7); color: var(--paper);
+.ss__cap span { padding: .5rem .75rem; background: rgba(14,39,49,.7); color: var(--paper);
                 border-radius: var(--r-pill);
                 backdrop-filter: blur(4px); }
 .ss__cap span:last-child { color: var(--gold); }
@@ -630,7 +659,7 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
    containing block. */
 .ss__sw input { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
                 overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); border: 0; }
-.ss__chip { width: 30px; height: 30px; background: var(--c); border: 1px solid rgba(10,19,48,.55);
+.ss__chip { width: 30px; height: 30px; background: var(--c); border: 1px solid rgba(17,47,60,.55);
             border-radius: 50%; transition: transform .4s var(--e-out), box-shadow .4s var(--e); }
 .ss__code { font: 500 .72rem/1 var(--ff); color: var(--slate); letter-spacing: .04em; }
 .ss__sw:hover .ss__chip { transform: scale(1.1); }
@@ -676,6 +705,52 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
             font: 500 .8rem/1 var(--ff); cursor: pointer; transition: all .35s var(--e);
             border-radius: var(--r-pill); }
 .ss__case[aria-pressed="true"] { background: var(--sapphire); color: var(--paper); border-color: var(--sapphire); }
+
+/* The Smile Studio sits inside a .gem band, and the light-ground tokens collapse
+   there. In the old navy palette the pressed fill (--sapphire on --abyss) measured
+   1.22:1 — the pill had a label but effectively no shape. On the band the states
+   invert: rest is a translucent panel with a hairline that clears the 3:1 UI
+   boundary (WCAG 1.4.11), pressed is the yellow accent at 10.96:1.
+   --slate and --slate-dim are LIGHT-ground tokens; on --abyss --slate measured
+   2.53:1, so .check and .ss__hint are remapped to --on-gem-dim (9.00:1). */
+.gem .ss__layer,
+.gem .ss__case {
+  background: rgba(234,246,251,.07);
+  border-color: rgba(234,246,251,.38);   /* 3.14:1 against --abyss */
+  color: var(--on-gem);
+}
+.gem .ss__layer:hover,
+.gem .ss__case:hover {
+  background: rgba(234,246,251,.15); border-color: var(--gold);
+}
+.gem .ss__layer[aria-pressed="true"],
+.gem .ss__case[aria-pressed="true"] {
+  background: var(--gold); border-color: var(--gold); color: var(--sapphire);
+}
+.gem .ss__layer[aria-pressed="true"]::before {
+  background: var(--sapphire); border-color: var(--sapphire);
+}
+.gem .ss__hint,
+.gem .check       { color: var(--on-gem-dim); }
+.gem .ss__code    { color: var(--on-gem-dim); }
+.gem .ss__sw input:checked ~ .ss__code { color: var(--gold); }
+.gem .ss__range::-webkit-slider-runnable-track { background: rgba(234,246,251,.30); }
+.gem .ss__range::-moz-range-track              { background: rgba(234,246,251,.30); }
+
+.gem .check input {
+  appearance: none; -webkit-appearance: none; margin: 0;
+  background: rgba(234,246,251,.07);
+  border: 1px solid rgba(234,246,251,.38);
+  border-radius: var(--r); display: grid; place-content: center; cursor: pointer;
+  transition: background .3s var(--e), border-color .3s var(--e);
+}
+.gem .check input:hover { border-color: var(--gold); }
+.gem .check input:checked { background: var(--gold); border-color: var(--gold); }
+.gem .check input:checked::after {
+  content: ""; width: 11px; height: 6px;
+  border-left: 2px solid var(--sapphire); border-bottom: 2px solid var(--sapphire);
+  transform: rotate(-45deg) translateY(-2px);
+}
 
 /* ---------- 19. Accordion / FAQ ---------- */
 .acc { display: grid; }
@@ -739,7 +814,7 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
 }
 .field textarea { min-height: 120px; resize: vertical; border-radius: var(--r-l); }
 .field input:focus, .field select:focus, .field textarea:focus {
-  outline: none; border-color: var(--sapphire); box-shadow: 0 0 0 3px rgba(0,24,104,.12);
+  outline: none; border-color: var(--sapphire); box-shadow: 0 0 0 3px rgba(32,88,112,.12);
 }
 .field--err input, .field--err select, .field--err textarea { border-color: #8a2f2f; }
 .field__e { font-size: .8rem; color: #8a2f2f; font-weight: 600; }
@@ -769,7 +844,7 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
 .ftr .wm__n { color: var(--paper); font-size: 1.6rem; }
 .ftr__bot { margin-top: clamp(2.4rem,4vw,3.6rem); padding-top: 1.6rem; border-top: 1px solid var(--line-gem);
             display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between;
-            font-size: .8rem; color: var(--slate-dim); }
+            font-size: .8rem; color: var(--on-gem-dim); }   /* NOT --slate-dim: 3.09:1 on abyss */
 
 /* ---------- 24. Sticky mobile CTA ---------- */
 /* .mbar is position:fixed, so every breakpoint that shows it must also add the
@@ -777,14 +852,23 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
    of every page sit under the bar. */
 .mbar { position: fixed; inset: auto 0 0; z-index: 800; display: none;
         grid-template-columns: 1fr 1.3fr; border-top: 1px solid var(--line);
-        background: rgba(247,249,253,.94); backdrop-filter: blur(14px);
+        background: rgba(244,250,253,.94); backdrop-filter: blur(14px);
         padding-bottom: env(safe-area-inset-bottom); }
 .mbar a { display: flex; align-items: center; justify-content: center; gap: .5rem;
           min-height: 58px; font: 600 .9rem/1 var(--ff); color: var(--sapphire); }
 .mbar a + a { background: var(--sapphire); color: var(--paper); }
 
 /* ---------- 25. Breakpoints ---------- */
-@media (max-width: 1180px) {
+/* The header bar is wordmark + nav + phone + CTA, all flex:none. Together they
+   out-measure the viewport from about 1470px down, and because body is
+   overflow-x: clip that NEVER shows up as scrollWidth — the CTA is simply sliced
+   off the right edge. Same trap as Site 4's header in CLAUDE.md. Two changes fix
+   it: the nav collapses to the burger at 1300 rather than 1180, and the
+   "Dental Studio" subtitle (136px on its own) drops wherever the full nav is
+   showing, since the gem mark and "Sapphire" already carry the brand. */
+@media (max-width: 1560px) { .wm__s { display: none; } }
+
+@media (max-width: 1300px) {
   .nav { display: none; }
   .burger { display: inline-flex; margin-left: auto; }
   .hdr__tel { display: none; }
@@ -872,7 +956,7 @@ a.card:focus-visible { outline: 2px solid var(--gold-dp); outline-offset: 3px; }
 .gem::after {
   content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
   background: radial-gradient(420px circle at var(--gx) var(--gy),
-              rgba(216,184,96,.13), rgba(18,55,159,.10) 42%, transparent 68%);
+              rgba(255,213,61,.13), rgba(64,176,223,.10) 42%, transparent 68%);
   opacity: 0; transition: opacity .6s var(--e);
 }
 .gem[data-lit="true"]::after { opacity: 1; }

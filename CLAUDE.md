@@ -247,7 +247,12 @@ either way**, including if you hand it to a competitor.
 so the NAP, the three doctors and their credentials, the membership tiers and their prices, the
 financing partners, the hours and the service list are all **real and taken from the practice's own
 published material**. The before/after case photography and the three headshots are the practice's
-own files. The **palette is sampled from their actual logo**: `#001868` navy, `#D8B860` gold.
+own files. The **palette is taken from the practice's live website theme**, not from its logo:
+`#40b0df` cyan and `#ffd53d` yellow, read off the site's own `--wp--preset--color--*` tokens.
+The logo and the website disagree — the logo PNG is `#001868` navy + `#D8B860` gold (19.7% and
+18.7% of its opaque pixels) — and the client chose the website. **The real logo is used as
+artwork**: the gem mark in the header, the full lockup in the footer, plus a reversed variant
+(navy → `--on-gem`, gold untouched) for the dark bands.
 
 > **The rule that follows from that.** Because the business is real, nothing may be invented about
 > it. No fabricated reviews, no invented licence numbers, no made-up clinical claims about an
@@ -263,30 +268,51 @@ most towns those are three referrals; here it is one plan, one building, one day
 entirely out of fear. The anxiety segment is the wedge, and the in-house anesthesiologist is the
 proof.
 **Emotional angle:** Relief, not aspiration. *"The dentistry was never the hard part. The dread was."*
-**Layout — porcelain and cut gem.** A light, luminous, jewel-clean surface: near-white porcelain
-ground, deep sapphire full-bleed "gem" bands for contrast, champagne gold hairlines, and generous
-air. The signature motif is the **facet** — a chamfered corner cut from the logo's tessellated gem,
-plus a faint 60°/-60° facet lattice — used instead of a border-radius anywhere a softer language
-would have reached for one.
+**Layout — clinical light, rounded.** A light, luminous surface: near-white ground, deep-teal
+full-bleed "gem" bands for contrast, yellow hairlines, and generous air, with a faint 60°/-60°
+lattice carried over from the logo's tessellation.
+
+> **The facet is gone.** It was documented here as the signature motif, but the `.fct` chamfer
+> classes were never applied to a single element on any of the nine pages — the site was not
+> faceted, it was square. It now uses a radius scale instead: `--r` 8 / `--r-m` 14 / `--r-l` 20 /
+> `--r-xl` clamp(22–34) / `--r-pill`. The radii stay tighter than Hearth & Hollis's 24–48px
+> organic curves, and the ◆ bullets and the lattice stay, so the two still do not read alike.
 
 | Token | Value |
 |---|---|
-| Porcelain | `#F7F9FD` — page base |
-| Paper | `#FFFFFF` — raised panel |
-| Sapphire | `#001868` — brand ink, **15.78:1 on porcelain** |
-| Abyss | `#000B2E` — the gem bands and footer |
-| Ink | `#0A1330` — body text, 17.34:1 |
-| Slate | `#46527A` — secondary, **7.25:1** |
-| Gold | `#D8B860` — **1.92:1 on porcelain, so large display / rules / icons only; 10.07:1 on abyss, so legal as text on the gem** |
-| Gold-deep | `#8A6B22` — small gold text on light, **4.99:1** |
+| Porcelain | `#F4FAFD` — page base, a tint of the theme's `primary-extra-light` |
+| Paper | `#FFFFFF` — raised panel (theme `base`) |
+| Mist / Frost | `#ECF7FC` / `#D9EFF9` — theme `primary-extra-light` / `primary-light` |
+| Sapphire | `#205870` — theme `primary-extra-dark`; brand ink, **7.41:1 on porcelain** |
+| Sapphire-2/3 | `#2D7B9C` — theme `primary-dark`; raised gem panel and button hover (white 4.75:1) |
+| Cyan | `#40B0DF` — theme `primary`. **2.35:1 on porcelain, so fills, rules and icons only** |
+| Abyss | `#0E2731` — **derived**; the gem bands and footer |
+| Ink | `#112F3C` — **derived**; body text, 13.33:1 |
+| Slate | `#385765` — **derived**; secondary, 7.33:1 |
+| Slate-dim | `#527483` — **derived**; tertiary, 4.76:1. **Light-ground only** — 3.09:1 on abyss |
+| Gold | `#FFD53D` — theme `secondary`. **1.34:1 on porcelain, so large display / rules / icons only; 10.96:1 on abyss, so legal as text on the gem** |
+| Gold-deep | `#836D1F` — **derived**; small yellow text on light, **4.78:1** |
+| On-gem / dim | `#EAF6FB` / `#99CDE2` — text on the bands, 14.10:1 / 9.00:1 |
 | Display | `Cormorant Garamond` 300–600 + italic |
 | Body / UI | `Manrope` 400/500/600/700 |
 
-**Why this does not collide with Vantage,** which is also blue: Vantage is a *bright* azure
-(`#4D8DFF`) on near-black, ~96% dark pixels, mono type, HUD ticks and 4px radius. Sapphire is a
-*deep* indigo on near-white, ~90% light pixels, a Garamond display face, facet chamfers and gold.
-Same colour family, opposite pole, opposite ground; the two can never produce a similar screenshot.
-Sapphire never uses `#4D8DFF`, a mono family, or `.18em` uppercase micro-caps.
+> **The theme ships no near-black and no accessible yellow.** Its darkest yellow, `#B3952B`, is
+> 2.90:1 on white. So `--abyss`, `--ink`, `--slate`, `--slate-dim` and `--gold-deep` are derived by
+> darkening the theme hues until they hit their contrast target. Every value above is measured
+> against the ground it is actually used on, not against pure white — `--gold-deep` measures 4.78:1
+> on porcelain but only 4.38:1 would have been reached had it been solved against `#FFFFFF`.
+
+**Light-ground tokens must not be used inside a `.gem` band.** `--slate` is 2.53:1 and `--slate-dim`
+3.09:1 on `--abyss`. The band has its own pair, `--on-gem` / `--on-gem-dim`. This bit the Smile
+Studio controls, `.check`, `.ss__hint` and `.ftr__bot`, all of which now have `.gem` overrides.
+
+**Collision risk with Vantage went UP, and is managed rather than absent.** Vantage's accent is
+`#4D8DFF`; Sapphire's is now `#40B0DF` — the same bright-blue family, where the old `#001868` navy
+was not. They stay apart on ground and everything else: Vantage is ~96% dark pixels, mono type, HUD
+ticks and 4px radius; Sapphire is ~90% light pixels, a Garamond display face, pill buttons and
+20–34px radii, with a yellow secondary Vantage does not have. Sapphire still never uses `#4D8DFF`,
+a mono family, or `.18em` uppercase micro-caps. **If either brand's accent moves again, re-check
+this.**
 
 #### The Smile Studio — WebGL over real paired case photography (`assets/js/smile-studio.js`)
 

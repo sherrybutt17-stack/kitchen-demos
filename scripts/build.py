@@ -68,20 +68,29 @@ def encode_image(basename, width, quality):
     src = None
     # -2400 is the high-resolution master; the eight photos whose source CDN has
     # since delisted them have no -2400 and fall through to -1600 automatically.
+    # -440 / -240 are the logo lockup and gem mark, which are vector-ish art shipped
+    # at their display size rather than as photographic masters. Without them in the
+    # ladder every logo silently fell out of the build as "skipped".
     for cand in (f"{basename}-2400.webp", f"{basename}-1600.webp",
-                 f"{basename}-1200.jpg", f"{basename}-800.webp"):
+                 f"{basename}-1200.jpg", f"{basename}-800.webp",
+                 f"{basename}-440.webp", f"{basename}-240.webp"):
         p = os.path.join(MEDIA_IMG, cand)
         if os.path.exists(p):
             src = p
             break
     if src is None:
         return None
-    im = Image.open(src).convert("RGB")
+    im = Image.open(src)
+    # Photographs flatten to RGB, but the logo is transparent line art — converting
+    # that to RGB fills every transparent pixel with black, which put a black slab
+    # behind the mark in the header. Keep the alpha channel when the source has one.
+    has_alpha = im.mode in ("RGBA", "LA") or "transparency" in im.info
+    im = im.convert("RGBA" if has_alpha else "RGB")
     w0, h0 = im.size
     if w0 > width:
         im = im.resize((width, max(1, round(h0 * width / w0))), Image.LANCZOS)
     buf = io.BytesIO()
-    im.save(buf, "WEBP", quality=quality, method=6)
+    im.save(buf, "WEBP", quality=quality, method=6, **({"exact": True} if has_alpha else {}))
     uri = "data:image/webp;base64," + base64.b64encode(buf.getvalue()).decode()
     _img_cache[key] = (uri, im.size, len(buf.getvalue()))
     return _img_cache[key]
