@@ -146,7 +146,18 @@ def build_page(src_path, site_dir, css, js):
         first_js[0] = False
         return mark + "<script>\n" + open(path, encoding="utf8").read() + "\n</script>"
 
-    html = re.sub(r'<script src="assets/js/([a-z0-9_-]+)\.js" defer></script>', js_repl, html)
+    # `defer` is optional in this pattern ON PURPOSE. It used to be required, and
+    # a page that wrote <script src="assets/js/site.js"></script> silently kept an
+    # external reference all the way into dist/ — a built page that looks finished
+    # and is dead inside GHL, where that path does not exist. Same failure shape as
+    # the \b ROLE_RULES bug: a regex that matches nothing reports nothing.
+    html = re.sub(r'<script src="assets/js/([a-z0-9_-]+)\.js"(?: defer)?(?: async)?></script>',
+                  js_repl, html)
+    # and never let it fail quietly again
+    leftover = re.findall(r'<script src="(assets/[^"]+)"', html)
+    if leftover:
+        raise SystemExit(f"!! {os.path.basename(src_path)}: script(s) not inlined -> {leftover}. "
+                         f"dist pages must be self-contained.")
 
     # Deferred base64 payloads (hero video + every lazy image), emitted at the tail
     # of the document so markup reaches the parser first. See step 4 for the rationale.
