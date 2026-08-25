@@ -462,11 +462,12 @@ a { color: inherit; }
     linear-gradient(180deg, rgba(6,35,52,.62) 0%, rgba(6,35,52,.15) 34%, rgba(6,35,52,.55) 70%, rgba(6,35,52,.9) 100%),
     linear-gradient(94deg, rgba(6,35,52,.78) 0%, rgba(6,35,52,.28) 52%, transparent 78%); }
 .hero__in { position: relative; z-index: 2; width: 100%; }
-.hero .d1 { color: #fff; max-width: 15.5em;
-  /* the homepage headline is twelve words. At the global .d1 ceiling it ate the
-     whole viewport and pushed the stat row below the fold, so the hero caps its
-     own display size rather than the scale being lowered for every page. */
-  font-size: clamp(2.35rem, 1rem + 4.4vw, 4.7rem); }
+.hero .d1 { color: #fff; max-width: 13.5em;
+  /* The hero caps its own display size rather than lowering the scale for every
+     page. The headline is short now, so it can run bigger than the twelve-word
+     one this cap was originally added for — but it still needs a ceiling, or the
+     global .d1 max pushes the stat row below the fold on a laptop. */
+  font-size: clamp(2.5rem, 1rem + 5.4vw, 5.6rem); }
 .hero .d1 b { color: var(--sky); }
 .hero__lede { color: rgba(255,255,255,.88); max-width: 38ch; font-size: clamp(1.06rem,1rem+.5vw,1.3rem); }
 .hero__acts { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; }
@@ -475,8 +476,11 @@ a { color: inherit; }
               margin-top: clamp(2rem,4.5vw,3.4rem); padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.22); }
 .hero__stat { display: flex; flex-direction: column; gap: .3rem; }
 .hero__stat b { font: 800 clamp(1.5rem,2.4vw,2.3rem)/1 var(--ffd); letter-spacing: -.035em; color: #fff; }
-.hero__stat span { font: 600 .715rem/1.3 var(--ff); letter-spacing: .13em; text-transform: uppercase;
-                   color: rgba(255,255,255,.72); }
+/* Direct child only. As a descendant selector this also caught the
+   <span class="count"> INSIDE each <b>, so every animated figure rendered at
+   .715rem next to a full-size "$" and "/hr" — "$100/hr" came out as "$₁₀₀/hr". */
+.hero__stat > span { font: 600 .715rem/1.3 var(--ff); letter-spacing: .13em; text-transform: uppercase;
+                     color: rgba(255,255,255,.72); }
 
 /* compact page hero for interior pages */
 .phero { position: relative; background: var(--deep); color: var(--on-deep); overflow: hidden;
