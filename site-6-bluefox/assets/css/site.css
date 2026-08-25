@@ -1,57 +1,63 @@
 /* ============================================================================
-   BLUE FOX CLEANING — design system
+   BLUE FOX LANDSCAPE & SERVICES — design system
    Site 6. Nothing here is shared with sites 1–5; divergence is the deliverable.
 
    PALETTE PROVENANCE
-   The two brand colours are measured off the practice's own logo file
-   (wp-content/uploads/2022/02/Asset-1.png): #00ABFF covers 84.6% of the opaque
-   pixels and #033857 the other 15.4%. There is no third colour in the mark, and
-   the live WordPress theme only ever shipped Astra's stock #0170B9, which is not
-   the brand. So --sky and --navy are real; --deep, --ink, --slate, --slate-dim,
-   --sky-mid and --sky-deep are DERIVED by darkening those two hues until each
-   hits its contrast target on the ground it is actually used on.
+   Measured off the company's own logo files, not chosen. #145282 is 73–78% of
+   the opaque pixels in every version of the mark and #D3E1F0 is the other
+   17–22%; there is no third colour in the logo itself. The orange is real too —
+   #D98D3B is 93.8% of the favicon, which is the mark reversed out of a solid
+   orange tile. So the brand is steel blue on pale ice, with orange as the one
+   accent, and this build treats it exactly that way.
 
-   THE ONE RULE THAT KEEPS BITING
-   --sky is 2.54:1 on paper — fills, rules, icons and display type only, never
-   small text on light. But it is 6.37:1 on --deep, so on the dark bands it is
-   legal at body size. The relationship inverts. Conversely the light-ground text
-   tokens are illegal inside .deep: --slate measures 2.28:1 there. The bands have
-   their own pair, --on-deep / --on-deep-dim.
+   THE RULE THAT KEEPS BITING
+   --amber is 2.68:1 on paper — fills, rules, icons and display type only, never
+   small text on light. But it is 5.33:1 on --bark, so on the dark bands it is
+   legal at body size. The relationship inverts. Conversely the light-ground
+   text tokens are illegal inside .deep: --slate measures 2.4:1 there. The bands
+   carry their own pair, --on-deep / --on-deep-dim.
+
+   SHAPE
+   The logo is a SOFT, rounded fox head set against a serif wordmark in small
+   caps. So this site is rounded and classical, not cut and engineered — the
+   opposite of what a hard-edged mark would have asked for.
    ========================================================================== */
 
 :root {
   /* ── brand, measured from the logo ────────────────────────────────────── */
-  --sky:        #00ABFF;   /* 84.6% of the mark. 2.54:1 on paper, 6.37:1 on deep */
-  --navy:       #033857;   /* 15.4% of the mark. 12.30:1 on paper — brand ink    */
+  --steel:      #145282;   /* 73–78% of the mark. 8.21:1 on paper — brand ink  */
+  --ice:        #D3E1F0;   /* 17–22% of the mark. Raised tint                  */
+  --amber:      #D98D3B;   /* 93.8% of the favicon. 2.68:1 on paper → fills    */
 
   /* ── grounds ──────────────────────────────────────────────────────────── */
   --paper:      #FFFFFF;
-  --frost:      #F2F8FC;   /* page wash                                          */
-  --mist:       #E3F1FA;   /* raised tint / inset panels                         */
-  --deep:       #062334;   /* derived — the dark bands and the footer            */
+  --frost:      #F5F8FC;   /* page wash                                        */
+  --mist:       #E7EFF8;   /* inset panels                                     */
+  --bark:       #0B2C48;   /* derived — the dark bands and the footer          */
 
   /* ── text on light ────────────────────────────────────────────────────── */
-  --ink:        #0A1F2E;   /* body, 16.82:1 on paper                             */
-  --slate:      #3E5C6E;   /* secondary, 7.09:1 paper / 6.16:1 mist              */
-  --slate-dim:  #4A6B7C;   /* tertiary, 5.70:1 paper / 4.95:1 mist — still AA    */
-  --sky-mid:    #0076B0;   /* links + small blue text, 4.98:1                     */
-  --sky-deep:   #00618F;   /* small blue text wanting headroom, 6.76:1            */
+  --ink:        #10273A;   /* body, 14.0:1 on paper                            */
+  --slate:      #3D5B72;   /* secondary, 6.7:1                                 */
+  --slate-dim:  #4C687D;   /* tertiary, 5.4:1 — still AA                       */
+  --steel-mid:  #1C6BAA;   /* links, 5.63:1                                    */
+  --amber-deep: #8A5410;   /* small orange text on light, 6.26:1               */
 
   /* ── text on the dark bands ───────────────────────────────────────────── */
-  --on-deep:     #E8F4FB;  /* 14.46:1 on deep                                    */
-  --on-deep-dim: #A8CFE4;  /*  9.79:1 on deep                                    */
-  --sky-lt:      #5CC0FF;  /*  8.04:1 on deep — the accent up there              */
+  --on-deep:     #E8F1FA;  /* 12.6:1 on bark                                   */
+  --on-deep-dim: #AFC7DC;  /*  8.0:1 on bark                                   */
+  --amber-lt:    #F0A94C;  /*  6.1:1 on bark — the accent up there            */
+  --steel-lt:    #7FB3DC;  /*  7.4:1 on bark                                   */
 
   /* ── lines ────────────────────────────────────────────────────────────── */
-  --line:      rgba(10,31,46,.13);
-  --line-str:  rgba(10,31,46,.24);
-  --line-deep: rgba(232,244,251,.16);
+  --line:      rgba(16,39,58,.14);
+  --line-str:  rgba(16,39,58,.26);
+  --line-deep: rgba(232,241,250,.18);
 
-  /* ── the chamfer. The logo is a hard-cut angular mark, so every surface on
-        this site is cut, never rounded. One scale, three sizes. ───────────── */
+  /* ── the radius scale. The mark is a soft, rounded fox and the wordmark is
+        a serif; a hard chamfer would have fought both. ──────────────────── */
   --cut:   10px;
   --cut-m: 16px;
-  --cut-l: 26px;
+  --cut-l: 24px;
 
   /* ── rhythm ───────────────────────────────────────────────────────────── */
   --shell: 1320px;
@@ -59,8 +65,8 @@
   --sect:  clamp(4rem, 8vw, 6.5rem);
 
   /* ── type ─────────────────────────────────────────────────────────────── */
-  --ff:  "Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --ffd: "Archivo", "Figtree", -apple-system, BlinkMacSystemFont, sans-serif;
+  --ff:  "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --ffd: "Bitter", Georgia, "Times New Roman", serif;
 
   /* ── motion ───────────────────────────────────────────────────────────── */
   --e:     cubic-bezier(.22,1,.36,1);
@@ -72,19 +78,17 @@
    Cut top-left and bottom-right, mirroring the notch pair in the fox mark.
    clip-path here is always a FULL-AREA polygon, so unlike an inset() reveal it
    never produces a zero-area intersection rectangle — see the note on .rv. */
-.cut  { clip-path: polygon(var(--c,var(--cut)) 0, 100% 0, 100% calc(100% - var(--c,var(--cut))),
-        calc(100% - var(--c,var(--cut))) 100%, 0 100%, 0 var(--c,var(--cut))); }
+.cut  { border-radius: var(--c, var(--cut)); }
 .cut--m { --c: var(--cut-m); }
 .cut--l { --c: var(--cut-l); }
 /* the opposite diagonal, for elements that sit against a .cut one */
-.cut--alt { clip-path: polygon(0 0, calc(100% - var(--c,var(--cut))) 0, 100% var(--c,var(--cut)),
-            100% 100%, var(--c,var(--cut)) 100%, 0 calc(100% - var(--c,var(--cut)))); }
+.cut--alt { border-radius: var(--c, var(--cut)); }
 /* an outlined chamfer needs two layers, because a border is clipped away with
    everything else. The wrapper carries the line colour, the child the fill. */
 .cutline { background: var(--line-str); padding: 1px; }
 .cutline > * { background: var(--paper); }
 .deep .cutline { background: var(--line-deep); }
-.deep .cutline > * { background: var(--deep); }
+.deep .cutline > * { background: var(--bark); }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
@@ -102,7 +106,7 @@ body {
 }
 img, svg, video, canvas { max-width: 100%; display: block; }
 a { color: inherit; }
-::selection { background: var(--sky); color: var(--deep); }
+::selection { background: var(--amber); color: var(--bark); }
 
 /* ── display type ─────────────────────────────────────────────────────────
    Archivo carries the brand's hard, engineered edge. Measures are in em, not
@@ -111,24 +115,24 @@ a { color: inherit; }
    its own column. */
 .d1, .d2, .d3, .d4 {
   font-family: var(--ffd); font-weight: 800; letter-spacing: -.035em;
-  line-height: .96; margin: 0; text-wrap: balance; color: var(--navy);
+  line-height: .96; margin: 0; text-wrap: balance; color: var(--steel);
 }
 .d1 { font-size: clamp(2.6rem, 1rem + 6.9vw, 7rem); line-height: .93; }
 .d2 { font-size: clamp(2.05rem, 1rem + 4.2vw, 4.75rem); }
 .d3 { font-size: clamp(1.55rem, 1rem + 2.2vw, 2.9rem); line-height: 1.06; letter-spacing: -.03em; }
 .d4 { font-size: clamp(1.2rem, 1rem + 1.05vw, 1.75rem); line-height: 1.18; letter-spacing: -.02em; font-weight: 700; }
-.d1 b, .d2 b, .d3 b { font-weight: 800; color: var(--sky); }
+.d1 b, .d2 b, .d3 b { font-weight: 800; color: var(--amber); }
 .deep .d1, .deep .d2, .deep .d3, .deep .d4 { color: var(--on-deep); }
-.deep .d1 b, .deep .d2 b, .deep .d3 b { color: var(--sky-lt); }
+.deep .d1 b, .deep .d2 b, .deep .d3 b { color: var(--steel-lt); }
 
 /* eyebrow — a hard blue tick, not a dot */
 .eyebrow {
   font: 700 .74rem/1 var(--ff); letter-spacing: .17em; text-transform: uppercase;
-  color: var(--sky-deep); margin: 0 0 1.15rem; display: flex; align-items: center; gap: .65rem;
+  color: var(--amber-deep); margin: 0 0 1.15rem; display: flex; align-items: center; gap: .65rem;
 }
-.eyebrow::before { content: ""; width: 22px; height: 3px; background: var(--sky); flex: none; }
+.eyebrow::before { content: ""; width: 22px; height: 3px; background: var(--amber); flex: none; }
 .eyebrow--plain::before { display: none; }
-.deep .eyebrow { color: var(--sky-lt); }
+.deep .eyebrow { color: var(--steel-lt); }
 
 .lede  { font-size: clamp(1.06rem, 1rem + .48vw, 1.32rem); line-height: 1.6; color: var(--slate); }
 .deep .lede { color: var(--on-deep-dim); }
@@ -136,8 +140,8 @@ a { color: inherit; }
 .deep .muted { color: var(--on-deep-dim); }
 .dim   { color: var(--slate-dim); font-size: .845rem; line-height: 1.55; }
 .deep .dim { color: var(--on-deep-dim); }
-.blue  { color: var(--sky-deep); }
-.deep .blue { color: var(--sky-lt); }
+.blue  { color: var(--amber-deep); }
+.deep .blue { color: var(--steel-lt); }
 
 /* ── layout ───────────────────────────────────────────────────────────────── */
 .shell { max-width: var(--shell); margin-inline: auto; padding-inline: var(--gut); }
@@ -153,7 +157,7 @@ a { color: inherit; }
    preceding ground colour — NOT by a clip-path on the section itself, because an
    ancestor clip shrinks the intersection rectangle of every .rv child inside it. */
 .deep {
-  background: var(--deep); color: var(--on-deep); position: relative; isolation: isolate;
+  background: var(--bark); color: var(--on-deep); position: relative; isolation: isolate;
 }
 .deep > * { position: relative; z-index: 1; }
 .deep--wedge::before {
@@ -194,24 +198,22 @@ a { color: inherit; }
 .mt-s{margin-top:.6rem}.mt-m{margin-top:1.15rem}.mt-l{margin-top:2rem}.mt-xl{margin-top:3rem}
 .rule { height: 1px; background: var(--line); border: 0; margin: 0; }
 .deep .rule { background: var(--line-deep); }
-.rule--sky { height: 3px; background: var(--sky); width: 46px; border: 0; margin: 0; }
+.rule--accent { height: 3px; background: var(--amber); width: 46px; border: 0; margin: 0; }
 
 /* ── surfaces ─────────────────────────────────────────────────────────────── */
 .panel {
   background: var(--paper); padding: clamp(1.3rem, 2.2vw, 2.1rem);
-  clip-path: polygon(var(--cut-m) 0, 100% 0, 100% calc(100% - var(--cut-m)),
-             calc(100% - var(--cut-m)) 100%, 0 100%, 0 var(--cut-m));
+  border-radius: var(--cut-m);
 }
 .panel--mist  { background: var(--mist); }
 .panel--frost { background: var(--frost); }
-.panel--sky   { background: var(--sky); color: var(--deep); }
-.panel--sky .d3, .panel--sky .d4 { color: var(--deep); }
+.panel--accent   { background: var(--amber); color: var(--bark); }
+.panel--accent .d3, .panel--accent .d4 { color: var(--bark); }
 .deep .panel { background: rgba(232,244,251,.055); }
 .deep .panel--mist { background: rgba(232,244,251,.09); }
 
 .fig { overflow: hidden; position: relative; background: var(--mist);
-       clip-path: polygon(var(--cut-l) 0, 100% 0, 100% calc(100% - var(--cut-l)),
-                  calc(100% - var(--cut-l)) 100%, 0 100%, 0 var(--cut-l)); }
+       border-radius: var(--cut-l); }
 .fig img { width: 100%; height: 100%; object-fit: cover; }
 .fig--wide { aspect-ratio: 16/10; }
 .fig--sq   { aspect-ratio: 1/1; }
@@ -227,36 +229,36 @@ a { color: inherit; }
 .chip {
   display: inline-flex; align-items: center; gap: .5rem; flex: none;
   font: 700 .735rem/1 var(--ff); letter-spacing: .085em; text-transform: uppercase;
-  color: var(--navy); background: var(--mist); padding: .55rem .8rem;
-  clip-path: polygon(7px 0, 100% 0, 100% calc(100% - 7px), calc(100% - 7px) 100%, 0 100%, 0 7px);
+  color: var(--steel); background: var(--mist); padding: .55rem .8rem;
+  border-radius: 9px;
 }
-.chip--sky { background: var(--sky); color: var(--deep); }
+.chip--accent { background: var(--amber); color: var(--bark); }
 .chip--out { background: transparent; box-shadow: inset 0 0 0 1px var(--line-str); }
 .deep .chip { background: rgba(232,244,251,.1); color: var(--on-deep); }
-.deep .chip--sky { background: var(--sky); color: var(--deep); }
+.deep .chip--accent { background: var(--amber); color: var(--bark); }
 .chips { display: flex; flex-wrap: wrap; gap: .5rem; }
 
 /* ── buttons ──────────────────────────────────────────────────────────────── */
 .btn {
-  --bg: var(--navy); --fg: #fff;
+  --bg: var(--steel); --fg: #fff;
   position: relative; display: inline-flex; align-items: center; justify-content: center;
   gap: .6rem; min-height: 54px; padding: 0 1.65rem; background: var(--bg); color: var(--fg);
   font: 700 .92rem/1 var(--ff); letter-spacing: .01em; text-decoration: none; cursor: pointer;
   border: 0; overflow: hidden; transition: background var(--t) var(--e), color var(--t) var(--e);
-  clip-path: polygon(11px 0, 100% 0, 100% calc(100% - 11px), calc(100% - 11px) 100%, 0 100%, 0 11px);
+  border-radius: 13px;
 }
 .btn > * { position: relative; z-index: 1; }
 .btn::after {
-  content: ""; position: absolute; inset: 0; background: var(--sky); z-index: 0;
+  content: ""; position: absolute; inset: 0; background: var(--amber); z-index: 0;
   transform: translateX(-101%); transition: transform .5s var(--e-out);
 }
 .btn:hover::after, .btn:focus-visible::after { transform: none; }
-.btn:hover, .btn:focus-visible { color: var(--deep); }
-.btn--sky   { --bg: var(--sky); --fg: var(--deep); }
-.btn--sky::after { background: var(--navy); }
-.btn--sky:hover, .btn--sky:focus-visible { color: #fff; }
-.btn--ghost { --bg: transparent; --fg: var(--navy); box-shadow: inset 0 0 0 2px var(--line-str); }
-.btn--ghost:hover, .btn--ghost:focus-visible { color: var(--deep); }
+.btn:hover, .btn:focus-visible { color: var(--bark); }
+.btn--accent   { --bg: var(--amber); --fg: var(--bark); }
+.btn--accent::after { background: var(--steel); }
+.btn--accent:hover, .btn--accent:focus-visible { color: #fff; }
+.btn--ghost { --bg: transparent; --fg: var(--steel); box-shadow: inset 0 0 0 2px var(--line-str); }
+.btn--ghost:hover, .btn--ghost:focus-visible { color: var(--bark); }
 .deep .btn--ghost { --fg: var(--on-deep); box-shadow: inset 0 0 0 2px var(--line-deep); }
 .btn--sm { min-height: 46px; font-size: .84rem; padding: 0 1.2rem; }
 .btn--wide { width: 100%; }
@@ -264,13 +266,13 @@ a { color: inherit; }
 .btn__ar { transition: transform .45s var(--e-out); }
 .btn:hover .btn__ar { transform: translateX(4px); }
 
-.tlink { position: relative; font-weight: 700; color: var(--sky-deep); text-decoration: none;
+.tlink { position: relative; font-weight: 700; color: var(--amber-deep); text-decoration: none;
          display: inline-flex; align-items: center; gap: .45rem; }
 .tlink::after { content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 2px;
-                background: var(--sky); transform: scaleX(0); transform-origin: right;
+                background: var(--amber); transform: scaleX(0); transform-origin: right;
                 transition: transform .45s var(--e-out); }
 .tlink:hover::after, .tlink:focus-visible::after { transform: scaleX(1); transform-origin: left; }
-.deep .tlink { color: var(--sky-lt); }
+.deep .tlink { color: var(--steel-lt); }
 
 /* ── a11y plumbing ────────────────────────────────────────────────────────── */
 /* Never hide anything by translating it off-screen. Standalone, an absolutely
@@ -285,10 +287,10 @@ a { color: inherit; }
 .skip:focus {
   position: fixed; top: 12px; left: 12px; width: auto; height: auto; margin: 0;
   padding: .85rem 1.3rem; clip: auto; clip-path: none; z-index: 999;
-  background: var(--sky); color: var(--deep); font-weight: 700; text-decoration: none;
+  background: var(--amber); color: var(--bark); font-weight: 700; text-decoration: none;
 }
-:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; border-radius: 2px; }
-.deep :focus-visible, .hdr :focus-visible { outline-color: var(--sky-lt); }
+:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; border-radius: 2px; }
+.deep :focus-visible, .hdr :focus-visible { outline-color: var(--steel-lt); }
 
 /* ── reveals ──────────────────────────────────────────────────────────────
    .rv only ever animates opacity/transform/filter, never a clip. An element
@@ -344,8 +346,8 @@ a { color: inherit; }
 .wm { display: inline-flex; align-items: center; gap: .7rem; text-decoration: none; flex: none; }
 .wm img { width: 42px; height: auto; }
 .wm__t { display: flex; flex-direction: column; line-height: 1; }
-.wm__n { font: 800 1.16rem/1 var(--ffd); letter-spacing: -.035em; color: var(--navy); }
-.wm__n i { font-style: normal; color: var(--sky); }
+.wm__n { font: 800 1.16rem/1 var(--ffd); letter-spacing: -.035em; color: var(--steel); }
+.wm__n i { font-style: normal; color: var(--amber); }
 .wm__s { font: 700 .585rem/1 var(--ff); letter-spacing: .21em; text-transform: uppercase;
          color: var(--slate-dim); margin-top: .38rem; }
 /* over a photographic hero, before the header solidifies */
@@ -361,7 +363,7 @@ a { color: inherit; }
 .nav > li > a { display: inline-flex; align-items: center; gap: .35rem; text-decoration: none;
                 font: 600 .905rem/1 var(--ff); color: var(--ink); padding: .8rem .2rem; position: relative; }
 .nav > li > a::after { content: ""; position: absolute; left: .2rem; right: .2rem; bottom: .35rem;
-                       height: 2px; background: var(--sky); transform: scaleX(0); transform-origin: right;
+                       height: 2px; background: var(--amber); transform: scaleX(0); transform-origin: right;
                        transition: transform .4s var(--e-out); }
 .nav > li > a:hover::after, .nav > li > a:focus-visible::after,
 .nav > li[data-cur] > a::after { transform: scaleX(1); transform-origin: left; }
@@ -373,29 +375,29 @@ a { color: inherit; }
        padding: .5rem; background: var(--paper); box-shadow: 0 20px 44px -22px rgba(3,56,87,.42), 0 0 0 1px var(--line);
        opacity: 0; visibility: hidden; transform: translateY(-7px); pointer-events: none;
        transition: opacity .3s var(--e), transform .3s var(--e), visibility .3s;
-       clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px); }
+       border-radius: 14px; }
 .nav > li:hover .sub, .nav > li:focus-within .sub {
   opacity: 1; visibility: visible; transform: none; pointer-events: auto; }
 .sub a { display: block; padding: .68rem .85rem; text-decoration: none; font: 600 .88rem/1.35 var(--ff);
          color: var(--ink); transition: background .25s var(--e), color .25s var(--e); }
 .sub a small { display: block; font-weight: 500; font-size: .775rem; color: var(--slate-dim); margin-top: .16rem; }
-.sub a:hover, .sub a:focus-visible { background: var(--mist); color: var(--navy); }
+.sub a:hover, .sub a:focus-visible { background: var(--mist); color: var(--steel); }
 
 .hdr__cta { display: flex; align-items: center; gap: .7rem; flex: none; }
 .hdr__tel { display: inline-flex; align-items: center; gap: .45rem; text-decoration: none;
-            font: 700 .9rem/1 var(--ff); color: var(--navy); white-space: nowrap; }
+            font: 700 .9rem/1 var(--ff); color: var(--steel); white-space: nowrap; }
 .hdr__tel svg { width: 15px; height: 15px; flex: none; }
 
 .burger { display: none; width: 48px; height: 48px; flex: none; background: transparent; border: 0;
           cursor: pointer; padding: 0; place-items: center; }
-.burger span { display: block; width: 23px; height: 2px; background: var(--navy); margin: 4px auto;
+.burger span { display: block; width: 23px; height: 2px; background: var(--steel); margin: 4px auto;
                transition: transform .4s var(--e), opacity .3s var(--e); }
 .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
 .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
 /* off-canvas */
-.oc { position: fixed; inset: 0; z-index: 95; background: var(--deep); color: var(--on-deep);
+.oc { position: fixed; inset: 0; z-index: 95; background: var(--bark); color: var(--on-deep);
       display: flex; flex-direction: column; padding: 5.5rem var(--gut) 2rem; overflow-y: auto;
       opacity: 0; visibility: hidden; transform: translateY(-2%);
       transition: opacity .45s var(--e), transform .45s var(--e), visibility .45s; }
@@ -415,7 +417,7 @@ a { color: inherit; }
    HERO
    ========================================================================== */
 .hero { position: relative; min-height: clamp(600px, 92svh, 940px); display: flex; align-items: flex-end;
-        overflow: hidden; background: var(--deep); padding-block: clamp(6rem,12vw,8rem) clamp(2.5rem,5vw,4.5rem); }
+        overflow: hidden; background: var(--bark); padding-block: clamp(6rem,12vw,8rem) clamp(2.5rem,5vw,4.5rem); }
 .hero__media { position: absolute; inset: 0; z-index: 0; }
 /* Deliberately over-scaled so the parallax never reveals an edge. Its rect
    necessarily exceeds the viewport and the element sweep flags it at every
@@ -435,10 +437,10 @@ a { color: inherit; }
      one this cap was originally added for — but it still needs a ceiling, or the
      global .d1 max pushes the stat row below the fold on a laptop. */
   font-size: clamp(2.5rem, 1rem + 5.4vw, 5.6rem); }
-.hero .d1 b { color: var(--sky); }
+.hero .d1 b { color: var(--amber); }
 .hero__lede { color: rgba(255,255,255,.88); max-width: 38ch; font-size: clamp(1.06rem,1rem+.5vw,1.3rem); }
 .hero__acts { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; }
-.hero .eyebrow { color: var(--sky); }
+.hero .eyebrow { color: var(--amber); }
 .hero__foot { display: flex; flex-wrap: wrap; gap: clamp(1rem,3vw,3rem); align-items: center;
               margin-top: clamp(2rem,4.5vw,3.4rem); padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.22); }
 .hero__stat { display: flex; flex-direction: column; gap: .3rem; }
@@ -450,12 +452,12 @@ a { color: inherit; }
                      color: rgba(255,255,255,.72); }
 
 /* compact page hero for interior pages */
-.phero { position: relative; background: var(--deep); color: var(--on-deep); overflow: hidden;
+.phero { position: relative; background: var(--bark); color: var(--on-deep); overflow: hidden;
          padding-block: clamp(7.5rem,14vw,10.5rem) clamp(3rem,6vw,5rem); }
 .phero__bg { position: absolute; inset: 0; z-index: 0; opacity: .3; }
 .phero__bg img { width: 100%; height: 100%; object-fit: cover; }
 .phero::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: linear-gradient(100deg, var(--deep) 12%, rgba(6,35,52,.72) 58%, rgba(6,35,52,.5)); }
+  background: linear-gradient(100deg, var(--bark) 12%, rgba(6,35,52,.72) 58%, rgba(6,35,52,.5)); }
 .phero > * { position: relative; z-index: 2; }
 .phero .d1 { max-width: 13em; }
 
@@ -463,9 +465,9 @@ a { color: inherit; }
 .crumb { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; list-style: none; margin: 0 0 1.35rem;
          padding: 0; font: 600 .77rem/1.4 var(--ff); color: var(--on-deep-dim); }
 .crumb a { text-decoration: none; color: var(--on-deep-dim); }
-.crumb a:hover { color: var(--sky-lt); }
+.crumb a:hover { color: var(--steel-lt); }
 .crumb li + li::before { content: "/"; margin-right: .5rem; opacity: .55; }
-.crumb [aria-current] { color: var(--sky-lt); }
+.crumb [aria-current] { color: var(--steel-lt); }
 
 /* ============================================================================
    MARQUEE  ·  the published-facts ticker
@@ -473,7 +475,7 @@ a { color: inherit; }
    design. Excluded from the overflow sweep by ancestor, like every other
    deliberately over-wide element on these sites.
    ========================================================================== */
-.marq { background: var(--navy); color: #fff; overflow: hidden; padding-block: .95rem;
+.marq { background: var(--steel); color: #fff; overflow: hidden; padding-block: .95rem;
         -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
                 mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
 .marq__t { display: flex; width: max-content; animation: marq 46s linear infinite; }
@@ -481,7 +483,7 @@ a { color: inherit; }
 .marq__g { display: flex; align-items: center; gap: 2.6rem; padding-right: 2.6rem; flex: none; }
 .marq__i { display: inline-flex; align-items: center; gap: .6rem; white-space: nowrap;
            font: 700 .81rem/1 var(--ff); letter-spacing: .1em; text-transform: uppercase; }
-.marq__i::before { content: ""; width: 6px; height: 6px; background: var(--sky); flex: none;
+.marq__i::before { content: ""; width: 6px; height: 6px; background: var(--amber); flex: none;
                    transform: rotate(45deg); }
 @keyframes marq { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .marq__t { animation: none; } }
@@ -492,8 +494,7 @@ a { color: inherit; }
 .card { position: relative; display: flex; flex-direction: column; background: var(--paper);
         text-decoration: none; color: inherit; overflow: hidden;
         transition: transform .55s var(--e), box-shadow .55s var(--e);
-        clip-path: polygon(var(--cut-l) 0, 100% 0, 100% calc(100% - var(--cut-l)),
-                   calc(100% - var(--cut-l)) 100%, 0 100%, 0 var(--cut-l)); }
+        border-radius: var(--cut-l); }
 a.card:hover, a.card:focus-visible { transform: translateY(-7px); }
 .card__m { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--mist); }
 .card__m img { width: 100%; height: 100%; object-fit: cover;
@@ -501,48 +502,48 @@ a.card:hover, a.card:focus-visible { transform: translateY(-7px); }
 a.card:hover .card__m img { transform: scale(1.055); }
 .card__b { padding: clamp(1.25rem,2.1vw,1.85rem); display: flex; flex-direction: column; flex: 1; }
 .card__n { font: 700 .715rem/1 var(--ff); letter-spacing: .16em; text-transform: uppercase;
-           color: var(--sky-deep); margin: 0 0 .85rem; }
+           color: var(--amber-deep); margin: 0 0 .85rem; }
 .card h3 { font: 800 clamp(1.2rem,1.5vw,1.5rem)/1.15 var(--ffd); letter-spacing: -.03em;
-           color: var(--navy); margin: 0 0 .6rem; }
+           color: var(--steel); margin: 0 0 .6rem; }
 .card p { margin: 0; color: var(--slate); font-size: .955rem; }
 .card__go { margin-top: auto; padding-top: 1.3rem; display: inline-flex; align-items: center; gap: .5rem;
-            font: 700 .8rem/1 var(--ff); letter-spacing: .05em; color: var(--sky-deep); }
+            font: 700 .8rem/1 var(--ff); letter-spacing: .05em; color: var(--amber-deep); }
 a.card:hover .card__go { gap: .85rem; }
 .card__go svg { transition: transform .4s var(--e-out); }
 .card__price { margin-top: 1.1rem; display: flex; align-items: baseline; gap: .45rem; }
-.card__price b { font: 800 clamp(1.75rem,2.6vw,2.4rem)/1 var(--ffd); letter-spacing: -.04em; color: var(--navy); }
+.card__price b { font: 800 clamp(1.75rem,2.6vw,2.4rem)/1 var(--ffd); letter-spacing: -.04em; color: var(--steel); }
 .card__price span { font: 600 .8rem/1 var(--ff); color: var(--slate-dim); }
 .deep .card { background: rgba(232,244,251,.06); }
 .deep .card h3 { color: var(--on-deep); }
 .deep .card p { color: var(--on-deep-dim); }
-.deep .card__n, .deep .card__go { color: var(--sky-lt); }
+.deep .card__n, .deep .card__go { color: var(--steel-lt); }
 .deep .card__price b { color: #fff; }
 
 /* numbered process step */
 .step { position: relative; padding-top: 1.5rem; }
 .step__n { font: 800 clamp(2.6rem,5vw,4.4rem)/.8 var(--ffd); letter-spacing: -.05em;
-           color: var(--sky); opacity: .28; margin: 0 0 .5rem; }
-.deep .step__n { color: var(--sky-lt); opacity: .4; }
+           color: var(--amber); opacity: .28; margin: 0 0 .5rem; }
+.deep .step__n { color: var(--steel-lt); opacity: .4; }
 .step h3 { font: 800 clamp(1.15rem,1.5vw,1.45rem)/1.2 var(--ffd); letter-spacing: -.03em;
-           color: var(--navy); margin: 0 0 .55rem; }
+           color: var(--steel); margin: 0 0 .55rem; }
 .deep .step h3 { color: var(--on-deep); }
 .step p { margin: 0; color: var(--slate); font-size: .95rem; }
 .deep .step p { color: var(--on-deep-dim); }
-.step::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; background: var(--sky); }
+.step::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; background: var(--amber); }
 
 /* ── the checklist. This is the site's core content object: Blue Fox publishes
       the exact task list, so it gets a real component rather than a <ul>. */
 .check { display: grid; gap: 1.6rem; }
 .check__g h4 { font: 700 .73rem/1 var(--ff); letter-spacing: .17em; text-transform: uppercase;
-               color: var(--sky-deep); margin: 0 0 .85rem; padding-bottom: .7rem;
+               color: var(--amber-deep); margin: 0 0 .85rem; padding-bottom: .7rem;
                border-bottom: 1px solid var(--line); }
-.deep .check__g h4 { color: var(--sky-lt); border-color: var(--line-deep); }
+.deep .check__g h4 { color: var(--steel-lt); border-color: var(--line-deep); }
 .check__g ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
 .check__g li { display: flex; align-items: flex-start; gap: .65rem; font-size: .95rem; color: var(--ink); }
 .deep .check__g li { color: var(--on-deep); }
 .check__g li::before {
-  content: ""; width: 15px; height: 15px; flex: none; margin-top: .28rem; background: var(--sky);
-  clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
+  content: ""; width: 15px; height: 15px; flex: none; margin-top: .28rem; background: var(--amber);
+  border-radius: 6px;
   -webkit-mask: no-repeat center / 9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M1 6l3.4 3.6L11 2' stroke='%23000' stroke-width='2.4' fill='none' stroke-linecap='square'/%3E%3C/svg%3E");
 }
 .check__g li[data-x]::before { background: var(--line-str); }
@@ -554,34 +555,33 @@ a.card:hover .card__go { gap: .85rem; }
 .spec { width: 100%; border-collapse: collapse; font-size: .95rem; }
 .spec th, .spec td { text-align: left; padding: .95rem 1rem; border-bottom: 1px solid var(--line); vertical-align: top; }
 .spec thead th { font: 700 .715rem/1 var(--ff); letter-spacing: .15em; text-transform: uppercase;
-                 color: var(--slate-dim); border-bottom: 2px solid var(--navy); white-space: nowrap; }
-.spec tbody th { font-weight: 700; color: var(--navy); }
-.spec td b { font: 800 1.15rem/1 var(--ffd); letter-spacing: -.03em; color: var(--navy); }
+                 color: var(--slate-dim); border-bottom: 2px solid var(--steel); white-space: nowrap; }
+.spec tbody th { font-weight: 700; color: var(--steel); }
+.spec td b { font: 800 1.15rem/1 var(--ffd); letter-spacing: -.03em; color: var(--steel); }
 .spec tr:last-child th, .spec tr:last-child td { border-bottom: 0; }
 .spec__wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .deep .spec th, .deep .spec td { border-color: var(--line-deep); }
-.deep .spec thead th { color: var(--on-deep-dim); border-bottom-color: var(--sky); }
+.deep .spec thead th { color: var(--on-deep-dim); border-bottom-color: var(--amber); }
 .deep .spec tbody th, .deep .spec td b { color: var(--on-deep); }
 
 /* ── stat band ────────────────────────────────────────────────────────────── */
 .stats { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1px; background: var(--line-deep); }
-.stat { background: var(--deep); padding: clamp(1.35rem,2.4vw,2.2rem); }
+.stat { background: var(--bark); padding: clamp(1.35rem,2.4vw,2.2rem); }
 .stat b { display: block; font: 800 clamp(2rem,3.6vw,3.4rem)/1 var(--ffd); letter-spacing: -.045em;
-          color: var(--sky-lt); margin-bottom: .5rem; }
+          color: var(--steel-lt); margin-bottom: .5rem; }
 .stat span { font: 600 .755rem/1.45 var(--ff); letter-spacing: .1em; text-transform: uppercase;
              color: var(--on-deep-dim); }
 
 /* ── testimonials ─────────────────────────────────────────────────────────── */
 .quote { display: flex; flex-direction: column; height: 100%; background: var(--paper);
          padding: clamp(1.4rem,2.3vw,2rem);
-         clip-path: polygon(var(--cut-m) 0, 100% 0, 100% calc(100% - var(--cut-m)),
-                    calc(100% - var(--cut-m)) 100%, 0 100%, 0 var(--cut-m)); }
+         border-radius: var(--cut-m); }
 .quote__st { display: flex; gap: .18rem; margin-bottom: 1rem; }
-.quote__st svg { width: 16px; height: 16px; fill: var(--sky); }
+.quote__st svg { width: 16px; height: 16px; fill: var(--amber); }
 .quote blockquote { margin: 0; font-size: 1.03rem; line-height: 1.6; color: var(--ink); }
 .quote figcaption { margin-top: auto; padding-top: 1.25rem; display: flex; align-items: center;
                     justify-content: space-between; gap: 1rem; font-size: .85rem; }
-.quote figcaption b { color: var(--navy); font-weight: 700; }
+.quote figcaption b { color: var(--steel); font-weight: 700; }
 .quote figcaption span { color: var(--slate-dim); font-size: .78rem; }
 .deep .quote { background: rgba(232,244,251,.06); }
 .deep .quote blockquote { color: var(--on-deep); }
@@ -595,7 +595,7 @@ a.card:hover .card__go { gap: .85rem; }
 .deep .acc details { border-color: var(--line-deep); }
 .acc summary { list-style: none; cursor: pointer; display: flex; align-items: flex-start; gap: 1rem;
                padding: 1.25rem 0; font: 700 clamp(1.02rem,1.25vw,1.2rem)/1.35 var(--ff);
-               color: var(--navy); min-height: 48px; }
+               color: var(--steel); min-height: 48px; }
 .deep .acc summary { color: var(--on-deep); }
 .acc summary::-webkit-details-marker { display: none; }
 .acc summary::after { content: ""; width: 15px; height: 15px; flex: none; margin-left: auto; margin-top: .3rem;
@@ -618,8 +618,7 @@ a.card:hover .card__go { gap: .85rem; }
    ========================================================================== */
 .wt { display: grid; grid-template-columns: 1.32fr 1fr; gap: clamp(1.2rem,2.4vw,2.4rem); align-items: start; }
 .wt__stage { position: relative; background: #041A27; overflow: hidden;
-             clip-path: polygon(var(--cut-l) 0, 100% 0, 100% calc(100% - var(--cut-l)),
-                        calc(100% - var(--cut-l)) 100%, 0 100%, 0 var(--cut-l)); }
+             border-radius: var(--cut-l); }
 .wt__canvas { display: block; width: 100%; aspect-ratio: 4/3; }
 .wt__badge { position: absolute; top: .95rem; left: .95rem; z-index: 2; display: flex; gap: .4rem;
              flex-wrap: wrap; max-width: calc(100% - 1.9rem); }
@@ -627,8 +626,7 @@ a.card:hover .card__go { gap: .85rem; }
             font: 600 .74rem/1.4 var(--ff); letter-spacing: .06em; text-transform: uppercase;
             color: var(--on-deep-dim); }
 .wt__panel { background: var(--paper); padding: clamp(1.2rem,2.1vw,1.85rem);
-             clip-path: polygon(var(--cut-l) 0, 100% 0, 100% calc(100% - var(--cut-l)),
-                        calc(100% - var(--cut-l)) 100%, 0 100%, 0 var(--cut-l)); }
+             border-radius: var(--cut-l); }
 .deep .wt__panel { background: rgba(232,244,251,.07); }
 
 .wt__row { padding-block: 1rem; border-bottom: 1px solid var(--line); }
@@ -638,7 +636,7 @@ a.card:hover .card__go { gap: .85rem; }
            font: 700 .74rem/1 var(--ff); letter-spacing: .15em; text-transform: uppercase;
            color: var(--slate-dim); margin-bottom: .8rem; }
 .deep .wt__lab { color: var(--on-deep-dim); }
-.wt__lab b { font: 800 1.2rem/1 var(--ffd); letter-spacing: -.03em; color: var(--navy);
+.wt__lab b { font: 800 1.2rem/1 var(--ffd); letter-spacing: -.03em; color: var(--steel);
              text-transform: none; letter-spacing: -.02em; }
 .deep .wt__lab b { color: var(--on-deep); }
 
@@ -650,11 +648,11 @@ a.card:hover .card__go { gap: .85rem; }
 .deep .wt input[type=range]::-webkit-slider-runnable-track { background: rgba(232,244,251,.18); }
 .deep .wt input[type=range]::-moz-range-track { background: rgba(232,244,251,.18); }
 .wt input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px;
-  margin-top: -11px; background: var(--sky); border: 0; cursor: pointer;
-  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px); }
-.wt input[type=range]::-moz-range-thumb { width: 26px; height: 26px; background: var(--sky); border: 0;
+  margin-top: -11px; background: var(--amber); border: 0; cursor: pointer;
+  border-radius: 10px; }
+.wt input[type=range]::-moz-range-thumb { width: 26px; height: 26px; background: var(--amber); border: 0;
   border-radius: 0; cursor: pointer;
-  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px); }
+  border-radius: 10px; }
 
 /* segmented radio group */
 .seg { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 4px; }
@@ -671,31 +669,31 @@ a.card:hover .card__go { gap: .85rem; }
 .seg label { display: grid; place-items: center; text-align: center; gap: .18rem; min-height: 52px;
              padding: .5rem .35rem; cursor: pointer; background: var(--frost); color: var(--slate);
              font: 700 .82rem/1.2 var(--ff); transition: background .3s var(--e), color .3s var(--e);
-             clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px); }
+             border-radius: 10px; }
 .seg label small { font-weight: 600; font-size: .72rem; letter-spacing: .06em; opacity: .8; }
 .deep .seg label { background: rgba(232,244,251,.08); color: var(--on-deep-dim); }
-.seg input:checked + label { background: var(--sky); color: var(--deep); }
-.seg input:focus-visible + label { outline: 3px solid var(--sky); outline-offset: 3px; }
+.seg input:checked + label { background: var(--amber); color: var(--bark); }
+.seg input:focus-visible + label { outline: 3px solid var(--amber); outline-offset: 3px; }
 
 /* checkbox row */
 .chk { display: flex; align-items: flex-start; gap: .7rem; cursor: pointer; min-height: 48px;
        padding-top: .4rem; font-size: .93rem; color: var(--ink); }
 .deep .chk { color: var(--on-deep); }
-.chk input { width: 22px; height: 22px; margin: .15rem 0 0; flex: none; accent-color: var(--sky); cursor: pointer; }
+.chk input { width: 22px; height: 22px; margin: .15rem 0 0; flex: none; accent-color: var(--amber); cursor: pointer; }
 .chk small { display: block; color: var(--slate-dim); font-size: .8rem; margin-top: .12rem; }
 .deep .chk small { color: var(--on-deep-dim); }
 
 /* the readout */
 .wt__out { display: block; padding-top: 1.15rem; }
 .wt__fig { display: flex; align-items: baseline; gap: .5rem; flex-wrap: wrap; }
-.wt__fig b { font: 800 clamp(2.1rem,4vw,3.1rem)/.95 var(--ffd); letter-spacing: -.045em; color: var(--navy); }
-.deep .wt__fig b { color: var(--sky-lt); }
+.wt__fig b { font: 800 clamp(2.1rem,4vw,3.1rem)/.95 var(--ffd); letter-spacing: -.045em; color: var(--steel); }
+.deep .wt__fig b { color: var(--steel-lt); }
 .wt__fig span { font: 600 .88rem/1.3 var(--ff); color: var(--slate-dim); }
 .deep .wt__fig span { color: var(--on-deep-dim); }
 .wt__break { margin-top: .8rem; display: grid; gap: .35rem; font-size: .86rem; color: var(--slate); }
 .deep .wt__break { color: var(--on-deep-dim); }
 .wt__break > span { display: flex; justify-content: space-between; gap: 1rem; }
-.wt__break b { color: var(--navy); font-weight: 700; }
+.wt__break b { color: var(--steel); font-weight: 700; }
 .deep .wt__break b { color: var(--on-deep); }
 
 /* ============================================================================
@@ -710,15 +708,15 @@ a.card:hover .card__go { gap: .85rem; }
   width: 100%; min-height: 54px; padding: .9rem 1rem; font: 400 1rem/1.4 var(--ff);
   color: var(--ink); background: var(--paper); border: 0; box-shadow: inset 0 0 0 1.5px var(--line-str);
   transition: box-shadow .3s var(--e); appearance: none;
-  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px); }
+  border-radius: 12px; }
 .field textarea { min-height: 130px; resize: vertical; }
 .field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%233E5C6E' stroke-width='1.8' fill='none'/%3E%3C/svg%3E");
                  background-repeat: no-repeat; background-position: right 1rem center; background-size: 12px;
                  padding-right: 2.6rem; }
 .field input:focus, .field select:focus, .field textarea:focus {
-  outline: none; box-shadow: inset 0 0 0 2px var(--sky); }
+  outline: none; box-shadow: inset 0 0 0 2px var(--amber); }
 .field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible {
-  outline: 3px solid var(--sky); outline-offset: 2px; }
+  outline: 3px solid var(--amber); outline-offset: 2px; }
 .field small { font-size: .78rem; color: var(--slate-dim); }
 .deep .field small { color: var(--on-deep-dim); }
 .deep .field input, .deep .field select, .deep .field textarea {
@@ -727,13 +725,13 @@ a.card:hover .card__go { gap: .85rem; }
 .form__2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
 .form__note { font-size: .8rem; color: var(--slate-dim); line-height: 1.55; }
 .deep .form__note { color: var(--on-deep-dim); }
-.req { color: var(--sky-deep); }
-.deep .req { color: var(--sky-lt); }
+.req { color: var(--amber-deep); }
+.deep .req { color: var(--steel-lt); }
 
 /* landing-page shell — no nav, no exit links */
 .lphdr { padding-block: 1.5rem; border-bottom: 1px solid var(--line-deep); }
 .lphdr__in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-.lp { background: var(--deep); color: var(--on-deep); min-height: 100svh; }
+.lp { background: var(--bark); color: var(--on-deep); min-height: 100svh; }
 .lp__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.8rem,4.5vw,5rem);
             align-items: start; padding-block: clamp(2.5rem,6vw,4.5rem); }
 .lp__form { position: sticky; top: 2rem; }
@@ -741,20 +739,20 @@ a.card:hover .card__go { gap: .85rem; }
 /* ============================================================================
    FOOTER + MOBILE BAR
    ========================================================================== */
-.ftr { background: var(--deep); color: var(--on-deep-dim); padding-block: clamp(3rem,6vw,5rem) 0;
+.ftr { background: var(--bark); color: var(--on-deep-dim); padding-block: clamp(3rem,6vw,5rem) 0;
        position: relative; isolation: isolate; }
 .ftr__top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: clamp(1.6rem,3vw,3rem);
             padding-bottom: clamp(2.2rem,4vw,3.4rem); }
 .ftr__lk { display: inline-flex; align-items: center; gap: .75rem; text-decoration: none; margin-bottom: 1.1rem; }
 .ftr__lk img { width: 50px; height: auto; }
 .ftr__lk b { font: 800 1.3rem/1 var(--ffd); letter-spacing: -.035em; color: #fff; }
-.ftr__lk b i { font-style: normal; color: var(--sky-lt); }
+.ftr__lk b i { font-style: normal; color: var(--steel-lt); }
 .ftr h4 { font: 700 .715rem/1 var(--ff); letter-spacing: .17em; text-transform: uppercase;
           color: #fff; margin: 0 0 1.15rem; }
 .ftr ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
 .ftr a { color: var(--on-deep-dim); text-decoration: none; font-size: .92rem;
          transition: color .3s var(--e); }
-.ftr a:hover { color: var(--sky-lt); }
+.ftr a:hover { color: var(--steel-lt); }
 .ftr address { font-style: normal; font-size: .92rem; line-height: 1.75; }
 .ftr__bot { border-top: 1px solid var(--line-deep); padding-block: 1.5rem; display: flex;
             flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center;
@@ -762,18 +760,18 @@ a.card:hover .card__go { gap: .85rem; }
 .ftr__bot ul { display: flex; flex-wrap: wrap; gap: 1.2rem; }
 .ftr__sample { background: rgba(0,171,255,.1); box-shadow: inset 0 0 0 1px var(--line-deep);
                padding: .9rem 1.1rem; font-size: .78rem; line-height: 1.6; margin-bottom: 1.5rem;
-               clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px); }
+               border-radius: 12px; }
 
 /* fixed CTA bar. Always paired with a matching body padding-bottom in the SAME
    media query — drop one and the last rows of every page sit under the bar. */
-.mbar { display: none; position: fixed; inset: auto 0 0; z-index: 88; background: var(--deep);
+.mbar { display: none; position: fixed; inset: auto 0 0; z-index: 88; background: var(--bark);
         border-top: 1px solid var(--line-deep); padding: .55rem .7rem calc(.55rem + env(safe-area-inset-bottom));
         gap: .5rem; grid-template-columns: 1fr 1fr; }
 .mbar a { display: flex; align-items: center; justify-content: center; gap: .45rem; min-height: 50px;
           text-decoration: none; font: 700 .875rem/1 var(--ff);
-          clip-path: polygon(9px 0, 100% 0, 100% calc(100% - 9px), calc(100% - 9px) 100%, 0 100%, 0 9px); }
+          border-radius: 11px; }
 .mbar__tel { background: rgba(232,244,251,.1); color: var(--on-deep); }
-.mbar__cta { background: var(--sky); color: var(--deep); }
+.mbar__cta { background: var(--amber); color: var(--bark); }
 
 /* ============================================================================
    RESPONSIVE
@@ -856,3 +854,53 @@ a.card:hover .card__go { gap: .85rem; }
 /* The wordmark subtitle was 9.4px — smaller than any other type on the site and
    below the floor every other brand in this repo holds. */
 .wm__s { font-size: .69rem; }
+
+/* ============================================================================
+   BEFORE / AFTER SLIDER
+   Pure CSS clip-path driven by a range input — keyboard operable, touch
+   draggable, no library. Used on the homepage with the company's own
+   pressure-washing job.
+
+   The figure itself is CLIPPED, so it must never carry its own .rv: an element
+   clipped to zero area has a zero-area intersection rectangle, so an observer
+   watching it never fires and it stays hidden forever. The unclipped wrapper is
+   observed instead and forwards data-in down via [data-rv-child].
+   ========================================================================== */
+.ba { position: relative; margin: 0; overflow: hidden; background: var(--mist);
+      aspect-ratio: 16/9; border-radius: var(--cut-l); isolation: isolate; }
+.ba img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ba__after { clip-path: inset(0 0 0 var(--ba, 50%)); }
+.ba__line { position: absolute; top: 0; bottom: 0; left: var(--ba, 50%); width: 2px;
+            background: var(--amber); z-index: 2; pointer-events: none;
+            transform: translateX(-1px); }
+.ba__line::after {
+  content: ""; position: absolute; top: 50%; left: 50%; width: 46px; height: 46px;
+  transform: translate(-50%, -50%); border-radius: 50%; background: var(--amber);
+  box-shadow: 0 2px 14px rgba(11,44,72,.4);
+  -webkit-mask: no-repeat center / 20px 20px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6l-5 6 5 6M15 6l5 6-5 6' stroke='%23000' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  -webkit-mask-composite: destination-out;
+}
+.ba__line::before {
+  content: ""; position: absolute; top: 50%; left: 50%; width: 46px; height: 46px;
+  transform: translate(-50%, -50%); border-radius: 50%; background: var(--amber);
+}
+.ba__range { position: absolute; inset: 0; z-index: 3; width: 100%; height: 100%;
+             margin: 0; opacity: 0; cursor: ew-resize; -webkit-appearance: none; appearance: none;
+             background: transparent; }
+.ba__range::-webkit-slider-thumb { -webkit-appearance: none; width: 56px; height: 100%; cursor: ew-resize; }
+.ba__range::-moz-range-thumb { width: 56px; height: 100%; border: 0; background: transparent; cursor: ew-resize; }
+.ba__range:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+.ba__tag { position: absolute; top: 1rem; z-index: 2; pointer-events: none;
+           font: 700 .72rem/1 var(--ff); letter-spacing: .14em; text-transform: uppercase;
+           color: #fff; background: rgba(11,44,72,.72); padding: .5rem .75rem; border-radius: 6px; }
+.ba__tag--l { left: 1rem; }
+.ba__tag--r { right: 1rem; }
+@media (max-width: 720px) { .ba { aspect-ratio: 4/3; } }
+
+/* The wordmark carries both logo variants and the header state picks one. The
+   steel-blue mark is correct on the solid white header and invisible on the
+   photographic hero, where the reversed (pale ice) variant is the only legible
+   one. Swapping a src in JS would flash; swapping visibility does not. */
+.wm__mk--lt { display: none; }
+.hdr--over:not([data-solid="true"]) .wm__mk { display: none; }
+.hdr--over:not([data-solid="true"]) .wm__mk--lt { display: block; }

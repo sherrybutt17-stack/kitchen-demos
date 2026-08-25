@@ -1,16 +1,16 @@
-# Six Brand Websites — Three Kitchen Remodeling, One Security, One Dental, One Cleaning
+# Six Brand Websites — Three Kitchen Remodeling, One Security, One Dental, One Landscaping
 
 ## What this project is
 
 Six **completely separate** websites, built to look like the work of six different world-class
 agencies. Different brand, positioning, customer, color system, typography, layout philosophy, and
 conversion strategy for each. Sites 1–3 are kitchen remodeling; **Site 4 is a security firm**,
-**Site 5 is a dental practice** and **Site 6 is a residential cleaning company**, each added to
+**Site 5 is a dental practice** and **Site 6 is a landscaping and exterior-cleaning company**, each added to
 prove the pattern and the toolchain travel to another industry without being adapted.
 
 Sites 1–4 are demo/sample sites: fictional brands anchored to real affluent metros so local SEO,
 service-area content, and schema read as genuine. **Sites 5 and 6 are different — each is a
-redesign of a real business** (sapphiredentalstudio.com and bluefoxcleaning.com) using that
+redesign of a real business** (sapphiredentalstudio.com and bluefoxlandscapeandservices.com) using that
 business's own content, people, prices, photography and logo palette. Nothing about either is
 invented, which changes the rules: see their brand blocks.
 
@@ -29,7 +29,7 @@ Static HTML/CSS/JS you can open in a browser and show a client — structured so
 | Website 3 "3D" | **Real WebGL** (`kitchen3d.js`, raw — no Three.js) **plus** the scroll-driven Chamber. Both, not either. |
 | Brands | Sites 1–4 fictional, each anchored to a real affluent metro. **Sites 5 and 6 are real businesses.** |
 | Site 4 source | Content structure adapted from truelovesecurity.com; brand, NAP and licences invented |
-| Site 6 source | bluefoxcleaning.com — a real company. Rates, checklists, products, policies and reviews are its own |
+| Site 6 source | bluefoxlandscapeandservices.com — a real company. Services, area, hours, financing and the $250 design fee are its own |
 | Build system | **None.** No framework, no bundler, no package manager. |
 
 ### Nothing from the original 19-page brief was lost — it relocated
@@ -374,124 +374,118 @@ practice. Order: `index` · `services` · `smile-gallery` · `sedation-dentistry
 
 ---
 
-### Site 6 — BLUE FOX · *Cleaning Co* → `site-6-bluefox/`
-**Metro:** Cave Creek / Anthem / Carefree / North Scottsdale, Arizona — the north Valley
-**Industry:** Residential cleaning — recurring, deep, and move in/out.
-**Source:** A redesign of **bluefoxcleaning.com**. Like Site 5 this is a **real business**, so the
-NAP, the hourly rate card, the room-by-room checklists, the product list by brand, the cancellation
-policy, the careers package and the reviews are all **real and taken from the company's own
-published material.** The **palette is measured off the company's own logo file**
-(`wp-content/uploads/2022/02/Asset-1.png`): `#00ABFF` is 84.6% of its opaque pixels and `#033857`
-the other 15.4%, and there is no third colour in the mark. The live WordPress theme only ever
-shipped Astra's stock `#0170B9`, which is **not** the brand — so unlike Site 5, where the logo and
-the site disagreed and the client chose the site, here **the logo is the only source of truth.**
-The real mark is used as artwork in the header and footer, plus a reversed variant
-(the navy interior lifted to ice) for the dark bands.
+### Site 6 — BLUE FOX · *Landscape & Services* → `site-6-bluefox/`
+**Metro:** Lake Mary / Heathrow / Altamonte Springs / Longwood / Orlando — Central Florida
+**Industry:** Landscaping, pressure washing and soft washing.
+**Source:** A redesign of **bluefoxlandscapeandservices.com**. Like Site 5 this is a **real
+business**, so the service list, the five-city service area, both phone numbers, the hours, the
+Acorn Finance partnership and the $250 digital-design fee (50% deposit, credited back if the
+package is approved) are all **real and taken from the company's own published material.**
 
-> **The same rule that binds Site 5 binds this one.** Nothing may be invented. Two facts were not
-> verifiable and are therefore **absent rather than filled in**: the office hours (the live site
-> publishes none anywhere, so `contact.html` says "call or text" and **no
-> `openingHoursSpecification` is emitted**), and the Google review count (**no `aggregateRating`
-> anywhere on the site** — the three quoted reviews are real, verbatim, under the reviewers' real
-> names, and that is all that is claimed). Both carry HTML comments telling whoever launches it
-> what to confirm. A third is flagged for the client: **the live site publishes two contradictory
-> rate ladders** — the homepage says $100/$110/$115, the service pages still say $90/$100/$110.
-> This build uses the homepage ladder throughout and flags the conflict in `cleaning-services.html`.
+**The palette is measured off the company's own logo files.** `#145282` is 73–78% of the opaque
+pixels in every version of the mark and `#D3E1F0` is the other 17–22% — there is no third colour
+in the logo itself. The orange is real too: `#D98D3B` is 93.8% of the favicon, which is the same
+mark reversed out of a solid orange tile. So the brand is steel blue on pale ice with orange as
+the one accent, and this build treats it exactly that way. Unlike the previous occupant of this
+directory, the site's own CSS shipped no usable theme tokens at all, so the logo was the only
+source of truth available.
 
-**Positioning:** *Everything, in writing.* Every competitor in this trade quotes per job and
-describes its products in adjectives. Blue Fox publishes the hourly rate, the exact task list, every
-product by brand name, and the cancellation policy — before you call. That is not a tone; it is the
-entire information architecture.
-**Customer:** North Valley households who are not behind on cleaning, they are out of Saturdays.
-**Emotional angle:** Relief and control, never shame. The founder's actual insight is that her
-mother came home to a clean kitchen in a different mood than a dirty one, so the product is the
-mood of the house and the cleaning is only the mechanism.
-*"Nobody wants a clean house. They want how it feels to walk into one."*
-**Layout — spec sheet in sunlight.** Bright photographic grounds, enormous Archivo headlines, and
-every claim immediately followed by a hard `.chip` carrying the actual figure. The signature is a
-**chamfer**: the logo is a hard-cut angular fox head, so every surface on this site is cut, never
-rounded — `--cut` 10 / `--cut-m` 16 / `--cut-l` 26, applied via full-area `clip-path` polygons.
-That is deliberately the opposite of Hearth & Hollis's 24–48px organic radii and of Site 5's
-rounded scale, and unlike Site 5's documented-but-never-applied `.fct` classes, **`.cut` is
-actually on the elements** — panels, cards, figures, buttons, chips, form fields and the mobile bar.
+> **The same rule that binds Site 5 binds this one.** Nothing may be invented. Three things the
+> company does not publish are therefore **absent rather than filled in**, each flagged in an HTML
+> comment where it belongs: a **street address** (schema carries `addressLocality` only, and
+> `contact.html` shows a service area rather than a pin), any **licence or insurance numbers**, and
+> **customer reviews** — there is no testimonial section and **no `aggregateRating` anywhere**. The
+> homepage carries an explicit commented-out Proof section saying so, rather than a block of
+> invented praise. The financing page states **no rates, terms or amounts**, because those are
+> Acorn's to quote and repeating them second-hand would be a consumer-finance representation about
+> a third party.
+
+**Positioning:** One company for the build *and* the upkeep. Most landscapers cannot wash and most
+washing companies cannot plant, so a landscape gets installed and then quietly ages five years in
+two. Blue Fox does both halves, which means nobody gets to blame the other.
+**Customer:** Central Florida homeowners and commercial sites, building or restoring.
+**Emotional angle:** Competence and foresight. *"Most yards are not badly designed. They are badly
+maintained."*
+**Layout — surveyed, then built.** The mark is a **soft, rounded** fox head set against a **serif
+small-caps wordmark**, so this site is rounded and classical, not cut and engineered — deliberately
+the opposite of the hard-chamfered system that occupied this directory before it. Radii are
+`--cut` 10 / `--cut-m` 16 / `--cut-l` 24.
 
 | Token | Value |
 |---|---|
-| Sky | `#00ABFF` — **measured, 84.6% of the logo.** 2.54:1 on paper, so fills/rules/icons/display only |
-| Navy | `#033857` — **measured, 15.4% of the logo.** Brand ink, 12.30:1 on paper |
-| Paper / Frost / Mist | `#FFFFFF` / `#F2F8FC` / `#E3F1FA` |
-| Deep | `#062334` — **derived**; the dark bands and the footer |
-| Ink | `#0A1F2E` — **derived**; body text, 16.82:1 |
-| Slate / Slate-dim | `#3E5C6E` (7.09:1) / `#4A6B7C` (5.70:1) — **derived**, light-ground only |
-| Sky-mid / Sky-deep | `#0076B0` (4.98:1) / `#00618F` (6.76:1) — **derived**; small blue text on light |
-| On-deep / dim | `#E8F4FB` (14.46:1) / `#A8CFE4` (9.79:1) — text on the bands |
-| Sky-lt | `#5CC0FF` — 8.04:1 on deep; the accent up there |
-| Display | `Archivo` 600/700/800, tracking `-0.035em` |
-| Body / UI | `Figtree` 400/500/600/700 |
+| Steel | `#145282` — **measured, 73–78% of the mark.** 8.21:1 on paper — brand ink |
+| Ice | `#D3E1F0` — **measured, 17–22% of the mark.** Raised tint |
+| Amber | `#D98D3B` — **measured, 93.8% of the favicon.** 2.68:1 on paper → fills/display only |
+| Paper / Frost / Mist | `#FFFFFF` / `#F5F8FC` / `#E7EFF8` |
+| Bark | `#0B2C48` — **derived**; the dark bands and the footer |
+| Ink | `#10273A` — **derived**; body text, 14.0:1 |
+| Slate / Slate-dim | `#3D5B72` (6.7:1) / `#4C687D` (5.4:1) — **derived**, light-ground only |
+| Steel-mid | `#1C6BAA` — **derived**; links, 5.63:1 |
+| Amber-deep | `#8A5410` — **derived**; small orange text on light, 6.26:1 |
+| On-deep / dim | `#E8F1FA` (12.6:1) / `#AFC7DC` (8.0:1) — text on the bands |
+| Amber-lt / Steel-lt | `#F0A94C` (6.1:1) / `#7FB3DC` (7.4:1) — accents on the bands |
+| Display | `Bitter` 500–800 (slab serif) |
+| Body / UI | `Source Sans 3` 400/500/600/700 |
 
-> **The contrast relationship inverts, and that is the rule to remember.** `--sky` is 2.54:1 on
-> paper — illegal as small text on light — but **6.37:1 on `--deep`**, so on the dark bands it is
-> legal at body size. Conversely the light-ground text tokens are illegal inside `.deep`:
-> `--slate` measures 2.28:1 there. The bands carry their own pair, `--on-deep` / `--on-deep-dim`.
-> This is the same bite that hit Site 5's `.gem` band, in the opposite direction.
+> **The contrast relationship inverts, exactly as it did for the previous brand.** `--amber` is
+> 2.68:1 on paper — fills, rules, icons and display type only — but **5.33:1 on `--bark`**, so on
+> the dark bands it is legal at body size. Conversely the light-ground text tokens are illegal
+> inside `.deep`: `--slate` measures about 2.4:1 there. The bands carry their own pair,
+> `--on-deep` / `--on-deep-dim`.
 
-**Collision risk with Vantage AND Sapphire is real and managed.** Three of the six brands now sit in
-the blue family: Vantage `#4D8DFF`, Sapphire `#40B0DF`, Blue Fox `#00ABFF`. They stay apart on
-ground, form and type. Vantage is ~96% dark pixels, mono type, HUD ticks, 4px radius. Sapphire is
-~90% light, a Garamond display face, pill buttons, 20–34px radii, with a yellow secondary. Blue Fox
-is ~80% light with full-bleed near-black bands, a heavy grotesque display face, **hard chamfers and
-zero curves anywhere**, and no secondary colour at all. Blue Fox never uses `#4D8DFF`, `#40B0DF`,
-a mono family, a serif, a pill, or a yellow. **If any of the three accents moves again, re-check
-all three.**
+**Type is the main separator from the other five.** Bitter is the only slab serif in the repo —
+Sites 1/3/4 are grotesques, Site 2 is Fraunces, Site 5 is Cormorant Garamond. Combined with the
+soft radii and the steel/orange pairing, Site 6 does not read like any of them, and the three
+blue-accented brands (Vantage `#4D8DFF`, Sapphire `#40B0DF`, Blue Fox `#145282`) stay apart because
+Blue Fox's blue is a **dark ink** rather than a bright accent — it is used where the others use
+near-black.
 
-> **No green, deliberately.** The no-green/no-red rule is scoped to Sites 1–4 and does not bind this
-> one — but every eco-cleaning company on earth is green, and Blue Fox's actual brand is electric
-> blue. Avoiding green here is a positioning decision, not an inherited constraint. Status reads
-> sky blue; there is no traffic-light anywhere.
+#### The Property Plan — a lot that measures itself (`assets/js/property-plan.js`)
 
-#### The Walkthrough — a plan that prices itself (`assets/js/walkthrough.js`)
-
-Site 6's answer to Obsidian's WebGL room, Vantage's Perimeter and Sapphire's Smile Studio. ~15KB,
+Site 6's answer to Obsidian's WebGL room, Vantage's Perimeter and Sapphire's Smile Studio. ~13KB,
 raw 2D canvas, no library, DPR-aware, `ResizeObserver`.
 
-It exists because the live site had a hole in the middle of its funnel: it published "$100/hr" and
-then "no appointment is officially scheduled until we reach out", so a visitor could not answer the
-only question they arrived with — *what will this cost at my house.*
+It exists because every landscaper in Central Florida offers a "free estimate" and then makes you
+wait for a truck to find out what you own.
 
-- bedrooms, bathrooms, clean type and a pets checkbox generate a **room array**
-- the rooms are laid out by **squarified treemap**, which is deterministic, always fills the
-  footprint and never overlaps — which is what makes it read as a plan rather than as boxes
-- each room carries its own **crew-minutes** from the published checklist, and prints them on the
-  plan; a "crew minute" is one minute of the two-person team, the unit the rate is actually billed in
-- a mop-pass sweep crosses the plan and rooms light as it passes
-- **the tally is summed off the very same array the canvas draws**, so what you see and what the
-  number claims cannot disagree — the same discipline as the Perimeter's measured coverage figure
-- the configuration is carried into the quote form's querystring, and `site.js` prefills it there,
-  so a qualified lead is never asked for it twice
-- `prefers-reduced-motion` draws one finished frame; `IntersectionObserver` pauses it off-screen
+- a lot-size range and eight service checkboxes generate a **zone array** — house, driveway,
+  walkway, front/back/side lawn, front/back beds, patio
+- zones are laid out by **squarified treemap** inside the lot footprint, each hatched to its type
+  and labelled with its own square footage
+- ticking a service highlights **exactly** the zones that service touches, and the total is summed
+  from that same array — so the drawing and the number cannot disagree
+- a survey sweep passes down the plan on entry; `prefers-reduced-motion` draws one finished frame
+- the scope travels into the estimate form's querystring, and `site.js` prefills it there
 
-**The canvas is `aria-hidden` and only ever draws.** Every control beside it is a real form element
-— `input[type=range]`, a radio `fieldset`, `input[type=checkbox]` — and the readout is a native
-`<output>`, implicitly `role="status" aria-live="polite"`, debounced 300ms. No parallel keyboard
-implementation exists because none is needed.
+> **It deliberately quotes no price.** Blue Fox publishes no unit pricing — the only published
+> figure is the $250 design fee — so a dollar number here would be inventing a fact about a real
+> company. It measures and scopes instead, turning "I'd like a quote" into a brief. The page says
+> so in as many words.
 
-> **It is labelled an estimate everywhere it appears**, and the page states plainly why it is a
-> range: the crew bills actual time, a kept-up house lands low, and the figure given on the phone is
-> the one that counts. For a real business quoting real money, that caveat is not a footnote.
+**The canvas is `aria-hidden` and only ever draws.** Every control is a real form element and the
+readout is a native `<output>`, debounced 300ms.
 
 #### The sixteen pages
 
-Site 6 breaks the page lock hardest, because these URLs **already rank for the client** and folding
-them into hubs would throw that away. The set mirrors the live IA exactly:
-`index` · `cleaning-services` · `basic-clean` · `deep-clean` · `move-in-out-clean` ·
-`products-we-use` · `service-area` · four `cleaning-service-<city>` pages · `about` · `careers` ·
+`index` · `landscape-design-construction` · `sod-installation` · `paver-installation` ·
+`irrigation` · `tree-removal` · `lighting-installation` · `power-washing-services` ·
+`soft-washing-services` · `roof-cleaning` · `service-area` · `gallery` · `financing` ·
 `free-quote` · `thank-you` · `contact`.
 
-The four city pages are the biggest content win. The live versions are near-identical boilerplate
-with the town name swapped; here each carries **a local hook that is true of that town and false of
-the other three** — Cave Creek is a dust problem, Anthem a calendar problem, Carefree an
-empty-months problem, North Scottsdale a square-footage problem — plus real neighbourhood names and
-the actual ZIPs.
+Drainage, house wash, soft-wash gutters and the three power-washing sub-pages fold into their hubs
+as **H2 sections carrying their own `Service` schema** — the same pattern Sites 1–3 use for
+cabinets and countertops, so they still rank without three near-empty pages.
+
+**Photography is the company's own where it exists.** Eight real project photographs were pulled
+from the live site — including a genuine before/after driveway pair that drives the homepage
+slider. The gallery captions those eight "Blue Fox project" and leaves the representative stock
+uncaptioned, because a portfolio page that implies someone else's yard is yours is the one thing it
+must never do.
+
+> ⚠ **Known: the built homepage is 5.3 MB and the gallery 4.1 MB**, over the 2.2–3.1 MB the other
+> homepages hit. Cause is volume, not quality — twenty photographs including a full-width
+> before/after pair, with no video to blame. If GHL paste size becomes the binding constraint,
+> drop the homepage gallery teaser to two tiles and the `.ba` role to 1200px.
 
 
 ---
@@ -515,7 +509,7 @@ the actual ZIPs.
 ├── site-3-obsidian/                ← same 7 pages, own CSS/JS + chamber.js
 ├── site-4-vantage/                 ← same 7 pages, own CSS/JS + perimeter.js
 ├── site-5-sapphire/                ← 9 pages, own CSS/JS + smile-studio.js
-├── site-6-bluefox/                 ← 16 pages, own CSS/JS + walkthrough.js
+├── site-6-bluefox/                 ← 16 pages, own CSS/JS + property-plan.js
 └── dist/                           ← BUILT: what you paste into GoHighLevel
     └── site-*/ *.html              (CSS + JS + all images inlined, zero external files)
 ```
@@ -555,7 +549,7 @@ carrying an inlined hero video.
   ≤40KB for Site 3 (currently ~39KB across `site.js` + `chamber.js` + `kitchen3d.js`);
   ≤30KB for Site 4 (currently ~27KB across `site.js` + `perimeter.js`);
   ≤36KB for Site 5 (currently ~27KB across `site.js` + `smile-studio.js`);
-  ≤30KB for Site 6 (currently ~25KB across `site.js` + `walkthrough.js`).
+  ≤30KB for Site 6 (currently ~25KB across `site.js` + `property-plan.js`).
   The ceiling moved from 35KB to 40KB to pay for the lighting/material upgrade in
   `kitchen3d.js` — that was a deliberate trade, not drift.
 - Do not hand-edit `dist/`.
@@ -689,7 +683,7 @@ site via `preconnect` + `display=swap`; all below-fold media lazy; animations re
 6. Root `index.html` launcher — six cards, one line of positioning each.
 7. **Site 4 — Vantage.** Same page set in a different industry, plus `perimeter.js`.
 8. **Site 5 — Sapphire.** A real practice redesigned from its own content, plus `smile-studio.js`.
-9. **Site 6 — Blue Fox.** A real cleaning company redesigned from its own content, plus `walkthrough.js`.
+9. **Site 6 — Blue Fox.** A real landscaping company redesigned from its own content, plus `property-plan.js`.
 
 ---
 

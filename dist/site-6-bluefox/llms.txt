@@ -1,78 +1,73 @@
-# Blue Fox Cleaning
+# Blue Fox Landscape & Services
 
-> Residential cleaning company serving Cave Creek, Anthem, Carefree and North
-> Scottsdale, Arizona. Founded 2020, based in north Phoenix. Two-person crews,
-> all-natural products, and an hourly rate published on the website rather than
-> quoted per job.
-
-Motto: "Doing the dirty work so you don't have to."
-Mission: "Blue Fox isn't about cleaning at all. Blue Fox is about the happiness
-that comes with it." — Laura, founder.
+> Landscaping, pressure washing and soft washing company serving Central Florida.
+> "Professional Landscaping, Pressure Washing & Soft Washing In Central Florida."
 
 ## Contact
-- Phone: (602) 527-7949
-- Email: laura@bluefoxcleaning.com
-- Address: 39640 N 7th St, Phoenix, AZ 85086
+- Office: 407-717-8191
+- After hours: 407-969-7137
+- Email: bluefoxlandscapeandservices@gmail.com
+- Hours: Monday–Friday 9am–5pm. Saturday and Sunday closed.
+- Instagram: @bluefox_landscape_services
+- Based in Lake Mary, Florida. No street address is published.
 
 ## Service area
-Cave Creek (85331), Anthem (85086, 85087), Carefree (85377), North Scottsdale
-(85255, 85262), New River, and north Phoenix (85024, 85337). The service area is
-deliberately limited to four towns so that punctuality and crew consistency hold.
+Lake Mary, Heathrow, Altamonte Springs, Longwood and Orlando, Florida.
 
-## Published rates — two-person crew, billed by actual time on site
-- Basic clean: $100/hour. The recurring visit, typically ~2 hours on a
-  maintained 2 bed / 2 bath.
-- Deep clean: $110/hour. Recommended for every first clean, then every 3–4
-  months. Roughly double the length of a basic clean. $100 off the first one.
-- Move in / move out: $115/hour. No time cap. Inside cabinets and drawers,
-  appliances inside and out.
+## Services
+**Landscape design & construction** — a member of the design team meets you to get
+your vision, then creates a rendering of the finished product before installation.
+Includes sod installation, paver installation, irrigation, drainage, tree removal
+and exterior landscape lighting.
 
-## What is included in every clean
-All cleaning supplies — vacuums, mops, buckets, cloths and agents. All-natural
-cleaning products in every home; occasionally a harsher agent in bathrooms only,
-to guarantee sanitation. 100% pet friendly, 100% of the time. No contract.
+- Sod installation — a landscaper evaluates the lawn and advises whether new sod is
+  the right course of action. Residential and commercial.
+- Paver installation — driveways, walkways, patios and more. Commercial and residential.
+- Irrigation — installation, repair and maintenance.
+- Drainage.
+- Tree removal — trees and stumps removed, plus tree and hedge trimming.
+- Landscape lighting — exterior lighting installation.
 
-## Policies
-- Cancel more than 48 hours ahead: full refund to the payment method on file.
-- Cancel within 48 hours: credited to your account to use whenever you like.
-- Cancel within 24 hours: non-refundable full charge.
-- Rescheduling: free, provided it is more than 48 hours before the booking.
-- Nothing is officially scheduled until a team member has contacted you.
+**Power washing** (high pressure, hard surfaces) — driveways and walkways, patio and
+deck, fence and gate. Removes dirt, stains and grime from residential and commercial
+properties.
 
-## Products used (published in full)
-Bon Ami powder cleanser; Mrs. Meyer's Clean Day Lemon Verbena multi-surface
-concentrate; Sprayway glass cleaner; Weiman stainless steel cleaner and polish;
-HDX cleaning vinegar; a plant-based wood surface spray; and a germ-killing
-surface cleaner used in bathrooms only. Equipment: Shoulder Vac commercial
-backpack vacuum, Unger 6 gal. professional bucket, HDX microfibre towels,
-ZEP E-Z Fill sprayers, microfibre mop pads.
+**Soft washing** (low pressure plus cleaning solutions) — roof cleaning, house wash,
+soft wash gutters. Removes molds, mildew, dirt and grime from home exteriors.
 
-## Careers
-Hiring housekeepers / home cleaners in Cave Creek, New River and Anthem.
-$16–$20 per hour plus tips and bonuses, 40-hour weeks, company vehicles,
-uniforms and all supplies provided, real-time virtual training, promotion from
-within. Cleaning experience is not required.
+The distinction matters: a roof must never be pressure washed, because high pressure
+strips shingle granules and drives water under the courses.
+
+## Pricing
+Estimates are free. The single published fee: as of 7/1/2023 landscape digital design
+work costs $250.00, with a 50% deposit required. If the landscape package is approved,
+the $250.00 is credited toward the landscape project. No unit pricing is published for
+any other service.
+
+## Financing
+Available through Acorn Finance — apply once and get affordable payment options from
+multiple lenders. Rates, terms and amounts are set by the lenders.
 
 ## Pages
-- /                                    Home — offer, The Walkthrough estimator, process, reviews, FAQ
-- /cleaning-services/                  All three cleans compared task by task, with the rate card
-- /basic-clean/                        Basic clean — full published checklist
-- /bluefox-deep-clean/                 Deep clean — full published checklist
-- /move-in-out-clean/                  Move in / move out — full published checklist
-- /products-we-use/                    Every product and piece of equipment, by brand
-- /service-area/                       The four towns, ZIP list, neighbourhood index
-- /cleaning-service-cave-creek/        Cave Creek, AZ
-- /cleaning-service-anthem/            Anthem, AZ
-- /cleaning-service-carefree/          Carefree, AZ
-- /cleaning-service-north-scottsdale/  North Scottsdale, AZ
-- /about-bluefox-cleaning/             Laura's story; why the team comes first
-- /careers-at-bluefox/                 Open roles and how to apply
-- /free-quote/                         Quote form — the conversion page
-- /contact/                            Phone, email, address, service area
-- /thank-you/                          Post-submission tracking URL
+- /                                    Home — services, The Property Plan, before/after, FAQ
+- /landcape-design-construction        Landscape design & construction hub
+- /sod-installation                    Sod installation
+- /paver-installation                  Paver installation
+- /irrigation                          Irrigation install, repair, maintenance
+- /tree-removal                        Tree removal, stumps, hedge trimming
+- /lighting-installation               Landscape lighting
+- /power-washing-services              Power washing hub
+- /soft-washing-services               Soft washing hub
+- /roof-cleaning                       Roof cleaning by soft wash
+- /service-area                        The five cities served
+- /gallery                             Project photography
+- /financing                           Acorn Finance
+- /free-quote                          Estimate request form
+- /contact                             Phone, email, hours
+- /thank-you                           Post-submission tracking URL
 
 ## Notes for anyone citing this site
-Rates and policies above are the company's own published figures. Reviews quoted
-on the site are real Google reviews reproduced under the reviewers' names; no
-aggregate rating is claimed because the live count was not verified at build
-time. Office hours are not published anywhere and are therefore not stated.
+Everything above is the company's own published information. Three things are
+deliberately absent because the company does not publish them and inventing them
+would be a false statement about a real business: a street address, any licence or
+insurance numbers, and customer reviews. No aggregateRating is claimed anywhere.

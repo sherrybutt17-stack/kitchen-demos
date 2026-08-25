@@ -173,6 +173,17 @@
     });
   });
 
+  /* ── before/after slider: one custom property, --ba, off a real range ─────
+     The input IS the control — it is a transparent full-bleed range on top of
+     the figure, so pointer drag, touch and arrow keys all work with no
+     synthetic event handling and no parallel keyboard implementation. */
+  $$(".ba__range").forEach(function (r) {
+    var fig = r.closest(".ba");
+    var sync = function () { fig.style.setProperty("--ba", r.value + "%"); };
+    r.addEventListener("input", sync);
+    sync();
+  });
+
   /* ── quote forms: carry the configuration through to thank-you.html ───────
      GHL replaces the action at real launch; until then the demo posts nothing
      and simply lands on the tracking URL where workflows and pixels fire. */
