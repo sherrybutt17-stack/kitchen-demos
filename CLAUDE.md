@@ -24,7 +24,7 @@ Static HTML/CSS/JS you can open in a browser and show a client — structured so
 | Question | Decision |
 |---|---|
 | Deliverable | Coded demos only — no separate markdown strategy docs |
-| Scope | **7 pages per site for Sites 1–4; 9 for Site 5; 16 for Site 6 = 53 pages total**, all at full fidelity |
+| Scope | **7 pages per site for Sites 1–4; 9 for Site 5; 39 files for Site 6 (34 pages + 4 alternate routes + thank-you) = 76 files**, all at full fidelity |
 | Media | Photography throughout + hero video loops + click-to-load testimonial video |
 | Website 3 "3D" | **Real WebGL** (`kitchen3d.js`, raw — no Three.js) **plus** the scroll-driven Chamber. Both, not either. |
 | Brands | Sites 1–4 fictional, each anchored to a real affluent metro. **Sites 5 and 6 are real businesses.** |
@@ -381,6 +381,12 @@ practice. Order: `index` · `services` · `smile-gallery` · `sedation-dentistry
 business**, so the service list, the five-city service area, both phone numbers, the hours, the
 Acorn Finance partnership and the $250 digital-design fee (50% deposit, credited back if the
 package is approved) are all **real and taken from the company's own published material.**
+The October 2026 redesign (the client's *Blue Fox Website Redesign Report*) added three washing
+services the live site does not list — **exterior window washing, interior window washing and solar
+panel cleaning** — and four **extended-area towns** (Winter Park, Winter Garden, Windermere, Ocoee).
+All seven were **confirmed by the client**, and each page carries an HTML comment saying so. The
+service pages state scope only — no method, equipment, price or result claims — and the four towns
+promise *availability confirmation per address*, never coverage.
 
 **The palette is measured off the company's own logo files.** `#145282` is 73–78% of the opaque
 pixels in every version of the mark and `#D3E1F0` is the other 17–22% — there is no third colour
@@ -390,15 +396,23 @@ the one accent, and this build treats it exactly that way. Unlike the previous o
 directory, the site's own CSS shipped no usable theme tokens at all, so the logo was the only
 source of truth available.
 
-> **The same rule that binds Site 5 binds this one.** Nothing may be invented. Three things the
-> company does not publish are therefore **absent rather than filled in**, each flagged in an HTML
-> comment where it belongs: a **street address** (schema carries `addressLocality` only, and
-> `contact.html` shows a service area rather than a pin), any **licence or insurance numbers**, and
-> **customer reviews** — there is no testimonial section and **no `aggregateRating` anywhere**. The
-> homepage carries an explicit commented-out Proof section saying so, rather than a block of
-> invented praise. The financing page states **no rates, terms or amounts**, because those are
-> Acorn's to quote and repeating them second-hand would be a consumer-finance representation about
-> a third party.
+> **The same rule that binds Site 5 binds this one.** Nothing may be invented. Two things the
+> company does not publish are **absent rather than filled in**, each flagged in an HTML comment:
+> a **street address** (schema carries `addressLocality` only) and any **licence or insurance
+> numbers**. The financing page states **no rates, terms or amounts**, because those are Acorn's to
+> quote. The design fee is shown exactly as published ("as of 7/1/2023") with a
+> `CONFIRM BEFORE LAUNCH` comment beside every instance.
+>
+> **Reviews are real now.** The live site embeds an Elfsight Google-review widget
+> (`ec53b920-a2d4-47a4-bfa7-4cd3497c010b`, Google place `ChIJ2ew02570xGURCXi63r12k7U`). An earlier
+> build missed it and concluded the company had no reviews. The redesign quotes those reviews
+> **verbatim** — an excerpt is a leading run of whole sentences ending in "…", never an edit — and
+> links each card to its own Google URL. The Erika Dollar excerpt the report asks for on service
+> pages is her genuine 5★ review of 29 Feb 2024. The live widget itself loads on `reviews.html`
+> (lazy, on approach), and its rendered header fills every `[data-rating]` slot with the live rating
+> and count. **Still no `aggregateRating`**: self-served LocalBusiness review stars are not shown by
+> Google, and the total is not something a static page can pin. Never type a rating or count into
+> the markup.
 
 **Positioning:** One company for the build *and* the upkeep. Most landscapers cannot wash and most
 washing companies cannot plant, so a landscape gets installed and then quietly ages five years in
@@ -442,6 +456,10 @@ near-black.
 
 #### The Property Plan — a lot that measures itself (`assets/js/property-plan.js`)
 
+> **Moved to `estimator.html` in the redesign.** It is a direct-link tool the team shares with
+> prospects: absent from the homepage, the nav and the footer, so the public enquiry flow stays
+> short. `property-plan.js` loads on that page only.
+
 Site 6's answer to Obsidian's WebGL room, Vantage's Perimeter and Sapphire's Smile Studio. ~13KB,
 raw 2D canvas, no library, DPR-aware, `ResizeObserver`.
 
@@ -465,27 +483,60 @@ wait for a truck to find out what you own.
 **The canvas is `aria-hidden` and only ever draws.** Every control is a real form element and the
 readout is a native `<output>`, debounced 300ms.
 
-#### The sixteen pages
+#### The thirty-nine files
 
-`index` · `landscape-design-construction` · `sod-installation` · `paver-installation` ·
-`irrigation` · `tree-removal` · `lighting-installation` · `power-washing-services` ·
-`soft-washing-services` · `roof-cleaning` · `service-area` · `gallery` · `financing` ·
-`free-quote` · `thank-you` · `contact`.
+**34 distinct pages + 4 compatibility routes + `thank-you.html`.** The report counts 38 routes;
+`thank-you.html` is the tracking URL on top of those.
 
-Drainage, house wash, soft-wash gutters and the three power-washing sub-pages fold into their hubs
-as **H2 sections carrying their own `Service` schema** — the same pattern Sites 1–3 use for
-cabinets and countertops, so they still rank without three near-empty pages.
+- **Home + 2 overviews:** `index` · `landscaping` · `washing`
+- **7 landscaping:** `landscape-design-construction` · `sod-installation` · `paver-installation` ·
+  `irrigation` · `tree-removal` (Tree & hedge work) · `lighting-installation` · `drainage`
+- **7 washing:** `exterior-window-washing` · `interior-window-washing` · `power-washing-services` ·
+  `house-wash` · `soft-wash-gutters` (Gutter cleaning) · `solar-panel-cleaning` · `roof-cleaning` (Roof washing)
+- **9 communities:** `lake-mary` · `heathrow` · `altamonte-springs` · `longwood` · `orlando`
+  (established) · `winter-park` · `winter-garden` · `windermere` · `ocoee` (confirm availability)
+- **Supporting:** `gallery` · `service-area` · `financing` · `contact` · `reviews` · `free-quote` ·
+  `estimator` · `soft-washing-services` (explained as a method, not a service)
+- **Compatibility routes** (meta-refresh + canonical, `noindex`; become 301s at launch):
+  `tree-hedge-work` · `landscape-lighting` · `power-washing` · `roof-washing`
 
-**Photography is the company's own where it exists.** Eight real project photographs were pulled
-from the live site — including a genuine before/after driveway pair that drives the homepage
-slider. The gallery captions those eight "Blue Fox project" and leaves the representative stock
-uncaptioned, because a portfolio page that implies someone else's yard is yours is the one thing it
-must never do.
+Slugs match the live site's own URLs wherever one exists (`house-wash`, `soft-wash-gutters`,
+`drainage`, the five city slugs), so production redirects are only needed for the four
+alternates. The power-washing sub-services keep their live anchors (`#power-washing-driveways`
+etc.) as H2 panels with their own `Service` schema.
 
-> ⚠ **Known: the built homepage is 5.3 MB and the gallery 4.1 MB**, over the 2.2–3.1 MB the other
-> homepages hit. Cause is volume, not quality — twenty photographs including a full-width
-> before/after pair, with no video to blame. If GHL paste size becomes the binding constraint,
-> drop the homepage gallery teaser to two tiles and the `.ba` role to 1200px.
+**Every page is `noindex`** — the redesign is a review version and has not replaced the live site.
+Remove the robots tag at launch.
+
+**Shared chrome:** a floating glass navbar, clear over photography and frosted past 40px or while a
+menu is open. Landscaping and Washing are dropdowns whose label links to the overview, with a
+separate chevron `<button>` owning `aria-expanded`. On phones, native `<details>` groups. Below-fold
+quote CTAs (`[data-quote="svc"]`) open one shared `<dialog id="qm">` with the service preselected;
+each is a real link to `free-quote.html?service=…`, so it still works without script.
+
+**The quote form is one component** (`qform()` in the generator, `.qform` in CSS): name, email,
+phone and service required; ZIP optional; **no street address**; SMS consent optional and never
+pre-checked. It validates inline, says plainly that it is a preview and sends nothing, then lands
+on `thank-you.html?preview=1`. A `LAUNCH:` comment on every form says what GHL replaces.
+
+**Photography is the company's own wherever a claim is made.** The pool grew from 8 to 28 real
+photographs, pulled from the live site's own CDN (credits in `CREDITS.json`). Only those carry a
+"Blue Fox project" caption, and the gallery shows **only** those. The window, solar, gutter and roof
+pages use uncaptioned general home exteriors with alt text saying what they show.
+
+> **The old homepage before/after was not a pair.** `bx-wash-before` is a walkway mid-wash with a
+> hose on it; `bx-wash-after` is a driveway at a garage — different places, overlaid as "the same
+> driveway, forty minutes apart". The slider now uses the company's genuine **Longwood paver
+> cleaning** pair (`bx-pv-before` / `bx-pv-after`, same house number in both). The before frame was
+> cropped (scale 0.83, edge-correlation search on the house and garage) to register with the after.
+> The Viburnum hedge pair could not be registered, so it is shown as two side-by-side stills.
+
+> ⚠ **Known: built `index.html` is 5.6 MB and `gallery.html` 8.5 MB** (23 tiles plus both pairs).
+> If GHL paste size binds, cut the gallery mosaic first; every tile is a card-role 1100px image.
+
+**Pages are generated, then edited as plain HTML.** A one-off generator in the session scratchpad
+wrote all 39 files from shared chrome and content data. It is not part of the toolchain. Edit the
+HTML directly. A nav or footer change touches every file, exactly as it does on the other sites.
 
 
 ---
@@ -509,7 +560,7 @@ must never do.
 ├── site-3-obsidian/                ← same 7 pages, own CSS/JS + chamber.js
 ├── site-4-vantage/                 ← same 7 pages, own CSS/JS + perimeter.js
 ├── site-5-sapphire/                ← 9 pages, own CSS/JS + smile-studio.js
-├── site-6-bluefox/                 ← 16 pages, own CSS/JS + property-plan.js
+├── site-6-bluefox/                 ← 39 files (34 pages + 4 alternates + thank-you), own CSS/JS + property-plan.js
 └── dist/                           ← BUILT: what you paste into GoHighLevel
     └── site-*/ *.html              (CSS + JS + all images inlined, zero external files)
 ```
@@ -549,7 +600,10 @@ carrying an inlined hero video.
   ≤40KB for Site 3 (currently ~39KB across `site.js` + `chamber.js` + `kitchen3d.js`);
   ≤30KB for Site 4 (currently ~27KB across `site.js` + `perimeter.js`);
   ≤36KB for Site 5 (currently ~27KB across `site.js` + `smile-studio.js`);
-  ≤30KB for Site 6 (currently ~25KB across `site.js` + `property-plan.js`).
+  ≤36KB for Site 6 (currently ~34KB across `site.js` + `property-plan.js` — but `property-plan.js`
+  now loads only on `estimator.html`, so every other page ships `site.js` alone, ~20KB).
+  The ceiling moved from 30KB to pay for the redesign's dropdowns, quote popup, validation,
+  carousel, gallery lightbox and review-feed loader — a deliberate trade.
   The ceiling moved from 35KB to 40KB to pay for the lighting/material upgrade in
   `kitchen3d.js` — that was a deliberate trade, not drift.
 - Do not hand-edit `dist/`.
@@ -707,7 +761,7 @@ python3 -m http.server 8080
   immediately, no scroll-jacking; hero videos show posters only.
 - **Keyboard:** Tab each homepage start to finish — skip link fires first, focus ring always
   visible, accordions / sliders / video facades operable, no focus trap.
-- **Links:** every nav and footer link on all six sites resolves; all 53 pages, no 404s.
+- **Links:** every nav and footer link on all six sites resolves; all 76 files, no 404s.
 - **Funnel:** each site's CTAs reach `free-consultation.html`; submitting lands on `thank-you.html`.
 
 ---

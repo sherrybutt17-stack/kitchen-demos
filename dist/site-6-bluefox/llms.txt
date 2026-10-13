@@ -12,31 +12,35 @@
 - Based in Lake Mary, Florida. No street address is published.
 
 ## Service area
-Lake Mary, Heathrow, Altamonte Springs, Longwood and Orlando, Florida.
+Established: Lake Mary, Heathrow, Altamonte Springs, Longwood and Orlando, Florida.
+Extended, availability confirmed per address before booking: Winter Park, Winter
+Garden, Windermere and Ocoee.
 
-## Services
-**Landscape design & construction** — a member of the design team meets you to get
-your vision, then creates a rendering of the finished product before installation.
-Includes sod installation, paver installation, irrigation, drainage, tree removal
-and exterior landscape lighting.
-
+## Landscaping services
+- Landscape design & construction — a member of the design team meets you to get
+  your vision, then creates a rendering of the finished product before installation.
 - Sod installation — a landscaper evaluates the lawn and advises whether new sod is
   the right course of action. Residential and commercial.
 - Paver installation — driveways, walkways, patios and more. Commercial and residential.
 - Irrigation — installation, repair and maintenance.
-- Drainage.
-- Tree removal — trees and stumps removed, plus tree and hedge trimming.
+- Tree & hedge work — trees and stumps removed, plus tree and hedge trimming.
 - Landscape lighting — exterior lighting installation.
+- Drainage — systems that direct rain and irrigation runoff away from the property,
+  after a free evaluation.
 
-**Power washing** (high pressure, hard surfaces) — driveways and walkways, patio and
-deck, fence and gate. Removes dirt, stains and grime from residential and commercial
-properties.
+## Washing services
+- Exterior window washing — outside glass, frames and sills.
+- Interior window washing — inside glass and sills.
+- Power washing (high pressure, hard surfaces) — driveways and walkways, patio and
+  deck, fence and gate.
+- House washing (soft wash) — siding, soffits, eaves and trim.
+- Gutter cleaning (soft wash) — build-up of leaves, mold, dirt and grime removed.
+- Solar panel cleaning — pollen, dust and droppings removed from the panels.
+- Roof washing (soft wash only) — a roof must never be pressure washed, because high
+  pressure strips shingle granules and drives water under the courses.
 
-**Soft washing** (low pressure plus cleaning solutions) — roof cleaning, house wash,
-soft wash gutters. Removes molds, mildew, dirt and grime from home exteriors.
-
-The distinction matters: a roof must never be pressure washed, because high pressure
-strips shingle granules and drives water under the courses.
+Soft washing is a method — low pressure plus cleaning solutions — not a separate
+service; it is how houses, gutters and roofs are cleaned.
 
 ## Pricing
 Estimates are free. The single published fee: as of 7/1/2023 landscape digital design
@@ -45,29 +49,43 @@ the $250.00 is credited toward the landscape project. No unit pricing is publish
 any other service.
 
 ## Financing
-Available through Acorn Finance — apply once and get affordable payment options from
-multiple lenders. Rates, terms and amounts are set by the lenders.
+Available through Acorn Finance — apply once and get payment options from multiple
+lenders. Rates, terms and amounts are set by the lenders.
+
+## Reviews
+Customer reviews are the company's real Google reviews (Google place
+ChIJ2ew02570xGURCXi63r12k7U), quoted verbatim on this site and linked to each
+original. The rating and total count are shown live from Google, not restated here.
 
 ## Pages
-- /                                    Home — services, The Property Plan, before/after, FAQ
-- /landcape-design-construction        Landscape design & construction hub
+- /                                    Home — quote form, project gallery, services, before/after, reviews, FAQ
+- /landscaping                         Landscaping overview
+- /landcape-design-construction        Landscape design & construction
 - /sod-installation                    Sod installation
 - /paver-installation                  Paver installation
 - /irrigation                          Irrigation install, repair, maintenance
-- /tree-removal                        Tree removal, stumps, hedge trimming
+- /tree-removal                        Tree & hedge work
 - /lighting-installation               Landscape lighting
-- /power-washing-services              Power washing hub
-- /soft-washing-services               Soft washing hub
-- /roof-cleaning                       Roof cleaning by soft wash
-- /service-area                        The five cities served
+- /drainage                            Drainage
+- /washing                             Washing overview
+- /exterior-window-washing             Exterior window washing
+- /interior-window-washing             Interior window washing
+- /power-washing-services              Power washing (driveways, patio & deck, fence & gate)
+- /house-wash                          House washing
+- /soft-wash-gutters                   Gutter cleaning
+- /solar-panel-cleaning                Solar panel cleaning
+- /roof-cleaning                       Roof washing
+- /soft-washing-services               How soft washing works
+- /service-area                        Established and extended service area
+- /lake-mary /heathrow /altamonte-springs /longwood /orlando   Community pages
+- /winter-park /winter-garden /windermere /ocoee               Community pages (availability confirmed per address)
 - /gallery                             Project photography
+- /reviews                             Google reviews
 - /financing                           Acorn Finance
-- /free-quote                          Estimate request form
+- /free-quote                          Quote request form
 - /contact                             Phone, email, hours
-- /thank-you                           Post-submission tracking URL
 
 ## Notes for anyone citing this site
-Everything above is the company's own published information. Three things are
-deliberately absent because the company does not publish them and inventing them
-would be a false statement about a real business: a street address, any licence or
-insurance numbers, and customer reviews. No aggregateRating is claimed anywhere.
+Everything above is the company's own published information or was confirmed by the
+company. Two things are deliberately absent because they are not published: a street
+address, and any licence or insurance numbers.

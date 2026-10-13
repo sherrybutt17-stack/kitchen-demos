@@ -838,5 +838,87 @@
   "v-wood-slot": {
     "credit": "Pexels licence (free to use, no attribution required)",
     "src": "https://images.pexels.com/photos/34549311/pexels-photo-34549311.jpeg?auto=compress&cs=tinysrgb&w=2400"
+  },
+  "bx-pv-before": {
+    "credit": "Blue Fox Landscape & Services \u2014 the company's own project photography",
+    "src": "https://irp.cdn-website.com/21ec2a1d/dms3rep/multi/Longwood+paver+cleaning+_beforeA_-928d2b54.jpg",
+    "note": "cropped to register with the after frame"
+  },
+  "bx-pv-after": {
+    "credit": "Blue Fox Landscape & Services \u2014 the company's own project photography",
+    "src": "https://irp.cdn-website.com/21ec2a1d/dms3rep/multi/Longwood+paver+cleaning+_after_-69ad7b7e.jpg",
+    "note": "scaled to the registered frame"
+  },
+  "bx-hedge-before": {
+    "credit": "Blue Fox Landscape & Services \u2014 the company's own project photography",
+    "src": "https://irp.cdn-website.com/21ec2a1d/dms3rep/multi/Viburnum+hedge+install+before.jpeg"
+  },
+  "bx-hedge-after": {
+    "credit": "Blue Fox Landscape & Services \u2014 the company's own project photography",
+    "src": "https://irp.cdn-website.com/21ec2a1d/dms3rep/multi/Viburnum+hedge+install+after+B.jpeg"
+  },
+  "bx-curve-estate": {
+    "credit": "Blue Fox Landscape & Services \u2014 the company's own project photography",
+    "src": "https://irp.cdn-website.com/21ec2a1d/dms3rep/multi/blue-fox19.jpg"
+  },
+  "bx-curve-path": {
+    "credit": "Blue Fox Landscape & Services \u2014 the company's own project photography",
+    "src": "https://irp.cdn-website.com/21ec2a1d/dms3rep/multi/blue-fox20.jpg"
+  },
+  "bx-side-path": {
+    "credit": "Blue Fox Landscape & Services \u2014 the company's own project photography",
+    "src": "https://irp.cdn-website.com/21ec2a1d/dms3rep/multi/blue-fox31.jpg"
+  },
+  "bx-shrub-bed": {
+    "credit": "Blue Fox Landscape & Services \u2014 the company's own project photography",
+    "src": "https://irp.cdn-website.com/21ec2a1d/dms3rep/multi/blue-fox35.jpg"
+  },
+  "bx-lawn-curve": {
+    "credit": "Blue Fox Landscape & Services \u2014 the company's own project photography",
+    "src": "https://irp.cdn-website.com/21ec2a1d/dms3rep/multi/blue-fox43.jpg"
+  },
+  "bx-oak-lawn": {
+    "credit": "Blue Fox Landscape & Services \u2014 the company's own project photography",
+    "src": "https://irp.cdn-website.com/21ec2a1d/dms3rep/multi/blue-fox59.jpg"
+  },
+  "bx-drive-concrete": {
+    "credit": "Blue Fox Landscape & Services \u2014 the company's own project photography",
+    "src": "https://irp.cdn-website.com/21ec2a1d/dms3rep/multi/blue-fox74.jpg"
+  },
+  "bx-paver-sealed": {
+    "credit": "Blue Fox Landscape & Services \u2014 the company's own project photography",
+    "src": "https://irp.cdn-website.com/21ec2a1d/dms3rep/multi/blue-fox77.jpg"
+  },
+  "bx-paver-drive": {
+    "credit": "Blue Fox Landscape & Services \u2014 the company's own project photography",
+    "src": "https://irp.cdn-website.com/21ec2a1d/dms3rep/multi/blue-fox78.jpg"
+  },
+  "bx-crew-planting": {
+    "credit": "Blue Fox Landscape & Services \u2014 the company's own project photography",
+    "src": "https://irp.cdn-website.com/21ec2a1d/dms3rep/multi/blue-fox83.jpg"
+  },
+  "bx-hedge-front": {
+    "credit": "Blue Fox Landscape & Services \u2014 the company's own project photography",
+    "src": "https://irp.cdn-website.com/21ec2a1d/dms3rep/multi/blue-fox86.jpg"
+  },
+  "bx-hedge-gate": {
+    "credit": "Blue Fox Landscape & Services \u2014 the company's own project photography",
+    "src": "https://irp.cdn-website.com/21ec2a1d/dms3rep/multi/blue-fox9.jpg"
+  },
+  "bx-commercial-bed": {
+    "credit": "Blue Fox Landscape & Services \u2014 the company's own project photography",
+    "src": "https://irp.cdn-website.com/21ec2a1d/dms3rep/multi/blue-fox93.jpg"
+  },
+  "bx-commercial-entry": {
+    "credit": "Blue Fox Landscape & Services \u2014 the company's own project photography",
+    "src": "https://irp.cdn-website.com/21ec2a1d/dms3rep/multi/blue-fox97.jpg"
+  },
+  "bx-palm-install": {
+    "credit": "Blue Fox Landscape & Services \u2014 the company's own project photography",
+    "src": "https://irp.cdn-website.com/21ec2a1d/dms3rep/multi/Sylvester+Palm+install+Apopka.jpeg"
+  },
+  "bx-backyard-pavers": {
+    "credit": "Blue Fox Landscape & Services \u2014 the company's own project photography",
+    "src": "https://irp.cdn-website.com/21ec2a1d/dms3rep/multi/Blue-Fox-Landscape-Services-65.jpeg"
   }
 }
