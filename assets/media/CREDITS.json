@@ -920,5 +920,10 @@
   "bx-backyard-pavers": {
     "credit": "Blue Fox Landscape & Services \u2014 the company's own project photography",
     "src": "https://irp.cdn-website.com/21ec2a1d/dms3rep/multi/Blue-Fox-Landscape-Services-65.jpeg"
+  },
+  "bx-hero-home": {
+    "credit": "Pexels licence (free to use, no attribution required)",
+    "src": "https://www.pexels.com/photo/12558900/",
+    "note": "Blue Fox homepage hero, stand-in for the client-requested iStock 155133397 (paid licence). Not a Blue Fox job, so it carries no project caption."
   }
 }

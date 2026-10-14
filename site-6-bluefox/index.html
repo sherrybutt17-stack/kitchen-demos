@@ -271,11 +271,12 @@
      IMAGE_MANIFEST — every slot marked REAL is the company's own photograph,
      from bluefoxlandscapeandservices.com. Stock images never carry a
      "Blue Fox project" caption anywhere on the site.
-     bx-design-lake      HERO   16:9   REAL — paver walkway, new beds, lakefront
+     bx-hero-home        HERO   16:10  STOCK (Pexels 12558900) — tile-roof home, palms, flower beds,
+                                     curved paver drive. Stand-in for the client's chosen iStock
+                                     155133397, which is a paid licence ($7 / 3 credits). Once bought,
+                                     encode it to the same bx-hero-home-* ladder and nothing else changes.
+                                     Not a Blue Fox job, so it carries no project caption.
      carousel x8         slide  16:8.6 REAL — see CAROUSEL in each slide caption
-     bx-path-bed         tile   —      REAL — shortcut: landscaping
-     bx-paver-drive      tile   —      REAL — shortcut: exterior care
-     bx-crew-planting    tile   —      REAL — shortcut: customer stories
      bx-oak-lawn         dir    16:9   REAL — landscaping directory
      bx-drive-concrete   dir    16:9   REAL — washing directory
      bx-pv-before/after  b/a    4:3    REAL — Longwood paver cleaning, before frame registered to the after
@@ -355,44 +356,128 @@
 </div>
 
 <main id="main">
-<!-- GHL SECTION 01 · Hero | full-width | photographic LCP (company's own photo) + restrained overlay -->
+<!-- GHL SECTION 01 · Hero | full-width | photographic LCP, untinted. Only a neutral (no-hue)
+     shade sits behind the type so white text holds AA over a bright sky and lawn. -->
 <section class="hero">
-  <div class="hero__media"><img src="../assets/media/img/bx-design-lake-1600.webp" srcset="../assets/media/img/bx-design-lake-800.webp 800w, ../assets/media/img/bx-design-lake-1600.webp 1600w, ../assets/media/img/bx-design-lake-2400.webp 1920w" sizes="100vw" alt="A curved paver walkway through fresh planting beds running down to a lakefront" width="1920" height="1086" fetchpriority="high" decoding="async"></div>
-  <div class="hero__scrim"></div>
+  <div class="hero__media"><img src="../assets/media/img/bx-hero-home-1600.webp" srcset="../assets/media/img/bx-hero-home-800.webp 800w, ../assets/media/img/bx-hero-home-1600.webp 1600w, ../assets/media/img/bx-hero-home-2400.webp 2400w" sizes="100vw" alt="A Mediterranean-style Florida home behind royal palms, clipped hedges, flowering beds and a curved paver driveway" width="2400" height="1511" fetchpriority="high" decoding="async"></div>
+  <div class="hero__shade" aria-hidden="true"></div>
   <div class="shell hero__in">
-    <p class="eyebrow rv">Lake Mary · Heathrow · Altamonte Springs · Longwood · Orlando</p>
-    <h1 class="d1 rv" style="--d:.08s">Professional landscaping, pressure washing &amp; <b>soft washing</b> in Central Florida.</h1>
-    <p class="hero__lede mt-m rv" style="--d:.16s">We design and install the landscape — then keep the whole property looking the way it did the week we finished it. One company for the build and for the upkeep.</p>
-    <div class="hero__acts mt-l rv" style="--d:.24s">
+    <h1 class="d1 rv">Central Florida landscaping, <b>designed and kept beautiful.</b></h1>
+    <p class="hero__lede rv" style="--d:.1s">Design, installation and the washing that keeps it new — one company for all of it.</p>
+    <div class="hero__acts rv" style="--d:.18s">
       <a class="btn btn--accent magnet" href="#quote"><span>Get a free quote</span><svg class="btn__ar" width="15" height="12" viewBox="0 0 15 12" fill="none" aria-hidden="true"><path d="M9 1l5 5-5 5M14 6H0" stroke="currentColor" stroke-width="1.8"/></svg></a>
-      <a class="btn btn--ghost" href="#work" style="--fg:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)"><span>See our work</span></a>
+      <a class="btn btn--ghost" href="#work" style="--fg:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.7)"><span>See our work</span></a>
     </div>
-    <a class="hero__rev glass rv" style="--d:.3s" href="reviews.html"><span class="stars" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg></span><span data-rating>Read our Google reviews</span><span aria-hidden="true">→</span></a>
   </div>
-  <p class="hero__cap glass"><b>Blue Fox project</b>A curved paver walkway and new planting beds on a lakefront lot.</p>
 </section>
 
-<!-- GHL SECTION 02 · Short quote form | lifted onto the hero | 5 fields in a row → 1-col @720 -->
-<section class="qband" id="quote">
+<!-- GHL SECTION 02 · Service directory | landscaping and washing side by side → 1-col @860 -->
+<section class="section section--mist">
+  <div class="shell">
+    <div class="shead">
+      <div><p class="eyebrow rv">What we do</p>
+      <h2 class="d2 rv" style="--d:.06s">Both halves of a property, under one company.</h2></div>
+      <p class="lede rv" style="--d:.12s">Most landscapers do not wash, and most washing companies cannot plant. Blue Fox does both — so nobody gets to blame the other.</p>
+    </div>
+    <div class="dir" data-stagger=".1">
+      <div class="dir__col rv">
+        <div class="dir__m"><img src="../assets/media/img/bx-oak-lawn-1600.webp" srcset="../assets/media/img/bx-oak-lawn-800.webp 800w, ../assets/media/img/bx-oak-lawn-1600.webp 1600w, ../assets/media/img/bx-oak-lawn-2400.webp 1920w" sizes="(max-width:860px) 92vw, 46vw" alt="A front lawn and planting beds beneath a large live oak" width="1920" height="1440" loading="lazy" decoding="async"></div>
+        <div class="dir__b">
+          <p class="eyebrow" style="margin-bottom:.6rem">Design · build</p>
+          <h3 class="d3">Landscaping</h3>
+          <p>Meet the design team, see a rendering of the finished property, then one crew builds it.</p>
+          <ol class="dir__list"><li><a href="landscape-design-construction.html">Landscape design & construction</a></li><li><a href="sod-installation.html">Sod installation</a></li><li><a href="paver-installation.html">Paver installation</a></li><li><a href="irrigation.html">Irrigation</a></li><li><a href="tree-removal.html">Tree & hedge work</a></li><li><a href="lighting-installation.html">Landscape lighting</a></li><li><a href="drainage.html">Drainage</a></li></ol>
+          <a class="btn btn--ghost" href="landscaping.html"><span>Landscaping overview</span><svg class="btn__ar" width="15" height="12" viewBox="0 0 15 12" fill="none" aria-hidden="true"><path d="M9 1l5 5-5 5M14 6H0" stroke="currentColor" stroke-width="1.8"/></svg></a>
+        </div>
+      </div>
+      <div class="dir__col rv">
+        <div class="dir__m"><img src="../assets/media/img/bx-drive-concrete-1600.webp" srcset="../assets/media/img/bx-drive-concrete-800.webp 800w, ../assets/media/img/bx-drive-concrete-1600.webp 1600w, ../assets/media/img/bx-drive-concrete-2400.webp 1920w" sizes="(max-width:860px) 92vw, 46vw" alt="A clean concrete driveway curving out to the street" width="1920" height="1440" loading="lazy" decoding="async"></div>
+        <div class="dir__b">
+          <p class="eyebrow" style="margin-bottom:.6rem">Clean · maintain</p>
+          <h3 class="d3">Washing</h3>
+          <p>High pressure where a surface can take it, a soft wash where it cannot — glass to roofline.</p>
+          <ol class="dir__list"><li><a href="exterior-window-washing.html">Exterior window washing</a></li><li><a href="interior-window-washing.html">Interior window washing</a></li><li><a href="power-washing-services.html">Power washing</a></li><li><a href="house-wash.html">House washing</a></li><li><a href="soft-wash-gutters.html">Gutter cleaning</a></li><li><a href="solar-panel-cleaning.html">Solar panel cleaning</a></li><li><a href="roof-cleaning.html">Roof washing</a></li></ol>
+          <a class="btn btn--ghost" href="washing.html"><span>Washing overview</span><svg class="btn__ar" width="15" height="12" viewBox="0 0 15 12" fill="none" aria-hidden="true"><path d="M9 1l5 5-5 5M14 6H0" stroke="currentColor" stroke-width="1.8"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GHL SECTION 03 · Google reviews | verbatim cards + the company's live feed -->
+<section class="section section--frost">
+  <div class="shell">
+    <div class="shead">
+      <div><p class="eyebrow rv">Customer stories</p>
+      <h2 class="d2 rv" style="--d:.06s">What customers say on Google.</h2></div>
+      <p class="lede rv" style="--d:.12s">Quoted exactly and linked to each original review. <a class="tlink" href="reviews.html">Read more reviews</a></p>
+    </div>
+    <div class="rvbar rv">
+      <span class="rvbar__g"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h11.8c-.5 2.8-2.1 5.1-4.4 6.7v5.5h7.1c4.2-3.8 6.5-9.5 6.5-16.2z"/><path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.3l-7.1-5.5c-2 1.3-4.5 2.1-7.4 2.1-5.7 0-10.6-3.9-12.3-9.1H4.4v5.7C8 41.1 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.7 28.2c-.4-1.3-.7-2.7-.7-4.2s.3-2.9.7-4.2v-5.7H4.4C2.9 17.1 2 20.4 2 24s.9 6.9 2.4 9.9l7.3-5.7z"/><path fill="#EA4335" d="M24 10.7c3.2 0 6.1 1.1 8.4 3.3l6.3-6.3C34.9 4.2 29.9 2 24 2 15.4 2 8 6.9 4.4 14.1l7.3 5.7c1.7-5.2 6.6-9.1 12.3-9.1z"/></svg>Google reviews</span>
+      <span class="rvbar__r" data-rating aria-live="polite"></span>
+      <a class="tlink" href="https://www.google.com/maps/place/?q=place_id:ChIJ2ew02570xGURCXi63r12k7U" rel="noopener" target="_blank">See every review on Google<span class="vh"> (opens in a new tab)</span></a>
+    </div>
+    <div class="rvw" data-stagger=".07"><figure class="quote rv">
+        <div class="quote__st"><span class="stars" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg></span><span class="vh">Five stars</span></div>
+        <blockquote><p>The Blue Fox Team is professional and cares for your lawn needs as their own. The team completed pressure washing of sidewalks/driveway with great results and care was taken to ensure neighbors and surrounding areas were clean of debris after completing the work. I am very pleased with the quality and hard work performed by Blue Fox. Appreciate having one company to care for all of my outside home needs.</p></blockquote>
+        <figcaption><span><b>Allison Guthrie</b><br><span>Google review · December 2023</span></span>
+          <a class="quote__src" href="https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURsNXN5VE1BEAE!2m1!1s0x0:0xb59376bddeba7809!3m1!1s2@1:CIHM0ogKEICAgIDl5syTMA%7CCgsIudyoqwYQgNr6dA%7C" rel="noopener nofollow" target="_blank">View on Google<span class="vh"> (opens in a new tab)</span> ↗</a></figcaption>
+      </figure><figure class="quote rv">
+        <div class="quote__st"><span class="stars" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg></span><span class="vh">Five stars</span></div>
+        <blockquote><p>Danny and his team were beyond impressive. They knocked out what I thought would take over a week, in a single day. We are so happy with the results. They took care of us and now we have our own slice of paradise. We not only have a beautiful backyard but a freshly washed house and patio!</p></blockquote>
+        <figcaption><span><b>Courtney Schuler</b><br><span>Google review · May 2026</span></span>
+          <a class="quote__src" href="https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pKNlowNXhjMjV3Y1ZaTk1ETTRhWGMzVUhBeE5VRRAB!2m1!1s0x0:0xb59376bddeba7809!3m1!1s2@1:CAIQACodChtycF9oOjJ6Z05xc25wcVZNMDM4aXc3UHAxNUE%7C%7C" rel="noopener nofollow" target="_blank">View on Google<span class="vh"> (opens in a new tab)</span> ↗</a></figcaption>
+      </figure><figure class="quote rv">
+        <div class="quote__st"><span class="stars" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg></span><span class="vh">Five stars</span></div>
+        <blockquote><p>Blue Fox has done several projects around my home. They continue to do incredible work with excellent customer service. They recently pressure washed and sealed my pavers on the driveway and back pool area. It is incredibly clean and well managed due to their expertise.</p></blockquote>
+        <figcaption><span><b>Anthony Gonzales</b><br><span>Google review · September 2026</span></span>
+          <a class="quote__src" href="https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21vMll6ZGFVekpJWDNwUVZFdE9OMVJGWHpSSVlsRRAB!2m1!1s0x0:0xb59376bddeba7809!3m1!1s2@1:CAIQACodChtycF9oOmo2YzdaUzJIX3pQVEtON1RFXzRIYlE%7C%7C" rel="noopener nofollow" target="_blank">View on Google<span class="vh"> (opens in a new tab)</span> ↗</a></figcaption>
+      </figure><figure class="quote rv">
+        <div class="quote__st"><span class="stars" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg></span><span class="vh">Five stars</span></div>
+        <blockquote><p>Danny and his team did an amazing job on the soft wash of my house, roof, sidewalks! My house looks like it was just freshly painted! Thank You!</p></blockquote>
+        <figcaption><span><b>Manisha Williams</b><br><span>Google review · April 2026</span></span>
+          <a class="quote__src" href="https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xaaVNsSldZbXhLZVVzNVJFOXdiM056V25nNVdWRRAB!2m1!1s0x0:0xb59376bddeba7809!3m1!1s2@1:CAIQACodChtycF9oOlZiSlJWYmxKeUs5RE9wb3NzWng5WVE%7C%7C" rel="noopener nofollow" target="_blank">View on Google<span class="vh"> (opens in a new tab)</span> ↗</a></figcaption>
+      </figure><figure class="quote rv">
+        <div class="quote__st"><span class="stars" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg></span><span class="vh">Five stars</span></div>
+        <blockquote><p>Bluefox Landscaping with owner Danny and his team, transformed our plain front garden into an oasis, with beautiful rocks, plants and new sod. We highly recommend Bluefox Landscaping to anyone who wants to transform their garden.</p></blockquote>
+        <figcaption><span><b>Peter S</b><br><span>Google review · April 2026</span></span>
+          <a class="quote__src" href="https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25GWGEwWnNkRWhsUTJvMFpUQjZXWEZCUW14aFgyYxAB!2m1!1s0x0:0xb59376bddeba7809!3m1!1s2@1:CAIQACodChtycF9oOnFXa0ZsdEhlQ2o0ZTB6WXFBQmxhX2c%7C%7C" rel="noopener nofollow" target="_blank">View on Google<span class="vh"> (opens in a new tab)</span> ↗</a></figcaption>
+      </figure><figure class="quote rv">
+        <div class="quote__st"><span class="stars" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg></span><span class="vh">Five stars</span></div>
+        <blockquote><p>You won’t find a better service for a better price. They re-sodded my whole front yard and it’s absolutely beautiful. They even made sure to check and fix my irrigation system first.</p></blockquote>
+        <figcaption><span><b>Stef O.</b><br><span>Google review · April 2025</span></span>
+          <a class="quote__src" href="https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnTURJX2ZfX1d3EAE!2m1!1s0x0:0xb59376bddeba7809!3m1!1s2@1:CIHM0ogKEICAgMDI_f__Ww%7CCgwI6NbpvwYQ6NPw5QI%7C" rel="noopener nofollow" target="_blank">View on Google<span class="vh"> (opens in a new tab)</span> ↗</a></figcaption>
+      </figure></div>
+  </div>
+</section>
+
+<!-- GHL SECTION 04 · Quote form | dark band, large white card | 2-col card → 1-col @900 | services multi-select -->
+<section class="section qband" id="quote">
   <div class="shell">
     <div class="qcard">
       <div class="qcard__h">
-        <p class="eyebrow" style="margin-bottom:0">Free, no-obligation quote</p>
-        <h2 class="d4">Tell us about the property.</h2>
-        <p>Landscaping, washing, or both. We come back to you to arrange a look — estimates are free.</p>
+        <p class="eyebrow">Free, no-obligation quote</p>
+        <h2 class="d3">Tell us about the property.</h2>
+        <p class="qcard__lede">Landscaping, washing, or both. Pick every service you are thinking about and we come back to you to arrange a look.</p>
+        <ul class="qcard__pts">
+          <li>Estimates are free</li>
+          <li>Residential and commercial</li>
+          <li>Office hours Mon–Fri, 9am–5pm</li>
+        </ul>
+        <p class="qcard__call">Prefer to talk? <a href="tel:+14077178191">407-717-8191</a></p>
       </div>
       <!-- LAUNCH: replace this preview form with the client's GoHighLevel form or point it at the GHL webhook.
-     Keep the field set: name, email, phone, service (required); ZIP (optional); SMS consent (optional, unchecked).
+     Keep the field set: name, email, phone, service (required — one OR MORE; map to a GHL multi-select/checkbox field); ZIP (optional); SMS consent (optional, unchecked).
      Then test lead creation, notifications and consent handling end to end. -->
-<form class="qform qform--row" action="thank-you.html" method="get">
+<form class="qform qform--big" action="thank-you.html" method="get">
 <div class="qform__g">
 <div class="field"><label for="hq-name">Name <span class="req">*</span></label><input id="hq-name" name="name" type="text" autocomplete="name" required></div>
 <div class="field"><label for="hq-email">Email <span class="req">*</span></label><input id="hq-email" name="email" type="email" autocomplete="email" required></div>
 <div class="field"><label for="hq-phone">Phone <span class="req">*</span></label><input id="hq-phone" name="phone" type="tel" autocomplete="tel" required></div>
-<div class="field"><label for="hq-svc">Service <span class="req">*</span></label><select id="hq-svc" name="service" required><option value="">Choose…</option><optgroup label="Landscaping"><option value="design">Landscape design &amp; construction</option><option value="sod">Sod installation</option><option value="paver">Paver installation</option><option value="irrigation">Irrigation</option><option value="tree">Tree &amp; hedge work</option><option value="lighting">Landscape lighting</option><option value="drainage">Drainage</option></optgroup><optgroup label="Washing"><option value="window-ext">Exterior window washing</option><option value="window-int">Interior window washing</option><option value="power">Power washing</option><option value="house">House washing</option><option value="gutter">Gutter cleaning</option><option value="solar">Solar panel cleaning</option><option value="roof">Roof washing</option><option value="soft">Soft washing — not sure which</option></optgroup><optgroup label="Other"><option value="multiple">Several services / not sure yet</option></optgroup></select></div>
 <div class="field"><label for="hq-zip">ZIP <span class="opt">(optional)</span></label><input id="hq-zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5"></div>
+<div class="field qform__full"><label for="hq-svc">Services <span class="req">*</span> <span class="opt">(choose all that apply)</span></label><select id="hq-svc" name="service" required><option value="">Choose…</option><optgroup label="Landscaping"><option value="design">Landscape design &amp; construction</option><option value="sod">Sod installation</option><option value="paver">Paver installation</option><option value="irrigation">Irrigation</option><option value="tree">Tree &amp; hedge work</option><option value="lighting">Landscape lighting</option><option value="drainage">Drainage</option></optgroup><optgroup label="Washing"><option value="window-ext">Exterior window washing</option><option value="window-int">Interior window washing</option><option value="power">Power washing</option><option value="house">House washing</option><option value="gutter">Gutter cleaning</option><option value="solar">Solar panel cleaning</option><option value="roof">Roof washing</option><option value="soft">Soft washing — not sure which</option></optgroup><optgroup label="Other"><option value="multiple">Several services / not sure yet</option></optgroup></select></div>
 </div>
-<div class="qform__foot"><label class="chk" for="hq-sms"><input type="checkbox" id="hq-sms" name="sms" value="yes"><span>Text me about my quote <span class="opt">(optional)</span><small>Message and data rates may apply. Reply STOP to opt out. Not required to get a quote.</small></span></label><button class="btn btn--accent" type="submit"><span>Get my free quote</span><svg class="btn__ar" width="15" height="12" viewBox="0 0 15 12" fill="none" aria-hidden="true"><path d="M9 1l5 5-5 5M14 6H0" stroke="currentColor" stroke-width="1.8"/></svg></button></div>
+<div class="qform__foot"><label class="chk" for="hq-sms"><input type="checkbox" id="hq-sms" name="sms" value="yes"><span>Text me about my quote <span class="opt">(optional)</span><small>Message and data rates may apply. Reply STOP to opt out. Not required to get a quote.</small></span></label><button class="btn btn--cta" type="submit"><span>Get my free quote</span><svg class="btn__ar" width="15" height="12" viewBox="0 0 15 12" fill="none" aria-hidden="true"><path d="M9 1l5 5-5 5M14 6H0" stroke="currentColor" stroke-width="1.8"/></svg></button></div>
 <p class="form__status" role="status" hidden></p>
 <p class="form__note"><span class="preview-tag">Preview form</span> Nothing is sent from this review version. Estimates are free; office hours Mon–Fri 9am–5pm.</p>
 </form>
@@ -400,19 +485,8 @@
   </div>
 </section>
 
-<!-- GHL SECTION 03 · Shortcuts | 3 tiles → 1-col @860 -->
-<section class="section section--frost" style="padding-top:clamp(1.5rem,3vw,2.5rem)">
-  <div class="shell">
-    <div class="short" data-stagger=".08">
-      <a class="short__i rv" href="landscaping.html"><img src="../assets/media/img/bx-path-bed-1600.webp" srcset="../assets/media/img/bx-path-bed-800.webp 800w, ../assets/media/img/bx-path-bed-1600.webp 1600w, ../assets/media/img/bx-path-bed-2400.webp 1920w" sizes="(max-width:860px) 92vw, 30vw" alt="A paver walkway beside freshly mulched planting beds along a home" width="1920" height="1440" loading="lazy" decoding="async"><span>Design · build</span><b>Landscaping</b><small>Seven services, from a rendering to the last plant.</small></a>
-      <a class="short__i rv" href="washing.html"><img src="../assets/media/img/bx-paver-drive-1600.webp" srcset="../assets/media/img/bx-paver-drive-800.webp 800w, ../assets/media/img/bx-paver-drive-1600.webp 1600w, ../assets/media/img/bx-paver-drive-2400.webp 1920w" sizes="(max-width:860px) 92vw, 30vw" alt="A paver driveway leading to a two-car garage" width="1920" height="1440" loading="lazy" decoding="async"><span>Keep it looking new</span><b>Exterior care</b><small>Windows, driveways, siding, gutters, solar and roofs.</small></a>
-      <a class="short__i rv" href="reviews.html"><img src="../assets/media/img/bx-crew-planting-1600.webp" srcset="../assets/media/img/bx-crew-planting-800.webp 800w, ../assets/media/img/bx-crew-planting-1600.webp 1600w, ../assets/media/img/bx-crew-planting-2400.webp 1920w" sizes="(max-width:860px) 92vw, 30vw" alt="The Blue Fox crew planting a new hedge along a front porch" width="1920" height="1440" loading="lazy" decoding="async"><span>In their words</span><b>Customer stories</b><small>Real Google reviews, quoted exactly.</small></a>
-    </div>
-  </div>
-</section>
-
-<!-- GHL SECTION 04 · Project gallery | carousel, 8s autoplay, prev/next/pause, stops on interaction -->
-<section class="section section--frost" id="work" style="padding-top:clamp(2rem,4vw,3.5rem)">
+<!-- GHL SECTION 05 · Project gallery | carousel, 8s autoplay, prev/next/pause, stops on interaction -->
+<section class="section section--frost" id="work">
   <div class="shell">
     <div class="shead">
       <div><p class="eyebrow rv">Our work</p>
@@ -464,43 +538,10 @@
   </div>
 </section>
 
-<!-- GHL SECTION 05 · Service directory | landscaping and washing side by side → 1-col @860 -->
-<section class="section section--mist">
-  <div class="shell">
-    <div class="shead">
-      <div><p class="eyebrow rv">What we do</p>
-      <h2 class="d2 rv" style="--d:.06s">Both halves of a property, under one company.</h2></div>
-      <p class="lede rv" style="--d:.12s">Most landscapers do not wash, and most washing companies cannot plant. Blue Fox does both — so nobody gets to blame the other.</p>
-    </div>
-    <div class="dir" data-stagger=".1">
-      <div class="dir__col rv">
-        <div class="dir__m"><img src="../assets/media/img/bx-oak-lawn-1600.webp" srcset="../assets/media/img/bx-oak-lawn-800.webp 800w, ../assets/media/img/bx-oak-lawn-1600.webp 1600w, ../assets/media/img/bx-oak-lawn-2400.webp 1920w" sizes="(max-width:860px) 92vw, 46vw" alt="A front lawn and planting beds beneath a large live oak" width="1920" height="1440" loading="lazy" decoding="async"></div>
-        <div class="dir__b">
-          <p class="eyebrow" style="margin-bottom:.6rem">Design · build</p>
-          <h3 class="d3">Landscaping</h3>
-          <p>Meet the design team, see a rendering of the finished property, then one crew builds it.</p>
-          <ol class="dir__list"><li><a href="landscape-design-construction.html">Landscape design & construction</a></li><li><a href="sod-installation.html">Sod installation</a></li><li><a href="paver-installation.html">Paver installation</a></li><li><a href="irrigation.html">Irrigation</a></li><li><a href="tree-removal.html">Tree & hedge work</a></li><li><a href="lighting-installation.html">Landscape lighting</a></li><li><a href="drainage.html">Drainage</a></li></ol>
-          <a class="btn btn--ghost" href="landscaping.html"><span>Landscaping overview</span><svg class="btn__ar" width="15" height="12" viewBox="0 0 15 12" fill="none" aria-hidden="true"><path d="M9 1l5 5-5 5M14 6H0" stroke="currentColor" stroke-width="1.8"/></svg></a>
-        </div>
-      </div>
-      <div class="dir__col rv">
-        <div class="dir__m"><img src="../assets/media/img/bx-drive-concrete-1600.webp" srcset="../assets/media/img/bx-drive-concrete-800.webp 800w, ../assets/media/img/bx-drive-concrete-1600.webp 1600w, ../assets/media/img/bx-drive-concrete-2400.webp 1920w" sizes="(max-width:860px) 92vw, 46vw" alt="A clean concrete driveway curving out to the street" width="1920" height="1440" loading="lazy" decoding="async"></div>
-        <div class="dir__b">
-          <p class="eyebrow" style="margin-bottom:.6rem">Clean · maintain</p>
-          <h3 class="d3">Washing</h3>
-          <p>High pressure where a surface can take it, a soft wash where it cannot — glass to roofline.</p>
-          <ol class="dir__list"><li><a href="exterior-window-washing.html">Exterior window washing</a></li><li><a href="interior-window-washing.html">Interior window washing</a></li><li><a href="power-washing-services.html">Power washing</a></li><li><a href="house-wash.html">House washing</a></li><li><a href="soft-wash-gutters.html">Gutter cleaning</a></li><li><a href="solar-panel-cleaning.html">Solar panel cleaning</a></li><li><a href="roof-cleaning.html">Roof washing</a></li></ol>
-          <a class="btn btn--ghost" href="washing.html"><span>Washing overview</span><svg class="btn__ar" width="15" height="12" viewBox="0 0 15 12" fill="none" aria-hidden="true"><path d="M9 1l5 5-5 5M14 6H0" stroke="currentColor" stroke-width="1.8"/></svg></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- GHL SECTION 06 · Before/after | REAL Blue Fox job (Longwood paver cleaning).
      The .ba figure is CLIPPED, so it never carries its own .rv — the unclipped
      wrapper is observed and forwards data-in via [data-rv-child]. -->
-<section class="section deep deep--wedge" style="--wedge:#E7EFF8">
+<section class="section deep deep--wedge" style="--wedge:#F5F8FC">
   <div class="shell">
     <div class="shead">
       <div><p class="eyebrow rv">Paver cleaning · our own job</p>
@@ -540,55 +581,8 @@
   </div>
 </section>
 
-<!-- GHL SECTION 08 · Google reviews | verbatim cards + the company's live feed -->
-<section class="section section--frost">
-  <div class="shell">
-    <div class="shead">
-      <div><p class="eyebrow rv">Customer stories</p>
-      <h2 class="d2 rv" style="--d:.06s">What customers say on Google.</h2></div>
-      <p class="lede rv" style="--d:.12s">Quoted exactly and linked to each original review. <a class="tlink" href="reviews.html">Read more reviews</a></p>
-    </div>
-    <div class="rvbar rv">
-      <span class="rvbar__g"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h11.8c-.5 2.8-2.1 5.1-4.4 6.7v5.5h7.1c4.2-3.8 6.5-9.5 6.5-16.2z"/><path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.3l-7.1-5.5c-2 1.3-4.5 2.1-7.4 2.1-5.7 0-10.6-3.9-12.3-9.1H4.4v5.7C8 41.1 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.7 28.2c-.4-1.3-.7-2.7-.7-4.2s.3-2.9.7-4.2v-5.7H4.4C2.9 17.1 2 20.4 2 24s.9 6.9 2.4 9.9l7.3-5.7z"/><path fill="#EA4335" d="M24 10.7c3.2 0 6.1 1.1 8.4 3.3l6.3-6.3C34.9 4.2 29.9 2 24 2 15.4 2 8 6.9 4.4 14.1l7.3 5.7c1.7-5.2 6.6-9.1 12.3-9.1z"/></svg>Google reviews</span>
-      <span class="rvbar__r" data-rating aria-live="polite"></span>
-      <a class="tlink" href="https://www.google.com/maps/place/?q=place_id:ChIJ2ew02570xGURCXi63r12k7U" rel="noopener" target="_blank">See every review on Google<span class="vh"> (opens in a new tab)</span></a>
-    </div>
-    <div class="rvw" data-stagger=".07"><figure class="quote rv">
-        <div class="quote__st"><span class="stars" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg></span><span class="vh">Five stars</span></div>
-        <blockquote><p>The Blue Fox Team is professional and cares for your lawn needs as their own. The team completed pressure washing of sidewalks/driveway with great results and care was taken to ensure neighbors and surrounding areas were clean of debris after completing the work. I am very pleased with the quality and hard work performed by Blue Fox. Appreciate having one company to care for all of my outside home needs.</p></blockquote>
-        <figcaption><span><b>Allison Guthrie</b><br><span>Google review · December 2023</span></span>
-          <a class="quote__src" href="https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURsNXN5VE1BEAE!2m1!1s0x0:0xb59376bddeba7809!3m1!1s2@1:CIHM0ogKEICAgIDl5syTMA%7CCgsIudyoqwYQgNr6dA%7C" rel="noopener nofollow" target="_blank">View on Google<span class="vh"> (opens in a new tab)</span> ↗</a></figcaption>
-      </figure><figure class="quote rv">
-        <div class="quote__st"><span class="stars" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg></span><span class="vh">Five stars</span></div>
-        <blockquote><p>Danny and his team were beyond impressive. They knocked out what I thought would take over a week, in a single day. We are so happy with the results. They took care of us and now we have our own slice of paradise. We not only have a beautiful backyard but a freshly washed house and patio!</p></blockquote>
-        <figcaption><span><b>Courtney Schuler</b><br><span>Google review · May 2026</span></span>
-          <a class="quote__src" href="https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pKNlowNXhjMjV3Y1ZaTk1ETTRhWGMzVUhBeE5VRRAB!2m1!1s0x0:0xb59376bddeba7809!3m1!1s2@1:CAIQACodChtycF9oOjJ6Z05xc25wcVZNMDM4aXc3UHAxNUE%7C%7C" rel="noopener nofollow" target="_blank">View on Google<span class="vh"> (opens in a new tab)</span> ↗</a></figcaption>
-      </figure><figure class="quote rv">
-        <div class="quote__st"><span class="stars" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg></span><span class="vh">Five stars</span></div>
-        <blockquote><p>Blue Fox has done several projects around my home. They continue to do incredible work with excellent customer service. They recently pressure washed and sealed my pavers on the driveway and back pool area. It is incredibly clean and well managed due to their expertise.</p></blockquote>
-        <figcaption><span><b>Anthony Gonzales</b><br><span>Google review · September 2026</span></span>
-          <a class="quote__src" href="https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21vMll6ZGFVekpJWDNwUVZFdE9OMVJGWHpSSVlsRRAB!2m1!1s0x0:0xb59376bddeba7809!3m1!1s2@1:CAIQACodChtycF9oOmo2YzdaUzJIX3pQVEtON1RFXzRIYlE%7C%7C" rel="noopener nofollow" target="_blank">View on Google<span class="vh"> (opens in a new tab)</span> ↗</a></figcaption>
-      </figure><figure class="quote rv">
-        <div class="quote__st"><span class="stars" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg></span><span class="vh">Five stars</span></div>
-        <blockquote><p>Danny and his team did an amazing job on the soft wash of my house, roof, sidewalks! My house looks like it was just freshly painted! Thank You!</p></blockquote>
-        <figcaption><span><b>Manisha Williams</b><br><span>Google review · April 2026</span></span>
-          <a class="quote__src" href="https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xaaVNsSldZbXhLZVVzNVJFOXdiM056V25nNVdWRRAB!2m1!1s0x0:0xb59376bddeba7809!3m1!1s2@1:CAIQACodChtycF9oOlZiSlJWYmxKeUs5RE9wb3NzWng5WVE%7C%7C" rel="noopener nofollow" target="_blank">View on Google<span class="vh"> (opens in a new tab)</span> ↗</a></figcaption>
-      </figure><figure class="quote rv">
-        <div class="quote__st"><span class="stars" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg></span><span class="vh">Five stars</span></div>
-        <blockquote><p>Bluefox Landscaping with owner Danny and his team, transformed our plain front garden into an oasis, with beautiful rocks, plants and new sod. We highly recommend Bluefox Landscaping to anyone who wants to transform their garden.</p></blockquote>
-        <figcaption><span><b>Peter S</b><br><span>Google review · April 2026</span></span>
-          <a class="quote__src" href="https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25GWGEwWnNkRWhsUTJvMFpUQjZXWEZCUW14aFgyYxAB!2m1!1s0x0:0xb59376bddeba7809!3m1!1s2@1:CAIQACodChtycF9oOnFXa0ZsdEhlQ2o0ZTB6WXFBQmxhX2c%7C%7C" rel="noopener nofollow" target="_blank">View on Google<span class="vh"> (opens in a new tab)</span> ↗</a></figcaption>
-      </figure><figure class="quote rv">
-        <div class="quote__st"><span class="stars" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg></span><span class="vh">Five stars</span></div>
-        <blockquote><p>You won’t find a better service for a better price. They re-sodded my whole front yard and it’s absolutely beautiful. They even made sure to check and fix my irrigation system first.</p></blockquote>
-        <figcaption><span><b>Stef O.</b><br><span>Google review · April 2025</span></span>
-          <a class="quote__src" href="https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnTURJX2ZfX1d3EAE!2m1!1s0x0:0xb59376bddeba7809!3m1!1s2@1:CIHM0ogKEICAgMDI_f__Ww%7CCgwI6NbpvwYQ6NPw5QI%7C" rel="noopener nofollow" target="_blank">View on Google<span class="vh"> (opens in a new tab)</span> ↗</a></figcaption>
-      </figure></div>
-  </div>
-</section>
-
-<!-- GHL SECTION 09 · Financing | 2-col → 1-col @860 | retained project photography -->
-<section class="section deep deep--wedge" style="--wedge:#F5F8FC">
+<!-- GHL SECTION 08 · Financing | 2-col → 1-col @860 | retained project photography -->
+<section class="section deep deep--wedge" style="--wedge:#FFFFFF">
   <div class="shell">
     <div class="split split--wide split--flip">
       <div>
@@ -609,7 +603,7 @@
   </div>
 </section>
 
-<!-- GHL SECTION 10 · Service area | chips link to the community pages -->
+<!-- GHL SECTION 09 · Service area | chips link to the community pages -->
 <section class="section section--paper">
   <div class="shell">
     <div class="shead">
@@ -621,7 +615,7 @@
   </div>
 </section>
 
-<!-- GHL SECTION 11 · FAQ -->
+<!-- GHL SECTION 10 · FAQ -->
 <section class="section section--frost">
   <div class="shell">
     <div class="shead">
@@ -641,7 +635,7 @@
   </div>
 </section>
 
-<!-- GHL SECTION 12 · Final CTA | full-width | opens the shared quote popup -->
+<!-- GHL SECTION 11 · Final CTA | full-width | opens the shared quote popup -->
 <section class="section deep deep--wedge" style="--wedge:#F5F8FC">
   <div class="shell shell--narrow" style="text-align:center">
     <p class="eyebrow eyebrow--plain rv" style="justify-content:center">Free, no-obligation estimate</p>

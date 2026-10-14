@@ -519,6 +519,26 @@ phone and service required; ZIP optional; **no street address**; SMS consent opt
 pre-checked. It validates inline, says plainly that it is a preview and sends nothing, then lands
 on `thank-you.html?preview=1`. A `LAUNCH:` comment on every form says what GHL replaces.
 
+**Service is a multi-select** (October 2026 follow-up). The markup stays a native single
+`<select name="service">`, so the form still works with no script; `site.js` makes it `multiple`
+and drives it from a checkbox panel (`.msel`). The select remains the one source of truth that
+validation, `pick()`, prefill and submit read — `sel._sync()` repaints the panel after any of
+them touch it. The estimator's `?services=a,b,c` now selects each one instead of "multiple".
+`.msel__b` carries `contain: inline-size`: without it a prefilled one-line label such as
+"Landscape design & construction" set the column's min-content and pushed service-page forms
+40px past a 320px viewport.
+
+**Homepage after the October 2026 follow-up:** Hero → Both halves (service directory) → Google
+reviews → Quote form → Gallery → Before/after → Process → Financing → Service area → FAQ → Final
+CTA. The three shortcut tiles were removed. The hero is **untinted** — the old steel-blue scrim
+is gone; only a neutral black shade (`.hero__shade`) sits under the nav and behind the type for
+AA. Its photo is Pexels 12558900 (`bx-hero-home`), a stand-in for the client's chosen iStock
+155133397, which is a paid licence: buy it, encode it to the same `bx-hero-home-*` ladder, done.
+It is stock, so it carries no "Blue Fox project" caption. The quote form is its own dark band
+(`.qband`, deliberately **not** `.deep` — every `.deep .field` rule would restyle the white card)
+with a steel-on-white `.btn--cta`. The same trap was live on `free-quote.html`, whose white panel
+sits in a `.deep` band and had #AFC7DC labels on white; `.deep .lp__form` now undoes it.
+
 **Photography is the company's own wherever a claim is made.** The pool grew from 8 to 28 real
 photographs, pulled from the live site's own CDN (credits in `CREDITS.json`). Only those carry a
 "Blue Fox project" caption, and the gallery shows **only** those. The window, solar, gutter and roof
@@ -531,7 +551,7 @@ pages use uncaptioned general home exteriors with alt text saying what they show
 > cropped (scale 0.83, edge-correlation search on the house and garage) to register with the after.
 > The Viburnum hedge pair could not be registered, so it is shown as two side-by-side stills.
 
-> ⚠ **Known: built `index.html` is 5.6 MB and `gallery.html` 8.5 MB** (23 tiles plus both pairs).
+> ⚠ **Known: built `index.html` is 5.0 MB and `gallery.html` 8.5 MB** (23 tiles plus both pairs).
 > If GHL paste size binds, cut the gallery mosaic first; every tile is a card-role 1100px image.
 
 **Pages are generated, then edited as plain HTML.** A one-off generator in the session scratchpad
@@ -600,8 +620,9 @@ carrying an inlined hero video.
   ≤40KB for Site 3 (currently ~39KB across `site.js` + `chamber.js` + `kitchen3d.js`);
   ≤30KB for Site 4 (currently ~27KB across `site.js` + `perimeter.js`);
   ≤36KB for Site 5 (currently ~27KB across `site.js` + `smile-studio.js`);
-  ≤36KB for Site 6 (currently ~34KB across `site.js` + `property-plan.js` — but `property-plan.js`
-  now loads only on `estimator.html`, so every other page ships `site.js` alone, ~20KB).
+  ≤36KB for Site 6 (currently 35.8KB across `site.js` + `property-plan.js` — at the ceiling
+  after the services multi-select; `property-plan.js` loads only on `estimator.html`, so every
+  other page ships `site.js` alone, ~22.7KB).
   The ceiling moved from 30KB to pay for the redesign's dropdowns, quote popup, validation,
   carousel, gallery lightbox and review-feed loader — a deliberate trade.
   The ceiling moved from 35KB to 40KB to pay for the lighting/material upgrade in

@@ -161,14 +161,47 @@
     sync();
   });
 
-  /* ── quote forms ──────────────────────────────────────────────────────────
-     PREVIEW BEHAVIOUR. Nothing is sent: the forms validate, say plainly that
-     they are a preview, then land on thank-you.html so the intended journey can
-     be seen end to end. At launch the GHL form or webhook replaces this handler
-     (see the LAUNCH comment on each <form>). */
+  /* ── quote forms — PREVIEW. Nothing is sent: validate, say so, land on
+     thank-you.html. At launch GHL replaces this (see each LAUNCH comment). */
   var MSG = { name: "Please add your name.", email: "Please add an email address we can reply to.",
-              phone: "Please add a phone number with area code.", service: "Please choose a service.",
+              phone: "Please add a phone number with area code.", service: "Please choose at least one service.",
               zip: "ZIP codes are five digits — or leave it blank." };
+  /* ── services multi-select: a native <select> (works with no script) made
+     multiple and driven by a checkbox panel. The select stays the truth. */
+  var msel = function (sel) {
+    var id = sel.id, lab = $("label[for='" + id + "']"), w = document.createElement("div"),
+        b = document.createElement("button"), p = document.createElement("div"), cs = [];
+    sel.multiple = true;
+    if (sel.options[0] && !sel.options[0].value) sel.remove(0);
+    sel.id = id + "-x"; sel.hidden = true; sel._b = b;
+    w.className = "msel"; b.type = "button"; b.className = "msel__b"; b.id = id;
+    p.className = "msel__p"; p.id = id + "-p"; p.hidden = true;
+    b.setAttribute("aria-expanded", "false"); b.setAttribute("aria-controls", p.id);
+    if (lab) { lab.id = id + "-l"; b.setAttribute("aria-labelledby", lab.id + " " + id); }
+    $$("optgroup, option", sel).forEach(function (o) {
+      var g = o.tagName === "OPTGROUP", l = document.createElement(g ? "p" : "label");
+      if (g) { l.className = "msel__g"; l.textContent = o.label; p.appendChild(l); return; }
+      var c = document.createElement("input");
+      c.type = "checkbox"; c._o = o; cs.push(c);
+      c.addEventListener("change", function () { o.selected = c.checked; sync(); sel.dispatchEvent(new Event("change")); });
+      l.appendChild(c); l.appendChild(document.createTextNode(o.value === "multiple" ? "Not sure yet" : o.textContent));
+      p.appendChild(l);
+    });
+    var sync = sel._sync = function () {
+      var on = cs.filter(function (c) { return (c.checked = c._o.selected); });
+      b.textContent = !on.length ? "Choose services…" : on.length > 1 ? on.length + " services selected" : on[0].parentNode.textContent;
+    };
+    var set = function (o) { p.hidden = !o; b.setAttribute("aria-expanded", o); };
+    b.addEventListener("click", function () { set(p.hidden); if (!p.hidden) cs[0].focus(); });
+    w.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !p.hidden) { e.preventDefault(); e.stopPropagation(); set(false); b.focus(); }
+    });
+    ["click", "focusin"].forEach(function (t) { document.addEventListener(t, function (e) { if (!w.contains(e.target)) set(false); }); });
+    sel.parentNode.insertBefore(w, sel); w.appendChild(b); w.appendChild(p); w.appendChild(sel);
+    sync();
+  };
+  $$("form.qform select[name=service]").forEach(msel);
+
   var check = function (el) {
     var v = (el.value || "").trim(), ok = true;
     if (el.required && !v) ok = false;
@@ -176,13 +209,13 @@
     else if (el.type === "tel" && v) ok = v.replace(/\D/g, "").length >= 10;
     else if (el.name === "zip" && v) ok = /^\d{5}$/.test(v);
     var f = el.closest(".field"); if (!f) return ok;
-    var err = $(".field__err", f);
-    if (ok) { f.removeAttribute("data-err"); el.removeAttribute("aria-invalid"); if (err) err.remove(); }
+    var err = $(".field__err", f), t = el._b || el;
+    if (ok) { f.removeAttribute("data-err"); t.removeAttribute("aria-invalid"); if (err) err.remove(); }
     else {
-      f.setAttribute("data-err", ""); el.setAttribute("aria-invalid", "true");
+      f.setAttribute("data-err", ""); t.setAttribute("aria-invalid", "true");
       if (!err) {
         err = document.createElement("p"); err.className = "field__err"; err.id = el.id + "-err";
-        f.appendChild(err); el.setAttribute("aria-describedby", err.id);
+        f.appendChild(err); t.setAttribute("aria-describedby", err.id);
       }
       err.textContent = MSG[el.name] || "Please check this field.";
     }
@@ -193,14 +226,14 @@
     var els = $$("input[name], select[name]", f).filter(function (el) { return el.type !== "checkbox" && el.type !== "hidden"; });
     els.forEach(function (el) {
       el.addEventListener("blur", function () { if (el.value || el.hasAttribute("aria-invalid")) check(el); });
-      el.addEventListener("change", function () { if (el.hasAttribute("aria-invalid")) check(el); });
+      el.addEventListener("change", function () { if ((el._b || el).hasAttribute("aria-invalid")) check(el); });
     });
     f.addEventListener("submit", function (e) {
       e.preventDefault();
       var bad = els.filter(function (el) { return !check(el); });
       var st = $(".form__status", f);
       if (bad.length) {
-        bad[0].focus();
+        (bad[0]._b || bad[0]).focus();
         if (st) { st.hidden = false; st.textContent = bad.length === 1 ? "One field needs a look before this can go." : bad.length + " fields need a look before this can go."; }
         return;
       }
@@ -211,16 +244,17 @@
         st.textContent = "Preview only — nothing has been sent. Once the client's GoHighLevel connection is live, this goes straight to the Blue Fox office. Taking you to the confirmation page…";
       }
       var d = new FormData(f), q = ["preview=1"];
-      ["name", "service"].forEach(function (k) { var v = d.get(k); if (v) q.push(k + "=" + encodeURIComponent(v)); });
+      ["name", "service"].forEach(function (k) { var v = d.getAll(k).join(","); if (v) q.push(k + "=" + encodeURIComponent(v)); });
       setTimeout(function () { window.location.href = "thank-you.html?" + q.join("&"); }, 1700);
     });
   });
 
-  /* select a service by value, only if that option exists in the markup */
-  var pick = function (sel, v) {
+  /* select a service by value, only if that option exists; add keeps others */
+  var pick = function (sel, v, add) {
     if (!sel || !v) return false;
     var o = Array.prototype.filter.call(sel.options, function (x) { return x.value === v; })[0];
-    if (o) sel.value = o.value;
+    if (o) { if (add) o.selected = true; else sel.value = o.value; }
+    if (sel._sync) sel._sync();
     return !!o;
   };
 
@@ -235,7 +269,7 @@
         if (oc && oc.getAttribute("data-open") === "true") $(".oc__x", oc).click();
         var st = $(".form__status", qf); if (st) st.hidden = true;
         var sel = qf.elements.service;
-        if (!pick(sel, a.getAttribute("data-quote"))) sel.value = "";
+        if (!pick(sel, a.getAttribute("data-quote"))) { sel.value = ""; if (sel._sync) sel._sync(); }
         qm.showModal();
         var first = qf.elements.name; if (first) first.focus();
       });
@@ -254,7 +288,10 @@
       .map(function (s) { return s === "light" ? "lighting" : s; });
     var notes = [];
     if (svc.length === 1) pick(pf.elements.service, svc[0]);
-    else if (svc.length > 1) { pick(pf.elements.service, "multiple"); notes.push("Estimator scope: " + svc.join(", ")); }
+    else if (svc.length > 1) {
+      svc.forEach(function (v) { pick(pf.elements.service, v, true); });
+      notes.push("Estimator scope: " + svc.join(", "));
+    }
     var lot = parseInt(qp.get("lot"), 10);
     if (lot > 0 && lot < 1e6) notes.push("Lot size: about " + lot.toLocaleString() + " sq ft");
     var z = (qp.get("zip") || "").replace(/\D/g, "").slice(0, 5);
