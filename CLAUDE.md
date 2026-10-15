@@ -528,9 +528,13 @@ them touch it. The estimator's `?services=a,b,c` now selects each one instead of
 "Landscape design & construction" set the column's min-content and pushed service-page forms
 40px past a 320px viewport.
 
-**Homepage after the October 2026 follow-up:** Hero → Both halves (service directory) → Google
-reviews → Quote form → Gallery → Before/after → Process → Financing → Service area → FAQ → Final
-CTA. The three shortcut tiles were removed. The hero is **untinted** — the old steel-blue scrim
+**Homepage after the October 2026 follow-up:** Hero → Short quote strip → Both halves (service
+directory) → Google reviews → Quote form → Gallery → Before/after → Process → Financing → Service
+area → FAQ → Final CTA. The three shortcut tiles were removed. The **short quote strip** (`.qtop`,
+`id="quote"`, the hero CTA's target) is a white card pulled up over the hero's bottom edge by
+`--qtop-lift`; the hero (`.hero--lift`) reads the same variable to clear its buttons. Header + five
+fields in one row ≥1241px, header above below that, 3-col ≤900, 1-col ≤720. The larger dark-band
+form further down is now `id="quote-full"`, and its fields keep the `hq-` IDs (the strip uses `tq-`). The hero is **untinted** — the old steel-blue scrim
 is gone; only a neutral black shade (`.hero__shade`) sits under the nav and behind the type for
 AA. Its photo is Pexels 12558900 (`bx-hero-home`), a stand-in for the client's chosen iStock
 155133397, which is a paid licence: buy it, encode it to the same `bx-hero-home-*` ladder, done.

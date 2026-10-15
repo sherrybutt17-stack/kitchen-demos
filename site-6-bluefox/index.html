@@ -358,7 +358,7 @@
 <main id="main">
 <!-- GHL SECTION 01 · Hero | full-width | photographic LCP, untinted. Only a neutral (no-hue)
      shade sits behind the type so white text holds AA over a bright sky and lawn. -->
-<section class="hero">
+<section class="hero hero--lift">
   <div class="hero__media"><img src="../assets/media/img/bx-hero-home-1600.webp" srcset="../assets/media/img/bx-hero-home-800.webp 800w, ../assets/media/img/bx-hero-home-1600.webp 1600w, ../assets/media/img/bx-hero-home-2400.webp 2400w" sizes="100vw" alt="A Mediterranean-style Florida home behind royal palms, clipped hedges, flowering beds and a curved paver driveway" width="2400" height="1511" fetchpriority="high" decoding="async"></div>
   <div class="hero__shade" aria-hidden="true"></div>
   <div class="shell hero__in">
@@ -371,7 +371,38 @@
   </div>
 </section>
 
-<!-- GHL SECTION 02 · Service directory | landscaping and washing side by side → 1-col @860 -->
+<!-- GHL SECTION 02 · Short quote form | lifted onto the bottom of the hero | header + 5 fields in one row
+     → header above @1240 → 3-col @900 → 1-col @720 | services multi-select. In GHL: a section with a
+     negative top margin equal to --qtop-lift, so the card overlaps the hero photograph. -->
+<section class="qtop" id="quote">
+  <div class="shell">
+    <div class="qtop__card">
+      <div class="qtop__h">
+        <p class="eyebrow">Free, no-obligation quote</p>
+        <h2 class="d3">Tell us about the property.</h2>
+        <p>Landscaping, washing, or both. We come back to you to arrange a look — estimates are free.</p>
+        <p class="qtop__call">Prefer to talk? <a href="tel:+14077178191">407-717-8191</a></p>
+      </div>
+      <!-- LAUNCH: replace this preview form with the client's GoHighLevel form or point it at the GHL webhook.
+     Keep the field set: name, email, phone, service (required — one OR MORE; map to a GHL multi-select/checkbox field); ZIP (optional); SMS consent (optional, unchecked).
+     Then test lead creation, notifications and consent handling end to end. -->
+<form class="qform qform--row" action="thank-you.html" method="get">
+<div class="qform__g">
+<div class="field"><label for="tq-name">Name <span class="req">*</span></label><input id="tq-name" name="name" type="text" autocomplete="name" required></div>
+<div class="field"><label for="tq-email">Email <span class="req">*</span></label><input id="tq-email" name="email" type="email" autocomplete="email" required></div>
+<div class="field"><label for="tq-phone">Phone <span class="req">*</span></label><input id="tq-phone" name="phone" type="tel" autocomplete="tel" required></div>
+<div class="field qform__svc"><label for="tq-svc">Services <span class="req">*</span></label><select id="tq-svc" name="service" required><option value="">Choose…</option><optgroup label="Landscaping"><option value="design">Landscape design &amp; construction</option><option value="sod">Sod installation</option><option value="paver">Paver installation</option><option value="irrigation">Irrigation</option><option value="tree">Tree &amp; hedge work</option><option value="lighting">Landscape lighting</option><option value="drainage">Drainage</option></optgroup><optgroup label="Washing"><option value="window-ext">Exterior window washing</option><option value="window-int">Interior window washing</option><option value="power">Power washing</option><option value="house">House washing</option><option value="gutter">Gutter cleaning</option><option value="solar">Solar panel cleaning</option><option value="roof">Roof washing</option><option value="soft">Soft washing — not sure which</option></optgroup><optgroup label="Other"><option value="multiple">Several services / not sure yet</option></optgroup></select></div>
+<div class="field"><label for="tq-zip">ZIP <span class="opt">(optional)</span></label><input id="tq-zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5"></div>
+</div>
+<div class="qform__foot"><label class="chk" for="tq-sms"><input type="checkbox" id="tq-sms" name="sms" value="yes"><span>Text me about my quote <span class="opt">(optional)</span><small>Message and data rates may apply. Reply STOP to opt out. Not required to get a quote.</small></span></label><button class="btn btn--accent" type="submit"><span>Get my free quote</span><svg class="btn__ar" width="15" height="12" viewBox="0 0 15 12" fill="none" aria-hidden="true"><path d="M9 1l5 5-5 5M14 6H0" stroke="currentColor" stroke-width="1.8"/></svg></button></div>
+<p class="form__status" role="status" hidden></p>
+<p class="form__note"><span class="preview-tag">Preview form</span> Nothing is sent from this review version. Estimates are free; office hours Mon–Fri 9am–5pm.</p>
+</form>
+    </div>
+  </div>
+</section>
+
+<!-- GHL SECTION 03 · Service directory | landscaping and washing side by side → 1-col @860 -->
 <section class="section section--mist">
   <div class="shell">
     <div class="shead">
@@ -404,7 +435,7 @@
   </div>
 </section>
 
-<!-- GHL SECTION 03 · Google reviews | verbatim cards + the company's live feed -->
+<!-- GHL SECTION 04 · Google reviews | verbatim cards + the company's live feed -->
 <section class="section section--frost">
   <div class="shell">
     <div class="shead">
@@ -451,8 +482,8 @@
   </div>
 </section>
 
-<!-- GHL SECTION 04 · Quote form | dark band, large white card | 2-col card → 1-col @900 | services multi-select -->
-<section class="section qband" id="quote">
+<!-- GHL SECTION 05 · Quote form | dark band, large white card | 2-col card → 1-col @900 | services multi-select -->
+<section class="section qband" id="quote-full">
   <div class="shell">
     <div class="qcard">
       <div class="qcard__h">
@@ -485,7 +516,7 @@
   </div>
 </section>
 
-<!-- GHL SECTION 05 · Project gallery | carousel, 8s autoplay, prev/next/pause, stops on interaction -->
+<!-- GHL SECTION 06 · Project gallery | carousel, 8s autoplay, prev/next/pause, stops on interaction -->
 <section class="section section--frost" id="work">
   <div class="shell">
     <div class="shead">
@@ -538,7 +569,7 @@
   </div>
 </section>
 
-<!-- GHL SECTION 06 · Before/after | REAL Blue Fox job (Longwood paver cleaning).
+<!-- GHL SECTION 07 · Before/after | REAL Blue Fox job (Longwood paver cleaning).
      The .ba figure is CLIPPED, so it never carries its own .rv — the unclipped
      wrapper is observed and forwards data-in via [data-rv-child]. -->
 <section class="section deep deep--wedge" style="--wedge:#F5F8FC">
@@ -563,7 +594,7 @@
   </div>
 </section>
 
-<!-- GHL SECTION 07 · Process | 3 steps | the design fee stated plainly -->
+<!-- GHL SECTION 08 · Process | 3 steps | the design fee stated plainly -->
 <section class="section section--paper">
   <div class="shell">
     <div class="shead">
@@ -581,7 +612,7 @@
   </div>
 </section>
 
-<!-- GHL SECTION 08 · Financing | 2-col → 1-col @860 | retained project photography -->
+<!-- GHL SECTION 09 · Financing | 2-col → 1-col @860 | retained project photography -->
 <section class="section deep deep--wedge" style="--wedge:#FFFFFF">
   <div class="shell">
     <div class="split split--wide split--flip">
@@ -603,7 +634,7 @@
   </div>
 </section>
 
-<!-- GHL SECTION 09 · Service area | chips link to the community pages -->
+<!-- GHL SECTION 10 · Service area | chips link to the community pages -->
 <section class="section section--paper">
   <div class="shell">
     <div class="shead">
@@ -615,7 +646,7 @@
   </div>
 </section>
 
-<!-- GHL SECTION 10 · FAQ -->
+<!-- GHL SECTION 11 · FAQ -->
 <section class="section section--frost">
   <div class="shell">
     <div class="shead">
@@ -635,7 +666,7 @@
   </div>
 </section>
 
-<!-- GHL SECTION 11 · Final CTA | full-width | opens the shared quote popup -->
+<!-- GHL SECTION 12 · Final CTA | full-width | opens the shared quote popup -->
 <section class="section deep deep--wedge" style="--wedge:#F5F8FC">
   <div class="shell shell--narrow" style="text-align:center">
     <p class="eyebrow eyebrow--plain rv" style="justify-content:center">Free, no-obligation estimate</p>

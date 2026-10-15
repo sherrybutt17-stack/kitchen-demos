@@ -1087,6 +1087,37 @@ a.card:hover .card__go { gap: .85rem; }
 .qcard__call a { display: inline-block; padding-block: .7rem; margin-block: -.7rem; color: #fff; font-weight: 700; text-underline-offset: 3px; }
 .qcard > .qform { padding: clamp(1.6rem, 4vw, 3.4rem); align-content: start; }
 
+/* ── quote strip: the SHORT form, lifted onto the bottom of the homepage hero.
+      A light card on the mist ground — not a .deep — so the light field styles
+      apply untouched. The section's own background starts below the overlap,
+      so it never paints over the photograph. --qtop-lift is read by both the
+      hero (to clear its buttons) and the strip (to pull itself up). ── */
+:root { --qtop-lift: clamp(4.5rem, 8vw, 6.5rem); }
+.hero--lift { min-height: clamp(580px, 86svh, 880px);
+              padding-bottom: calc(var(--qtop-lift) + clamp(2rem, 4vw, 3.5rem)); }
+.qtop { position: relative; z-index: 3; margin-top: calc(-1 * var(--qtop-lift));
+        background: linear-gradient(transparent var(--qtop-lift), var(--mist) 0); }
+.qtop__card { background: var(--paper); border-radius: var(--cut-l); border-top: 5px solid var(--amber);
+  padding: clamp(1.4rem, 2.6vw, 2.4rem) clamp(1.2rem, 2.6vw, 2.4rem) clamp(1.2rem, 2.2vw, 1.9rem);
+  display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); gap: clamp(1.2rem, 2.4vw, 2.4rem); align-items: start;
+  box-shadow: 0 44px 90px -40px rgba(11,44,72,.6), 0 14px 30px -18px rgba(11,44,72,.3), 0 0 0 1px var(--line); }
+.qtop__h .eyebrow { margin-bottom: 0; }
+.qtop__h .d3 { margin-top: .6rem; color: var(--steel); font-size: clamp(1.75rem, 1rem + 1.35vw, 2.25rem); line-height: 1.1; }
+.qtop__h > p:not(.eyebrow) { margin: .8rem 0 0; color: var(--slate); font-size: .98rem; line-height: 1.6; }
+.qtop__h > .qtop__call { margin-top: .9rem; }
+.qtop__call a { display: inline-block; padding-block: .7rem; margin-block: -.7rem; color: var(--steel); font-weight: 700;
+                text-underline-offset: 3px; white-space: nowrap; }
+/* five fields in one row: ZIP needs five digits, services needs its summary line */
+.qform--row .qform__g { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, 1fr) minmax(0, 1.3fr) minmax(0, .85fr);
+                        gap: .9rem; }
+.qform--row .field input, .qform--row .msel__b { min-height: 58px; }
+.qform--row .msel__b { padding-left: .9rem; padding-right: 2.2rem; background-position: right .85rem center; }
+/* the services panel is wider than its column: hang it from the column's right edge */
+.qform--row .msel__p { left: auto; width: min(480px, calc(100vw - 2 * var(--gut))); }
+.qform--row .qform__foot { align-items: flex-start; }
+.qform--row .qform__foot .btn { min-height: 60px; padding-inline: 2.1rem; font-size: 1rem;
+                                box-shadow: 0 18px 34px -16px rgba(138,84,16,.75); }
+
 /* the shared quote form. Required: name, email, phone, service. ZIP optional.
    No street address, ever. SMS consent optional and never pre-checked. */
 .qform { display: grid; gap: 1rem; }
@@ -1312,6 +1343,19 @@ a.card:hover .card__go { gap: .85rem; }
 @media (max-width: 1100px) {
   .rvw { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+@media (max-width: 1240px) {
+  .qtop__card { grid-template-columns: 1fr; }
+}
+@media (max-width: 1240px) and (min-width: 721px) {
+  /* header goes above the fields, laid out wide so the inputs stay near the fold */
+  .qtop__h { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: clamp(1.5rem, 4vw, 3rem); align-items: end; }
+  .qtop__h > :is(.eyebrow, .d3) { grid-column: 1; }
+  .qtop__h > p:not(.eyebrow) { grid-column: 2; }
+}
+@media (max-width: 900px) {
+  .qform--row .qform__g { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .qform--row .qform__svc { grid-column: span 2; }
+}
 @media (max-width: 960px) {
   .qcard { grid-template-columns: 1fr; }
   .qcard__call { padding-top: 1.4rem; }
@@ -1338,7 +1382,10 @@ a.card:hover .card__go { gap: .85rem; }
   .car__cap { right: 1rem; bottom: 4.6rem; }
 }
 @media (max-width: 720px) {
-  .qform__g { grid-template-columns: 1fr; }
+  :root { --qtop-lift: 3.5rem; }
+  .qform__g, .qform--row .qform__g { grid-template-columns: 1fr; }
+  .qform--row .qform__svc { grid-column: auto; }
+  .qform--row .msel__p { left: 0; width: auto; }
   .qform__foot .btn { width: 100%; }
   .rvw, .rel, .pair, .scope { grid-template-columns: 1fr; }
   .rvbar .tlink { margin-left: 0; }
