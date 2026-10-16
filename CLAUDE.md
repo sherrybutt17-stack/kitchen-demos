@@ -531,9 +531,12 @@ them touch it. The estimator's `?services=a,b,c` now selects each one instead of
 **Homepage after the October 2026 follow-up:** Hero → Short quote strip → Both halves (service
 directory) → Google reviews → Quote form → Gallery → Before/after → Process → Financing → Service
 area → FAQ → Final CTA. The three shortcut tiles were removed. The **short quote strip** (`.qtop`,
-`id="quote"`, the hero CTA's target) is a white card pulled up over the hero's bottom edge by
-`--qtop-lift`; the hero (`.hero--lift`) reads the same variable to clear its buttons. Header + five
-fields in one row ≥1241px, header above below that, 3-col ≤900, 1-col ≤720. The larger dark-band
+`id="quote"`, the hero CTA's target) is a two-panel card pulled up over the hero's bottom edge by
+`--qtop-lift`; the hero (`.hero--lift`) reads the same variable to clear its buttons. A `--bark`
+header column (4fr) beside a white form (9fr): name · email · phone, then services ×2 + ZIP, frost
+input wells, an amber top rule drawn by `::before`. The card cannot clip — the services panel hangs
+past it — so each panel carries its own ground and radii. Header stacks above ≤1024, 1-col ≤720.
+The frost wells use `:where(.qform--row)` so the shared focus/open/error rings still outrank them. The larger dark-band
 form further down is now `id="quote-full"`, and its fields keep the `hq-` IDs (the strip uses `tq-`). The hero is **untinted** — the old steel-blue scrim
 is gone; only a neutral black shade (`.hero__shade`) sits under the nav and behind the type for
 AA. Its photo is Pexels 12558900 (`bx-hero-home`), a stand-in for the client's chosen iStock
