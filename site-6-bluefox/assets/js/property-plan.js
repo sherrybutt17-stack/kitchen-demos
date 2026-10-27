@@ -1,5 +1,5 @@
 /* ============================================================================
-   THE PROPERTY PLAN — Blue Fox Landscape & Services
+   THE PROPERTY PLAN — BlueFox Landscape & Services
    Raw 2D canvas. No library. DPR-aware, ResizeObserver, ~14KB.
 
    WHY IT EXISTS
@@ -17,7 +17,7 @@
    zones moved.
 
    WHAT IT DELIBERATELY DOES NOT DO
-   It does not quote a price. Blue Fox publishes no unit pricing (the only
+   It does not quote a price. BlueFox publishes no unit pricing (the only
    published figure is the $250 digital design fee), so inventing a dollar
    number here would be inventing a fact about a real company. It measures, it
    scopes, and it hands that to the free estimate. That is the honest version.
@@ -58,7 +58,7 @@
     paver:      "Paver installation",
     irrigation: "Irrigation",
     light:      "Landscape lighting",
-    power:      "Power washing",
+    power:      "Pressure washing",
     soft:       "Soft washing",
     roof:       "Roof cleaning"
   };

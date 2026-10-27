@@ -1,5 +1,5 @@
 /* ============================================================================
-   BLUE FOX LANDSCAPE & SERVICES — site.js
+   BLUEFOX LANDSCAPE & SERVICES — site.js
    No framework, no library. Motion is transform/opacity/filter only and every
    effect short-circuits under prefers-reduced-motion.
    ========================================================================== */
@@ -241,7 +241,7 @@
       if (btn) btn.disabled = true;
       if (st) {
         st.hidden = false;
-        st.textContent = "Preview only — nothing has been sent. Once the client's GoHighLevel connection is live, this goes straight to the Blue Fox office. Taking you to the confirmation page…";
+        st.textContent = "Preview only — nothing has been sent. Once the client's GoHighLevel connection is live, this goes straight to the BlueFox office. Taking you to the confirmation page…";
       }
       var d = new FormData(f), q = ["preview=1"];
       ["name", "service"].forEach(function (k) { var v = d.getAll(k).join(","); if (v) q.push(k + "=" + encodeURIComponent(v)); });

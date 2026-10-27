@@ -24,7 +24,7 @@ Static HTML/CSS/JS you can open in a browser and show a client — structured so
 | Question | Decision |
 |---|---|
 | Deliverable | Coded demos only — no separate markdown strategy docs |
-| Scope | **7 pages per site for Sites 1–4; 9 for Site 5; 39 files for Site 6 (34 pages + 4 alternate routes + thank-you) = 76 files**, all at full fidelity |
+| Scope | **7 pages per site for Sites 1–4; 9 for Site 5; 46 files for Site 6 (39 pages + 6 compatibility routes + thank-you) = 83 files**, all at full fidelity |
 | Media | Photography throughout + hero video loops + click-to-load testimonial video |
 | Website 3 "3D" | **Real WebGL** (`kitchen3d.js`, raw — no Three.js) **plus** the scroll-driven Chamber. Both, not either. |
 | Brands | Sites 1–4 fictional, each anchored to a real affluent metro. **Sites 5 and 6 are real businesses.** |
@@ -374,19 +374,70 @@ practice. Order: `index` · `services` · `smile-gallery` · `sedation-dentistry
 
 ---
 
-### Site 6 — BLUE FOX · *Landscape & Services* → `site-6-bluefox/`
-**Metro:** Lake Mary / Heathrow / Altamonte Springs / Longwood / Orlando — Central Florida
-**Industry:** Landscaping, pressure washing and soft washing.
+### Site 6 — BLUEFOX · *Landscape & Services* → `site-6-bluefox/`
+**Metro:** Central Florida — Ocoee / Winter Garden / Windermere / Winter Park / Lake Mary / Heathrow /
+Apopka, plus Altamonte Springs / Longwood / Orlando
+**Industry:** Landscape design and installation, pressure washing (with soft washing) and window cleaning.
 **Source:** A redesign of **bluefoxlandscapeandservices.com**. Like Site 5 this is a **real
-business**, so the service list, the five-city service area, both phone numbers, the hours, the
+business**, so the service list, the service area, both phone numbers, the hours, the
 Acorn Finance partnership and the $250 digital-design fee (50% deposit, credited back if the
-package is approved) are all **real and taken from the company's own published material.**
-The October 2026 redesign (the client's *Blue Fox Website Redesign Report*) added three washing
-services the live site does not list — **exterior window washing, interior window washing and solar
-panel cleaning** — and four **extended-area towns** (Winter Park, Winter Garden, Windermere, Ocoee).
-All seven were **confirmed by the client**, and each page carries an HTML comment saying so. The
-service pages state scope only — no method, equipment, price or result claims — and the four towns
-promise *availability confirmation per address*, never coverage.
+package is approved) are all **real and taken from the company's own published material** or
+confirmed by the client. The October 2026 redesign (the client's *Blue Fox Website Redesign Report*)
+added three services the live site does not list — **exterior window cleaning, interior window
+cleaning and solar panel cleaning** — each carrying an HTML comment saying the client confirmed it.
+The window pages state scope only — no method, equipment, price or result claims.
+
+#### Phase 1 revisions — the October 2026 meeting checklist (launch target 30 Oct 2026)
+
+The client meeting produced a *Consolidated Website Revision & Implementation Checklist*. What it
+changed, and the rules that now follow from it:
+
+- **"Pressure washing" in every visible word; `power-washing` in every URL.** The live site ranks
+  on `/power-washing-services` and its three sub-page anchors, so the slug, the `#power-washing-*`
+  ids and the form value `power` are kept while every label, title, caption and schema name says
+  pressure washing. Verbatim Google reviews keep their own wording ("Power washing driveway").
+  **Soft wash stays** as the named method for house, roof and solar panel cleaning (client-confirmed
+  for solar, so that page now says so).
+- **The name is BlueFox, one word** — in copy, titles and schema `name`, never inside a review.
+  `alternateName` carries "Blue Fox …" and "Bluefox …" so entity matching with the Google
+  profile survives.
+- **Project work, not maintenance.** "Kept beautiful", "keep it looking new", "the build and the
+  upkeep" and irrigation "maintain" are gone; nothing may suggest recurring lawn or landscape
+  maintenance. Recurring *window cleaning* (one-time / monthly / quarterly) is fine — it is the
+  client's own offer.
+- **Three categories:** Landscaping · Pressure washing · Window cleaning — the nav, the homepage
+  "What we do" cards (`.dir--3`), every city page's services block and the footer.
+- **Cities:** seven confirmed — Ocoee (leads every list: the client confirmed substantial existing
+  business there), Winter Garden, Windermere, Winter Park, Lake Mary, Heathrow, Apopka (new page).
+  Altamonte Springs, Longwood and Orlando are kept as "also serving": they are live URLs with
+  rankings. **No "confirm availability" anywhere. Never name Kissimmee** — the client does not want it.
+- **High-ticket services surfaced:** `paver-sand-seal.html` (new; Liz's request — explained as
+  *more than a wash*: joints re-sanded, surface sealed, helps stabilise pavers and reduce weeds;
+  priced by the square foot; homepage spotlight `.seal`), pool deck washing and screen enclosure
+  cleaning (`#pool-deck-washing` / `#screen-enclosure-cleaning` panels on the pressure washing page,
+  each with `Service` schema), paver repairs (`#paver-repairs` on the paver page). Form values
+  `sandseal`, `pooldeck`, `screen`.
+- **Design is not free.** Estimates are free; digital landscape design is the one paid step. The
+  thank-you page and the homepage process both say so.
+- **Acorn link:** every financing CTA uses `https://www.acornfinance.com/apply?d=J86UJ`, BlueFox's
+  prequalification link from the live financing page — never the generic `/?d=J86UJ` landing page.
+- **Not in Phase 1:** estimator pricing (waits on Liz's window/sod/sand & seal prices, and the JS is
+  at its ceiling), owner and promo video, chatbot, and all GHL CRM, notification and rep-routing
+  work. Rep names never go into page source — route by service value inside GHL.
+
+**SEO migration.** The live site runs on **Duda** (`irp.cdn-website.com`). Its sitemap has URLs the
+redesign does not reproduce — `/landcape-design-construction` (a typo), `/power-washing-driveways`,
+`-patio-deck`, `-fence-gate`, and `/heathrow-fl/{irrigation,landscape-design-construction,sod-installation}`.
+**`redirects.csv`** maps each to its new home (301), plus the six compatibility routes. Every
+other live path is preserved 1:1. `/privacy` and `/accessibility-statement` are live footer links,
+so both are carried across: the privacy policy verbatim (name spelling only); the accessibility
+statement keeps the company's own contact paragraphs but **not** its UserWay-widget claims, which
+would be false for this build.
+
+**Client media** lands in the shared Drive folder `1h_AaJ6xuJqQkQGqun0BnIxbLjH_vw-WU` (`Photos/`,
+`Videos/`). It is publicly listable — the folder HTML embeds its children, no connector needed —
+and was empty on 27 Oct 2026. When it fills: contact-sheet, replace the stock window images and the
+before/after first.
 
 **The palette is measured off the company's own logo files.** `#145282` is 73–78% of the opaque
 pixels in every version of the mark and `#D3E1F0` is the other 17–22% — there is no third colour
@@ -414,12 +465,13 @@ source of truth available.
 > Google, and the total is not something a static page can pin. Never type a rating or count into
 > the markup.
 
-**Positioning:** One company for the build *and* the upkeep. Most landscapers cannot wash and most
-washing companies cannot plant, so a landscape gets installed and then quietly ages five years in
-two. Blue Fox does both halves, which means nobody gets to blame the other.
+**Positioning:** One company for the whole property — landscape design and installation, pressure
+washing and window cleaning. Project work, not a maintenance contract (Phase 1 checklist). Most
+landscapers cannot pressure wash and most washing companies cannot plant; BlueFox does all three,
+which means nobody gets to blame the other. Landscaping stays the lead; pressure washing and window
+cleaning are made far more prominent rather than turning the site into a washing business.
 **Customer:** Central Florida homeowners and commercial sites, building or restoring.
-**Emotional angle:** Competence and foresight. *"Most yards are not badly designed. They are badly
-maintained."*
+**Emotional angle:** Competence. *"One company, one number, one crew that turns up."*
 **Layout — surveyed, then built.** The mark is a **soft, rounded** fox head set against a **serif
 small-caps wordmark**, so this site is rounded and classical, not cut and engineered — deliberately
 the opposite of the hard-chamfered system that occupied this directory before it. Radii are
@@ -446,12 +498,16 @@ the opposite of the hard-chamfered system that occupied this directory before it
 > the dark bands it is legal at body size. Conversely the light-ground text tokens are illegal
 > inside `.deep`: `--slate` measures about 2.4:1 there. The bands carry their own pair,
 > `--on-deep` / `--on-deep-dim`.
+>
+> **The footer is a dark band that is not `.deep`** — so `.dim` there fell back to `--slate-dim`
+> and measured 2.4:1 on `--bark` (the brand blurb, hours and area lines). `.ftr .dim` now uses
+> `--on-deep-dim`. Any new dark surface needs the same override; check it, do not assume it.
 
 **Type is the main separator from the other five.** Bitter is the only slab serif in the repo —
 Sites 1/3/4 are grotesques, Site 2 is Fraunces, Site 5 is Cormorant Garamond. Combined with the
 soft radii and the steel/orange pairing, Site 6 does not read like any of them, and the three
-blue-accented brands (Vantage `#4D8DFF`, Sapphire `#40B0DF`, Blue Fox `#145282`) stay apart because
-Blue Fox's blue is a **dark ink** rather than a bright accent — it is used where the others use
+blue-accented brands (Vantage `#4D8DFF`, Sapphire `#40B0DF`, BlueFox `#145282`) stay apart because
+BlueFox's blue is a **dark ink** rather than a bright accent — it is used where the others use
 near-black.
 
 #### The Property Plan — a lot that measures itself (`assets/js/property-plan.js`)
@@ -475,7 +531,7 @@ wait for a truck to find out what you own.
 - a survey sweep passes down the plan on entry; `prefers-reduced-motion` draws one finished frame
 - the scope travels into the estimate form's querystring, and `site.js` prefills it there
 
-> **It deliberately quotes no price.** Blue Fox publishes no unit pricing — the only published
+> **It deliberately quotes no price.** BlueFox publishes no unit pricing — the only published
 > figure is the $250 design fee — so a dollar number here would be inventing a fact about a real
 > company. It measures and scopes instead, turning "I'd like a quote" into a brief. The page says
 > so in as many words.
@@ -483,34 +539,45 @@ wait for a truck to find out what you own.
 **The canvas is `aria-hidden` and only ever draws.** Every control is a real form element and the
 readout is a native `<output>`, debounced 300ms.
 
-#### The thirty-nine files
+#### The forty-six files
 
-**34 distinct pages + 4 compatibility routes + `thank-you.html`.** The report counts 38 routes;
-`thank-you.html` is the tracking URL on top of those.
+**39 distinct pages + 6 compatibility routes + `thank-you.html`.** `thank-you.html` is the
+tracking URL on top of those.
 
-- **Home + 2 overviews:** `index` · `landscaping` · `washing`
-- **7 landscaping:** `landscape-design-construction` · `sod-installation` · `paver-installation` ·
-  `irrigation` · `tree-removal` (Tree & hedge work) · `lighting-installation` · `drainage`
-- **7 washing:** `exterior-window-washing` · `interior-window-washing` · `power-washing-services` ·
-  `house-wash` · `soft-wash-gutters` (Gutter cleaning) · `solar-panel-cleaning` · `roof-cleaning` (Roof washing)
-- **9 communities:** `lake-mary` · `heathrow` · `altamonte-springs` · `longwood` · `orlando`
-  (established) · `winter-park` · `winter-garden` · `windermere` · `ocoee` (confirm availability)
+- **Home + 3 overviews:** `index` · `landscaping` · `washing` (the *Pressure washing* overview) · `window-cleaning`
+- **8 landscaping:** `landscape-design-construction` · `paver-installation` (& repairs) · `paver-sand-seal` ·
+  `sod-installation` · `irrigation` · `tree-removal` (Tree & hedge work) · `lighting-installation` · `drainage`
+- **5 pressure washing:** `power-washing-services` (driveways, patio & deck, fence & gate, pool decks,
+  screen enclosures) · `house-wash` · `roof-cleaning` (Roof washing) · `solar-panel-cleaning` ·
+  `soft-wash-gutters` (Gutter cleaning)
+- **2 window cleaning:** `exterior-window-cleaning` · `interior-window-cleaning`
+- **10 communities:** `ocoee` · `winter-garden` · `windermere` · `winter-park` · `lake-mary` ·
+  `heathrow` · `apopka` (confirmed) · `altamonte-springs` · `longwood` · `orlando` (also serving)
 - **Supporting:** `gallery` · `service-area` · `financing` · `contact` · `reviews` · `free-quote` ·
-  `estimator` · `soft-washing-services` (explained as a method, not a service)
+  `estimator` · `soft-washing-services` (explained as a method, not a service) · `privacy` ·
+  `accessibility-statement`
 - **Compatibility routes** (meta-refresh + canonical, `noindex`; become 301s at launch):
-  `tree-hedge-work` · `landscape-lighting` · `power-washing` · `roof-washing`
+  `tree-hedge-work` · `landscape-lighting` · `power-washing` · `roof-washing` ·
+  `exterior-window-washing` · `interior-window-washing` (the review-version window names)
 
-Slugs match the live site's own URLs wherever one exists (`house-wash`, `soft-wash-gutters`,
-`drainage`, the five city slugs), so production redirects are only needed for the four
-alternates. The power-washing sub-services keep their live anchors (`#power-washing-driveways`
-etc.) as H2 panels with their own `Service` schema.
+Slugs match the live site's own URLs wherever one exists (`power-washing-services`, `house-wash`,
+`soft-wash-gutters`, `drainage`, the five live city slugs); `redirects.csv` covers everything else.
+The pressure-washing sub-services keep their live anchors (`#power-washing-driveways` etc.) as
+panels with their own `Service` schema.
 
 **Every page is `noindex`** — the redesign is a review version and has not replaced the live site.
 Remove the robots tag at launch.
 
 **Shared chrome:** a floating glass navbar, clear over photography and frosted past 40px or while a
-menu is open. Landscaping and Washing are dropdowns whose label links to the overview, with a
-separate chevron `<button>` owning `aria-expanded`. On phones, native `<details>` groups. Below-fold
+menu is open. Landscaping, Pressure washing and Window cleaning are dropdowns whose label links to
+the overview, with a separate chevron `<button>` owning `aria-expanded`. On phones, native
+`<details>` groups. The seven top-level items fit from 1181px up (measured to 1920); below that the
+burger takes over. **The logo is the fox head only** (`bx-logo-head-240`, cropped from the stacked
+lockup, which had shrunk the head to ~28px with an illegible second "BLUE FOX" under it) beside the
+live-text wordmark "BlueFox". Over the photograph the header swaps to `bx-logo-head-lt-240`: the
+head body recoloured white while the two eye components keep `#145282` and the ice markings become
+`--steel-lt` — the client asked for a white logo that keeps the blue eyes. The footer uses the same
+live-text lockup, so the name is never baked into a raster again. Below-fold
 quote CTAs (`[data-quote="svc"]`) open one shared `<dialog id="qm">` with the service preselected;
 each is a real link to `free-quote.html?service=…`, so it still works without script.
 
@@ -528,28 +595,43 @@ them touch it. The estimator's `?services=a,b,c` now selects each one instead of
 "Landscape design & construction" set the column's min-content and pushed service-page forms
 40px past a 320px viewport.
 
-**Homepage after the October 2026 follow-up:** Hero → Short quote strip → Both halves (service
-directory) → Google reviews → Quote form → Gallery → Before/after → Process → Financing → Service
-area → FAQ → Final CTA. The three shortcut tiles were removed. The **short quote strip** (`.qtop`,
+**Homepage after the Phase 1 revisions:** Hero → Short quote strip → What we do (three cards:
+landscaping, pressure washing, window cleaning) → Paver Sand & Seal spotlight → Google reviews →
+Quote form → Gallery → Before/after → Process → Financing → Service area → FAQ → Final CTA. The
+**short quote strip** (`.qtop`,
 `id="quote"`, the hero CTA's target) is a two-panel card pulled up over the hero's bottom edge by
 `--qtop-lift`; the hero (`.hero--lift`) reads the same variable to clear its buttons. A `--bark`
 header column (4fr) beside a white form (9fr): name · email · phone, then services ×2 + ZIP, frost
 input wells, an amber top rule drawn by `::before`. The card cannot clip — the services panel hangs
 past it — so each panel carries its own ground and radii. Header stacks above ≤1024, 1-col ≤720.
 The frost wells use `:where(.qform--row)` so the shared focus/open/error rings still outrank them. The larger dark-band
-form further down is now `id="quote-full"`, and its fields keep the `hq-` IDs (the strip uses `tq-`). The hero is **untinted** — the old steel-blue scrim
-is gone; only a neutral black shade (`.hero__shade`) sits under the nav and behind the type for
-AA. Its photo is Pexels 12558900 (`bx-hero-home`), a stand-in for the client's chosen iStock
+form further down is now `id="quote-full"`, and its fields keep the `hq-` IDs (the strip uses `tq-`).
+
+**The hero is one static photograph, shown as shot.** The checklist asked for the dark overlay to
+be removed or significantly reduced, so the full-height wash is gone; `.hero__shade` is now only a
+thin neutral band under the nav. The type moved into **`.hero__card`**, a navy glass card in the
+lower left. A lighter scrim was tried first and *measured*: the headline sits in this photograph's
+sky, and white over it came out at 1.0–1.3:1. The card (`rgba(11,44,72,.8)` + blur) measures
+≥7.6:1 white and ≥3.85:1 amber at every width from 320 to 1440 — **without** counting the
+text-shadow — by screenshotting with the type hidden and sampling the 90th-percentile pixel behind
+each line. Re-measure it whenever the hero photograph changes. The card is sized so the H1 sets in
+three lines (two at 1024) and covers the lower-left corner only; below 480px the secondary
+"See our work" link is dropped so the photo keeps its share. The headline is *Central Florida
+landscaping and pressure washing.* Its photo is Pexels 12558900 (`bx-hero-home`), a stand-in for the client's chosen iStock
 155133397, which is a paid licence: buy it, encode it to the same `bx-hero-home-*` ladder, done.
-It is stock, so it carries no "Blue Fox project" caption. The quote form is its own dark band
+It is stock, so it carries no "BlueFox project" caption. The quote form is its own dark band
 (`.qband`, deliberately **not** `.deep` — every `.deep .field` rule would restyle the white card)
 with a steel-on-white `.btn--cta`. The same trap was live on `free-quote.html`, whose white panel
 sits in a `.deep` band and had #AFC7DC labels on white; `.deep .lp__form` now undoes it.
 
 **Photography is the company's own wherever a claim is made.** The pool grew from 8 to 28 real
 photographs, pulled from the live site's own CDN (credits in `CREDITS.json`). Only those carry a
-"Blue Fox project" caption, and the gallery shows **only** those. The window, solar, gutter and roof
-pages use uncaptioned general home exteriors with alt text saying what they show.
+"BlueFox project" caption, and the gallery shows **only** those. The window, solar, gutter and roof
+pages use uncaptioned general home exteriors with alt text saying what they show. The window
+cleaning card and overview use two stock photographs (`bx-window-clean` Pexels 31435403,
+`bx-window-int` Pexels 6197111), uncaptioned. A candidate showing a competitor's branded jacket was
+rejected at contact-sheet review. The paver photo the client discussed (`bx-paver-sealed`) is
+captioned **"Pressure washing / Paver Sand & Seal"** everywhere it appears.
 
 > **The old homepage before/after was not a pair.** `bx-wash-before` is a walkway mid-wash with a
 > hose on it; `bx-wash-after` is a driveway at a garage — different places, overlaid as "the same
@@ -558,12 +640,20 @@ pages use uncaptioned general home exteriors with alt text saying what they show
 > cropped (scale 0.83, edge-correlation search on the house and garage) to register with the after.
 > The Viburnum hedge pair could not be registered, so it is shown as two side-by-side stills.
 
-> ⚠ **Known: built `index.html` is 5.0 MB and `gallery.html` 8.5 MB** (23 tiles plus both pairs).
+> ⚠ **Known: built `index.html` is 5.2 MB and `gallery.html` 8.4 MB** (23 tiles plus both pairs).
 > If GHL paste size binds, cut the gallery mosaic first; every tile is a card-role 1100px image.
 
 **Pages are generated, then edited as plain HTML.** A one-off generator in the session scratchpad
-wrote all 39 files from shared chrome and content data. It is not part of the toolchain. Edit the
-HTML directly. A nav or footer change touches every file, exactly as it does on the other sites.
+wrote the original 39 files from shared chrome and content data; the Phase 1 revisions were applied
+by scripts in a later scratchpad (a chrome regenerator, and a terminology pass that rewrites text
+nodes only — never `<blockquote>`, never a URL). Neither is part of the toolchain. Edit the HTML
+directly. A nav or footer change touches every file, exactly as it does on the other sites.
+
+> **A text pass must treat bare paths as URLs too.** The terminology pass protected `https://…`,
+> `x.html` and `#anchors`, but not a bare `/power-washing-services` inside an HTML comment, and
+> rewrote a launch instruction to `/pressure-washing-services` — a URL that does not exist. Caught
+> by grepping for `pressure-wash` afterwards; fixed. After any bulk rename, grep for the new spelling
+> in path form.
 
 
 ---
@@ -587,7 +677,7 @@ HTML directly. A nav or footer change touches every file, exactly as it does on 
 ├── site-3-obsidian/                ← same 7 pages, own CSS/JS + chamber.js
 ├── site-4-vantage/                 ← same 7 pages, own CSS/JS + perimeter.js
 ├── site-5-sapphire/                ← 9 pages, own CSS/JS + smile-studio.js
-├── site-6-bluefox/                 ← 39 files (34 pages + 4 alternates + thank-you), own CSS/JS + property-plan.js
+├── site-6-bluefox/                 ← 46 files (39 pages + 6 compatibility routes + thank-you), own CSS/JS + property-plan.js, redirects.csv
 └── dist/                           ← BUILT: what you paste into GoHighLevel
     └── site-*/ *.html              (CSS + JS + all images inlined, zero external files)
 ```
@@ -629,7 +719,8 @@ carrying an inlined hero video.
   ≤36KB for Site 5 (currently ~27KB across `site.js` + `smile-studio.js`);
   ≤36KB for Site 6 (currently 35.8KB across `site.js` + `property-plan.js` — at the ceiling
   after the services multi-select; `property-plan.js` loads only on `estimator.html`, so every
-  other page ships `site.js` alone, ~22.7KB).
+  other page ships `site.js` alone, ~22.7KB). The Phase 2 priced estimator needs a budget
+  decision before it is built.
   The ceiling moved from 30KB to pay for the redesign's dropdowns, quote popup, validation,
   carousel, gallery lightbox and review-feed loader — a deliberate trade.
   The ceiling moved from 35KB to 40KB to pay for the lighting/material upgrade in
@@ -765,7 +856,7 @@ site via `preconnect` + `display=swap`; all below-fold media lazy; animations re
 6. Root `index.html` launcher — six cards, one line of positioning each.
 7. **Site 4 — Vantage.** Same page set in a different industry, plus `perimeter.js`.
 8. **Site 5 — Sapphire.** A real practice redesigned from its own content, plus `smile-studio.js`.
-9. **Site 6 — Blue Fox.** A real landscaping company redesigned from its own content, plus `property-plan.js`.
+9. **Site 6 — BlueFox.** A real landscaping company redesigned from its own content, plus `property-plan.js`.
 
 ---
 
@@ -789,7 +880,7 @@ python3 -m http.server 8080
   immediately, no scroll-jacking; hero videos show posters only.
 - **Keyboard:** Tab each homepage start to finish — skip link fires first, focus ring always
   visible, accordions / sliders / video facades operable, no focus trap.
-- **Links:** every nav and footer link on all six sites resolves; all 76 files, no 404s.
+- **Links:** every nav and footer link on all six sites resolves; all 83 files, no 404s.
 - **Funnel:** each site's CTAs reach `free-consultation.html`; submitting lands on `thank-you.html`.
 
 ---

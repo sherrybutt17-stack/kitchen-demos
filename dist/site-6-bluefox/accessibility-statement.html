@@ -1,0 +1,2338 @@
+<!--
+  ════════════════════════════════════════════════════════════════════════════
+  PASTE THIS FILE — NOT the one in site-*/ . This build has the CSS, the
+  JavaScript and every photograph embedded; the source version links to
+  ./assets/ files that do not exist inside GoHighLevel, which is why it
+  renders unstyled there.
+
+  In GHL:
+    1. Add a Section, set its width to FULL WIDTH and its padding to 0.
+    2. Drop in a Custom HTML / Code element.
+    3. Paste this entire file.
+  The stylesheet above makes every band span the viewport even if the
+  section is left at its default width.
+  ════════════════════════════════════════════════════════════════════════════
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessibility Statement | BlueFox Landscape &amp; Services</title>
+<meta name="description" content="How the BlueFox Landscape &amp; Services website is built for accessibility, and how to reach us if any part of it does not work for you.">
+<!-- PREVIEW: the review version stays noindex. At launch remove this tag, confirm
+     the production canonical below, and set up the 301s listed in redirects.csv. -->
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://www.bluefoxlandscapeandservices.com/accessibility-statement">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BlueFox Landscape &amp; Services">
+<meta property="og:title" content="Accessibility Statement | BlueFox Landscape &amp; Services">
+<meta property="og:description" content="How the BlueFox Landscape &amp; Services website is built for accessibility, and how to reach us if any part of it does not work for you.">
+<meta property="og:url" content="https://www.bluefoxlandscapeandservices.com/accessibility-statement">
+<meta property="og:image" content="https://www.bluefoxlandscapeandservices.com/assets/media/img/bx-design-lake-1200.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================================
+   BLUEFOX LANDSCAPE & SERVICES — design system
+   Site 6. Nothing here is shared with sites 1–5; divergence is the deliverable.
+
+   PALETTE PROVENANCE
+   Measured off the company's own logo files, not chosen. #145282 is 73–78% of
+   the opaque pixels in every version of the mark and #D3E1F0 is the other
+   17–22%; there is no third colour in the logo itself. The orange is real too —
+   #D98D3B is 93.8% of the favicon, which is the mark reversed out of a solid
+   orange tile. So the brand is steel blue on pale ice, with orange as the one
+   accent, and this build treats it exactly that way.
+
+   THE RULE THAT KEEPS BITING
+   --amber is 2.68:1 on paper — fills, rules, icons and display type only, never
+   small text on light. But it is 5.33:1 on --bark, so on the dark bands it is
+   legal at body size. The relationship inverts. Conversely the light-ground
+   text tokens are illegal inside .deep: --slate measures 2.4:1 there. The bands
+   carry their own pair, --on-deep / --on-deep-dim.
+
+   SHAPE
+   The logo is a SOFT, rounded fox head set against a serif wordmark in small
+   caps. So this site is rounded and classical, not cut and engineered — the
+   opposite of what a hard-edged mark would have asked for.
+   ========================================================================== */
+
+:root {
+  /* ── brand, measured from the logo ────────────────────────────────────── */
+  --steel:      #145282;   /* 73–78% of the mark. 8.21:1 on paper — brand ink  */
+  --ice:        #D3E1F0;   /* 17–22% of the mark. Raised tint                  */
+  --amber:      #D98D3B;   /* 93.8% of the favicon. 2.68:1 on paper → fills    */
+
+  /* ── grounds ──────────────────────────────────────────────────────────── */
+  --paper:      #FFFFFF;
+  --frost:      #F5F8FC;   /* page wash                                        */
+  --mist:       #E7EFF8;   /* inset panels                                     */
+  --bark:       #0B2C48;   /* derived — the dark bands and the footer          */
+
+  /* ── text on light ────────────────────────────────────────────────────── */
+  --ink:        #10273A;   /* body, 14.0:1 on paper                            */
+  --slate:      #3D5B72;   /* secondary, 6.7:1                                 */
+  --slate-dim:  #4C687D;   /* tertiary, 5.4:1 — still AA                       */
+  --steel-mid:  #1C6BAA;   /* links, 5.63:1                                    */
+  --amber-deep: #8A5410;   /* small orange text on light, 6.26:1               */
+
+  /* ── text on the dark bands ───────────────────────────────────────────── */
+  --on-deep:     #E8F1FA;  /* 12.6:1 on bark                                   */
+  --on-deep-dim: #AFC7DC;  /*  8.0:1 on bark                                   */
+  --amber-lt:    #F0A94C;  /*  6.1:1 on bark — the accent up there            */
+  --steel-lt:    #7FB3DC;  /*  7.4:1 on bark                                   */
+
+  /* ── lines ────────────────────────────────────────────────────────────── */
+  --line:      rgba(16,39,58,.14);
+  --line-str:  rgba(16,39,58,.26);
+  --line-deep: rgba(232,241,250,.18);
+
+  /* ── the radius scale. The mark is a soft, rounded fox and the wordmark is
+        a serif; a hard chamfer would have fought both. ──────────────────── */
+  --cut:   10px;
+  --cut-m: 16px;
+  --cut-l: 24px;
+
+  /* ── rhythm ───────────────────────────────────────────────────────────── */
+  --shell: 1320px;
+  --gut:   clamp(1.15rem, 4vw, 3.25rem);
+  --sect:  clamp(4rem, 8vw, 6.5rem);
+
+  /* ── type ─────────────────────────────────────────────────────────────── */
+  --ff:  "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --ffd: "Bitter", Georgia, "Times New Roman", serif;
+
+  /* ── motion ───────────────────────────────────────────────────────────── */
+  --e:     cubic-bezier(.22,1,.36,1);
+  --e-out: cubic-bezier(.16,1,.3,1);
+  --t:     .55s;
+}
+
+/* ── the chamfer utility ──────────────────────────────────────────────────
+   Cut top-left and bottom-right, mirroring the notch pair in the fox mark.
+   clip-path here is always a FULL-AREA polygon, so unlike an inset() reveal it
+   never produces a zero-area intersection rectangle — see the note on .rv. */
+.cut  { border-radius: var(--c, var(--cut)); }
+.cut--m { --c: var(--cut-m); }
+.cut--l { --c: var(--cut-l); }
+/* the opposite diagonal, for elements that sit against a .cut one */
+.cut--alt { border-radius: var(--c, var(--cut)); }
+/* an outlined chamfer needs two layers, because a border is clipped away with
+   everything else. The wrapper carries the line colour, the child the fill. */
+.cutline { background: var(--line-str); padding: 1px; }
+.cutline > * { background: var(--paper); }
+.deep .cutline { background: var(--line-deep); }
+.deep .cutline > * { background: var(--bark); }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--frost);
+  color: var(--ink);
+  font: 400 1.0625rem/1.65 var(--ff);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;          /* clip, never hidden — hidden kills position:sticky */
+  font-variant-numeric: tabular-nums lining-nums;
+}
+img, svg, video, canvas { max-width: 100%; display: block; }
+a { color: inherit; }
+::selection { background: var(--amber); color: var(--bark); }
+
+/* ── display type ─────────────────────────────────────────────────────────
+   Archivo carries the brand's hard, engineered edge. Measures are in em, not
+   ch: ch is a BODY-font unit and capping a 110px display heading at "18ch"
+   sizes it against Figtree, which is how a single long word ends up wider than
+   its own column. */
+.d1, .d2, .d3, .d4 {
+  font-family: var(--ffd); font-weight: 800; letter-spacing: -.03em;
+  line-height: 1.06; margin: 0; text-wrap: balance; color: var(--steel);
+}
+/* Leading is set so a descender never touches the cap height of the line below.
+   At .93–.96 the slab's g / y / p tails met the next line on every wrapped
+   heading — the "compressed" read in the October 2026 feedback. */
+.d1 { font-size: clamp(2.6rem, 1rem + 6.9vw, 7rem); line-height: 1.02; }
+.d2 { font-size: clamp(2.05rem, 1rem + 4.2vw, 4.75rem); }
+.d3 { font-size: clamp(1.55rem, 1rem + 2.2vw, 2.9rem); line-height: 1.12; letter-spacing: -.025em; }
+.d4 { font-size: clamp(1.2rem, 1rem + 1.05vw, 1.75rem); line-height: 1.25; letter-spacing: -.015em; font-weight: 700; }
+/* one heading → text gap everywhere, instead of whatever each block happened to set */
+:is(.d1, .d2, .d3) + :is(p, .lede, ul, .chips) { margin-top: clamp(1.1rem, 1.6vw, 1.5rem); }
+.d4 + :is(p, ul) { margin-top: .75rem; }
+p { margin-block: 0 1em; }
+p:where(:last-child) { margin-bottom: 0; }   /* p-weight only: any class margin still wins */
+.d1 b, .d2 b, .d3 b { font-weight: 800; color: var(--amber); }
+.deep .d1, .deep .d2, .deep .d3, .deep .d4 { color: var(--on-deep); }
+.deep .d1 b, .deep .d2 b, .deep .d3 b { color: var(--steel-lt); }
+
+/* eyebrow — a hard blue tick, not a dot */
+.eyebrow {
+  font: 700 .74rem/1 var(--ff); letter-spacing: .17em; text-transform: uppercase;
+  color: var(--amber-deep); margin: 0 0 1.15rem; display: flex; align-items: center; gap: .65rem;
+}
+.eyebrow::before { content: ""; width: 22px; height: 3px; background: var(--amber); flex: none; }
+.eyebrow--plain::before { display: none; }
+.deep .eyebrow { color: var(--steel-lt); }
+
+.lede  { font-size: clamp(1.06rem, 1rem + .48vw, 1.32rem); line-height: 1.6; color: var(--slate); text-wrap: pretty; }
+.deep .lede { color: var(--on-deep-dim); }
+.muted { color: var(--slate); }
+.deep .muted { color: var(--on-deep-dim); }
+.dim   { color: var(--slate-dim); font-size: .845rem; line-height: 1.6; }
+.deep .dim { color: var(--on-deep-dim); }
+.blue  { color: var(--amber-deep); }
+.deep .blue { color: var(--steel-lt); }
+
+/* ── layout ───────────────────────────────────────────────────────────────── */
+.shell { max-width: var(--shell); margin-inline: auto; padding-inline: var(--gut); }
+.shell--narrow { max-width: 1040px; }
+.shell--tight  { max-width: 760px; }
+.section { padding-block: var(--sect); position: relative; }
+.section--tight { padding-block: calc(var(--sect) * .62); }
+.section--paper { background: var(--paper); }
+.section--mist  { background: var(--mist); }
+.section--frost { background: var(--frost); }
+
+/* the dark band. Its top edge is a shallow wedge cut by a pseudo-element in the
+   preceding ground colour — NOT by a clip-path on the section itself, because an
+   ancestor clip shrinks the intersection rectangle of every .rv child inside it. */
+.deep {
+  background: var(--bark); color: var(--on-deep); position: relative; isolation: isolate;
+}
+.deep > * { position: relative; z-index: 1; }
+.deep--wedge::before {
+  content: ""; position: absolute; inset: 0 0 auto; height: clamp(26px, 3.4vw, 62px);
+  background: var(--wedge, var(--frost)); z-index: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
+}
+.deep--wedge-b::after {
+  content: ""; position: absolute; inset: auto 0 0; height: clamp(26px, 3.4vw, 62px);
+  background: var(--wedge-b, var(--frost)); z-index: 0;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 100% 100%);
+}
+/* a faint engineered grid, the drafting-paper read behind the dark bands */
+.deep::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: .5;
+  background:
+    linear-gradient(90deg, var(--line-deep) 1px, transparent 1px) 0 0 / 76px 76px,
+    linear-gradient(var(--line-deep) 1px, transparent 1px) 0 0 / 76px 76px,
+    radial-gradient(120% 80% at 78% 0%, rgba(0,171,255,.17), transparent 62%);
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 22%, #000 78%, transparent);
+          mask-image: linear-gradient(180deg, transparent, #000 22%, #000 78%, transparent);
+}
+
+.grid { display: grid; gap: clamp(1rem, 1.7vw, 1.8rem); }
+.g-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.g-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+.g-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.6rem, 4.2vw, 5rem); align-items: center; }
+.split--wide { grid-template-columns: 7fr 5fr; }
+.split--flip > *:first-child { order: 2; }
+
+/* section head — 6fr/5fr and bottom-aligned. A tall headline in a narrow column
+   used to leave the right 60% of every section head empty. */
+.shead { display: grid; grid-template-columns: 6fr 5fr; gap: clamp(1.4rem,3vw,4rem);
+         align-items: end; margin-bottom: clamp(2rem,4vw,3.6rem); }
+.shead > *:last-child { padding-bottom: .35rem; }
+
+.mt-s{margin-top:.6rem}.mt-m{margin-top:1.15rem}.mt-l{margin-top:2rem}.mt-xl{margin-top:3rem}
+.rule { height: 1px; background: var(--line); border: 0; margin: 0; }
+.deep .rule { background: var(--line-deep); }
+.rule--accent { height: 3px; background: var(--amber); width: 46px; border: 0; margin: 0; }
+
+/* ── surfaces ─────────────────────────────────────────────────────────────── */
+.panel {
+  background: var(--paper); padding: clamp(1.3rem, 2.2vw, 2.1rem);
+  border-radius: var(--cut-m);
+}
+.panel--mist  { background: var(--mist); }
+.panel--frost { background: var(--frost); }
+.panel--accent   { background: var(--amber); color: var(--bark); }
+.panel--accent .d3, .panel--accent .d4 { color: var(--bark); }
+.deep .panel { background: rgba(232,244,251,.055); }
+.deep .panel--mist { background: rgba(232,244,251,.09); }
+
+.fig { overflow: hidden; position: relative; background: var(--mist);
+       border-radius: var(--cut-l); }
+.fig img { width: 100%; height: 100%; object-fit: cover; }
+.fig--wide { aspect-ratio: 16/10; }
+.fig--sq   { aspect-ratio: 1/1; }
+.fig--port { aspect-ratio: 4/5; }
+.fig--tall { aspect-ratio: 3/4; }
+.fig--flat { aspect-ratio: 21/9; }
+.figcap { font: 600 .72rem/1.45 var(--ff); letter-spacing: .13em; text-transform: uppercase;
+          color: var(--slate-dim); margin-top: .7rem; }
+.deep .figcap { color: var(--on-deep-dim); }
+
+/* ── the spec chip. Blue Fox's whole differentiator is that the number is
+      published, so every claim on this site is followed by the actual figure. */
+.chip {
+  display: inline-flex; align-items: center; gap: .5rem; flex: none;
+  font: 700 .735rem/1 var(--ff); letter-spacing: .085em; text-transform: uppercase;
+  color: var(--steel); background: var(--mist); padding: .55rem .8rem;
+  border-radius: 9px;
+}
+.chip--accent { background: var(--amber); color: var(--bark); }
+.chip--out { background: transparent; box-shadow: inset 0 0 0 1px var(--line-str); }
+.deep .chip { background: rgba(232,244,251,.1); color: var(--on-deep); }
+.deep .chip--accent { background: var(--amber); color: var(--bark); }
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+/* ── buttons ──────────────────────────────────────────────────────────────── */
+.btn {
+  --bg: var(--steel); --fg: #fff;
+  position: relative; display: inline-flex; align-items: center; justify-content: center;
+  gap: .6rem; min-height: 54px; padding: 0 1.65rem; background: var(--bg); color: var(--fg);
+  font: 700 .92rem/1 var(--ff); letter-spacing: .01em; text-decoration: none; cursor: pointer;
+  border: 0; overflow: hidden; transition: background var(--t) var(--e), color var(--t) var(--e);
+  border-radius: 13px;
+}
+.btn > * { position: relative; z-index: 1; }
+.btn::after {
+  content: ""; position: absolute; inset: 0; background: var(--amber); z-index: 0;
+  transform: translateX(-101%); transition: transform .5s var(--e-out);
+}
+.btn:hover::after, .btn:focus-visible::after { transform: none; }
+.btn:hover, .btn:focus-visible { color: var(--bark); }
+.btn--accent   { --bg: var(--amber); --fg: var(--bark); }
+.btn--accent::after { background: var(--steel); }
+.btn--accent:hover, .btn--accent:focus-visible { color: #fff; }
+/* the form CTA: steel on white with an amber arrow chip, navy on hover —
+   white text clears 8.2:1 on steel and 13.9:1 on bark */
+.btn--cta { --bg: var(--steel); --fg: #fff; min-height: 62px; font-size: 1.04rem; gap: .9rem;
+            box-shadow: 0 18px 34px -16px rgba(20,82,130,.75); }
+.btn--cta::after { background: var(--bark); }
+.btn--cta:hover, .btn--cta:focus-visible { color: #fff; }
+.btn--cta .btn__ar { width: 34px; height: 34px; padding: 10px 9px; border-radius: 50%; background: var(--amber); color: var(--bark);
+                     transition: transform .4s var(--e-out); }
+.btn--cta:hover .btn__ar { transform: translateX(4px); }
+.btn--ghost { --bg: transparent; --fg: var(--steel); box-shadow: inset 0 0 0 2px var(--line-str); }
+.btn--ghost:hover, .btn--ghost:focus-visible { color: var(--bark); }
+.deep .btn--ghost { --fg: var(--on-deep); box-shadow: inset 0 0 0 2px var(--line-deep); }
+.btn--sm { min-height: 46px; font-size: .84rem; padding: 0 1.2rem; }
+.btn--wide { width: 100%; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn__ar { transition: transform .45s var(--e-out); }
+.btn:hover .btn__ar { transform: translateX(4px); }
+
+.tlink { position: relative; font-weight: 700; color: var(--amber-deep); text-decoration: none;
+         display: inline-flex; align-items: center; gap: .45rem; }
+.tlink::after { content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 2px;
+                background: var(--amber); transform: scaleX(0); transform-origin: right;
+                transition: transform .45s var(--e-out); }
+.tlink:hover::after, .tlink:focus-visible::after { transform: scaleX(1); transform-origin: left; }
+.deep .tlink { color: var(--steel-lt); }
+
+/* ── a11y plumbing ────────────────────────────────────────────────────────── */
+/* Never hide anything by translating it off-screen. Standalone, an absolutely
+   positioned .skip resolves against the initial containing block and sits above
+   the viewport; inside a GHL column it resolves against that column and lands ON
+   the client's own header. A clipped 1px box is invisible at any nesting depth. */
+.skip, .vh {
+  position: fixed; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+.vh { position: absolute !important; }
+.skip:focus {
+  position: fixed; top: 12px; left: 12px; width: auto; height: auto; margin: 0;
+  padding: .85rem 1.3rem; clip: auto; clip-path: none; z-index: 999;
+  background: var(--amber); color: var(--bark); font-weight: 700; text-decoration: none;
+}
+:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; border-radius: 2px; }
+.deep :focus-visible, .hdr :focus-visible { outline-color: var(--steel-lt); }
+
+/* ── reveals ──────────────────────────────────────────────────────────────
+   .rv only ever animates opacity/transform/filter, never a clip. An element
+   starting at clip-path: inset(0 0 100% 0) has a zero-area intersection
+   rectangle, so an observer watching THAT element never fires and it stays
+   clipped forever — which is how whole sections silently went blank on the
+   earlier sites. Anything clipped is observed via an unclipped ancestor that
+   forwards data-in down. */
+.rv { opacity: 0; transform: translateY(24px); filter: blur(4px);
+      transition: opacity .8s var(--e-out), transform .8s var(--e-out), filter .8s var(--e-out);
+      transition-delay: var(--d, 0s); }
+.rv[data-in="true"] { opacity: 1; transform: none; filter: none; }
+/* masked line-by-line heading reveal. .18em of descender headroom — at .06em the
+   tails of g, y and p grazed the mask edge at display sizes. */
+.rvt { display: block; overflow: hidden; padding-bottom: .18em; margin-bottom: -.18em; }
+.rvt > span { display: block; transform: translateY(108%);
+              transition: transform .95s var(--e-out) var(--d, 0s); }
+.rvt[data-in="true"] > span { transform: none; }
+.rvl { transform: scaleX(0); transform-origin: left;
+       transition: transform .9s var(--e-out) var(--d, 0s); }
+.rvl[data-in="true"] { transform: scaleX(1); }
+.count { font-variant-numeric: tabular-nums; }
+
+/* Parallax and the magnetic CTA.
+   NOTE: a custom property consumed by a transform is effectively global, because
+   any ancestor may set it. --bfx/--bfy are owner-prefixed for exactly that
+   reason: a bare --mx declared on a container once translated every magnetic
+   button inside it by half its own width and pushed six CTAs off the page. */
+.pll { transform: translate3d(0, calc(var(--sp, 0) * 30px), 0); will-change: transform; }
+.pll--slow { transform: translate3d(0, calc(var(--sp, 0) * 14px), 0); }
+.magnet { transform: translate3d(var(--bfx, 0px), var(--bfy, 0px), 0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .rv, .rvt > span, .rvl { opacity: 1 !important; transform: none !important;
+                           filter: none !important; transition: none !important; }
+  .pll, .pll--slow, .magnet { transform: none !important; }
+  .btn::after { transition: none; }
+}
+
+/* ============================================================================
+   HEADER  ·  a floating glass bar
+   Every page opens on a photograph or a dark band, so the bar starts as clear
+   glass with white type and turns to a readable frosted white once the page
+   scrolls past 40px — or the moment a dropdown opens, so the menu is never
+   read through a busy photograph.
+
+   The outer .hdr is a full-width, click-through frame (it carries the GHL
+   full-bleed rule harmlessly); only .hdr__in, the bar itself, takes pointer
+   events. The "light" state is everything that is NOT solid and NOT menu-open,
+   which is why the colour rules hang off one long :not() chain.
+   ========================================================================== */
+.hdr {
+  position: fixed; inset: 0 0 auto; z-index: 90; pointer-events: none;
+  padding: 12px clamp(.6rem, 1.6vw, 1.25rem) 0;
+  transition: transform .5s var(--e);
+}
+.hdr[data-hide="true"] { transform: translateY(-120%); }
+.hdr__in {
+  pointer-events: auto; position: relative;
+  max-width: calc(var(--shell) + 1rem); margin-inline: auto;
+  display: flex; align-items: center; gap: clamp(.7rem, 1.6vw, 1.8rem);
+  min-height: 68px; padding: .35rem .5rem .35rem clamp(.7rem, 1.4vw, 1.1rem);
+  border-radius: 20px;
+  background: rgba(11,44,72,.24);
+  -webkit-backdrop-filter: blur(14px) saturate(1.35); backdrop-filter: blur(14px) saturate(1.35);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.24), 0 12px 32px -20px rgba(3,20,35,.7);
+  transition: background .4s var(--e), box-shadow .4s var(--e);
+}
+.hdr[data-solid="true"] .hdr__in, .hdr[data-menu="true"] .hdr__in,
+.hdr:has(.nav__dd[data-open="true"]) .hdr__in {
+  background: rgba(255,255,255,.9);
+  box-shadow: inset 0 0 0 1px var(--line), 0 16px 36px -22px rgba(11,44,72,.5);
+}
+
+.wm { display: inline-flex; align-items: center; gap: .7rem; text-decoration: none; flex: none; }
+/* The mark is the fox head alone (bx-logo-head-*). The old file was the whole
+   stacked lockup squeezed into 42px, so the head was ~28px tall with an
+   illegible second "BLUE FOX" under it. The name itself is live text and is
+   one word: BlueFox. */
+.wm img { width: 50px; height: auto; }
+.wm__t { display: flex; flex-direction: column; line-height: 1; }
+.wm__n { font: 800 1.3rem/1 var(--ffd); letter-spacing: -.03em; color: var(--steel); }
+.wm__s { font: 700 .585rem/1 var(--ff); letter-spacing: .21em; text-transform: uppercase;
+         color: var(--slate-dim); margin-top: .38rem; }
+
+.hdr__in > nav { margin-right: auto; }
+.nav { display: flex; align-items: center; gap: clamp(.2rem, 1vw, 1.1rem); list-style: none;
+       margin: 0; padding: 0; }
+.nav > li { position: relative; display: flex; align-items: center; }
+.nav > li > a { display: inline-flex; align-items: center; text-decoration: none;
+                font: 600 .905rem/1 var(--ff); color: var(--ink); padding: 1rem .2rem; position: relative; }
+.nav > li > a::after { content: ""; position: absolute; left: .2rem; right: .2rem; bottom: .7rem;
+                       height: 2px; background: var(--amber); transform: scaleX(0); transform-origin: right;
+                       transition: transform .4s var(--e-out); }
+.nav > li > a:hover::after, .nav > li > a:focus-visible::after,
+.nav > li[data-cur] > a::after { transform: scaleX(1); transform-origin: left; }
+
+/* The dropdown toggle is its own button, so the label stays a real link to the
+   overview page. The chevron is drawn in a 12×12 box with the stroke centred on
+   both axes and the box centred in a 44px target — the old inline arrow sat on
+   the text baseline and read as uneven next to each label. */
+.nav__tg { width: 34px; height: 44px; margin-left: -.15rem; padding: 0; border: 0; background: transparent;
+           color: var(--ink); cursor: pointer; display: grid; place-items: center; border-radius: 10px; }
+.nav__tg svg { width: 12px; height: 12px; display: block; transition: transform .35s var(--e); }
+.nav__dd[data-open="true"] .nav__tg svg { transform: rotate(180deg); }
+@media (hover: hover) and (pointer: fine) { .nav__dd:hover .nav__tg svg { transform: rotate(180deg); } }
+
+.sub { position: absolute; top: calc(100% + 10px); left: -1rem; width: 320px; list-style: none; margin: 0;
+       padding: .5rem; background: var(--paper); border-radius: 16px;
+       box-shadow: 0 24px 48px -24px rgba(3,56,87,.45), 0 0 0 1px var(--line);
+       opacity: 0; visibility: hidden; transform: translateY(-6px); pointer-events: none;
+       transition: opacity .28s var(--e), transform .28s var(--e), visibility .28s; }
+/* a hover bridge across the 10px gap, so the menu does not close mid-travel */
+.sub::before { content: ""; position: absolute; inset: -12px 0 auto; height: 12px; }
+.nav__dd[data-open="true"] .sub { opacity: 1; visibility: visible; transform: none; pointer-events: auto; }
+@media (hover: hover) and (pointer: fine) {
+  .nav__dd:hover .sub { opacity: 1; visibility: visible; transform: none; pointer-events: auto; }
+}
+.sub a { display: flex; flex-direction: column; justify-content: center; min-height: 48px; padding: .5rem .85rem;
+         text-decoration: none; font: 600 .9rem/1.3 var(--ff); color: var(--ink); border-radius: 10px;
+         transition: background .25s var(--e), color .25s var(--e); }
+.sub a small { display: block; font-weight: 500; font-size: .78rem; color: var(--slate-dim); margin-top: .12rem; }
+.sub a:hover, .sub a:focus-visible, .sub a[aria-current] { background: var(--mist); color: var(--steel); }
+.sub__ov a { font-weight: 800; color: var(--steel); }
+.sub__ov { border-bottom: 1px solid var(--line); padding-bottom: .35rem; margin-bottom: .35rem; }
+
+.hdr__cta { display: flex; align-items: center; gap: .55rem; flex: none; }
+.hdr__tel { display: inline-flex; align-items: center; gap: .45rem; text-decoration: none; min-height: 46px;
+            padding-inline: .4rem; font: 700 .9rem/1 var(--ff); color: var(--steel); white-space: nowrap; }
+.hdr__tel svg { width: 15px; height: 15px; flex: none; }
+
+.burger { display: none; width: 48px; height: 48px; flex: none; background: transparent; border: 0;
+          cursor: pointer; padding: 0; place-items: center; border-radius: 12px; }
+.burger span { display: block; width: 23px; height: 2px; background: var(--steel); margin: 4px auto;
+               transition: transform .4s var(--e), opacity .3s var(--e); }
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* the light (over-photograph) state */
+.wm__mk--lt { display: none; }
+.hdr:not([data-solid="true"]):not([data-menu="true"]):not(:has(.nav__dd[data-open="true"])) .wm__mk { display: none; }
+.hdr:not([data-solid="true"]):not([data-menu="true"]):not(:has(.nav__dd[data-open="true"])) .wm__mk--lt { display: block; }
+.hdr:not([data-solid="true"]):not([data-menu="true"]):not(:has(.nav__dd[data-open="true"])) :is(.wm__n, .nav > li > a, .nav__tg, .hdr__tel) { color: #fff; }
+.hdr:not([data-solid="true"]):not([data-menu="true"]):not(:has(.nav__dd[data-open="true"])) .wm__s { color: rgba(255,255,255,.82); }
+.hdr:not([data-solid="true"]):not([data-menu="true"]):not(:has(.nav__dd[data-open="true"])) .burger span { background: #fff; }
+
+/* off-canvas — the two service groups are native <details>, so they expand
+   and collapse with no script and stay keyboard operable */
+.oc { position: fixed; inset: 0; z-index: 95; background: var(--bark); color: var(--on-deep);
+      display: flex; flex-direction: column; padding: 5.5rem var(--gut) 2rem; overflow-y: auto;
+      opacity: 0; visibility: hidden; transform: translateY(-2%);
+      transition: opacity .45s var(--e), transform .45s var(--e), visibility .45s; }
+.oc[data-open="true"] { opacity: 1; visibility: visible; transform: none; }
+.oc__x { position: absolute; top: 1.15rem; right: var(--gut); width: 48px; height: 48px;
+         background: transparent; border: 0; color: var(--on-deep); cursor: pointer; font-size: 1.6rem; }
+.oc ul { list-style: none; margin: 0; padding: 0; }
+.oc > ul > li { border-bottom: 1px solid var(--line-deep); }
+.oc > ul > li > a, .oc summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+                    min-height: 56px; padding: .6rem 0; text-decoration: none; cursor: pointer; list-style: none;
+                    font: 800 1.45rem/1.2 var(--ffd); letter-spacing: -.03em; color: var(--on-deep); }
+.oc summary::-webkit-details-marker { display: none; }
+.oc summary svg { width: 16px; height: 16px; flex: none; transition: transform .35s var(--e); }
+.oc details[open] summary svg { transform: rotate(180deg); }
+.oc__sub { padding: 0 0 .9rem .1rem !important; display: grid; gap: 0; }
+.oc__sub a { display: flex; align-items: center; min-height: 44px; text-decoration: none;
+             font: 600 .98rem/1.3 var(--ff); color: var(--on-deep-dim); }
+.oc__sub li:first-child a { color: var(--amber-lt); font-weight: 700; }
+.oc__foot { margin-top: auto; padding-top: 1.6rem; display: grid; gap: .7rem; }
+/* ============================================================================
+   HERO
+   ========================================================================== */
+.hero { position: relative; min-height: clamp(600px, 92svh, 940px); display: flex; align-items: flex-end;
+        overflow: hidden; background: var(--bark); padding-block: clamp(6rem,12vw,8rem) clamp(2.5rem,5vw,4.5rem); }
+.hero__media { position: absolute; inset: 0; z-index: 0; }
+/* Deliberately over-scaled so the parallax never reveals an edge. Its rect
+   necessarily exceeds the viewport and the element sweep flags it at every
+   width — verify it by its zero scroll delta, not by the rect alone. */
+.hero__media img, .hero__media video {
+  width: 100%; height: 100%; object-fit: cover;
+  transform: scale(calc(1 + var(--sp, 0) * .06)); transform-origin: 50% 40%;
+}
+/* Phase 1 checklist: "remove or significantly reduce the dark overlay". The
+   full-height 0.78 wash is gone and the photograph is shown as shot. The only
+   shade left is a thin neutral band under the nav, so the glass header and its
+   white logo have something to sit on.
+
+   The type moved into its own card instead. A lighter scrim was tried first and
+   measured: white over this photograph's sky came out at 1.0–1.3:1 at desktop
+   widths, because the headline sits in the sky. A contained navy glass card
+   (the header's own material, darker) keeps the property bright everywhere else
+   and holds the amber line at 3:1 even over pure white. */
+.hero__shade { position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,.26) 0%, rgba(0,0,0,0) 15%); }
+/* sized so the headline sets in three lines and the card covers the lower-left
+   corner only — the house, palms and drive stay in view */
+.hero__card { max-width: 37rem; padding: clamp(1.3rem, 2.6vw, 2.2rem) clamp(1.25rem, 2.8vw, 2.4rem);
+  border-radius: var(--cut-l); background: rgba(11,44,72,.8);
+  -webkit-backdrop-filter: blur(16px) saturate(1.25); backdrop-filter: blur(16px) saturate(1.25);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.16), 0 30px 60px -34px rgba(3,20,35,.75); }
+/* .hero .hero__card .d1, not .hero__card .d1: the generic .hero .d1 size rule
+   comes later in this file at the same specificity and would otherwise win */
+.hero .hero__card .d1 { font-size: clamp(2rem, .8rem + 2.9vw, 3.5rem); max-width: none; }
+/* on a phone the card is most of the hero; the secondary link goes (the mbar
+   and the gallery below carry it) so the photograph keeps its share */
+@media (max-width: 480px) { .hero__card .hero__acts .btn--ghost { display: none; } }
+.hero__card .hero__lede { max-width: 40ch; font-size: clamp(1.05rem, .96rem + .4vw, 1.25rem); margin-top: clamp(.9rem, 1.4vw, 1.2rem); }
+.hero__card .hero__acts { margin-top: clamp(1.3rem, 2.2vw, 1.8rem); }
+.hero__in { position: relative; z-index: 2; width: 100%; }
+.hero .d1 { color: #fff; max-width: 12em; line-height: 1.03; text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 2px 26px rgba(0,0,0,.5);
+  /* The hero caps its own display size rather than lowering the scale for every page. */
+  font-size: clamp(2.6rem, 1rem + 5.2vw, 5.6rem); }
+.hero .d1 b { color: var(--amber-lt); }
+.hero__lede { color: #fff; max-width: 34ch; margin: clamp(1.1rem, 1.8vw, 1.5rem) 0 0; font-weight: 500;
+              font-size: clamp(1.15rem, 1rem + .65vw, 1.45rem); line-height: 1.5; text-shadow: 0 1px 2px rgba(0,0,0,.45), 0 1px 16px rgba(0,0,0,.55); }
+.hero__acts { display: flex; flex-wrap: wrap; gap: .9rem; align-items: center; margin-top: clamp(1.7rem, 3vw, 2.5rem); }
+.hero .eyebrow { color: var(--amber); }
+.hero__foot { display: flex; flex-wrap: wrap; gap: clamp(1rem,3vw,3rem); align-items: center;
+              margin-top: clamp(2rem,4.5vw,3.4rem); padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.22); }
+.hero__stat { display: flex; flex-direction: column; gap: .3rem; }
+.hero__stat b { font: 800 clamp(1.5rem,2.4vw,2.3rem)/1 var(--ffd); letter-spacing: -.035em; color: #fff; }
+/* Direct child only. As a descendant selector this also caught the
+   <span class="count"> INSIDE each <b>, so every animated figure rendered at
+   .715rem next to a full-size "$" and "/hr" — "$100/hr" came out as "$₁₀₀/hr". */
+.hero__stat > span { font: 600 .715rem/1.3 var(--ff); letter-spacing: .13em; text-transform: uppercase;
+                     color: rgba(255,255,255,.72); }
+
+/* compact page hero for interior pages */
+.phero { position: relative; background: var(--bark); color: var(--on-deep); overflow: hidden;
+         padding-block: clamp(7.5rem,14vw,10.5rem) clamp(3rem,6vw,5rem); }
+.phero__bg { position: absolute; inset: 0; z-index: 0; opacity: .3; }
+.phero__bg img { width: 100%; height: 100%; object-fit: cover; }
+.phero::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(100deg, var(--bark) 12%, rgba(6,35,52,.72) 58%, rgba(6,35,52,.5)); }
+.phero > * { position: relative; z-index: 2; }
+.phero .d1 { max-width: 13em; }
+
+/* breadcrumb */
+.crumb { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; list-style: none; margin: 0 0 1.35rem;
+         padding: 0; font: 600 .77rem/1.4 var(--ff); color: var(--on-deep-dim); }
+.crumb a { text-decoration: none; color: var(--on-deep-dim); }
+.crumb a:hover { color: var(--steel-lt); }
+.crumb li + li::before { content: "/"; margin-right: .5rem; opacity: .55; }
+.crumb [aria-current] { color: var(--steel-lt); }
+
+/* ============================================================================
+   MARQUEE  ·  the published-facts ticker
+   width:max-content is intentional — the track is wider than the viewport by
+   design. Excluded from the overflow sweep by ancestor, like every other
+   deliberately over-wide element on these sites.
+   ========================================================================== */
+.marq { background: var(--steel); color: #fff; overflow: hidden; padding-block: .95rem;
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+                mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
+.marq__t { display: flex; width: max-content; animation: marq 46s linear infinite; }
+.marq:hover .marq__t { animation-play-state: paused; }
+.marq__g { display: flex; align-items: center; gap: 2.6rem; padding-right: 2.6rem; flex: none; }
+.marq__i { display: inline-flex; align-items: center; gap: .6rem; white-space: nowrap;
+           font: 700 .81rem/1 var(--ff); letter-spacing: .1em; text-transform: uppercase; }
+.marq__i::before { content: ""; width: 6px; height: 6px; background: var(--amber); flex: none;
+                   transform: rotate(45deg); }
+@keyframes marq { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marq__t { animation: none; } }
+
+/* ============================================================================
+   CARDS
+   ========================================================================== */
+.card { position: relative; display: flex; flex-direction: column; background: var(--paper);
+        text-decoration: none; color: inherit; overflow: hidden;
+        transition: transform .55s var(--e), box-shadow .55s var(--e);
+        border-radius: var(--cut-l); }
+a.card:hover, a.card:focus-visible { transform: translateY(-7px); }
+.card__m { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--mist); }
+.card__m img { width: 100%; height: 100%; object-fit: cover;
+               transition: transform .9s var(--e); }
+a.card:hover .card__m img { transform: scale(1.055); }
+.card__b { padding: clamp(1.25rem,2.1vw,1.85rem); display: flex; flex-direction: column; flex: 1; }
+.card__n { font: 700 .715rem/1 var(--ff); letter-spacing: .16em; text-transform: uppercase;
+           color: var(--amber-deep); margin: 0 0 .85rem; }
+.card h3 { font: 800 clamp(1.2rem,1.5vw,1.5rem)/1.22 var(--ffd); letter-spacing: -.02em;
+           color: var(--steel); margin: 0 0 .7rem; }
+.card p { margin: 0; color: var(--slate); font-size: .955rem; line-height: 1.6; }
+.card__go { margin-top: auto; padding-top: 1.3rem; display: inline-flex; align-items: center; gap: .5rem;
+            font: 700 .8rem/1 var(--ff); letter-spacing: .05em; color: var(--amber-deep); }
+a.card:hover .card__go { gap: .85rem; }
+.card__go svg { transition: transform .4s var(--e-out); }
+.card__price { margin-top: 1.1rem; display: flex; align-items: baseline; gap: .45rem; }
+.card__price b { font: 800 clamp(1.75rem,2.6vw,2.4rem)/1 var(--ffd); letter-spacing: -.04em; color: var(--steel); }
+.card__price span { font: 600 .8rem/1 var(--ff); color: var(--slate-dim); }
+.deep .card { background: rgba(232,244,251,.06); }
+.deep .card h3 { color: var(--on-deep); }
+.deep .card p { color: var(--on-deep-dim); }
+.deep .card__n, .deep .card__go { color: var(--steel-lt); }
+.deep .card__price b { color: #fff; }
+
+/* numbered process step */
+.step { position: relative; padding-top: 1.6rem; }
+.step__n { font: 800 clamp(2.6rem,5vw,4.4rem)/.8 var(--ffd); letter-spacing: -.05em;
+           color: var(--amber); opacity: .28; margin: 0 0 1rem; }
+.deep .step__n { color: var(--steel-lt); opacity: .4; }
+.step h3 { font: 800 clamp(1.15rem,1.5vw,1.45rem)/1.25 var(--ffd); letter-spacing: -.02em;
+           color: var(--steel); margin: 0 0 .7rem; }
+.deep .step h3 { color: var(--on-deep); }
+.step p { margin: 0; color: var(--slate); font-size: .95rem; line-height: 1.65; }
+.deep .step p { color: var(--on-deep-dim); }
+.step::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; background: var(--amber); }
+
+/* ── the checklist. This is the site's core content object: Blue Fox publishes
+      the exact task list, so it gets a real component rather than a <ul>. */
+.check { display: grid; gap: 1.6rem; }
+.check__g h4 { font: 700 .73rem/1 var(--ff); letter-spacing: .17em; text-transform: uppercase;
+               color: var(--amber-deep); margin: 0 0 .85rem; padding-bottom: .7rem;
+               border-bottom: 1px solid var(--line); }
+.deep .check__g h4 { color: var(--steel-lt); border-color: var(--line-deep); }
+.check__g ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+.check__g li { display: flex; align-items: flex-start; gap: .65rem; font-size: .95rem; line-height: 1.55; color: var(--ink); }
+.deep .check__g li { color: var(--on-deep); }
+.check__g li::before {
+  content: ""; width: 15px; height: 15px; flex: none; margin-top: .28rem; background: var(--amber);
+  border-radius: 6px;
+  -webkit-mask: no-repeat center / 9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M1 6l3.4 3.6L11 2' stroke='%23000' stroke-width='2.4' fill='none' stroke-linecap='square'/%3E%3C/svg%3E");
+}
+.check__g li[data-x]::before { background: var(--line-str); }
+.check--2 { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1.6rem clamp(1.5rem,3vw,3rem); }
+.check--3 { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.6rem clamp(1.5rem,3vw,3rem); }
+.check--4 { gap: 1.8rem clamp(1.5rem,3vw,3rem); }
+
+/* ── spec table: price / duration / policy, the "in writing" surfaces ─────── */
+.spec { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.spec th, .spec td { text-align: left; padding: .95rem 1rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.spec thead th { font: 700 .715rem/1 var(--ff); letter-spacing: .15em; text-transform: uppercase;
+                 color: var(--slate-dim); border-bottom: 2px solid var(--steel); white-space: nowrap; }
+.spec tbody th { font-weight: 700; color: var(--steel); }
+.spec td b { font: 800 1.15rem/1 var(--ffd); letter-spacing: -.03em; color: var(--steel); }
+.spec tr:last-child th, .spec tr:last-child td { border-bottom: 0; }
+.spec__wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.deep .spec th, .deep .spec td { border-color: var(--line-deep); }
+.deep .spec thead th { color: var(--on-deep-dim); border-bottom-color: var(--amber); }
+.deep .spec tbody th, .deep .spec td b { color: var(--on-deep); }
+
+/* ── stat band ────────────────────────────────────────────────────────────── */
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1px; background: var(--line-deep); }
+.stat { background: var(--bark); padding: clamp(1.35rem,2.4vw,2.2rem); }
+.stat b { display: block; font: 800 clamp(2rem,3.6vw,3.4rem)/1 var(--ffd); letter-spacing: -.045em;
+          color: var(--steel-lt); margin-bottom: .5rem; }
+.stat span { font: 600 .755rem/1.45 var(--ff); letter-spacing: .1em; text-transform: uppercase;
+             color: var(--on-deep-dim); }
+
+/* ── testimonials ─────────────────────────────────────────────────────────── */
+.quote { display: flex; flex-direction: column; height: 100%; background: var(--paper);
+         padding: clamp(1.4rem,2.3vw,2rem);
+         border-radius: var(--cut-m); }
+.quote__st { display: flex; gap: .18rem; margin-bottom: 1rem; }
+.quote__st svg { width: 16px; height: 16px; fill: var(--amber); }
+.quote blockquote { margin: 0; font-size: 1.03rem; line-height: 1.65; color: var(--ink); }
+.quote figcaption { margin-top: auto; padding-top: 1.25rem; display: flex; align-items: center;
+                    justify-content: space-between; gap: 1rem; font-size: .85rem; }
+.quote figcaption b { color: var(--steel); font-weight: 700; }
+.quote figcaption span { color: var(--slate-dim); font-size: .78rem; }
+.deep .quote { background: rgba(232,244,251,.06); }
+.deep .quote blockquote { color: var(--on-deep); }
+.deep .quote figcaption b { color: #fff; }
+.deep .quote figcaption span { color: var(--on-deep-dim); }
+
+/* ── accordion / FAQ ──────────────────────────────────────────────────────── */
+.acc { border-top: 1px solid var(--line); }
+.deep .acc { border-color: var(--line-deep); }
+.acc details { border-bottom: 1px solid var(--line); }
+.deep .acc details { border-color: var(--line-deep); }
+.acc summary { list-style: none; cursor: pointer; display: flex; align-items: flex-start; gap: 1rem;
+               padding: 1.3rem 0; font: 700 clamp(1.02rem,1.25vw,1.2rem)/1.4 var(--ff);
+               color: var(--steel); min-height: 48px; }
+.deep .acc summary { color: var(--on-deep); }
+.acc summary::-webkit-details-marker { display: none; }
+.acc summary::after { content: ""; width: 15px; height: 15px; flex: none; margin-left: auto; margin-top: .3rem;
+  background: currentColor; transition: transform .4s var(--e);
+  -webkit-mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 1v14M1 8h14' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E");
+          mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 1v14M1 8h14' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E"); }
+.acc details[open] summary::after { transform: rotate(135deg); }
+.acc__b { padding: 0 3rem 1.5rem 0; color: var(--slate); max-width: 70ch; line-height: 1.7; }
+.deep .acc__b { color: var(--on-deep-dim); }
+.acc__b p:first-child { margin-top: 0; }
+.acc__b p:last-child { margin-bottom: 0; }
+
+/* ============================================================================
+   THE WALKTHROUGH  ·  live plan + estimate  (assets/js/walkthrough.js)
+
+   The canvas is aria-hidden and ONLY ever draws. Every control beside it is a
+   real form element — range, radio, checkbox — and the readout is a native
+   <output>, which is implicitly role="status" aria-live="polite". That is what
+   makes the whole feature keyboard-operable without a parallel implementation.
+   ========================================================================== */
+.wt { display: grid; grid-template-columns: 1.32fr 1fr; gap: clamp(1.2rem,2.4vw,2.4rem); align-items: start; }
+.wt__stage { position: relative; background: #041A27; overflow: hidden;
+             border-radius: var(--cut-l); }
+.wt__canvas { display: block; width: 100%; aspect-ratio: 4/3; }
+.wt__badge { position: absolute; top: .95rem; left: .95rem; z-index: 2; display: flex; gap: .4rem;
+             flex-wrap: wrap; max-width: calc(100% - 1.9rem); }
+.wt__hint { position: absolute; bottom: .95rem; left: .95rem; right: .95rem; z-index: 2;
+            font: 600 .74rem/1.4 var(--ff); letter-spacing: .06em; text-transform: uppercase;
+            color: var(--on-deep-dim); }
+.wt__panel { background: var(--paper); padding: clamp(1.2rem,2.1vw,1.85rem);
+             border-radius: var(--cut-l); }
+.deep .wt__panel { background: rgba(232,244,251,.07); }
+
+.wt__row { padding-block: 1rem; border-bottom: 1px solid var(--line); }
+.deep .wt__row { border-color: var(--line-deep); }
+.wt__row:first-child { padding-top: 0; }
+.wt__lab { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+           font: 700 .74rem/1 var(--ff); letter-spacing: .15em; text-transform: uppercase;
+           color: var(--slate-dim); margin-bottom: .8rem; }
+.deep .wt__lab { color: var(--on-deep-dim); }
+.wt__lab b { font: 800 1.2rem/1 var(--ffd); letter-spacing: -.03em; color: var(--steel);
+             text-transform: none; letter-spacing: -.02em; }
+.deep .wt__lab b { color: var(--on-deep); }
+
+/* range — styled on both engines, 48px hit area kept via the thumb + padding */
+.wt input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 44px;
+                        background: transparent; cursor: pointer; margin: 0; }
+.wt input[type=range]::-webkit-slider-runnable-track { height: 4px; background: var(--mist); }
+.wt input[type=range]::-moz-range-track { height: 4px; background: var(--mist); }
+.deep .wt input[type=range]::-webkit-slider-runnable-track { background: rgba(232,244,251,.18); }
+.deep .wt input[type=range]::-moz-range-track { background: rgba(232,244,251,.18); }
+.wt input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px;
+  margin-top: -11px; background: var(--amber); border: 0; cursor: pointer;
+  border-radius: 10px; }
+.wt input[type=range]::-moz-range-thumb { width: 26px; height: 26px; background: var(--amber); border: 0;
+  border-radius: 0; cursor: pointer;
+  border-radius: 10px; }
+
+/* segmented radio group */
+.seg { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 4px; }
+/* The radios are driven by their <label> on pointer and by arrow keys on
+   keyboard, so the inputs themselves never need to be a hit target. Hiding them
+   with position:absolute and no offsets left three 1px boxes stacked at the same
+   static position, and the LAST one sat on top intercepting clicks meant for the
+   others — the group looked fine and simply refused to change on click. Clip
+   them the way .vh does and take them out of hit testing; focus still lands on
+   them, and the ring is drawn on the label. */
+.seg input { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+             overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); border: 0;
+             pointer-events: none; }
+.seg label { display: grid; place-items: center; text-align: center; gap: .18rem; min-height: 52px;
+             padding: .5rem .35rem; cursor: pointer; background: var(--frost); color: var(--slate);
+             font: 700 .82rem/1.2 var(--ff); transition: background .3s var(--e), color .3s var(--e);
+             border-radius: 10px; }
+.seg label small { font-weight: 600; font-size: .72rem; letter-spacing: .06em; opacity: .8; }
+.deep .seg label { background: rgba(232,244,251,.08); color: var(--on-deep-dim); }
+.seg input:checked + label { background: var(--amber); color: var(--bark); }
+.seg input:focus-visible + label { outline: 3px solid var(--amber); outline-offset: 3px; }
+
+/* checkbox row */
+.chk { display: flex; align-items: flex-start; gap: .7rem; cursor: pointer; min-height: 48px;
+       padding-top: .4rem; font-size: .93rem; color: var(--ink); }
+.deep .chk { color: var(--on-deep); }
+.chk input { width: 22px; height: 22px; margin: .15rem 0 0; flex: none; accent-color: var(--amber); cursor: pointer; }
+.chk small { display: block; color: var(--slate-dim); font-size: .8rem; margin-top: .12rem; }
+.deep .chk small { color: var(--on-deep-dim); }
+
+/* the readout */
+.wt__out { display: block; padding-top: 1.15rem; }
+.wt__fig { display: flex; align-items: baseline; gap: .5rem; flex-wrap: wrap; }
+.wt__fig b { font: 800 clamp(2.1rem,4vw,3.1rem)/.95 var(--ffd); letter-spacing: -.045em; color: var(--steel); }
+.deep .wt__fig b { color: var(--steel-lt); }
+.wt__fig span { font: 600 .88rem/1.3 var(--ff); color: var(--slate-dim); }
+.deep .wt__fig span { color: var(--on-deep-dim); }
+.wt__break { margin-top: .8rem; display: grid; gap: .35rem; font-size: .86rem; color: var(--slate); }
+.deep .wt__break { color: var(--on-deep-dim); }
+.wt__break > span { display: flex; justify-content: space-between; gap: 1rem; }
+.wt__break b { color: var(--steel); font-weight: 700; }
+.deep .wt__break b { color: var(--on-deep); }
+
+/* ============================================================================
+   FORMS
+   ========================================================================== */
+.form { display: grid; gap: 1.1rem; }
+.field { display: grid; gap: .45rem; }
+.field > label { font: 700 .755rem/1 var(--ff); letter-spacing: .13em; text-transform: uppercase;
+                 color: var(--slate-dim); }
+.deep .field > label { color: var(--on-deep-dim); }
+.field input, .field select, .field textarea {
+  width: 100%; min-height: 54px; padding: .9rem 1rem; font: 400 1rem/1.4 var(--ff);
+  color: var(--ink); background: var(--paper); border: 0; box-shadow: inset 0 0 0 1.5px var(--line-str);
+  transition: box-shadow .3s var(--e); appearance: none;
+  border-radius: 12px; }
+.field textarea { min-height: 130px; resize: vertical; }
+.field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%233E5C6E' stroke-width='1.8' fill='none'/%3E%3C/svg%3E");
+                 background-repeat: no-repeat; background-position: right 1rem center; background-size: 12px;
+                 padding-right: 2.6rem; }
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; box-shadow: inset 0 0 0 2px var(--amber); }
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible {
+  outline: 3px solid var(--amber); outline-offset: 2px; }
+.field small { font-size: .78rem; color: var(--slate-dim); }
+.deep .field small { color: var(--on-deep-dim); }
+.deep .field input, .deep .field select, .deep .field textarea {
+  background: rgba(232,244,251,.07); color: var(--on-deep); box-shadow: inset 0 0 0 1.5px var(--line-deep); }
+.deep .field input::placeholder, .deep .field textarea::placeholder { color: rgba(168,207,228,.75); }
+.form__2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+
+/* services multi-select (built by site.js from the native <select>) */
+.msel { position: relative; }
+.msel__b { width: 100%; min-height: 54px; padding: .9rem 2.6rem .9rem 1rem; text-align: left; cursor: pointer;
+  font: 400 1rem/1.4 var(--ff); color: var(--ink); border: 0; border-radius: 12px; box-shadow: inset 0 0 0 1.5px var(--line-str);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: box-shadow .3s var(--e);
+  /* a long one-line label must not set the column's min-content width: at 320px
+     "Landscape design & construction" pushed the service-page form 40px wide */
+  contain: inline-size;
+  background: var(--paper) no-repeat right 1rem center / 12px
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%233E5C6E' stroke-width='1.8' fill='none'/%3E%3C/svg%3E"); }
+.msel__b[aria-expanded="true"] { box-shadow: inset 0 0 0 2px var(--amber); }
+.msel__b:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+.field[data-err] .msel__b { box-shadow: inset 0 0 0 2px var(--amber-deep); }
+.msel__p { position: absolute; z-index: 30; left: 0; right: 0; top: calc(100% + .45rem); padding: .5rem;
+  max-height: min(380px, 62vh); overflow: auto; overscroll-behavior: contain;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 .4rem;
+  background: var(--paper); border-radius: var(--cut-m);
+  box-shadow: 0 26px 54px -22px rgba(11,44,72,.5), 0 0 0 1px var(--line); }
+.msel__p[hidden] { display: none; }
+.msel__g { grid-column: 1 / -1; margin: .7rem .6rem .25rem; font: 700 .72rem/1.2 var(--ff); letter-spacing: .14em;
+           text-transform: uppercase; color: var(--amber-deep); }
+.msel__g:first-child { margin-top: .3rem; }
+.msel__p label { display: flex; align-items: center; gap: .65rem; min-height: 44px; padding: .35rem .6rem; border-radius: 10px;
+                 font: 500 .95rem/1.3 var(--ff); color: var(--ink); cursor: pointer; }
+.msel__p label:hover { background: var(--frost); }
+/* outweighs `.qform--big .field input`, which would otherwise make each box a text field */
+.field .msel__p input[type="checkbox"] { width: 20px; height: 20px; min-height: 0; padding: 0; flex: none; margin: 0;
+  appearance: auto; box-shadow: none; border-radius: 4px; accent-color: var(--steel); cursor: pointer; }
+.deep .msel__b { background-color: rgba(232,244,251,.07); color: var(--on-deep); box-shadow: inset 0 0 0 1.5px var(--line-deep); }
+@media (max-width: 560px) { .msel__p { grid-template-columns: 1fr; } }
+.form__note { font-size: .8rem; color: var(--slate-dim); line-height: 1.55; }
+.deep .form__note { color: var(--on-deep-dim); }
+.req { color: var(--amber-deep); }
+.deep .req { color: var(--steel-lt); }
+
+/* landing-page shell — no nav, no exit links */
+.lphdr { padding-block: 1.5rem; border-bottom: 1px solid var(--line-deep); }
+.lphdr__in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.lp { background: var(--bark); color: var(--on-deep); min-height: 100svh; }
+.lp__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.8rem,4.5vw,5rem);
+            align-items: start; padding-block: clamp(2.5rem,6vw,4.5rem); }
+.lp__form { position: sticky; top: 2rem; }
+/* the free-quote form is a white panel inside a .deep band, so it has to undo
+   every `.deep` form rule — they had put #AFC7DC labels on white (1.9:1) */
+.deep .lp__form :is(.field > label, .opt, .form__note, .qform .chk, .chk small) { color: var(--slate-dim); }
+.deep .lp__form .qform .chk { color: var(--slate); }
+.deep .lp__form .req { color: var(--amber-deep); }
+.deep .lp__form :is(.preview-tag, .field__err, .card__n) { color: var(--amber-deep); }
+.deep .lp__form :is(.field input, .field select, .field textarea, .msel__b) {
+  background-color: var(--paper); color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--line-str); }
+.deep .lp__form .field textarea::placeholder { color: var(--slate-dim); }
+.deep .lp__form .field[data-err] :is(input, select, .msel__b) { box-shadow: inset 0 0 0 2px var(--amber-deep); }
+.deep .lp__form .form__status { background: var(--mist); color: var(--ink); }
+
+/* ============================================================================
+   FOOTER + MOBILE BAR
+   ========================================================================== */
+.ftr { background: var(--bark); color: var(--on-deep-dim); padding-block: clamp(3rem,6vw,5rem) 0;
+       position: relative; isolation: isolate; }
+.ftr__top { display: grid; grid-template-columns: 1.35fr 1.15fr 1.1fr .8fr 1.25fr; gap: clamp(1.6rem,3vw,3rem);
+            padding-bottom: clamp(2.2rem,4vw,3.4rem); }
+.ftr__lk { display: inline-flex; align-items: center; gap: .75rem; text-decoration: none; margin-bottom: 1.1rem; }
+.ftr__lk img { width: 180px; height: auto; }
+.ftr__lk b { font: 800 1.3rem/1 var(--ffd); letter-spacing: -.035em; color: #fff; }
+.ftr__lk b i { font-style: normal; color: var(--steel-lt); }
+.ftr h4 { font: 700 .715rem/1 var(--ff); letter-spacing: .17em; text-transform: uppercase;
+          color: #fff; margin: 0 0 1.15rem; }
+.ftr ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
+.ftr a { color: var(--on-deep-dim); text-decoration: none; font-size: .92rem;
+         transition: color .3s var(--e); }
+.ftr a:hover { color: var(--steel-lt); }
+.ftr address { font-style: normal; font-size: .92rem; line-height: 1.75; }
+.ftr__bot { border-top: 1px solid var(--line-deep); padding-block: 1.5rem; display: flex;
+            flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center;
+            font-size: .8rem; color: var(--on-deep-dim); }
+.ftr__bot ul { display: flex; flex-wrap: wrap; gap: 1.2rem; }
+.ftr__sample { background: rgba(0,171,255,.1); box-shadow: inset 0 0 0 1px var(--line-deep);
+               padding: .9rem 1.1rem; font-size: .78rem; line-height: 1.6; margin-bottom: 1.5rem;
+               border-radius: 12px; }
+
+/* fixed CTA bar. Always paired with a matching body padding-bottom in the SAME
+   media query — drop one and the last rows of every page sit under the bar. */
+.mbar { display: none; position: fixed; inset: auto 0 0; z-index: 88; background: var(--bark);
+        border-top: 1px solid var(--line-deep); padding: .55rem .7rem calc(.55rem + env(safe-area-inset-bottom));
+        gap: .5rem; grid-template-columns: 1fr 1fr; }
+.mbar a { display: flex; align-items: center; justify-content: center; gap: .45rem; min-height: 50px;
+          text-decoration: none; font: 700 .875rem/1 var(--ff);
+          border-radius: 11px; }
+.mbar__tel { background: rgba(232,244,251,.1); color: var(--on-deep); }
+.mbar__cta { background: var(--amber); color: var(--bark); }
+
+/* ============================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 1180px) {
+  .nav { display: none; }
+  .burger { display: grid; margin-left: auto; }
+  .wt { grid-template-columns: 1fr; }
+  .ftr__top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 980px) {
+  .g-4 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .stats { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .check--3 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .lp__grid { grid-template-columns: 1fr; }
+  .lp__form { position: static; }
+}
+@media (max-width: 860px) {
+  .split, .split--wide { grid-template-columns: 1fr; }
+  .split--flip > *:first-child { order: 0; }
+  .shead { grid-template-columns: 1fr; align-items: start; }
+  .shead > *:last-child { padding-bottom: 0; }
+  .g-3 { grid-template-columns: 1fr; }
+  .hero { min-height: 640px; }
+}
+@media (max-width: 720px) {
+  .g-2, .g-4 { grid-template-columns: 1fr; }
+  .check--2, .check--3 { grid-template-columns: 1fr; }
+  .form__2 { grid-template-columns: 1fr; }
+  .ftr__top { grid-template-columns: 1fr; }
+  .acc__b { padding-right: 0; }
+  /* the pair: fixed bar + the padding that keeps content clear of it */
+  .mbar { display: grid; }
+  body { padding-bottom: 74px; }
+}
+@media (max-width: 640px) {
+  /* Below 640 a flex:none wordmark subtitle and a flex:none header CTA
+     out-measure the viewport together and shove the burger past the right edge.
+     body{overflow-x:clip} hides that from scrollWidth entirely, so it must be
+     fixed by dropping the two, not detected by measuring the page. .mbar
+     already carries "Get a quote" at this width. */
+  .hdr__cta { display: none; }
+  .wm__s { display: none; }
+  .hero__foot { gap: 1.1rem 1.8rem; }
+  .stats { grid-template-columns: 1fr; }
+}
+@media (max-width: 420px) {
+  .seg { grid-template-columns: 1fr; }
+}
+
+/* ============================================================================
+   TAP-TARGET FLOOR
+
+   Found by sweeping every focusable element's getBoundingClientRect at
+   320/375/414/768/1024/1440. Buttons and form fields were already over 44px;
+   these are the ones that were not — header chrome, footer link lists,
+   breadcrumbs and standalone text links, all of which looked fine and measured
+   between 15px and 43px tall.
+
+   Inline links inside a running sentence are exempt from the 44px rule, so
+   .tlink expands its hit box with padding and pulls the space back with an
+   equal negative margin: the target grows, the line box does not move.
+   ========================================================================== */
+.wm { min-height: 48px; }
+
+.tlink { padding-block: .62rem; margin-block: -.62rem; }
+
+.crumb a { display: inline-block; padding-block: .85rem; margin-block: -.85rem; }
+
+.ftr ul { gap: 0; }
+.ftr ul a { display: flex; align-items: center; min-height: 44px; }
+.ftr__lk { min-height: 48px; }
+.ftr__bot ul a { min-height: 44px; }
+
+.oc__sub a { min-height: 44px; display: flex; align-items: center; padding-block: 0; }
+.acc summary { min-height: 52px; align-items: center; }
+
+/* The wordmark subtitle was 9.4px — smaller than any other type on the site and
+   below the floor every other brand in this repo holds. */
+.wm__s { font-size: .69rem; }
+
+/* ============================================================================
+   BEFORE / AFTER SLIDER
+   Pure CSS clip-path driven by a range input — keyboard operable, touch
+   draggable, no library. Used on the homepage with the company's own
+   pressure-washing job.
+
+   The figure itself is CLIPPED, so it must never carry its own .rv: an element
+   clipped to zero area has a zero-area intersection rectangle, so an observer
+   watching it never fires and it stays hidden forever. The unclipped wrapper is
+   observed instead and forwards data-in down via [data-rv-child].
+   ========================================================================== */
+.ba { position: relative; margin: 0; overflow: hidden; background: var(--mist);
+      aspect-ratio: 16/9; border-radius: var(--cut-l); isolation: isolate; }
+.ba img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ba__after { clip-path: inset(0 0 0 var(--ba, 50%)); }
+.ba__line { position: absolute; top: 0; bottom: 0; left: var(--ba, 50%); width: 2px;
+            background: var(--amber); z-index: 2; pointer-events: none;
+            transform: translateX(-1px); }
+.ba__line::after {
+  content: ""; position: absolute; top: 50%; left: 50%; width: 46px; height: 46px;
+  transform: translate(-50%, -50%); border-radius: 50%; background: var(--amber);
+  box-shadow: 0 2px 14px rgba(11,44,72,.4);
+  -webkit-mask: no-repeat center / 20px 20px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6l-5 6 5 6M15 6l5 6-5 6' stroke='%23000' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  -webkit-mask-composite: destination-out;
+}
+.ba__line::before {
+  content: ""; position: absolute; top: 50%; left: 50%; width: 46px; height: 46px;
+  transform: translate(-50%, -50%); border-radius: 50%; background: var(--amber);
+}
+.ba__range { position: absolute; inset: 0; z-index: 3; width: 100%; height: 100%;
+             margin: 0; opacity: 0; cursor: ew-resize; -webkit-appearance: none; appearance: none;
+             background: transparent; }
+.ba__range::-webkit-slider-thumb { -webkit-appearance: none; width: 56px; height: 100%; cursor: ew-resize; }
+.ba__range::-moz-range-thumb { width: 56px; height: 100%; border: 0; background: transparent; cursor: ew-resize; }
+.ba__range:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+.ba__tag { position: absolute; top: 1rem; z-index: 2; pointer-events: none;
+           font: 700 .72rem/1 var(--ff); letter-spacing: .14em; text-transform: uppercase;
+           color: #fff; background: rgba(11,44,72,.72); padding: .5rem .75rem; border-radius: 6px; }
+.ba__tag--l { left: 1rem; }
+.ba__tag--r { right: 1rem; }
+@media (max-width: 720px) { .ba { aspect-ratio: 4/3; } }
+
+/* ============================================================================
+   REDESIGN COMPONENTS  ·  October 2026
+   Quote band + shared quote popup, homepage carousel, the two-column service
+   directory, overview rows, Google review cards, gallery mosaic + lightbox,
+   split contact hero. Same tokens, same radius scale, nothing new in the palette.
+   ========================================================================== */
+
+/* glass — the one material the new hero, gallery and nav share */
+.glass { background: rgba(11,44,72,.42); color: #fff;
+         -webkit-backdrop-filter: blur(14px) saturate(1.3); backdrop-filter: blur(14px) saturate(1.3);
+         box-shadow: inset 0 0 0 1px rgba(255,255,255,.22); border-radius: var(--cut-m); }
+
+/* ── homepage hero additions ─────────────────────────────────────────────── */
+.hero { padding-bottom: clamp(3.5rem, 7vw, 6rem); }
+.stars { display: inline-flex; gap: 2px; flex: none; }
+.stars svg { width: 15px; height: 15px; fill: var(--amber); }
+
+/* ── quote band: a dark band of its own, NOT a .deep — the card inside is a
+      light surface and every `.deep .field …` rule would restyle its inputs. ── */
+.qband { background: var(--bark); position: relative; isolation: isolate; z-index: 2;
+         padding-block: calc(var(--sect) + clamp(14px, 1.7vw, 31px)) var(--sect); }
+.qband::before { content: ""; position: absolute; inset: 0 0 auto; height: clamp(26px, 3.4vw, 62px); z-index: 0;
+                 background: var(--frost); clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%); }
+.qband::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(55% 70% at 88% 12%, rgba(28,107,170,.45), transparent 70%); }
+.qband > .shell { position: relative; z-index: 1; }
+/* no overflow:hidden — the services panel must be free to hang past the card */
+.qcard { max-width: 1200px; margin-inline: auto; background: var(--paper); border-radius: var(--cut-l);
+         display: grid; grid-template-columns: minmax(0, 4.6fr) minmax(0, 7.4fr);
+         box-shadow: 0 60px 110px -50px rgba(0,0,0,.75), 0 0 0 1px rgba(255,255,255,.1); }
+.qcard__h { display: flex; flex-direction: column; color: #fff; padding: clamp(1.8rem, 4vw, 3.4rem);
+            border-radius: var(--cut-l) 0 0 var(--cut-l);
+            background: linear-gradient(160deg, var(--steel) 0%, #0F416A 100%); }
+.qcard__h .eyebrow { color: #fff; }
+.qcard__h .d3 { color: #fff; font-size: clamp(1.9rem, 1rem + 2.4vw, 3rem); }
+.qcard__lede { margin: clamp(1rem, 1.6vw, 1.3rem) 0 0; color: var(--on-deep); font-size: 1.05rem; line-height: 1.65; max-width: 36ch; }
+.qcard__pts { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; gap: .7rem; }
+.qcard__pts li { display: flex; align-items: center; gap: .75rem; font-weight: 600; color: #fff; }
+.qcard__pts li::before { content: ""; width: 22px; height: 22px; flex: none; border-radius: 50%;
+  background: var(--amber) no-repeat center / 12px
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10'%3E%3Cpath d='M1 5l3.5 3.5L11 1.5' stroke='%230B2C48' stroke-width='2' fill='none'/%3E%3C/svg%3E"); }
+.qcard__call { margin: auto 0 0; padding-top: 2rem; color: var(--on-deep); font-size: .98rem; }
+.qcard__call a { display: inline-block; padding-block: .7rem; margin-block: -.7rem; color: #fff; font-weight: 700; text-underline-offset: 3px; }
+.qcard > .qform { padding: clamp(1.6rem, 4vw, 3.4rem); align-content: start; }
+
+/* ── quote strip: the SHORT form, lifted onto the bottom of the homepage hero.
+      A light card on the mist ground — not a .deep — so the light field styles
+      apply untouched. The section's own background starts below the overlap,
+      so it never paints over the photograph. --qtop-lift is read by both the
+      hero (to clear its buttons) and the strip (to pull itself up). ── */
+:root { --qtop-lift: clamp(4.5rem, 8vw, 6.5rem); }
+.hero--lift { min-height: clamp(580px, 86svh, 880px);
+              padding-bottom: calc(var(--qtop-lift) + clamp(2rem, 4vw, 3.5rem)); }
+.qtop { position: relative; z-index: 3; margin-top: calc(-1 * var(--qtop-lift));
+        background: linear-gradient(transparent var(--qtop-lift), var(--mist) 0); }
+/* two panels — a bark header column and the white form. The card cannot clip
+   (the services panel hangs past it), so each panel carries its own ground and
+   corner radii, and the amber top rule is drawn over both by ::before. */
+.qtop__card { position: relative; border-radius: var(--cut-l);
+  display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 9fr);
+  box-shadow: 0 44px 90px -40px rgba(11,44,72,.6), 0 14px 30px -18px rgba(11,44,72,.3); }
+.qtop__card::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  border-radius: inherit; border-top: 3px solid var(--amber); }
+.qtop__h { display: flex; flex-direction: column; justify-content: center;
+  padding: clamp(1.7rem, 3.2vw, 2.8rem) clamp(1.3rem, 2.8vw, 2.4rem);
+  background: var(--bark); color: var(--on-deep); border-radius: var(--cut-l) 0 0 var(--cut-l); }
+/* --amber is 5.33:1 on --bark, so it is legal at eyebrow size here */
+.qtop__h .eyebrow { margin-bottom: 0; color: var(--amber); }
+.qtop__h .d3 { margin-top: 1.1rem; color: #fff; font-size: clamp(1.85rem, 1rem + 1.6vw, 2.5rem); line-height: 1.08; }
+.qtop__h > p:not(.eyebrow) { margin: 1rem 0 0; color: var(--on-deep); font-size: 1rem; line-height: 1.65; }
+.qtop__h > .qtop__call { margin-top: 1.7rem; padding-top: 1.4rem; border-top: 1px solid var(--line-deep); }
+.qtop__call a { display: inline-block; padding-block: .7rem; margin-block: -.7rem; color: #fff; font-weight: 700;
+                text-decoration-color: var(--amber); text-decoration-thickness: 2px; text-underline-offset: 5px; white-space: nowrap; }
+.qtop__card > .qform { background: var(--paper); border-radius: 0 var(--cut-l) var(--cut-l) 0;
+  padding: clamp(1.4rem, 2.8vw, 2.5rem); gap: 1.4rem; align-content: start; }
+/* name · email · phone, then services across two columns beside ZIP */
+.qform--row .qform__g { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.15rem 1rem; }
+.qform--row .qform__svc { grid-column: span 2; }
+/* align-content: start — a field without an error must not stretch to its neighbour's height */
+.qform--row .field { gap: .6rem; align-content: start; }
+.qform--row .field input, .qform--row .msel__b { min-height: 56px; }
+/* frost wells. :where() keeps this at base specificity, so the focus, open and
+   error rings defined with the shared fields still win over it */
+:where(.qform--row) .field input, :where(.qform--row) .msel__b {
+  background-color: var(--frost); box-shadow: inset 0 0 0 1px rgba(16,39,58,.2); border-radius: var(--cut); }
+:where(.qform--row) .field input:focus { background-color: var(--paper); }
+.qform--row .msel__b { padding-left: 1rem; padding-right: 2.4rem; background-position: right 1rem center; }
+.qform--row .qform__foot { align-items: center; }
+/* outranks `.qform .chk`, which sits later in the file */
+.qform--row .qform__foot .chk { max-width: 22rem; }
+.qform--row .qform__foot .btn { min-height: 56px; padding-inline: 1.9rem; font-size: 1rem;
+                                box-shadow: 0 18px 34px -16px rgba(138,84,16,.75); }
+.qform--row .form__note { padding-top: .95rem; border-top: 1px solid var(--line); }
+
+/* the shared quote form. Required: name, email, phone, service. ZIP optional.
+   No street address, ever. SMS consent optional and never pre-checked. */
+.qform { display: grid; gap: 1rem; }
+.qform__g { display: grid; gap: .9rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+/* the homepage's large form: 2-up fields, services full width, one big CTA */
+.qform--big { gap: 1.3rem; }
+.qform--big .qform__g { gap: 1.2rem 1.3rem; }
+.qform--big .field input, .qform--big .msel__b { min-height: 58px; font-size: 1.05rem; }
+.qform--big .qform__foot { flex-direction: column; align-items: stretch; gap: 1.1rem; }
+.qform--big .qform__foot .btn { width: 100%; }
+.qform__full { grid-column: 1 / -1; }
+.qform__foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .8rem 1.4rem; }
+.qform__foot .btn { flex: none; }
+.qform .chk { min-height: 44px; padding-top: .2rem; font-size: .86rem; color: var(--slate); max-width: 62ch; }
+.deep .qform .chk { color: var(--on-deep-dim); }
+.opt { font-weight: 600; letter-spacing: .06em; text-transform: none; color: var(--slate-dim); }
+.deep .opt { color: var(--on-deep-dim); }
+.field[data-err] input, .field[data-err] select, .field[data-err] textarea { box-shadow: inset 0 0 0 2px var(--amber-deep); }
+.deep .field[data-err] input, .deep .field[data-err] select { box-shadow: inset 0 0 0 2px var(--amber-lt); }
+.field__err { margin: 0; font: 600 .8rem/1.35 var(--ff); color: var(--amber-deep); }
+.deep .field__err { color: var(--amber-lt); }
+.form__status { margin: 0; padding: .85rem 1rem; border-radius: 12px; font-size: .9rem; line-height: 1.5;
+                background: var(--mist); color: var(--ink); box-shadow: inset 3px 0 0 var(--amber); }
+.deep .form__status { background: rgba(232,244,251,.09); color: var(--on-deep); }
+.form__status[hidden] { display: none; }
+.preview-tag { display: inline-flex; align-items: center; gap: .4rem; font: 700 .72rem/1 var(--ff);
+               letter-spacing: .14em; text-transform: uppercase; color: var(--amber-deep);
+               background: rgba(217,141,59,.14); padding: .4rem .55rem; border-radius: 6px; }
+.deep .preview-tag { color: var(--amber-lt); }
+
+/* ── shared quote popup — a native <dialog>, so focus containment, Esc and the
+      top layer all come from the browser; inside a GHL column it still sits
+      above everything because the top layer ignores the nesting. ────────── */
+.qm { border: 0; padding: 0; width: min(660px, calc(100vw - 1.5rem)); max-height: calc(100svh - 1.5rem);
+      overflow: auto; border-radius: var(--cut-l); background: var(--paper); color: var(--ink);
+      box-shadow: 0 40px 90px -30px rgba(3,20,35,.7); }
+.qm::backdrop { background: rgba(6,25,40,.62); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.qm__in { padding: clamp(1.3rem, 3vw, 2.2rem); }
+.qm__x { position: absolute; top: .6rem; right: .6rem; width: 46px; height: 46px; border: 0; border-radius: 12px;
+         background: var(--mist); color: var(--steel); font-size: 1.5rem; line-height: 1; cursor: pointer; }
+.qm[open] { animation: qm-in .4s var(--e-out); }
+@keyframes qm-in { from { opacity: 0; transform: translateY(14px); } }
+@media (prefers-reduced-motion: reduce) { .qm[open] { animation: none; } }
+
+/* ── carousel ────────────────────────────────────────────────────────────── */
+.car { position: relative; border-radius: var(--cut-l); overflow: hidden; background: var(--bark); }
+.car__track { display: flex; transform: translateX(calc(var(--car-i, 0) * -100%));
+              transition: transform 1s var(--e); }
+.car__slide { flex: 0 0 100%; position: relative; aspect-ratio: 16 / 8.6; margin: 0; }
+.car__slide img { width: 100%; height: 100%; object-fit: cover; }
+.car__cap { position: absolute; left: 1rem; bottom: 1rem; max-width: min(440px, calc(100% - 2rem));
+            padding: .8rem 1rem; font-size: .9rem; line-height: 1.45; }
+.car__cap b { display: block; font: 700 .7rem/1 var(--ff); letter-spacing: .15em; text-transform: uppercase;
+              color: var(--amber-lt); margin-bottom: .35rem; }
+.car__ui { position: absolute; right: 1rem; bottom: 1rem; display: flex; align-items: center; gap: .4rem;
+           padding: .3rem; z-index: 2; }
+.car__ui button { width: 46px; height: 46px; border: 0; border-radius: 12px; background: transparent; color: #fff;
+                  cursor: pointer; display: grid; place-items: center; }
+.car__ui button:hover { background: rgba(255,255,255,.14); }
+.car__ui svg { width: 16px; height: 16px; }
+.car__n { font: 700 .78rem/1 var(--ff); letter-spacing: .08em; color: #fff; min-width: 3.4em; text-align: center; }
+.car [data-car="pause"] .i-play { display: none; }
+.car[data-paused="true"] [data-car="pause"] .i-play { display: block; }
+.car[data-paused="true"] [data-car="pause"] .i-pause { display: none; }
+@media (prefers-reduced-motion: reduce) { .car__track { transition: none; } }
+
+/* ── service directory: landscaping and washing side by side ─────────────── */
+.dir { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 2rem); }
+.dir__col { background: var(--paper); border-radius: var(--cut-l); overflow: hidden; display: flex; flex-direction: column; }
+.dir__m { aspect-ratio: 16 / 9; background: var(--mist); overflow: hidden; }
+.dir__m img { width: 100%; height: 100%; object-fit: cover; }
+.dir__b { padding: clamp(1.3rem, 2.4vw, 2.1rem); display: flex; flex-direction: column; flex: 1; }
+.dir__b > p { color: var(--slate); margin: .7rem 0 1.2rem; }
+.dir__list { list-style: none; margin: 0 0 1.4rem; padding: 0; border-top: 1px solid var(--line); counter-reset: dir; }
+.dir__list li { border-bottom: 1px solid var(--line); counter-increment: dir; }
+.dir__list a { display: flex; align-items: center; gap: .9rem; min-height: 52px; padding-block: .5rem;
+               text-decoration: none; font: 700 1rem/1.3 var(--ff); color: var(--steel); }
+.dir__list a::before { content: counter(dir, decimal-leading-zero); font: 800 .78rem/1 var(--ffd);
+                       color: var(--amber-deep); width: 1.8em; flex: none; }
+.dir__list a::after { content: "→"; margin-left: auto; color: var(--amber-deep); transition: transform .35s var(--e-out); }
+.dir__list a:hover::after, .dir__list a:focus-visible::after { transform: translateX(4px); }
+.dir__list a:hover { color: var(--steel-mid); }
+.dir__b .btn { margin-top: auto; align-self: flex-start; }
+.deep .dir__col { background: rgba(232,244,251,.06); }
+.deep .dir__b > p { color: var(--on-deep-dim); }
+.deep .dir__list, .deep .dir__list li { border-color: var(--line-deep); }
+.deep .dir__list a { color: var(--on-deep); }
+.deep .dir__list a::before, .deep .dir__list a::after { color: var(--amber-lt); }
+
+/* ── overview rows (Landscaping / Washing pages) ─────────────────────────── */
+.srows { display: grid; gap: clamp(1rem, 2vw, 1.6rem); }
+.srow { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); background: var(--paper);
+        border-radius: var(--cut-l); overflow: hidden; }
+.srow:nth-child(even) .srow__m { order: 2; }
+.srow__m { min-height: 260px; background: var(--mist); }
+.srow__m img { width: 100%; height: 100%; object-fit: cover; }
+.srow__b { padding: clamp(1.4rem, 2.8vw, 2.6rem); display: flex; flex-direction: column; justify-content: center; }
+.srow__n { font: 800 .8rem/1 var(--ffd); color: var(--amber-deep); letter-spacing: .04em; margin: 0 0 .7rem; }
+.srow h3 { margin: 0; font: 800 clamp(1.4rem, 2.2vw, 2rem)/1.18 var(--ffd); letter-spacing: -.025em; color: var(--steel); }
+.srow h3 a { text-decoration: none; color: inherit; display: inline-block; padding-block: .8rem; margin-block: -.8rem; }
+.srow p { color: var(--slate); margin: .9rem 0 0; line-height: 1.65; }
+.srow .chips { margin-top: 1rem; }
+.srow .tlink { margin-top: 1.2rem; align-self: flex-start; }
+
+/* ── paired before / after stills (the hedge pair cannot be registered for a
+      slider, so it is shown honestly side by side) ───────────────────────── */
+.pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(.7rem, 1.4vw, 1.2rem); }
+.pair figure { margin: 0; position: relative; }
+.pair .fig { aspect-ratio: 4 / 3; }
+.pair .ba__tag { left: 1rem; }
+
+/* ── Google review cards ─────────────────────────────────────────────────── */
+.rvbar { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1.4rem; margin-bottom: clamp(1.4rem, 3vw, 2.4rem);
+         padding: 1rem 1.2rem; border-radius: var(--cut-m); background: var(--paper); box-shadow: 0 0 0 1px var(--line); }
+.rvbar__g { display: inline-flex; align-items: center; gap: .55rem; font: 800 1.05rem/1 var(--ffd); color: var(--steel); }
+.rvbar__g svg { width: 22px; height: 22px; flex: none; }
+.rvbar__r { font: 700 .95rem/1.3 var(--ff); color: var(--ink); }
+.rvbar__r:empty { display: none; }
+.rvbar .tlink { margin-left: auto; }
+.deep .rvbar { background: rgba(232,244,251,.07); box-shadow: inset 0 0 0 1px var(--line-deep); }
+.deep .rvbar__g, .deep .rvbar__r { color: var(--on-deep); }
+.rvw { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.9rem, 1.6vw, 1.4rem); align-items: stretch; }
+.quote { box-shadow: 0 0 0 1px var(--line); margin: 0; }
+.quote blockquote p { margin: 0; }
+.quote figcaption { flex-wrap: wrap; }
+.quote__src { display: inline-flex; align-items: center; gap: .35rem; min-height: 44px; font: 700 .8rem/1 var(--ff);
+              color: var(--amber-deep); text-decoration: none; }
+.quote__src:hover { text-decoration: underline; }
+.deep .quote { box-shadow: inset 0 0 0 1px var(--line-deep); }
+.deep .quote__src { color: var(--amber-lt); }
+.quote--lead { padding: clamp(1.6rem, 3vw, 2.6rem); }
+.quote--lead blockquote { font: 600 clamp(1.15rem, 1.6vw, 1.45rem)/1.5 var(--ffd); letter-spacing: -.01em; color: var(--steel); }
+.deep .quote--lead blockquote { color: var(--on-deep); }
+.elf { min-height: 380px; margin-top: clamp(1.4rem, 3vw, 2.4rem); }
+.elf__wait { color: var(--slate-dim); font-size: .9rem; }
+
+/* ── gallery: full-width opening + mosaic + lightbox ─────────────────────── */
+.ghero { position: relative; min-height: clamp(520px, 78svh, 820px); display: flex; align-items: flex-end;
+         background: var(--bark); overflow: hidden; padding: clamp(7rem, 12vw, 9rem) 0 clamp(2rem, 4vw, 3.5rem); }
+.ghero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ghero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,35,52,.35), transparent 30%, rgba(6,35,52,.55)); }
+.ghero .shell { position: relative; z-index: 2; width: 100%; }
+.ghero__panel { max-width: 640px; padding: clamp(1.4rem, 3vw, 2.4rem); }
+.ghero__panel .d1 { color: #fff; font-size: clamp(2.3rem, 1rem + 4.4vw, 4.6rem); line-height: 1.04; }
+.ghero__panel .lede { color: rgba(255,255,255,.9); }
+.ghero__panel .eyebrow { color: var(--amber-lt); }
+.ghero__panel .crumb, .ghero__panel .crumb a { color: rgba(255,255,255,.82); }
+.ghero__panel .crumb [aria-current] { color: #fff; }
+
+.flt { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: clamp(1.2rem, 2.4vw, 2rem); }
+.flt button { min-height: 46px; padding: 0 1.1rem; border: 0; border-radius: 999px; cursor: pointer;
+              font: 700 .86rem/1 var(--ff); color: var(--steel); background: var(--paper);
+              box-shadow: inset 0 0 0 1.5px var(--line-str); transition: background .25s var(--e), color .25s var(--e); }
+.flt button[aria-pressed="true"] { background: var(--steel); color: #fff; box-shadow: none; }
+.mos { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-rows: clamp(120px, 11vw, 190px);
+       grid-auto-flow: dense; gap: clamp(.55rem, 1vw, .9rem); }
+.mos__i { grid-column: span 4; grid-row: span 2; position: relative; padding: 0; border: 0; margin: 0; cursor: zoom-in;
+          border-radius: var(--cut-m); overflow: hidden; background: var(--mist); display: block; text-align: left; }
+.mos__i[hidden] { display: none; }
+.mos__i img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--e); }
+.mos__i:hover img, .mos__i:focus-visible img { transform: scale(1.04); }
+.mos__i span { position: absolute; left: .6rem; right: .6rem; bottom: .6rem; padding: .5rem .7rem; font: 600 .8rem/1.35 var(--ff);
+               opacity: 0; transform: translateY(6px); transition: opacity .3s var(--e), transform .3s var(--e); }
+.mos__i:hover span, .mos__i:focus-visible span { opacity: 1; transform: none; }
+.mos__i--xl { grid-column: span 8; grid-row: span 3; }
+.mos__i--w  { grid-column: span 8; grid-row: span 2; }
+.mos__i--t  { grid-column: span 4; grid-row: span 3; }
+
+.lb { border: 0; padding: 0; width: 100vw; height: 100svh; max-width: none; max-height: none; margin: 0;
+      background: rgba(4,18,30,.94); color: #fff; }
+.lb::backdrop { background: rgba(4,18,30,.9); }
+.lb__fig { margin: 0; height: 100%; display: grid; grid-template-rows: 1fr auto; padding: 4.2rem clamp(.6rem, 4vw, 4.5rem) 1.4rem; }
+.lb__fig img { width: 100%; height: 100%; object-fit: contain; min-height: 0; }
+.lb__fig figcaption { text-align: center; padding-top: .9rem; font-size: .95rem; color: var(--on-deep-dim); }
+.lb__ui button { position: absolute; width: 50px; height: 50px; border: 0; border-radius: 14px; cursor: pointer;
+                 background: rgba(255,255,255,.12); color: #fff; display: grid; place-items: center; font-size: 1.5rem; }
+.lb__ui button:hover { background: rgba(255,255,255,.22); }
+.lb__ui [data-lb="close"] { top: .9rem; right: .9rem; }
+.lb__ui [data-lb="prev"] { left: .9rem; top: 50%; transform: translateY(-50%); }
+.lb__ui [data-lb="next"] { right: .9rem; top: 50%; transform: translateY(-50%); }
+.lb__ui svg { width: 18px; height: 18px; }
+
+/* ── contact: photographic split hero ────────────────────────────────────── */
+.shero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); background: var(--bark);
+         color: var(--on-deep); min-height: clamp(560px, 80svh, 800px); }
+.shero__t { display: flex; flex-direction: column; justify-content: flex-end;
+            padding: clamp(7rem, 12vw, 9rem) clamp(1.15rem, 5vw, 4.5rem) clamp(2.5rem, 5vw, 4.5rem) max(var(--gut), calc((100vw - var(--shell)) / 2 + var(--gut))); }
+.shero__t .d1 { color: var(--on-deep); }
+.shero__m { position: relative; overflow: hidden; }
+.shero__m img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.shero__m .glass { position: absolute; left: 1rem; bottom: 1rem; padding: .7rem .9rem; font-size: .84rem; max-width: calc(100% - 2rem); }
+
+/* service-page intro + early quote form */
+.svcq { display: grid; grid-template-columns: minmax(0, 6.6fr) minmax(0, 5.4fr); gap: clamp(1.6rem, 4vw, 4.5rem); align-items: start; }
+.svcq__f { position: sticky; top: 100px; }
+.svcq__f .panel { box-shadow: 0 0 0 1px var(--line), 0 26px 50px -36px rgba(11,44,72,.5); }
+.scope { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .55rem 2rem; list-style: none; margin: 0; padding: 0; }
+.scope li { display: flex; gap: .7rem; align-items: flex-start; color: var(--on-deep); font-size: .98rem; }
+.scope li::before { content: ""; width: 8px; height: 8px; margin-top: .55rem; flex: none; background: var(--amber); transform: rotate(45deg); }
+.rel { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.8rem, 1.5vw, 1.3rem); }
+.rel a { display: flex; flex-direction: column; gap: .5rem; min-height: 120px; padding: 1.2rem 1.3rem; border-radius: var(--cut-m);
+         background: var(--paper); text-decoration: none; color: var(--ink); box-shadow: 0 0 0 1px var(--line);
+         transition: transform .4s var(--e), box-shadow .4s var(--e); }
+.rel a:hover, .rel a:focus-visible { transform: translateY(-4px); box-shadow: 0 0 0 1.5px var(--amber); }
+.rel small { font: 700 .7rem/1 var(--ff); letter-spacing: .15em; text-transform: uppercase; color: var(--amber-deep); }
+.rel b { font: 800 1.15rem/1.25 var(--ffd); letter-spacing: -.02em; color: var(--steel); }
+.rel span { font-size: .9rem; line-height: 1.6; color: var(--slate); }
+.cities { display: flex; flex-wrap: wrap; gap: .5rem; }
+.cities a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 1rem; border-radius: 999px;
+            text-decoration: none; font: 700 .86rem/1 var(--ff); color: var(--steel); background: var(--paper);
+            box-shadow: inset 0 0 0 1.5px var(--line-str); }
+.cities a:hover { box-shadow: inset 0 0 0 2px var(--amber); }
+.cities a small { font-weight: 600; color: var(--slate-dim); margin-left: .4rem; }
+.deep .cities a { background: rgba(232,244,251,.08); color: var(--on-deep); box-shadow: inset 0 0 0 1.5px var(--line-deep); }
+.deep .cities a small { color: var(--on-deep-dim); }
+.ftr__cities { border-top: 1px solid var(--line-deep); padding-block: 1.4rem; display: flex; flex-wrap: wrap; gap: .2rem 1.3rem; align-items: center; }
+.ftr__cities h4 { margin: 0 .6rem 0 0; }
+.ftr__cities a { display: inline-flex; align-items: center; min-height: 44px; }
+/* inline contact links: the hit box grows, the line box does not move */
+.ftr address a { display: inline-block; padding-block: .75rem; margin-block: -.75rem; }
+.phero__bg { opacity: .42; }
+
+@media (max-width: 1100px) {
+  .rvw { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 1024px) {
+  /* the bark header stacks above the form */
+  .qtop__card { grid-template-columns: 1fr; }
+  .qtop__h { border-radius: var(--cut-l) var(--cut-l) 0 0; }
+  .qtop__card > .qform { border-radius: 0 0 var(--cut-l) var(--cut-l); }
+}
+@media (max-width: 1024px) and (min-width: 721px) {
+  /* laid out wide so the inputs stay near the fold */
+  .qtop__h { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: clamp(1.5rem, 4vw, 3rem); align-items: end; }
+  .qtop__h > :is(.eyebrow, .d3) { grid-column: 1; }
+  .qtop__h > p:not(.eyebrow) { grid-column: 2; }
+  .qtop__h > .qtop__call { margin-top: .9rem; padding-top: 0; border-top: 0; }
+}
+@media (max-width: 960px) {
+  .qcard { grid-template-columns: 1fr; }
+  .qcard__call { padding-top: 1.4rem; }
+  .qcard__h { border-radius: var(--cut-l) var(--cut-l) 0 0; }
+}
+@media (max-width: 980px) {
+  .svcq { grid-template-columns: 1fr; }
+  .svcq__f { position: static; }
+  .rel { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .dir { grid-template-columns: 1fr; }
+  .srow { grid-template-columns: 1fr; }
+  .srow:nth-child(even) .srow__m { order: 0; }
+  .srow__m { min-height: 0; aspect-ratio: 16 / 10; }
+  .shero { grid-template-columns: 1fr; }
+  .shero__t { padding-left: var(--gut); padding-right: var(--gut); }
+  .shero__m { min-height: 300px; }
+  .mos { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: clamp(150px, 42vw, 260px); }
+  .mos__i, .mos__i--t { grid-column: span 1; grid-row: span 1; }
+  .mos__i--xl, .mos__i--w { grid-column: span 2; grid-row: span 1; }
+  .mos__i span { opacity: 1; transform: none; }
+  .car__slide { aspect-ratio: 4 / 3.4; }
+  .car__cap { right: 1rem; bottom: 4.6rem; }
+}
+@media (max-width: 720px) {
+  :root { --qtop-lift: 3.5rem; }
+  .qform__g, .qform--row .qform__g { grid-template-columns: 1fr; }
+  .qform--row .qform__svc { grid-column: auto; }
+  .qform--row .msel__p { left: 0; width: auto; }
+  .qform__foot .btn { width: 100%; }
+  .rvw, .rel, .pair, .scope { grid-template-columns: 1fr; }
+  .rvbar .tlink { margin-left: 0; }
+  .lb__ui [data-lb="prev"], .lb__ui [data-lb="next"] { top: auto; bottom: .8rem; transform: none; }
+  .lb__fig { padding-bottom: 4.6rem; }
+}
+
+/* between the burger breakpoint and a roomy desktop, the phone number is the
+   one thing that does not fit in the bar; the CTA and .mbar still carry it */
+@media (min-width: 1181px) and (max-width: 1340px) { .hdr__tel { display: none; } }
+
+/* footer fixes: the bottom row's links had lost their gap to the generic
+   `.ftr ul { gap: 0 }`, and the generic `.ftr a` colour washed out the buttons */
+.ftr .ftr__bot ul { gap: 0 1.4rem; }
+.ftr a.btn { color: var(--fg); }
+.ftr a.btn--accent:hover, .ftr a.btn--accent:focus-visible { color: #fff; }
+@media (max-width: 1180px) { .ftr__top > div:first-child { grid-column: 1 / -1; } }
+
+/* ── page hero, dark-band typography ─────────────────────────────────────
+   .phero is a dark band but not a .deep, so it needs its own on-dark text
+   tokens — the light-ground ones (steel headings, slate lede) measured
+   under 3:1 here. And `.phero > *` (position: relative) sits later in the
+   cascade than `.phero__bg`, so the background has to be re-pinned with a
+   more specific selector or it drops into the flow as a block image. */
+.phero > .phero__bg { position: absolute; inset: 0; z-index: 0; }
+.phero .d1, .phero .d2, .shero .d1 { color: var(--on-deep); }
+.phero .d1 b { color: var(--amber-lt); }
+.phero .lede, .shero .lede { color: var(--on-deep-dim); }
+.phero .eyebrow, .shero .eyebrow { color: var(--amber-lt); }
+.phero .chip, .shero .chip { background: rgba(232,244,251,.12); color: var(--on-deep); }
+.phero .chip--accent { background: var(--amber); color: var(--bark); }
+.phero .btn--ghost, .shero .btn--ghost { --fg: var(--on-deep); box-shadow: inset 0 0 0 2px rgba(232,241,250,.42); }
+.shero .crumb, .shero .crumb a { color: var(--on-deep-dim); }
+.shero .crumb [aria-current] { color: var(--steel-lt); }
+.nowrap { white-space: nowrap; }
+
+/* ── small uppercase labels. Each was set at /1, which is fine on one line and
+      cramped the moment it wraps — eyebrows, card labels and field labels all
+      wrap at 320–390px. 1.35 gives a wrapped second line room; chips trim their
+      padding by the same amount so a one-line chip keeps its height. ─────── */
+.eyebrow, .chip, .card__n, .check__g h4, .spec thead th, .wt__lab, .field > label,
+.ftr h4, .srow__n, .rel small, .quote__src { line-height: 1.35; }
+.chip { padding-block: .42rem; }
+.car__cap b, .hero__stat > span { line-height: 1.35; }
+/* a button label that has to wrap (the estimator's long one at 320px) gets real
+   leading; min-height still sets the one-line height */
+.btn { line-height: 1.2; text-align: center; }
+/* the form CTA must stay on one line: at 320px "Get my free quote" broke in two */
+.btn--cta { white-space: nowrap; }
+@media (max-width: 420px) { .btn--cta { padding-inline: 1rem; gap: .7rem; } }
+
+/* ============================================================================
+   PHASE 1 CHECKLIST (October 2026) — three service categories, the corrected
+   BlueFox wordmark, the Paver Sand & Seal spotlight
+   ========================================================================== */
+/* the white head over the photograph keeps its blue eyes and markings; a soft
+   shadow holds its rim against a pale sky */
+.wm__mk--lt { filter: drop-shadow(0 1px 5px rgba(0,0,0,.38)); }
+
+/* footer wordmark: the same live-text lockup as the header, reversed, so the
+   name is never again baked into a raster as "BLUE FOX" */
+.ftr__lk.wm img { width: 56px; }
+.ftr__lk .wm__n { color: #fff; font-size: 1.5rem; }
+.ftr__lk .wm__s { display: block; color: var(--on-deep-dim); font-size: .69rem; }
+
+/* What we do: three cards. Between 861 and 1024 the third card spans both
+   columns and lays out sideways, rather than leaving one orphaned column. */
+.dir--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 1024px) and (min-width: 861px) {
+  .dir--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dir--3 > .dir__col:last-child { grid-column: 1 / -1; }
+  .dir--3 > .dir__col:last-child:has(.dir__m) { display: grid; grid-template-columns: 1fr 1fr; }
+  .dir--3 > .dir__col:last-child .dir__m { aspect-ratio: auto; min-height: 100%; }
+}
+@media (max-width: 860px) { .dir--3 { grid-template-columns: 1fr; } }
+
+/* Paver Sand & Seal spotlight */
+.seal__pts { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid;
+             grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem 1.6rem; }
+.seal__pts li { display: flex; gap: .7rem; align-items: flex-start; font-weight: 600; color: var(--ink); }
+.seal__pts li::before { content: ""; width: 8px; height: 8px; margin-top: .55rem; flex: none;
+                        background: var(--amber); transform: rotate(45deg); }
+@media (max-width: 420px) { .seal__pts { grid-template-columns: 1fr; } }
+
+/* the Sand & Seal pointer that sits in the pressure-washing surfaces grid: a
+   whole-panel link, marked by an amber rule so it reads as "a different job" */
+.panel--seal { display: block; text-decoration: none; color: inherit;
+               box-shadow: inset 0 3px 0 var(--amber), 0 0 0 1px var(--line);
+               transition: box-shadow .3s var(--e), transform .3s var(--e); }
+.panel--seal:hover, .panel--seal:focus-visible { box-shadow: inset 0 3px 0 var(--amber), 0 0 0 2px var(--amber); }
+.panel--seal .card__n { color: var(--amber-deep); }
+
+/* long-form text (privacy policy, accessibility statement): one readable column */
+.prose { max-width: 72ch; color: var(--ink); }
+.prose h2 { font: 700 clamp(1.25rem, 1rem + .8vw, 1.6rem)/1.25 var(--ffd); letter-spacing: -.02em; color: var(--steel); margin: 2.4rem 0 .8rem; }
+.prose h2:first-child { margin-top: 0; }
+.prose p, .prose li { line-height: 1.7; }
+.prose p { margin: 0 0 1rem; }
+/* the company email is one 37-character token; at 320px it must be allowed to break */
+.prose a { overflow-wrap: anywhere; }
+.prose ul, .prose ol { margin: 0 0 1.2rem; padding-left: 1.3rem; display: grid; gap: .45rem; }
+
+/* the footer is a dark band but not a .deep one, so .dim fell back to the
+   light-ground --slate-dim: 2.4:1 on bark. Same trap as .deep; same pair fixes it
+   (--on-deep-dim, 8.0:1). Checklist 12.4: "maintain legible footer text". */
+.ftr .dim { color: var(--on-deep-dim); }
+/* a second heading stacked in one footer column (Window cleaning under Pressure washing) */
+.ftr ul + h4 { margin-top: 1.9rem; }
+
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "LandscapingBusiness",
+   "@id": "https://www.bluefoxlandscapeandservices.com/#business",
+   "name": "BlueFox Landscape & Services",
+   "url": "https://www.bluefoxlandscapeandservices.com/",
+   "telephone": "+1-407-717-8191",
+   "email": "bluefoxlandscapeandservices@gmail.com",
+   "image": "https://www.bluefoxlandscapeandservices.com/assets/media/img/bx-design-lake-1200.jpg",
+   "sameAs": [
+    "https://www.instagram.com/bluefox_landscape_services/"
+   ],
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lake Mary",
+    "addressRegion": "FL",
+    "addressCountry": "US"
+   },
+   "areaServed": [
+    {
+     "@type": "City",
+     "name": "Ocoee",
+     "addressRegion": "FL"
+    },
+    {
+     "@type": "City",
+     "name": "Winter Garden",
+     "addressRegion": "FL"
+    },
+    {
+     "@type": "City",
+     "name": "Windermere",
+     "addressRegion": "FL"
+    },
+    {
+     "@type": "City",
+     "name": "Winter Park",
+     "addressRegion": "FL"
+    },
+    {
+     "@type": "City",
+     "name": "Lake Mary",
+     "addressRegion": "FL"
+    },
+    {
+     "@type": "City",
+     "name": "Heathrow",
+     "addressRegion": "FL"
+    },
+    {
+     "@type": "City",
+     "name": "Apopka",
+     "addressRegion": "FL"
+    },
+    {
+     "@type": "City",
+     "name": "Altamonte Springs",
+     "addressRegion": "FL"
+    },
+    {
+     "@type": "City",
+     "name": "Longwood",
+     "addressRegion": "FL"
+    },
+    {
+     "@type": "City",
+     "name": "Orlando",
+     "addressRegion": "FL"
+    }
+   ],
+   "openingHoursSpecification": [
+    {
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+     ],
+     "opens": "09:00",
+     "closes": "17:00"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.bluefoxlandscapeandservices.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Accessibility statement",
+     "item": "https://www.bluefoxlandscapeandservices.com/accessibility-statement"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- REVIEWS: every quotation on this site is a verbatim Google review from the
+     company's own feed (place ChIJ2ew02570xGURCXi63r12k7U), linked to its source. No
+     aggregateRating is emitted: Google does not show self-served review stars
+     for a LocalBusiness, and the live total is not something this page can pin.
+     ADDRESS: no street address is published; schema carries locality only. -->
+<!-- ACCESSIBILITY STATEMENT. The live statement (bluefoxlandscapeandservices.com/accessibility-statement) describes
+     the UserWay widget, which this build does not include — carrying it across would make a false claim. The
+     "Here For You" and "Contact Us" paragraphs are the company's own, verbatim; the rest describes what this
+     build actually does. CONFIRM BEFORE LAUNCH: the client approves the wording, and if GHL adds UserWay,
+     restore the live text about it. -->
+
+<style id="ghl-fullbleed">
+/* ── Paste-into-GoHighLevel full-bleed escape ───────────────────────────────
+   Neutralises the width, padding and margin GHL's column wrapper imposes.
+   Harmless when the file is opened directly as a normal web page.        */
+/* Nesting-agnostic: GHL puts this markup several levels inside its own column,
+   so these cannot be anchored to `body >`. calc(50% - 50vw) resolves against the
+   parent's width, which makes the break-out correct at any depth. */
+.hdr, .lphdr, .ftr, main, main > section, main > div.marq, .marq {
+  width: 100vw; max-width: 100vw;
+  margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
+}
+/* fixed/absolute chrome is already out of flow — leave it alone */
+.mbar, .curtain, .drawer, .cur, .cur-dot {
+  width: auto; max-width: none; margin-left: 0; margin-right: 0;
+}
+main > section { margin-left: 0; margin-right: 0; }   /* main already spans */
+html, body { max-width: 100%; overflow-x: clip; }
+img, video, canvas, svg, iframe { max-width: 100%; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- GHL SECTION 00 · Header | fixed floating glass bar | frosts past 40px or when a menu opens -->
+<header class="hdr">
+  <div class="hdr__in">
+    <a class="wm" href="index.html" aria-label="BlueFox Landscape &amp; Services — home">
+      <img class="wm__mk" src="data:image/webp;base64,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" alt="" width="50" height="46" decoding="async">
+      <img class="wm__mk wm__mk--lt" src="data:image/webp;base64,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" alt="" width="50" height="46" decoding="async">
+      <span class="wm__t"><span class="wm__n">BlueFox</span><span class="wm__s">Landscape &amp; Services</span></span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav">
+        <li class="nav__dd"><a href="landscaping.html">Landscaping</a>
+          <button class="nav__tg" type="button" aria-expanded="false" aria-controls="sub-land" aria-label="Show landscaping services"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4.25l4 3.5 4-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="sub" id="sub-land">
+            <li class="sub__ov"><a href="landscaping.html">Landscaping overview<small>Every service in one place</small></a></li>
+            <li><a href="landscape-design-construction.html">Landscape design &amp; construction<small>Rendering before we dig</small></a></li>
+            <li><a href="paver-installation.html">Paver installation &amp; repairs<small>Driveways, walkways, patios</small></a></li>
+            <li><a href="paver-sand-seal.html">Paver Sand &amp; Seal<small>Re-sanded joints, sealed surface</small></a></li>
+            <li><a href="sod-installation.html">Sod installation<small>Lawn evaluated first</small></a></li>
+            <li><a href="irrigation.html">Irrigation<small>Installation and repair</small></a></li>
+            <li><a href="tree-removal.html">Tree &amp; hedge work<small>Removal, stumps, trimming</small></a></li>
+            <li><a href="lighting-installation.html">Landscape lighting<small>Exterior lighting install</small></a></li>
+            <li><a href="drainage.html">Drainage<small>Water directed away</small></a></li>
+          </ul>
+        </li>
+        <li class="nav__dd"><a href="washing.html">Pressure washing</a>
+          <button class="nav__tg" type="button" aria-expanded="false" aria-controls="sub-wash" aria-label="Show pressure washing services"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4.25l4 3.5 4-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="sub" id="sub-wash">
+            <li class="sub__ov"><a href="washing.html">Pressure washing overview<small>Every washing service in one place</small></a></li>
+            <li><a href="power-washing-services.html">Pressure washing<small>Driveways, pool decks, screen enclosures</small></a></li>
+            <li><a href="house-wash.html">House washing<small>Soft wash, siding to soffit</small></a></li>
+            <li><a href="roof-cleaning.html">Roof washing<small>Soft wash — never pressure</small></a></li>
+            <li><a href="solar-panel-cleaning.html">Solar panel cleaning<small>Soft wash, panel by panel</small></a></li>
+            <li><a href="soft-wash-gutters.html">Gutter cleaning<small>Soft-washed, inside and out</small></a></li>
+          </ul>
+        </li>
+        <li class="nav__dd"><a href="window-cleaning.html">Window cleaning</a>
+          <button class="nav__tg" type="button" aria-expanded="false" aria-controls="sub-win" aria-label="Show window cleaning services"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4.25l4 3.5 4-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="sub" id="sub-win">
+            <li class="sub__ov"><a href="window-cleaning.html">Window cleaning overview<small>Interior and exterior</small></a></li>
+            <li><a href="exterior-window-cleaning.html">Exterior window cleaning<small>Outside glass, frames, sills</small></a></li>
+            <li><a href="interior-window-cleaning.html">Interior window cleaning<small>Inside glass and sills</small></a></li>
+          </ul>
+        </li>
+        <li><a href="service-area.html">Service area</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="financing.html">Financing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hdr__cta">
+      <a class="hdr__tel" href="tel:+14077178191"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 2h3l1.4 3.4-1.8 1.3a10 10 0 004.7 4.7l1.3-1.8L15 11v3a1 1 0 01-1.1 1A13 13 0 012 3.1 1 1 0 013 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>407-717-8191</a>
+      <a class="btn btn--accent btn--sm" href="free-quote.html" data-quote=""><span>Free quote</span></a>
+    </div>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="ocnav" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="oc" id="ocnav" data-open="false">
+  <button class="oc__x" type="button" aria-label="Close menu">&times;</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><details><summary>Landscaping <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4.25l4 3.5 4-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <ul class="oc__sub"><li><a href="landscaping.html">Landscaping overview</a></li><li><a href="landscape-design-construction.html">Landscape design &amp; construction</a></li><li><a href="paver-installation.html">Paver installation &amp; repairs</a></li><li><a href="paver-sand-seal.html">Paver Sand &amp; Seal</a></li><li><a href="sod-installation.html">Sod installation</a></li><li><a href="irrigation.html">Irrigation</a></li><li><a href="tree-removal.html">Tree &amp; hedge work</a></li><li><a href="lighting-installation.html">Landscape lighting</a></li><li><a href="drainage.html">Drainage</a></li></ul></details></li>
+    <li><details><summary>Pressure washing <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4.25l4 3.5 4-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <ul class="oc__sub"><li><a href="washing.html">Pressure washing overview</a></li><li><a href="power-washing-services.html">Pressure washing</a></li><li><a href="house-wash.html">House washing</a></li><li><a href="roof-cleaning.html">Roof washing</a></li><li><a href="solar-panel-cleaning.html">Solar panel cleaning</a></li><li><a href="soft-wash-gutters.html">Gutter cleaning</a></li></ul></details></li>
+    <li><details><summary>Window cleaning <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4.25l4 3.5 4-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <ul class="oc__sub"><li><a href="window-cleaning.html">Window cleaning overview</a></li><li><a href="exterior-window-cleaning.html">Exterior window cleaning</a></li><li><a href="interior-window-cleaning.html">Interior window cleaning</a></li></ul></details></li>
+    <li><a href="service-area.html">Service area</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="financing.html">Financing</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="oc__foot">
+    <a class="btn btn--accent btn--wide" href="free-quote.html" data-quote=""><span>Get a free quote</span></a>
+    <a class="btn btn--ghost btn--wide" href="tel:+14077178191" style="--fg:var(--on-deep);box-shadow:inset 0 0 0 2px var(--line-deep)"><span>Call 407-717-8191</span></a>
+  </div>
+</div>
+
+<main id="main">
+<!-- GHL SECTION 01 · Page hero | full-width | bg: deep, no photograph -->
+<section class="phero">
+  <div class="shell">
+    <ol class="crumb"><li><a href="index.html">Home</a></li><li aria-current="page">Accessibility statement</li></ol>
+    <p class="eyebrow rv">Accessibility</p>
+    <h1 class="d1 rv" style="--d:.06s">Accessibility statement</h1>
+    <p class="lede mt-m rv" style="--d:.12s;max-width:56ch">How this website is built to be usable by everyone, and how to reach us if any part of it is not.</p>
+  </div>
+</section>
+
+<!-- GHL SECTION 02 · Body text | single readable column -->
+<section class="section section--paper">
+  <div class="shell shell--narrow">
+    <div class="prose">
+        <p>BlueFox Landscape &amp; Services wants everyone to be able to use this website, including people who use assistive technology.</p>
+        <h2>How this website is built</h2>
+        <p>The site is built to the Web Content Accessibility Guidelines (WCAG) 2.2, level AA:</p>
+        <ul><li>Every page can be used with a keyboard alone, starting with a "Skip to content" link, and the focused element always shows a visible outline.</li><li>Text and controls are checked for colour contrast against the background they actually sit on.</li><li>Menus, accordions, the before-and-after sliders and the quote forms are built from native controls, so screen readers announce them correctly.</li><li>Photographs carry text descriptions; decorative graphics are hidden from screen readers.</li><li>Animation is reduced or switched off when your device asks for reduced motion.</li><li>Tap targets on phones are at least 44 pixels, and text reflows at every screen width without sideways scrolling.</li></ul>
+        <h2>Here For You</h2>
+        <p>If you are experiencing difficulty with any content on www.bluefoxlandscapeandservices.com or require assistance with any part of our site, please contact us during normal business hours as detailed below and we will be happy to assist.</p>
+        <h2>Contact Us</h2>
+        <p>If you wish to report an accessibility issue, have any questions or need assistance, please contact www.bluefoxlandscapeandservices.com Customer Support as follows:</p>
+        <p>Email: <a class="tlink" href="mailto:bluefoxlandscapeandservices@gmail.com">bluefoxlandscapeandservices@gmail.com</a><br>Office: <a class="tlink" href="tel:+14077178191">407-717-8191</a> · Mon–Fri 9am–5pm</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- GHL SECTION 99 · Footer | full-width | 5-col → 1-col @720. The estimator is
+     deliberately absent: it is a direct-link tool for the team, not public nav. -->
+<footer class="ftr">
+  <div class="shell">
+    <div class="ftr__top">
+      <div>
+        <a class="ftr__lk wm" href="index.html" aria-label="BlueFox Landscape &amp; Services — home">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazysrc="#__i0" alt="" width="56" height="52" decoding="async" loading="lazy">
+          <span class="wm__t"><span class="wm__n">BlueFox</span><span class="wm__s">Landscape &amp; Services</span></span>
+        </a>
+        <p class="dim" style="max-width:34ch">Landscape design and installation, pressure washing and window cleaning across Central Florida — residential and commercial.</p>
+        <div class="chips mt-m"><span class="chip">Residential &amp; commercial</span><span class="chip">Free estimates</span></div>
+      </div>
+      <div>
+        <h4>Landscaping</h4>
+        <ul><li><a href="landscaping.html">Landscaping overview</a></li><li><a href="landscape-design-construction.html">Landscape design &amp; construction</a></li><li><a href="paver-installation.html">Paver installation &amp; repairs</a></li><li><a href="paver-sand-seal.html">Paver Sand &amp; Seal</a></li><li><a href="sod-installation.html">Sod installation</a></li><li><a href="irrigation.html">Irrigation</a></li><li><a href="tree-removal.html">Tree &amp; hedge work</a></li><li><a href="lighting-installation.html">Landscape lighting</a></li><li><a href="drainage.html">Drainage</a></li></ul>
+      </div>
+      <div>
+        <h4>Pressure washing</h4>
+        <ul><li><a href="washing.html">Pressure washing overview</a></li><li><a href="power-washing-services.html">Pressure washing</a></li><li><a href="house-wash.html">House washing</a></li><li><a href="roof-cleaning.html">Roof washing</a></li><li><a href="solar-panel-cleaning.html">Solar panel cleaning</a></li><li><a href="soft-wash-gutters.html">Gutter cleaning</a></li><li><a href="soft-washing-services.html">How soft washing works</a></li></ul>
+        <h4 class="mt-l">Window cleaning</h4>
+        <ul><li><a href="window-cleaning.html">Window cleaning overview</a></li><li><a href="exterior-window-cleaning.html">Exterior window cleaning</a></li><li><a href="interior-window-cleaning.html">Interior window cleaning</a></li></ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="service-area.html">Service area</a></li>
+          <li><a href="financing.html">Financing</a></li>
+          <li><a href="free-quote.html">Free quote</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <address>
+          Office <a href="tel:+14077178191">407-717-8191</a><br>
+          After hours <a href="tel:+14079697137">407-969-7137</a><br>
+          <a href="mailto:bluefoxlandscapeandservices@gmail.com">bluefoxlandscapeandservices@gmail.com</a><br>
+          <span class="dim">Mon–Fri 9am–5pm · Sat–Sun closed</span><br>
+          <span class="dim">Serving Central Florida</span>
+        </address>
+        <div class="mt-m" style="display:grid;gap:.6rem">
+          <a class="btn btn--accent btn--sm" href="free-quote.html" data-quote=""><span>Get a free quote</span></a>
+          <a class="btn btn--ghost btn--sm" href="https://www.instagram.com/bluefox_landscape_services/" rel="noopener" target="_blank" style="--fg:var(--on-deep);box-shadow:inset 0 0 0 2px var(--line-deep)"><span>@bluefox_landscape_services</span></a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="ftr__cities" aria-label="Communities">
+      <h4>Communities</h4>
+      <a href="ocoee.html">Ocoee</a> <a href="winter-garden.html">Winter Garden</a> <a href="windermere.html">Windermere</a> <a href="winter-park.html">Winter Park</a> <a href="lake-mary.html">Lake Mary</a> <a href="heathrow.html">Heathrow</a> <a href="apopka.html">Apopka</a> <a href="altamonte-springs.html">Altamonte Springs</a> <a href="longwood.html">Longwood</a> <a href="orlando.html">Orlando</a>
+    </nav>
+
+    <!-- PRE-LAUNCH NOTICE. BlueFox Landscape & Services is a real company. -->
+    <p class="ftr__sample">
+      <b>Review version.</b> This redesign has not replaced the live website, and its quote forms are
+      previews that send nothing until the GoHighLevel connection is configured. Customer reviews are
+      real Google reviews from the company's own feed. Before launch: confirm the Acorn Finance
+      prequalification link and the current digital-design fee terms, and supply a street address and
+      any licence or insurance numbers if they are to be published.
+    </p>
+
+    <div class="ftr__bot">
+      <p style="margin:0">&copy; <span data-year>2026</span> BlueFox Landscape &amp; Services. All rights reserved.</p>
+      <ul>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="accessibility-statement.html">Accessibility statement</a></li>
+        <li><a href="privacy.html">Privacy policy</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="Quick actions">
+  <a class="mbar__tel" href="tel:+14077178191"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 2h3l1.4 3.4-1.8 1.3a10 10 0 004.7 4.7l1.3-1.8L15 11v3a1 1 0 01-1.1 1A13 13 0 012 3.1 1 1 0 013 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg> Call now</a>
+  <a class="mbar__cta" href="free-quote.html" data-quote="">Free quote</a>
+</nav>
+
+<!-- Shared quote popup. Every "quote" CTA below the fold opens this instead of
+     sending the visitor back up the page; service buttons preselect the service. -->
+<dialog class="qm" id="qm" aria-labelledby="qm-h">
+  <div class="qm__in">
+    <button class="qm__x" type="button" aria-label="Close">&times;</button>
+    <p class="eyebrow">Free, no-obligation quote</p>
+    <h2 class="d3" id="qm-h" style="margin-bottom:1.2rem">Tell us about the property.</h2>
+    <!-- LAUNCH: replace this preview form with the client's GoHighLevel form or point it at the GHL webhook.
+     Keep the field set: name, email, phone, service (required — one OR MORE; map to a GHL multi-select/checkbox field
+     with these values: design, paver, sandseal, sod, irrigation, tree, lighting, drainage, power, pooldeck, screen, house, roof, solar, gutter, soft, window-ext, window-int, multiple);
+     ZIP (optional); SMS consent (optional, unchecked). Route and tag leads by service value inside GHL.
+     Then test lead creation, notifications and consent handling end to end. -->
+<form class="qform" action="thank-you.html" method="get">
+<div class="qform__g">
+<div class="field"><label for="qm-name">Name <span class="req">*</span></label><input id="qm-name" name="name" type="text" autocomplete="name" required></div>
+<div class="field"><label for="qm-email">Email <span class="req">*</span></label><input id="qm-email" name="email" type="email" autocomplete="email" required></div>
+<div class="field"><label for="qm-phone">Phone <span class="req">*</span></label><input id="qm-phone" name="phone" type="tel" autocomplete="tel" required></div>
+<div class="field"><label for="qm-svc">Service <span class="req">*</span></label><select id="qm-svc" name="service" required><option value="">Choose…</option><optgroup label="Landscaping"><option value="design">Landscape design &amp; construction</option><option value="paver">Paver installation &amp; repairs</option><option value="sandseal">Paver Sand &amp; Seal</option><option value="sod">Sod installation</option><option value="irrigation">Irrigation</option><option value="tree">Tree &amp; hedge work</option><option value="lighting">Landscape lighting</option><option value="drainage">Drainage</option></optgroup><optgroup label="Pressure washing"><option value="power">Pressure washing</option><option value="pooldeck">Pool deck washing</option><option value="screen">Screen enclosure cleaning</option><option value="house">House washing (soft wash)</option><option value="roof">Roof washing (soft wash)</option><option value="solar">Solar panel cleaning (soft wash)</option><option value="gutter">Gutter cleaning</option><option value="soft">Soft washing — not sure which</option></optgroup><optgroup label="Window cleaning"><option value="window-ext">Exterior window cleaning</option><option value="window-int">Interior window cleaning</option></optgroup><optgroup label="Other"><option value="multiple">Several services / not sure yet</option></optgroup></select></div>
+<div class="field"><label for="qm-zip">ZIP <span class="opt">(optional)</span></label><input id="qm-zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5"></div>
+</div>
+<div class="qform__foot"><label class="chk" for="qm-sms"><input type="checkbox" id="qm-sms" name="sms" value="yes"><span>Text me about my quote <span class="opt">(optional)</span><small>Message and data rates may apply. Reply STOP to opt out. Not required to get a quote.</small></span></label><button class="btn btn--accent" type="submit"><span>Get my free quote</span><svg class="btn__ar" width="15" height="12" viewBox="0 0 15 12" fill="none" aria-hidden="true"><path d="M9 1l5 5-5 5M14 6H0" stroke="currentColor" stroke-width="1.8"/></svg></button></div>
+<p class="form__status" role="status" hidden></p>
+<p class="form__note"><span class="preview-tag">Preview form</span> Nothing is sent from this review version. Estimates are free; office hours Mon–Fri 9am–5pm.</p>
+</form>
+  </div>
+</dialog>
+
+<script id="__i0" type="text/plain">data:image/webp;base64,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</script><script>(function(){function g(k){var n=document.getElementById(k.slice(1));return n&&n.textContent;}var v=document.querySelectorAll('video[data-src^="#"]');for(var i=0;i<v.length;i++){var s=g(v[i].getAttribute("data-src"));if(s)v[i].setAttribute("data-src",s);}var m=document.querySelectorAll("img[data-lazysrc]");for(var j=0;j<m.length;j++){var u=g(m[j].getAttribute("data-lazysrc"));if(u){m[j].src=u;m[j].removeAttribute("data-lazysrc");}}})();</script><script>
+/* ============================================================================
+   BLUEFOX LANDSCAPE & SERVICES — site.js
+   No framework, no library. Motion is transform/opacity/filter only and every
+   effect short-circuits under prefers-reduced-motion.
+   ========================================================================== */
+(function () {
+  "use strict";
+
+  var RM = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var FINE = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  var $  = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+
+  /* ── reveals ──────────────────────────────────────────────────────────────
+     Observed elements are always UNCLIPPED. clip-path shrinks the intersection
+     rectangle an observer measures, so a clipped element never intersects and
+     stays hidden forever; the observed ancestor forwards data-in to
+     [data-rv-child] descendants instead. */
+  function markIn(el) {
+    el.setAttribute("data-in", "true");
+    $$("[data-rv-child]", el).forEach(function (c) { c.setAttribute("data-in", "true"); });
+  }
+  if (RM || !("IntersectionObserver" in window)) {
+    $$(".rv, .rvt, .rvl, [data-rv-child]").forEach(markIn);
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        markIn(e.target);
+        io.unobserve(e.target);
+      });
+    }, { rootMargin: "0px 0px -9% 0px", threshold: 0.04 });
+    $$(".rv, .rvt, .rvl").forEach(function (el) { io.observe(el); });
+    $$("[data-stagger]").forEach(function (g) {
+      var step = parseFloat(g.getAttribute("data-stagger")) || 0.075;
+      $$(".rv, .rvt", g).forEach(function (el, i) { el.style.setProperty("--d", (i * step) + "s"); });
+    });
+  }
+
+  /* ── header: frost past 40px, hide on a fast downward scroll ──────────────── */
+  var hdr = $(".hdr");
+  var anyOpen = function () { return !!$(".nav__dd[data-open='true'], .oc[data-open='true']"); };
+  if (hdr) {
+    var last = 0, ticking = false;
+    var onScroll = function () {
+      var y = window.pageYOffset || document.documentElement.scrollTop;
+      hdr.setAttribute("data-solid", y > 40 ? "true" : "false");
+      hdr.setAttribute("data-hide", (y > 520 && y > last + 4 && !anyOpen()) ? "true" : "false");
+      last = y;
+      ticking = false;
+    };
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+    }, { passive: true });
+    onScroll();
+  }
+
+  /* ── dropdowns ────────────────────────────────────────────────────────────
+     The label is a real link to the overview page; the chevron is a separate
+     button that owns aria-expanded. Pointer hover opens the panel in CSS and
+     flips the bar to its frosted state here, so the menu never reads over a
+     photograph. */
+  var dds = $$(".nav__dd");
+  var setDD = function (li, open) {
+    li.setAttribute("data-open", open ? "true" : "false");
+    var b = $(".nav__tg", li);
+    if (b) b.setAttribute("aria-expanded", open ? "true" : "false");
+  };
+  dds.forEach(function (li) {
+    var b = $(".nav__tg", li);
+    b.addEventListener("click", function () {
+      var open = li.getAttribute("data-open") !== "true";
+      dds.forEach(function (o) { setDD(o, false); });
+      setDD(li, open);
+    });
+    if (FINE && hdr) {
+      li.addEventListener("pointerenter", function () { hdr.setAttribute("data-menu", "true"); });
+      li.addEventListener("pointerleave", function () { hdr.removeAttribute("data-menu"); });
+    }
+    li.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && li.getAttribute("data-open") === "true") { setDD(li, false); b.focus(); }
+    });
+    li.addEventListener("focusout", function (e) {
+      if (!li.contains(e.relatedTarget)) setDD(li, false);
+    });
+  });
+  document.addEventListener("click", function (e) {
+    dds.forEach(function (li) { if (!li.contains(e.target)) setDD(li, false); });
+  });
+
+  /* ── off-canvas navigation ────────────────────────────────────────────────── */
+  var burger = $(".burger"), oc = $(".oc");
+  if (burger && oc) {
+    var setOpen = function (open) {
+      oc.setAttribute("data-open", open ? "true" : "false");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+      document.documentElement.style.overflow = open ? "hidden" : "";
+      if (open) { var f = oc.querySelector("a, button, summary"); if (f) f.focus(); }
+      else burger.focus();
+    };
+    burger.addEventListener("click", function () { setOpen(oc.getAttribute("data-open") !== "true"); });
+    $(".oc__x", oc).addEventListener("click", function () { setOpen(false); });
+    oc.addEventListener("click", function (e) { if (e.target.closest("a")) setOpen(false); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && oc.getAttribute("data-open") === "true") setOpen(false);
+    });
+    oc.addEventListener("keydown", function (e) {
+      if (e.key !== "Tab") return;
+      var f = $$("a[href], button, summary", oc).filter(function (n) { return n.offsetParent !== null; });
+      if (!f.length) return;
+      var first = f[0], lastN = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); lastN.focus(); }
+      else if (!e.shiftKey && document.activeElement === lastN) { e.preventDefault(); first.focus(); }
+    });
+  }
+
+  /* ── hero parallax: one custom property, --sp, on the hero itself ─────────── */
+  var hero = $(".hero");
+  if (hero && !RM) {
+    var raf = false;
+    var tick = function () {
+      var r = hero.getBoundingClientRect();
+      hero.style.setProperty("--sp", Math.min(1, Math.max(0, -r.top / Math.max(1, r.height))).toFixed(4));
+      raf = false;
+    };
+    window.addEventListener("scroll", function () { if (!raf) { raf = true; requestAnimationFrame(tick); } }, { passive: true });
+    tick();
+  }
+
+  /* ── magnetic CTA. --bfx/--bfy are owner-prefixed: a custom property read by a
+     transform is effectively global, and a bare --mx on a container once pushed
+     six CTAs off the page. ─────────────────────────────────────────────────── */
+  if (!RM && FINE) {
+    $$(".magnet").forEach(function (el) {
+      el.addEventListener("pointermove", function (e) {
+        var r = el.getBoundingClientRect();
+        el.style.setProperty("--bfx", ((e.clientX - r.left - r.width / 2) * 0.16).toFixed(2) + "px");
+        el.style.setProperty("--bfy", ((e.clientY - r.top - r.height / 2) * 0.24).toFixed(2) + "px");
+      });
+      el.addEventListener("pointerleave", function () {
+        el.style.setProperty("--bfx", "0px"); el.style.setProperty("--bfy", "0px");
+      });
+    });
+  }
+
+  /* ── FAQ: one open at a time within an .acc ───────────────────────────────── */
+  $$(".acc").forEach(function (acc) {
+    var all = $$("details", acc);
+    all.forEach(function (d) {
+      d.addEventListener("toggle", function () {
+        if (d.open) all.forEach(function (o) { if (o !== d) o.open = false; });
+      });
+    });
+  });
+
+  /* ── before/after: the range input IS the control ─────────────────────────── */
+  $$(".ba__range").forEach(function (r) {
+    var fig = r.closest(".ba");
+    var sync = function () { fig.style.setProperty("--ba", r.value + "%"); };
+    r.addEventListener("input", sync);
+    sync();
+  });
+
+  /* ── quote forms — PREVIEW. Nothing is sent: validate, say so, land on
+     thank-you.html. At launch GHL replaces this (see each LAUNCH comment). */
+  var MSG = { name: "Please add your name.", email: "Please add an email address we can reply to.",
+              phone: "Please add a phone number with area code.", service: "Please choose at least one service.",
+              zip: "ZIP codes are five digits — or leave it blank." };
+  /* ── services multi-select: a native <select> (works with no script) made
+     multiple and driven by a checkbox panel. The select stays the truth. */
+  var msel = function (sel) {
+    var id = sel.id, lab = $("label[for='" + id + "']"), w = document.createElement("div"),
+        b = document.createElement("button"), p = document.createElement("div"), cs = [];
+    sel.multiple = true;
+    if (sel.options[0] && !sel.options[0].value) sel.remove(0);
+    sel.id = id + "-x"; sel.hidden = true; sel._b = b;
+    w.className = "msel"; b.type = "button"; b.className = "msel__b"; b.id = id;
+    p.className = "msel__p"; p.id = id + "-p"; p.hidden = true;
+    b.setAttribute("aria-expanded", "false"); b.setAttribute("aria-controls", p.id);
+    if (lab) { lab.id = id + "-l"; b.setAttribute("aria-labelledby", lab.id + " " + id); }
+    $$("optgroup, option", sel).forEach(function (o) {
+      var g = o.tagName === "OPTGROUP", l = document.createElement(g ? "p" : "label");
+      if (g) { l.className = "msel__g"; l.textContent = o.label; p.appendChild(l); return; }
+      var c = document.createElement("input");
+      c.type = "checkbox"; c._o = o; cs.push(c);
+      c.addEventListener("change", function () { o.selected = c.checked; sync(); sel.dispatchEvent(new Event("change")); });
+      l.appendChild(c); l.appendChild(document.createTextNode(o.value === "multiple" ? "Not sure yet" : o.textContent));
+      p.appendChild(l);
+    });
+    var sync = sel._sync = function () {
+      var on = cs.filter(function (c) { return (c.checked = c._o.selected); });
+      b.textContent = !on.length ? "Choose services…" : on.length > 1 ? on.length + " services selected" : on[0].parentNode.textContent;
+    };
+    var set = function (o) { p.hidden = !o; b.setAttribute("aria-expanded", o); };
+    b.addEventListener("click", function () { set(p.hidden); if (!p.hidden) cs[0].focus(); });
+    w.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !p.hidden) { e.preventDefault(); e.stopPropagation(); set(false); b.focus(); }
+    });
+    ["click", "focusin"].forEach(function (t) { document.addEventListener(t, function (e) { if (!w.contains(e.target)) set(false); }); });
+    sel.parentNode.insertBefore(w, sel); w.appendChild(b); w.appendChild(p); w.appendChild(sel);
+    sync();
+  };
+  $$("form.qform select[name=service]").forEach(msel);
+
+  var check = function (el) {
+    var v = (el.value || "").trim(), ok = true;
+    if (el.required && !v) ok = false;
+    else if (el.type === "email" && v) ok = el.validity ? el.validity.valid : /\S+@\S+\.\S+/.test(v);
+    else if (el.type === "tel" && v) ok = v.replace(/\D/g, "").length >= 10;
+    else if (el.name === "zip" && v) ok = /^\d{5}$/.test(v);
+    var f = el.closest(".field"); if (!f) return ok;
+    var err = $(".field__err", f), t = el._b || el;
+    if (ok) { f.removeAttribute("data-err"); t.removeAttribute("aria-invalid"); if (err) err.remove(); }
+    else {
+      f.setAttribute("data-err", ""); t.setAttribute("aria-invalid", "true");
+      if (!err) {
+        err = document.createElement("p"); err.className = "field__err"; err.id = el.id + "-err";
+        f.appendChild(err); t.setAttribute("aria-describedby", err.id);
+      }
+      err.textContent = MSG[el.name] || "Please check this field.";
+    }
+    return ok;
+  };
+  $$("form.qform").forEach(function (f) {
+    f.setAttribute("novalidate", "");
+    var els = $$("input[name], select[name]", f).filter(function (el) { return el.type !== "checkbox" && el.type !== "hidden"; });
+    els.forEach(function (el) {
+      el.addEventListener("blur", function () { if (el.value || el.hasAttribute("aria-invalid")) check(el); });
+      el.addEventListener("change", function () { if ((el._b || el).hasAttribute("aria-invalid")) check(el); });
+    });
+    f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var bad = els.filter(function (el) { return !check(el); });
+      var st = $(".form__status", f);
+      if (bad.length) {
+        (bad[0]._b || bad[0]).focus();
+        if (st) { st.hidden = false; st.textContent = bad.length === 1 ? "One field needs a look before this can go." : bad.length + " fields need a look before this can go."; }
+        return;
+      }
+      var btn = $("button[type=submit]", f);
+      if (btn) btn.disabled = true;
+      if (st) {
+        st.hidden = false;
+        st.textContent = "Preview only — nothing has been sent. Once the client's GoHighLevel connection is live, this goes straight to the BlueFox office. Taking you to the confirmation page…";
+      }
+      var d = new FormData(f), q = ["preview=1"];
+      ["name", "service"].forEach(function (k) { var v = d.getAll(k).join(","); if (v) q.push(k + "=" + encodeURIComponent(v)); });
+      setTimeout(function () { window.location.href = "thank-you.html?" + q.join("&"); }, 1700);
+    });
+  });
+
+  /* select a service by value, only if that option exists; add keeps others */
+  var pick = function (sel, v, add) {
+    if (!sel || !v) return false;
+    var o = Array.prototype.filter.call(sel.options, function (x) { return x.value === v; })[0];
+    if (o) { if (add) o.selected = true; else sel.value = o.value; }
+    if (sel._sync) sel._sync();
+    return !!o;
+  };
+
+  /* ── the shared quote popup. Every [data-quote] trigger is a real link to
+     free-quote.html, so it still works with no script or no <dialog>. ───── */
+  var qm = $("#qm");
+  if (qm && typeof qm.showModal === "function") {
+    var qf = $("form", qm);
+    $$("[data-quote]").forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (oc && oc.getAttribute("data-open") === "true") $(".oc__x", oc).click();
+        var st = $(".form__status", qf); if (st) st.hidden = true;
+        var sel = qf.elements.service;
+        if (!pick(sel, a.getAttribute("data-quote"))) { sel.value = ""; if (sel._sync) sel._sync(); }
+        qm.showModal();
+        var first = qf.elements.name; if (first) first.focus();
+      });
+    });
+    $(".qm__x", qm).addEventListener("click", function () { qm.close(); });
+    qm.addEventListener("click", function (e) { if (e.target === qm) qm.close(); });
+  }
+
+  /* ── prefill from the querystring. Values are matched against options that
+     already exist; nothing from the URL is ever injected as markup. ───────── */
+  var pf = $("form[data-prefill]");
+  if (pf) {
+    var qp = new URLSearchParams(window.location.search);
+    pick(pf.elements.service, qp.get("service"));
+    var svc = (qp.get("services") || "").split(",").filter(Boolean)
+      .map(function (s) { return s === "light" ? "lighting" : s; });
+    var notes = [];
+    if (svc.length === 1) pick(pf.elements.service, svc[0]);
+    else if (svc.length > 1) {
+      svc.forEach(function (v) { pick(pf.elements.service, v, true); });
+      notes.push("Estimator scope: " + svc.join(", "));
+    }
+    var lot = parseInt(qp.get("lot"), 10);
+    if (lot > 0 && lot < 1e6) notes.push("Lot size: about " + lot.toLocaleString() + " sq ft");
+    var z = (qp.get("zip") || "").replace(/\D/g, "").slice(0, 5);
+    if (z && pf.elements.zip) pf.elements.zip.value = z;
+    var note = pf.elements.note;
+    if (note && notes.length && !note.value) note.value = notes.join(". ") + ".";
+  }
+
+  /* ── carousel: 8s autoplay that stops for good once a visitor touches it ── */
+  $$(".car").forEach(function (car) {
+    var slides = $$(".car__slide", car), n = slides.length, i = 0, timer = null, stopped = RM;
+    var out = $(".car__n", car), pz = $("[data-car='pause']", car), live = $(".car__track", car);
+    var go = function (k) {
+      i = (k + n) % n;
+      car.style.setProperty("--car-i", i);
+      slides.forEach(function (s, j) { s.setAttribute("aria-hidden", j === i ? "false" : "true"); });
+      if (out) out.textContent = (i + 1) + " / " + n;
+    };
+    var stop = function () {
+      stopped = true; clearInterval(timer); timer = null;
+      car.setAttribute("data-paused", "true"); live.setAttribute("aria-live", "polite");
+      if (pz) pz.setAttribute("aria-label", "Play slideshow");
+    };
+    var play = function () {
+      stopped = false; clearInterval(timer);
+      timer = setInterval(function () { go(i + 1); }, 8000);
+      car.setAttribute("data-paused", "false"); live.setAttribute("aria-live", "off");
+      if (pz) pz.setAttribute("aria-label", "Pause slideshow");
+    };
+    $$("[data-car]", car).forEach(function (b) {
+      b.addEventListener("click", function () {
+        var a = b.getAttribute("data-car");
+        if (a === "pause") { if (stopped) play(); else stop(); return; }
+        stop(); go(i + (a === "next" ? 1 : -1));
+      });
+    });
+    var x0 = null;
+    live.addEventListener("pointerdown", function (e) { x0 = e.clientX; });
+    live.addEventListener("pointerup", function (e) {
+      if (x0 === null) return;
+      var dx = e.clientX - x0; x0 = null;
+      if (Math.abs(dx) > 40) { stop(); go(i + (dx < 0 ? 1 : -1)); }
+    });
+    car.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft") { stop(); go(i + (e.key === "ArrowRight" ? 1 : -1)); }
+    });
+    go(0);
+    if (stopped) stop();
+    else if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) {
+        if (stopped) return;
+        if (es[0].isIntersecting) { if (!timer) play(); } else { clearInterval(timer); timer = null; }
+      }, { threshold: 0.3 }).observe(car);
+    } else play();
+  });
+
+  /* ── gallery: category filter + lightbox ──────────────────────────────────── */
+  var mos = $(".mos");
+  if (mos) {
+    var items = $$(".mos__i", mos);
+    $$(".flt button").forEach(function (b, _, all) {
+      b.addEventListener("click", function () {
+        var f = b.getAttribute("data-f");
+        all.forEach(function (o) { o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
+        items.forEach(function (it) {
+          it.hidden = f !== "all" && (" " + it.getAttribute("data-cat") + " ").indexOf(" " + f + " ") < 0;
+        });
+      });
+    });
+    var lb = $(".lb");
+    if (lb && typeof lb.showModal === "function") {
+      var li = $("img", lb), lc = $("figcaption", lb), cur = 0, opener = null;
+      var vis = function () { return items.filter(function (it) { return !it.hidden; }); };
+      var show = function (k) {
+        var v = vis(); cur = (k + v.length) % v.length;
+        var im = $("img", v[cur]);
+        li.src = im.currentSrc || im.src; li.alt = im.alt;
+        lc.textContent = v[cur].getAttribute("data-cap") || im.alt;
+      };
+      items.forEach(function (it) {
+        it.addEventListener("click", function () {
+          opener = it; show(vis().indexOf(it)); lb.showModal();
+        });
+      });
+      $$("[data-lb]", lb).forEach(function (b) {
+        b.addEventListener("click", function () {
+          var a = b.getAttribute("data-lb");
+          if (a === "close") lb.close(); else show(cur + (a === "next" ? 1 : -1));
+        });
+      });
+      lb.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowRight") show(cur + 1);
+        if (e.key === "ArrowLeft") show(cur - 1);
+      });
+      lb.addEventListener("close", function () { if (opener) opener.focus(); });
+    }
+  }
+
+  /* ── the Google review feed ───────────────────────────────────────────────
+     The company's own Elfsight widget (the same one the live site embeds), so
+     every review is real and comes straight from Google. Third-party script, so
+     it is fetched only as the feed nears the viewport. Once it renders, its
+     header carries the live rating and count; [data-rating] slots elsewhere on
+     the page are filled from it. Nothing is ever shown if it never loads. */
+  var elf = $$("[data-elfsight]"), rated = $$("[data-rating]");
+  var readRating = function (root) {
+    var t = (root.textContent || "").replace(/\s+/g, " ");
+    var r = t.match(/\b([1-5][.,]\d)\b/), c = t.match(/(\d[\d,]*)\s+reviews?/i);
+    if (!r) return false;
+    var s = r[1].replace(",", ".") + " out of 5 on Google" + (c ? " · " + c[1] + " reviews" : "");
+    rated.forEach(function (el) { el.textContent = s; });
+    return true;
+  };
+  var loadElf = function () {
+    if (loadElf.done) return; loadElf.done = true;
+    var sc = document.createElement("script");
+    sc.src = "https://apps.elfsight.com/p/platform.js"; sc.defer = true;
+    document.body.appendChild(sc);
+    elf.forEach(function (box) {
+      var mo = new MutationObserver(function () {
+        var w = $(".elf__wait", box); if (w && box.children.length > 1) w.remove();
+        if (readRating(box)) mo.disconnect();
+      });
+      mo.observe(box, { childList: true, subtree: true, characterData: true });
+    });
+  };
+  if (elf.length) {
+    if ("IntersectionObserver" in window) {
+      var eio = new IntersectionObserver(function (es) {
+        if (es.some(function (e) { return e.isIntersecting; })) { eio.disconnect(); loadElf(); }
+      }, { rootMargin: "900px 0px" });
+      elf.forEach(function (b) { eio.observe(b); });
+    } else loadElf();
+  }
+
+  /* ── thank-you: echo the first name, and flag the preview ─────────────────── */
+  var tq = new URLSearchParams(window.location.search);
+  var echo = $("[data-echo]");
+  if (echo) {
+    var nm = (tq.get("name") || "").trim().replace(/[<>]/g, "").slice(0, 40);
+    var wrap = $("[data-echo-wrap]");
+    if (nm) echo.textContent = nm.split(" ")[0];
+    else if (wrap) wrap.remove();
+  }
+  var pv = $("[data-preview]");
+  if (pv && tq.get("preview")) pv.hidden = false;
+
+  $$("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
+})();
+
+</script>
+</body>
+</html>

@@ -1,7 +1,8 @@
-# Blue Fox Landscape & Services
+# BlueFox Landscape & Services
 
-> Landscaping, pressure washing and soft washing company serving Central Florida.
-> "Professional Landscaping, Pressure Washing & Soft Washing In Central Florida."
+> Landscape design and installation, pressure washing and window cleaning company
+> serving Central Florida. Project work — design, build and clean — not recurring
+> lawn or landscape maintenance.
 
 ## Contact
 - Office: 407-717-8191
@@ -12,41 +13,49 @@
 - Based in Lake Mary, Florida. No street address is published.
 
 ## Service area
-Established: Lake Mary, Heathrow, Altamonte Springs, Longwood and Orlando, Florida.
-Extended, availability confirmed per address before booking: Winter Park, Winter
-Garden, Windermere and Ocoee.
+Central Florida: Ocoee, Winter Garden, Windermere, Winter Park, Lake Mary, Heathrow
+and Apopka, plus Altamonte Springs, Longwood and Orlando.
 
 ## Landscaping services
 - Landscape design & construction — a member of the design team meets you to get
   your vision, then creates a rendering of the finished product before installation.
+- Paver installation & repairs — driveways, walkways, patios and more; sunken or
+  shifted pavers lifted and relaid. Commercial and residential.
+- Paver Sand & Seal — pavers pressure washed, joints refilled with sand and the
+  surface sealed, which helps stabilise the pavers and reduce weed growth. Priced
+  by the square foot. Distinct from an ordinary pressure wash.
 - Sod installation — a landscaper evaluates the lawn and advises whether new sod is
   the right course of action. Residential and commercial.
-- Paver installation — driveways, walkways, patios and more. Commercial and residential.
-- Irrigation — installation, repair and maintenance.
+- Irrigation — installation and repair.
 - Tree & hedge work — trees and stumps removed, plus tree and hedge trimming.
 - Landscape lighting — exterior lighting installation.
 - Drainage — systems that direct rain and irrigation runoff away from the property,
   after a free evaluation.
 
-## Washing services
-- Exterior window washing — outside glass, frames and sills.
-- Interior window washing — inside glass and sills.
-- Power washing (high pressure, hard surfaces) — driveways and walkways, patio and
+## Pressure washing services
+- Pressure washing (high pressure, hard surfaces) — driveways and walkways, patio and
   deck, fence and gate.
+- Pool deck washing.
+- Screen enclosure cleaning — pool cages and screened lanais.
 - House washing (soft wash) — siding, soffits, eaves and trim.
-- Gutter cleaning (soft wash) — build-up of leaves, mold, dirt and grime removed.
-- Solar panel cleaning — pollen, dust and droppings removed from the panels.
 - Roof washing (soft wash only) — a roof must never be pressure washed, because high
   pressure strips shingle granules and drives water under the courses.
+- Solar panel cleaning (soft wash) — pollen, dust and droppings removed from the panels.
+- Gutter cleaning (soft wash) — build-up of leaves, mold, dirt and grime removed.
 
 Soft washing is a method — low pressure plus cleaning solutions — not a separate
-service; it is how houses, gutters and roofs are cleaned.
+service; it is how houses, roofs, solar panels and gutters are cleaned.
+
+## Window cleaning services
+- Exterior window cleaning — outside glass, frames and sills.
+- Interior window cleaning — inside glass and sills.
+- Booked as a one-time clean, or monthly or quarterly. Priced by the pane.
 
 ## Pricing
-Estimates are free. The single published fee: as of 7/1/2023 landscape digital design
-work costs $250.00, with a 50% deposit required. If the landscape package is approved,
-the $250.00 is credited toward the landscape project. No unit pricing is published for
-any other service.
+Estimates are free. Landscape design is not: the single published fee is digital
+landscape design work, which as of 7/1/2023 costs $250.00, with a 50% deposit
+required. If the landscape package is approved, the $250.00 is credited toward the
+landscape project. No unit pricing is published for any other service.
 
 ## Financing
 Available through Acorn Finance — apply once and get payment options from multiple
@@ -58,32 +67,35 @@ ChIJ2ew02570xGURCXi63r12k7U), quoted verbatim on this site and linked to each
 original. The rating and total count are shown live from Google, not restated here.
 
 ## Pages
-- /                                    Home — quote form, project gallery, services, before/after, reviews, FAQ
+- /                                    Home — services, Paver Sand & Seal, reviews, quote form, gallery, before/after, FAQ
 - /landscaping                         Landscaping overview
-- /landcape-design-construction        Landscape design & construction
+- /landscape-design-construction       Landscape design & construction
+- /paver-installation                  Paver installation & repairs
+- /paver-sand-seal                     Paver Sand & Seal
 - /sod-installation                    Sod installation
-- /paver-installation                  Paver installation
-- /irrigation                          Irrigation install, repair, maintenance
+- /irrigation                          Irrigation installation and repair
 - /tree-removal                        Tree & hedge work
 - /lighting-installation               Landscape lighting
 - /drainage                            Drainage
-- /washing                             Washing overview
-- /exterior-window-washing             Exterior window washing
-- /interior-window-washing             Interior window washing
-- /power-washing-services              Power washing (driveways, patio & deck, fence & gate)
+- /washing                             Pressure washing overview
+- /power-washing-services              Pressure washing (driveways, patio & deck, fence & gate, pool decks, screen enclosures)
 - /house-wash                          House washing
-- /soft-wash-gutters                   Gutter cleaning
-- /solar-panel-cleaning                Solar panel cleaning
 - /roof-cleaning                       Roof washing
+- /solar-panel-cleaning                Solar panel cleaning
+- /soft-wash-gutters                   Gutter cleaning
 - /soft-washing-services               How soft washing works
-- /service-area                        Established and extended service area
-- /lake-mary /heathrow /altamonte-springs /longwood /orlando   Community pages
-- /winter-park /winter-garden /windermere /ocoee               Community pages (availability confirmed per address)
+- /window-cleaning                     Window cleaning overview
+- /exterior-window-cleaning            Exterior window cleaning
+- /interior-window-cleaning            Interior window cleaning
+- /service-area                        Service area
+- /ocoee /winter-garden /windermere /winter-park /lake-mary /heathrow /apopka   Community pages
+- /altamonte-springs /longwood /orlando                                          Community pages
 - /gallery                             Project photography
 - /reviews                             Google reviews
 - /financing                           Acorn Finance
 - /free-quote                          Quote request form
 - /contact                             Phone, email, hours
+- /privacy /accessibility-statement    Legal
 
 ## Notes for anyone citing this site
 Everything above is the company's own published information or was confirmed by the

@@ -1,5 +1,5 @@
 /* ============================================================================
-   BLUE FOX LANDSCAPE & SERVICES — design system
+   BLUEFOX LANDSCAPE & SERVICES — design system
    Site 6. Nothing here is shared with sites 1–5; divergence is the deliverable.
 
    PALETTE PROVENANCE
@@ -383,9 +383,13 @@ p:where(:last-child) { margin-bottom: 0; }   /* p-weight only: any class margin 
 }
 
 .wm { display: inline-flex; align-items: center; gap: .7rem; text-decoration: none; flex: none; }
-.wm img { width: 42px; height: auto; }
+/* The mark is the fox head alone (bx-logo-head-*). The old file was the whole
+   stacked lockup squeezed into 42px, so the head was ~28px tall with an
+   illegible second "BLUE FOX" under it. The name itself is live text and is
+   one word: BlueFox. */
+.wm img { width: 50px; height: auto; }
 .wm__t { display: flex; flex-direction: column; line-height: 1; }
-.wm__n { font: 800 1.16rem/1 var(--ffd); letter-spacing: -.035em; color: var(--steel); }
+.wm__n { font: 800 1.3rem/1 var(--ffd); letter-spacing: -.03em; color: var(--steel); }
 .wm__s { font: 700 .585rem/1 var(--ff); letter-spacing: .21em; text-transform: uppercase;
          color: var(--slate-dim); margin-top: .38rem; }
 
@@ -486,27 +490,39 @@ p:where(:last-child) { margin-bottom: 0; }   /* p-weight only: any class margin 
   width: 100%; height: 100%; object-fit: cover;
   transform: scale(calc(1 + var(--sp, 0) * .06)); transform-origin: 50% 40%;
 }
-/* The photograph is shown untinted (October 2026 feedback: no colour wash).
-   The only layer over it is a NEUTRAL shade — pure black, no hue — under the
-   nav and behind the type, so white text still clears AA on a bright sky and
-   lawn. It is a legibility floor, not a mood. */
+/* Phase 1 checklist: "remove or significantly reduce the dark overlay". The
+   full-height 0.78 wash is gone and the photograph is shown as shot. The only
+   shade left is a thin neutral band under the nav, so the glass header and its
+   white logo have something to sit on.
+
+   The type moved into its own card instead. A lighter scrim was tried first and
+   measured: white over this photograph's sky came out at 1.0–1.3:1 at desktop
+   widths, because the headline sits in the sky. A contained navy glass card
+   (the header's own material, darker) keeps the property bright everywhere else
+   and holds the amber line at 3:1 even over pure white. */
 .hero__shade { position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.36) 0%, rgba(0,0,0,0) 22%),
-    linear-gradient(90deg, rgba(4,12,20,.78) 0%, rgba(4,12,20,.58) 30%, rgba(4,12,20,.2) 56%, rgba(4,12,20,0) 72%),
-    linear-gradient(0deg, rgba(4,12,20,.6) 0%, rgba(4,12,20,0) 48%); }
-@media (max-width: 760px) {
-  .hero__shade { background:
-    linear-gradient(180deg, rgba(0,0,0,.34) 0%, rgba(0,0,0,0) 18%),
-    linear-gradient(0deg, rgba(4,12,20,.86) 0%, rgba(4,12,20,.66) 42%, rgba(4,12,20,.25) 70%, rgba(4,12,20,0) 88%); }
-}
+  background: linear-gradient(180deg, rgba(0,0,0,.26) 0%, rgba(0,0,0,0) 15%); }
+/* sized so the headline sets in three lines and the card covers the lower-left
+   corner only — the house, palms and drive stay in view */
+.hero__card { max-width: 37rem; padding: clamp(1.3rem, 2.6vw, 2.2rem) clamp(1.25rem, 2.8vw, 2.4rem);
+  border-radius: var(--cut-l); background: rgba(11,44,72,.8);
+  -webkit-backdrop-filter: blur(16px) saturate(1.25); backdrop-filter: blur(16px) saturate(1.25);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.16), 0 30px 60px -34px rgba(3,20,35,.75); }
+/* .hero .hero__card .d1, not .hero__card .d1: the generic .hero .d1 size rule
+   comes later in this file at the same specificity and would otherwise win */
+.hero .hero__card .d1 { font-size: clamp(2rem, .8rem + 2.9vw, 3.5rem); max-width: none; }
+/* on a phone the card is most of the hero; the secondary link goes (the mbar
+   and the gallery below carry it) so the photograph keeps its share */
+@media (max-width: 480px) { .hero__card .hero__acts .btn--ghost { display: none; } }
+.hero__card .hero__lede { max-width: 40ch; font-size: clamp(1.05rem, .96rem + .4vw, 1.25rem); margin-top: clamp(.9rem, 1.4vw, 1.2rem); }
+.hero__card .hero__acts { margin-top: clamp(1.3rem, 2.2vw, 1.8rem); }
 .hero__in { position: relative; z-index: 2; width: 100%; }
-.hero .d1 { color: #fff; max-width: 12em; line-height: 1.03; text-shadow: 0 2px 28px rgba(0,0,0,.45);
+.hero .d1 { color: #fff; max-width: 12em; line-height: 1.03; text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 2px 26px rgba(0,0,0,.5);
   /* The hero caps its own display size rather than lowering the scale for every page. */
   font-size: clamp(2.6rem, 1rem + 5.2vw, 5.6rem); }
 .hero .d1 b { color: var(--amber-lt); }
 .hero__lede { color: #fff; max-width: 34ch; margin: clamp(1.1rem, 1.8vw, 1.5rem) 0 0; font-weight: 500;
-              font-size: clamp(1.15rem, 1rem + .65vw, 1.45rem); line-height: 1.5; text-shadow: 0 1px 16px rgba(0,0,0,.5); }
+              font-size: clamp(1.15rem, 1rem + .65vw, 1.45rem); line-height: 1.5; text-shadow: 0 1px 2px rgba(0,0,0,.45), 0 1px 16px rgba(0,0,0,.55); }
 .hero__acts { display: flex; flex-wrap: wrap; gap: .9rem; align-items: center; margin-top: clamp(1.7rem, 3vw, 2.5rem); }
 .hero .eyebrow { color: var(--amber); }
 .hero__foot { display: flex; flex-wrap: wrap; gap: clamp(1rem,3vw,3rem); align-items: center;
@@ -1417,3 +1433,61 @@ a.card:hover .card__go { gap: .85rem; }
 /* the form CTA must stay on one line: at 320px "Get my free quote" broke in two */
 .btn--cta { white-space: nowrap; }
 @media (max-width: 420px) { .btn--cta { padding-inline: 1rem; gap: .7rem; } }
+
+/* ============================================================================
+   PHASE 1 CHECKLIST (October 2026) — three service categories, the corrected
+   BlueFox wordmark, the Paver Sand & Seal spotlight
+   ========================================================================== */
+/* the white head over the photograph keeps its blue eyes and markings; a soft
+   shadow holds its rim against a pale sky */
+.wm__mk--lt { filter: drop-shadow(0 1px 5px rgba(0,0,0,.38)); }
+
+/* footer wordmark: the same live-text lockup as the header, reversed, so the
+   name is never again baked into a raster as "BLUE FOX" */
+.ftr__lk.wm img { width: 56px; }
+.ftr__lk .wm__n { color: #fff; font-size: 1.5rem; }
+.ftr__lk .wm__s { display: block; color: var(--on-deep-dim); font-size: .69rem; }
+
+/* What we do: three cards. Between 861 and 1024 the third card spans both
+   columns and lays out sideways, rather than leaving one orphaned column. */
+.dir--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 1024px) and (min-width: 861px) {
+  .dir--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dir--3 > .dir__col:last-child { grid-column: 1 / -1; }
+  .dir--3 > .dir__col:last-child:has(.dir__m) { display: grid; grid-template-columns: 1fr 1fr; }
+  .dir--3 > .dir__col:last-child .dir__m { aspect-ratio: auto; min-height: 100%; }
+}
+@media (max-width: 860px) { .dir--3 { grid-template-columns: 1fr; } }
+
+/* Paver Sand & Seal spotlight */
+.seal__pts { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid;
+             grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem 1.6rem; }
+.seal__pts li { display: flex; gap: .7rem; align-items: flex-start; font-weight: 600; color: var(--ink); }
+.seal__pts li::before { content: ""; width: 8px; height: 8px; margin-top: .55rem; flex: none;
+                        background: var(--amber); transform: rotate(45deg); }
+@media (max-width: 420px) { .seal__pts { grid-template-columns: 1fr; } }
+
+/* the Sand & Seal pointer that sits in the pressure-washing surfaces grid: a
+   whole-panel link, marked by an amber rule so it reads as "a different job" */
+.panel--seal { display: block; text-decoration: none; color: inherit;
+               box-shadow: inset 0 3px 0 var(--amber), 0 0 0 1px var(--line);
+               transition: box-shadow .3s var(--e), transform .3s var(--e); }
+.panel--seal:hover, .panel--seal:focus-visible { box-shadow: inset 0 3px 0 var(--amber), 0 0 0 2px var(--amber); }
+.panel--seal .card__n { color: var(--amber-deep); }
+
+/* long-form text (privacy policy, accessibility statement): one readable column */
+.prose { max-width: 72ch; color: var(--ink); }
+.prose h2 { font: 700 clamp(1.25rem, 1rem + .8vw, 1.6rem)/1.25 var(--ffd); letter-spacing: -.02em; color: var(--steel); margin: 2.4rem 0 .8rem; }
+.prose h2:first-child { margin-top: 0; }
+.prose p, .prose li { line-height: 1.7; }
+.prose p { margin: 0 0 1rem; }
+/* the company email is one 37-character token; at 320px it must be allowed to break */
+.prose a { overflow-wrap: anywhere; }
+.prose ul, .prose ol { margin: 0 0 1.2rem; padding-left: 1.3rem; display: grid; gap: .45rem; }
+
+/* the footer is a dark band but not a .deep one, so .dim fell back to the
+   light-ground --slate-dim: 2.4:1 on bark. Same trap as .deep; same pair fixes it
+   (--on-deep-dim, 8.0:1). Checklist 12.4: "maintain legible footer text". */
+.ftr .dim { color: var(--on-deep-dim); }
+/* a second heading stacked in one footer column (Window cleaning under Pressure washing) */
+.ftr ul + h4 { margin-top: 1.9rem; }

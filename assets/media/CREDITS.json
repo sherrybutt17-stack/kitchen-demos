@@ -925,5 +925,25 @@
     "credit": "Pexels licence (free to use, no attribution required)",
     "src": "https://www.pexels.com/photo/12558900/",
     "note": "Blue Fox homepage hero, stand-in for the client-requested iStock 155133397 (paid licence). Not a Blue Fox job, so it carries no project caption."
+  },
+  "bx-window-clean": {
+    "credit": "Pexels licence (free to use, no attribution required)",
+    "src": "https://images.pexels.com/photos/31435403/pexels-photo-31435403.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "note": "BlueFox window-cleaning card and overview hero. Stock, not a BlueFox job, so it carries no project caption."
+  },
+  "bx-window-int": {
+    "credit": "Pexels licence (free to use, no attribution required)",
+    "src": "https://images.pexels.com/photos/6197111/pexels-photo-6197111.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    "note": "BlueFox interior window cleaning. Stock, uncaptioned."
+  },
+  "bx-logo-head": {
+    "credit": "BlueFox Landscape & Services \u2014 the company's own logo",
+    "src": "derived from bx-logo-mark-440 (the company's stacked logo)",
+    "note": "fox head only, cropped above the baked-in 'BLUE FOX' text so the header can set the corrected 'BlueFox' wordmark as live text"
+  },
+  "bx-logo-head-lt": {
+    "credit": "BlueFox Landscape & Services \u2014 the company's own logo",
+    "src": "derived from bx-logo-mark-440",
+    "note": "white head for the transparent header and dark bands: largest steel component -> white, the two eye components stay #145282, ice markings -> #7FB3DC"
   }
 }

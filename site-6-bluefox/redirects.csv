@@ -1,0 +1,14 @@
+from,to,status,reason
+/landcape-design-construction,/landscape-design-construction,301,live URL (in the live sitemap) carries a typo; the redesign corrects the slug
+/power-washing-driveways,/power-washing-services#power-washing-driveways,301,live sub-page folded into a section of the pressure washing page; the anchor id is kept
+/power-washing-patio-deck,/power-washing-services#power-washing-patio-deck,301,live sub-page folded into a section of the pressure washing page; the anchor id is kept
+/power-washing-fence-gate,/power-washing-services#power-washing-fence-gate,301,live sub-page folded into a section of the pressure washing page; the anchor id is kept
+/heathrow-fl/irrigation,/irrigation,301,live nested location+service page; the service page carries the intent
+/heathrow-fl/landscape-design-construction,/landscape-design-construction,301,live nested location+service page; the service page carries the intent
+/heathrow-fl/sod-installation,/sod-installation,301,live nested location+service page; the service page carries the intent
+/power-washing,/power-washing-services,301,review-version alternate name (compatibility route file)
+/roof-washing,/roof-cleaning,301,review-version alternate name (compatibility route file)
+/tree-hedge-work,/tree-removal,301,review-version alternate name (compatibility route file)
+/landscape-lighting,/lighting-installation,301,review-version alternate name (compatibility route file)
+/exterior-window-washing,/exterior-window-cleaning,301,review-version name before the window cleaning rename (compatibility route file)
+/interior-window-washing,/interior-window-cleaning,301,review-version name before the window cleaning rename (compatibility route file)
