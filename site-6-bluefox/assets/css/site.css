@@ -1491,3 +1491,12 @@ a.card:hover .card__go { gap: .85rem; }
 .ftr .dim { color: var(--on-deep-dim); }
 /* a second heading stacked in one footer column (Window cleaning under Pressure washing) */
 .ftr ul + h4 { margin-top: 1.9rem; }
+
+/* price estimate (estimator.html) — the .wt readout and .seg control, on light panels */
+.pe__fs { border: 0; padding: 0; margin: 1.15rem 0 .4rem; min-width: 0; }
+.pe__fs .wt__lab { margin-bottom: .6rem; }
+.seg--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.pe .wt__out { min-height: 4.6rem; }
+.pe__tbc { display: block; font-size: .92rem; line-height: 1.5; color: var(--slate); }
+.pe__go { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .8rem 1.4rem; align-items: center; }
+.pe__go .dim { margin: 0; }

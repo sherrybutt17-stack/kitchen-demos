@@ -1529,6 +1529,15 @@ a.card:hover .card__go { gap: .85rem; }
 /* a second heading stacked in one footer column (Window cleaning under Pressure washing) */
 .ftr ul + h4 { margin-top: 1.9rem; }
 
+/* price estimate (estimator.html) — the .wt readout and .seg control, on light panels */
+.pe__fs { border: 0; padding: 0; margin: 1.15rem 0 .4rem; min-width: 0; }
+.pe__fs .wt__lab { margin-bottom: .6rem; }
+.seg--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.pe .wt__out { min-height: 4.6rem; }
+.pe__tbc { display: block; font-size: .92rem; line-height: 1.5; color: var(--slate); }
+.pe__go { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .8rem 1.4rem; align-items: center; }
+.pe__go .dim { margin: 0; }
+
 </style>
 <script type="application/ld+json">
 {
@@ -1617,7 +1626,10 @@ a.card:hover .card__go { gap: .85rem; }
      "closes": "17:00"
     }
    ],
-   "alternateName": ["Blue Fox Landscape & Services", "Bluefox Landscape & Services"],
+   "alternateName": [
+    "Blue Fox Landscape & Services",
+    "Bluefox Landscape & Services"
+   ],
    "slogan": "Professional Landscaping, Pressure Washing & Soft Washing In Central Florida",
    "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -1779,6 +1791,22 @@ a.card:hover .card__go { gap: .85rem; }
      "acceptedAnswer": {
       "@type": "Answer",
       "text": "Pressure washing uses high-pressure water on hard surfaces that can take it — concrete driveways, walkways, patios. Soft washing uses low-pressure water with a mixture of cleaning solutions for surfaces that cannot — roofs, siding, gutters. A roof should never see a pressure washer, which is why the two are separate services."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is Paver Sand & Seal the same as pressure washing?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. A pressure wash cleans the surface and stops there. Paver Sand & Seal starts with the same wash, then refills the joints with sand and seals the pavers, which helps stabilise them and reduce weed growth. It is quoted by the square foot."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I book window cleaning on a schedule?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes — inside, outside or both, as a one-time clean or monthly or quarterly. Window cleaning is priced by the pane, and the estimate is free."
      }
     },
     {
@@ -2289,6 +2317,8 @@ img, video, canvas, svg, iframe { max-width: 100%; }
       <details open><summary>What areas do you serve?</summary><div class="acc__b"><p>Central Florida — Ocoee, Winter Garden, Windermere, Winter Park, Lake Mary, Heathrow and Apopka, plus Altamonte Springs, Longwood and Orlando. Office hours are Monday to Friday, 9am to 5pm; call <a class="tlink" href="tel:+14077178191">407-717-8191</a>, or <a class="tlink" href="tel:+14079697137">407-969-7137</a> after hours.</p></div></details>
 <details><summary>Are your estimates free?</summary><div class="acc__b"><p>Yes. Estimates are free. The single exception is digital landscape design work, which as of 7/1/2023 costs $250 with a 50% deposit — and if the landscape package is approved, that $250 is credited toward the landscape project.</p></div></details>
 <details><summary>What is the difference between pressure washing and soft washing?</summary><div class="acc__b"><p>Pressure washing uses high-pressure water on hard surfaces that can take it — concrete driveways, walkways, patios. Soft washing uses low-pressure water with a mixture of cleaning solutions for surfaces that cannot — roofs, siding, gutters. A roof should never see a pressure washer, which is why the two are separate services.</p></div></details>
+<details><summary>Is Paver Sand &amp; Seal the same as pressure washing?</summary><div class="acc__b"><p>No. A pressure wash cleans the surface and stops there. Paver Sand &amp; Seal starts with the same wash, then refills the joints with sand and seals the pavers, which helps stabilise them and reduce weed growth. It is quoted by the square foot.</p></div></details>
+<details><summary>Can I book window cleaning on a schedule?</summary><div class="acc__b"><p>Yes — inside, outside or both, as a one-time clean or monthly or quarterly. Window cleaning is priced by the pane, and the estimate is free.</p></div></details>
 <details><summary>Do you work on commercial properties?</summary><div class="acc__b"><p>Yes. Every service is available residential and commercial, from single-family homes to commercial buildings and whole communities.</p></div></details>
 <details><summary>Do you offer financing?</summary><div class="acc__b"><p>Yes — through <a class="tlink" href="financing.html">Acorn Finance</a>, where you can apply and get payment options from multiple lenders. Checking your options does not commit you to anything.</p></div></details>
 <details><summary>How does the landscape design process work?</summary><div class="acc__b"><p>A member of our professional landscape design team meets with you to get your vision, then creates a rendering of the finished product. You approve a picture of your own property before any ground is broken.</p></div></details>
@@ -2709,11 +2739,13 @@ img, video, canvas, svg, iframe { max-width: 100%; }
     pick(pf.elements.service, qp.get("service"));
     var svc = (qp.get("services") || "").split(",").filter(Boolean)
       .map(function (s) { return s === "light" ? "lighting" : s; });
-    var notes = [];
+    /* the price estimate sends its own readable scope (panes, area, frequency);
+       it only ever lands in the note's .value, capped, never as markup */
+    var sc = (qp.get("scope") || "").slice(0, 400), notes = sc ? [sc] : [];
     if (svc.length === 1) pick(pf.elements.service, svc[0]);
     else if (svc.length > 1) {
       svc.forEach(function (v) { pick(pf.elements.service, v, true); });
-      notes.push("Estimator scope: " + svc.join(", "));
+      if (!sc) notes.push("Estimator scope: " + svc.join(", "));
     }
     var lot = parseInt(qp.get("lot"), 10);
     if (lot > 0 && lot < 1e6) notes.push("Lot size: about " + lot.toLocaleString() + " sq ft");

@@ -1529,6 +1529,15 @@ a.card:hover .card__go { gap: .85rem; }
 /* a second heading stacked in one footer column (Window cleaning under Pressure washing) */
 .ftr ul + h4 { margin-top: 1.9rem; }
 
+/* price estimate (estimator.html) — the .wt readout and .seg control, on light panels */
+.pe__fs { border: 0; padding: 0; margin: 1.15rem 0 .4rem; min-width: 0; }
+.pe__fs .wt__lab { margin-bottom: .6rem; }
+.seg--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.pe .wt__out { min-height: 4.6rem; }
+.pe__tbc { display: block; font-size: .92rem; line-height: 1.5; color: var(--slate); }
+.pe__go { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .8rem 1.4rem; align-items: center; }
+.pe__go .dim { margin: 0; }
+
 </style>
 <script type="application/ld+json">
 {
@@ -2387,11 +2396,13 @@ img, video, canvas, svg, iframe { max-width: 100%; }
     pick(pf.elements.service, qp.get("service"));
     var svc = (qp.get("services") || "").split(",").filter(Boolean)
       .map(function (s) { return s === "light" ? "lighting" : s; });
-    var notes = [];
+    /* the price estimate sends its own readable scope (panes, area, frequency);
+       it only ever lands in the note's .value, capped, never as markup */
+    var sc = (qp.get("scope") || "").slice(0, 400), notes = sc ? [sc] : [];
     if (svc.length === 1) pick(pf.elements.service, svc[0]);
     else if (svc.length > 1) {
       svc.forEach(function (v) { pick(pf.elements.service, v, true); });
-      notes.push("Estimator scope: " + svc.join(", "));
+      if (!sc) notes.push("Estimator scope: " + svc.join(", "));
     }
     var lot = parseInt(qp.get("lot"), 10);
     if (lot > 0 && lot < 1e6) notes.push("Lot size: about " + lot.toLocaleString() + " sq ft");

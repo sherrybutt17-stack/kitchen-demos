@@ -1529,6 +1529,15 @@ a.card:hover .card__go { gap: .85rem; }
 /* a second heading stacked in one footer column (Window cleaning under Pressure washing) */
 .ftr ul + h4 { margin-top: 1.9rem; }
 
+/* price estimate (estimator.html) — the .wt readout and .seg control, on light panels */
+.pe__fs { border: 0; padding: 0; margin: 1.15rem 0 .4rem; min-width: 0; }
+.pe__fs .wt__lab { margin-bottom: .6rem; }
+.seg--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.pe .wt__out { min-height: 4.6rem; }
+.pe__tbc { display: block; font-size: .92rem; line-height: 1.5; color: var(--slate); }
+.pe__go { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .8rem 1.4rem; align-items: center; }
+.pe__go .dim { margin: 0; }
+
 </style>
 <script type="application/ld+json">
 {
@@ -1738,7 +1747,7 @@ img, video, canvas, svg, iframe { max-width: 100%; }
     <ol class="crumb"><li><a href="index.html">Home</a></li><li aria-current="page">Property estimator</li></ol>
     <p class="eyebrow">The Property Plan</p>
     <h1 class="d1">Scope your property before we visit.</h1>
-    <p class="lede mt-m" style="max-width:56ch">Set the lot size, tick what you are thinking about, and send the scope with your quote request.</p>
+    <p class="lede mt-m" style="max-width:56ch">Set the lot size, tick what you are thinking about, and send the scope with your quote request — plus a price estimate for window cleaning, sod and Paver Sand &amp; Seal.</p>
   </div>
 </section>
 <!-- GHL SECTION 02 · The Property Plan | full-width | canvas + real form controls -->
@@ -1806,15 +1815,76 @@ img, video, canvas, svg, iframe { max-width: 100%; }
     </div>
 
     <p class="dim mt-l rv" style="max-width:78ch">
-      <b style="color:var(--on-deep)">Why there is no dollar figure here.</b> Because BlueFox does not
-      publish unit pricing, and a number invented by a web page is worth nothing to you and less to
-      us. What this does instead is turn "I'd like a quote" into a scoped brief — lot size, zones
-      and services — so the estimate you get back is a real one. Estimates are free; only digital
-      design work carries a fee, and that is credited back if the package goes ahead.
+      <b style="color:var(--on-deep)">Why the plan shows no dollar figure.</b> Because a number invented
+      by a web page is worth nothing to you and less to us. The plan turns "I'd like a quote" into a
+      scoped brief — lot size, zones and services — so the estimate you get back is a real one. The
+      three services BlueFox prices by the unit are below, and they show a figure only once the
+      office has confirmed its rate. Estimates are free; only digital design work carries a fee, and
+      that is credited back if the package goes ahead.
     </p>
   </div>
 </section>
 
+
+<!-- GHL SECTION 03 · Price estimate | 3 panels → 1-col @860 | Phase 2 (checklist 6.3).
+     Rates live in #bx-prices below and are BlueFox's own figures only. A null rate shows
+     "being finalised" in place of a number — there is never a placeholder price. -->
+<section class="section section--mist" id="price-estimate">
+  <div class="shell">
+    <div class="shead">
+      <div><p class="eyebrow rv">Price estimate</p>
+      <h2 class="d2 rv" style="--d:.06s">Window cleaning, sod and Paver Sand &amp; Seal.</h2></div>
+      <p class="lede rv" style="--d:.12s">Priced by the pane or by the square foot. Fill in the ones you need: where a rate is confirmed you will see an estimate, and either way the details travel with your quote request. Every figure is confirmed at the free estimate visit, because site conditions move the real price.</p>
+    </div>
+    <div class="grid g-3 pe" data-stagger=".08">
+      <div class="panel rv">
+        <p class="card__n">Window cleaning</p>
+        <h3 class="d4">Priced by the pane</h3>
+        <div class="field mt-m"><label for="pe-panes">Window panes</label><input id="pe-panes" type="number" inputmode="numeric" min="1" max="999" step="1" placeholder="e.g. 24"></div>
+        <fieldset class="pe__fs"><legend class="wt__lab">How often</legend>
+          <div class="seg"><input type="radio" name="pe-freq" id="pe-f1" value="oneTime" checked><label for="pe-f1">One-time</label><input type="radio" name="pe-freq" id="pe-f2" value="quarterly"><label for="pe-f2">Quarterly</label><input type="radio" name="pe-freq" id="pe-f3" value="monthly"><label for="pe-f3">Monthly</label></div>
+        </fieldset>
+        <label class="chk" for="pe-inside"><input type="checkbox" id="pe-inside"><span>Inside as well<small>Interior glass and sills</small></span></label>
+        <output class="wt__out" id="pe-o-window" for="pe-panes pe-f1 pe-f2 pe-f3 pe-inside"></output>
+      </div>
+      <div class="panel rv">
+        <p class="card__n">Sod installation</p>
+        <h3 class="d4">Priced by the square foot</h3>
+        <div class="field mt-m"><label for="pe-sod">Lawn area (sq ft)</label><input id="pe-sod" type="number" inputmode="numeric" min="1" max="99999" step="1" placeholder="e.g. 1800"></div>
+        <fieldset class="pe__fs"><legend class="wt__lab">The ground today</legend>
+          <div class="seg seg--2"><input type="radio" name="pe-ground" id="pe-g1" value="bare" checked><label for="pe-g1">Bare ground</label><input type="radio" name="pe-ground" id="pe-g2" value="remove"><label for="pe-g2">Old sod to remove</label></div>
+        </fieldset>
+        <output class="wt__out" id="pe-o-sod" for="pe-sod pe-g1 pe-g2"></output>
+      </div>
+      <div class="panel rv">
+        <p class="card__n">Paver Sand &amp; Seal</p>
+        <h3 class="d4">Priced by the square foot</h3>
+        <div class="field mt-m"><label for="pe-seal">Paver area (sq ft)</label><input id="pe-seal" type="number" inputmode="numeric" min="1" max="99999" step="1" placeholder="e.g. 650"></div>
+        <p class="dim mt-m" style="margin-bottom:0">Driveway, patio, walkway or pool deck — washed, re-sanded and sealed. <a class="tlink" href="paver-sand-seal.html">How it works</a></p>
+        <output class="wt__out" id="pe-o-seal" for="pe-seal"></output>
+      </div>
+    </div>
+    <div class="pe__go rv">
+      <a class="btn btn--accent" id="pe-cta" href="free-quote.html"><span>Send these details with my quote request</span><svg class="btn__ar" width="15" height="12" viewBox="0 0 15 12" fill="none" aria-hidden="true"><path d="M9 1l5 5-5 5M14 6H0" stroke="currentColor" stroke-width="1.8"/></svg></a>
+      <p class="dim">Nothing is booked or charged. Estimates are free.</p>
+    </div>
+  </div>
+</section>
+<!-- PRICES (Phase 2 · checklist 6.3). BlueFox's own rates, in dollars per unit, supplied by the office:
+       window — per pane, by frequency (oneTime / quarterly / monthly); "inside" is the extra per pane
+                for interior glass (0 if the pane price already covers both sides)
+       sod    — per sq ft: "bare" = installing on bare ground, "remove" = removing existing sod first
+       seal   — Paver Sand & Seal per sq ft
+       min    — optional minimum job charge for that service
+       spread — 0 shows one figure; 0.15 shows a ±15% range instead
+     Leave any rate null until it is confirmed: null shows "rates are being finalised", never a number.
+     CONFIRM BEFORE showing this page publicly, and only then consider linking it from the nav. -->
+<script type="application/json" id="bx-prices">
+{"window": {"oneTime": null, "quarterly": null, "monthly": null, "inside": null, "min": null},
+ "sod": {"bare": null, "remove": null, "min": null},
+ "seal": {"rate": null, "min": null},
+ "spread": 0}
+</script>
 
 </main>
 
@@ -2215,11 +2285,13 @@ img, video, canvas, svg, iframe { max-width: 100%; }
     pick(pf.elements.service, qp.get("service"));
     var svc = (qp.get("services") || "").split(",").filter(Boolean)
       .map(function (s) { return s === "light" ? "lighting" : s; });
-    var notes = [];
+    /* the price estimate sends its own readable scope (panes, area, frequency);
+       it only ever lands in the note's .value, capped, never as markup */
+    var sc = (qp.get("scope") || "").slice(0, 400), notes = sc ? [sc] : [];
     if (svc.length === 1) pick(pf.elements.service, svc[0]);
     else if (svc.length > 1) {
       svc.forEach(function (v) { pick(pf.elements.service, v, true); });
-      notes.push("Estimator scope: " + svc.join(", "));
+      if (!sc) notes.push("Estimator scope: " + svc.join(", "));
     }
     var lot = parseInt(qp.get("lot"), 10);
     if (lot > 0 && lot < 1e6) notes.push("Lot size: about " + lot.toLocaleString() + " sq ft");
@@ -2685,6 +2757,82 @@ img, video, canvas, svg, iframe { max-width: 100%; }
       });
     }, { threshold: 0.25 }).observe(cv);
   } else restart();
+})();
+
+</script>
+<script>
+/* ============================================================================
+   PRICE ESTIMATE — BlueFox Landscape & Services (estimator.html only)
+
+   Window cleaning per pane by frequency, sod per sq ft (bare ground or old sod
+   to remove), Paver Sand & Seal per sq ft — checklist 6.3. The rates live in
+   #bx-prices on the page, not here, and start null: a null rate says "being
+   finalised", never a number. Either way the scope rides into the quote request.
+   ========================================================================== */
+(function () {
+  "use strict";
+  var root = document.getElementById("price-estimate");
+  if (!root) return;
+
+  var P = {};
+  try { P = JSON.parse(document.getElementById("bx-prices").textContent) || {}; } catch (e) { P = {}; }
+  var W = P.window || {}, S = P.sod || {}, Z = P.seal || {};
+
+  var $ = function (id) { return document.getElementById(id); };
+  var qty = function (id, max) { var v = Math.round(parseFloat($(id).value)); return v > 0 ? Math.min(v, max) : 0; };
+  var pick = function (n) { var r = root.querySelector("input[name='" + n + "']:checked"); return r ? r.value : ""; };
+  var usd = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); };
+  var n = function (v) { return v.toLocaleString("en-US"); };
+  var FREQ = { oneTime: "one-time", quarterly: "quarterly", monthly: "monthly" };
+  var GROUND = { bare: "bare ground", remove: "existing sod to remove" };
+
+  /* one figure, or a range once the office sets a spread; never below a minimum */
+  var fig = function (q, rate, min) {
+    var m = +min || 0, t = Math.max(q * rate, m), s = +P.spread || 0;
+    return s > 0 ? usd(Math.max(t * (1 - s), m)) + "–" + usd(t * (1 + s)) : usd(t);
+  };
+  /* only computed numbers and fixed strings reach innerHTML — never visitor input */
+  var say = function (out, q, rate, min, unit, name) {
+    if (!q) { out.innerHTML = ""; return; }
+    out.innerHTML = typeof rate === "number" && rate > 0
+      ? '<span class="wt__fig"><b>' + fig(q, rate, min) + "</b><span>" + unit + "</span></span>"
+      : '<span class="pe__tbc">' + name + " rates are being finalised — send the details and we will price it for you.</span>";
+  };
+
+  var deb;
+  var update = function () {
+    var panes = qty("pe-panes", 999), freq = pick("pe-freq") || "oneTime", inside = $("pe-inside").checked,
+        sod = qty("pe-sod", 99999), ground = pick("pe-ground") || "bare", seal = qty("pe-seal", 99999),
+        svc = [], scope = [];
+    if (panes) {
+      svc.push("window-ext"); if (inside) svc.push("window-int");
+      scope.push("Window cleaning: " + n(panes) + " panes, " + FREQ[freq] + (inside ? ", inside and out" : ""));
+    }
+    if (sod) { svc.push("sod"); scope.push("Sod: " + n(sod) + " sq ft, " + GROUND[ground]); }
+    if (seal) { svc.push("sandseal"); scope.push("Paver Sand & Seal: " + n(seal) + " sq ft"); }
+
+    $("pe-cta").href = "free-quote.html" + (svc.length
+      ? "?services=" + svc.join(",") + "&scope=" + encodeURIComponent("Price estimate — " + scope.join("; "))
+      : "");
+
+    /* inside glass is an add-on rate (0 if a pane price covers both sides);
+       while it is unset the figure says it is outside only */
+    var wr = W[freq], wu = freq === "oneTime" ? "estimated, one visit" : "estimated, per " + FREQ[freq] + " visit";
+    if (inside) {
+      if (typeof W.inside === "number" && typeof wr === "number") { wr += W.inside; wu += " · inside and out"; }
+      else wu += " · outside glass; inside priced at the visit";
+    }
+
+    clearTimeout(deb);
+    deb = setTimeout(function () {
+      say($("pe-o-window"), panes, wr, W.min, wu, "Window cleaning");
+      say($("pe-o-sod"), sod, S[ground], S.min, "estimated · " + GROUND[ground], "Sod");
+      say($("pe-o-seal"), seal, Z.rate, Z.min, "estimated", "Paver Sand & Seal");
+    }, 300);
+  };
+  root.addEventListener("input", update);
+  root.addEventListener("change", update);
+  update();
 })();
 
 </script>

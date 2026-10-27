@@ -421,9 +421,15 @@ changed, and the rules that now follow from it:
   thank-you page and the homepage process both say so.
 - **Acorn link:** every financing CTA uses `https://www.acornfinance.com/apply?d=J86UJ`, BlueFox's
   prequalification link from the live financing page — never the generic `/?d=J86UJ` landing page.
-- **Not in Phase 1:** estimator pricing (waits on Liz's window/sod/sand & seal prices, and the JS is
-  at its ceiling), owner and promo video, chatbot, and all GHL CRM, notification and rep-routing
-  work. Rep names never go into page source — route by service value inside GHL.
+- **Phase 2 — built where it could be:** the price estimate on `estimator.html` (below) is complete
+  except for the rates themselves, which only the office can supply. Two FAQs grounded in confirmed
+  facts were added to the homepage (Sand & Seal vs a wash; scheduled window cleaning); Liz's own list
+  of recurring questions is still to come.
+- **Blocked on the client, by design:** photography swaps and a stronger before/after (the Drive is
+  empty), the owner introduction video, the promo video and video hero, the thank-you video, and the
+  chatbot (a GHL widget that needs the client's account). **The separate washing website is a
+  recommendation to consider, not an approved build — do not build it.** All GHL CRM, notification
+  and rep-routing work happens in GHL. Rep names never go into page source — route by service value.
 
 **SEO migration.** The live site runs on **Duda** (`irp.cdn-website.com`). Its sitemap has URLs the
 redesign does not reproduce — `/landcape-design-construction` (a typo), `/power-washing-driveways`,
@@ -538,6 +544,26 @@ wait for a truck to find out what you own.
 
 **The canvas is `aria-hidden` and only ever draws.** Every control is a real form element and the
 readout is a native `<output>`, debounced 300ms.
+
+#### The price estimate (`assets/js/price-estimate.js`, estimator.html only)
+
+Phase 2 of the meeting checklist (6.3): the three services the office prices by the unit —
+window cleaning per pane by frequency (one-time / quarterly / monthly, optional inside add-on), sod
+per square foot (bare ground vs old sod to remove), Paver Sand & Seal per square foot.
+
+> **The rates are data, not code, and they start null.** They live in
+> `<script type="application/json" id="bx-prices">` on the page, beside a comment that says what
+> each key means, so the office (or whoever edits the GHL block) can set them without touching JS.
+> A null rate shows *"rates are being finalised"* — never a number — so nothing is invented about a
+> real company's pricing. Optional `min` (minimum job charge) floors the figure; `spread` turns it
+> into a range, and the range is floored at the minimum too. An unset `inside` rate labels the
+> window figure "outside glass; inside priced at the visit" rather than silently under-quoting.
+
+Priced or not, the CTA carries the scope into the quote: `free-quote.html?services=…&scope=…`,
+where `site.js` writes the readable scope ("Window cleaning: 24 panes, quarterly, inside and out;
+Sod: 1,800 sq ft, existing sod to remove") into the notes field as `.value`, capped at 400 chars.
+So a lead arrives priced, or at worst already measured. Tested with injected rates: arithmetic,
+minimum, range and inside add-on all verified. Keep the page direct-link until the rates are set.
 
 #### The forty-six files
 
@@ -717,10 +743,10 @@ carrying an inlined hero video.
   ≤40KB for Site 3 (currently ~39KB across `site.js` + `chamber.js` + `kitchen3d.js`);
   ≤30KB for Site 4 (currently ~27KB across `site.js` + `perimeter.js`);
   ≤36KB for Site 5 (currently ~27KB across `site.js` + `smile-studio.js`);
-  ≤36KB for Site 6 (currently 35.8KB across `site.js` + `property-plan.js` — at the ceiling
-  after the services multi-select; `property-plan.js` loads only on `estimator.html`, so every
-  other page ships `site.js` alone, ~22.7KB). The Phase 2 priced estimator needs a budget
-  decision before it is built.
+  ≤40KB for Site 6 (currently 39.9KB across `site.js` + `property-plan.js` + `price-estimate.js`;
+  the last two load only on `estimator.html`, so every other page ships `site.js` alone, ~22.8KB).
+  The ceiling moved from 36KB to 40KB to pay for the Phase 2 price estimate (~3.9KB) — a
+  deliberate trade, confined to the one direct-link page.
   The ceiling moved from 30KB to pay for the redesign's dropdowns, quote popup, validation,
   carousel, gallery lightbox and review-feed loader — a deliberate trade.
   The ceiling moved from 35KB to 40KB to pay for the lighting/material upgrade in

@@ -286,11 +286,13 @@
     pick(pf.elements.service, qp.get("service"));
     var svc = (qp.get("services") || "").split(",").filter(Boolean)
       .map(function (s) { return s === "light" ? "lighting" : s; });
-    var notes = [];
+    /* the price estimate sends its own readable scope (panes, area, frequency);
+       it only ever lands in the note's .value, capped, never as markup */
+    var sc = (qp.get("scope") || "").slice(0, 400), notes = sc ? [sc] : [];
     if (svc.length === 1) pick(pf.elements.service, svc[0]);
     else if (svc.length > 1) {
       svc.forEach(function (v) { pick(pf.elements.service, v, true); });
-      notes.push("Estimator scope: " + svc.join(", "));
+      if (!sc) notes.push("Estimator scope: " + svc.join(", "));
     }
     var lot = parseInt(qp.get("lot"), 10);
     if (lot > 0 && lot < 1e6) notes.push("Lot size: about " + lot.toLocaleString() + " sq ft");
